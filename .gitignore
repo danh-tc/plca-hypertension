@@ -1,0 +1,12 @@
+!data/raw/.gitkeep
+!outputs/.gitkeep
+# data & outputs (NHANES files are public but large; keep out of git)
+*.XPT
+*.parquet
+*.xpt
+.ipynb_checkpoints/
+.pytest_cache/
+.venv/
+__pycache__/
+data/raw/*
+outputs/*
