@@ -221,7 +221,7 @@ Các phân tích sau không dùng để kết luận về tiêu chí đánh giá
 
 ### 3.9 Môi trường tính toán và tái lập
 
-Toàn bộ kết quả trong bài lấy từ một lần chạy toàn bộ quy trình (scripts/run\_all.sh) trên một máy Linux (\[CPU\], \[RAM\]) với Python 3.12.3, numpy 2.5.5, pandas 3.1.1, scikit-learn 1.9.1, xgboost 3.4.1 và dice-ml 0.12. Seed 42 là seed chính; seed 43 và 44 dùng để đánh giá độ ổn định ở tầng CF. Mỗi lần chạy ghi lại phiên bản thư viện, commit Git và cấu hình. Việc bổ sung E6 sau khi E3 không đạt ở một lần chạy thử được khai báo ở mục 5.6. Nghiên cứu không được đăng ký. Bài được báo cáo theo hướng dẫn TRIPOD+AI \[38\].
+Toàn bộ kết quả trong bài lấy từ một lần chạy toàn bộ quy trình (scripts/run\_all.sh) trên một máy tính xách tay chạy Linux (Intel Core i5-1335U, 12 luồng, 16 GB RAM) với Python 3.12.3, numpy 2.5.5, pandas 3.1.1, scikit-learn 1.9.1, xgboost 3.4.1 và dice-ml 0.12. Seed 42 là seed chính; seed 43 và 44 dùng để đánh giá độ ổn định ở tầng CF. Mỗi lần chạy ghi lại phiên bản thư viện, commit Git và cấu hình. Việc bổ sung E6 sau khi E3 không đạt ở một lần chạy thử được khai báo ở mục 5.6. Nghiên cứu không được đăng ký. Bài được báo cáo theo hướng dẫn TRIPOD+AI \[38\].
 
 ## 4. Kết quả
 
