@@ -46,7 +46,7 @@ Medication status is tri-state (yes / no incl. structural skips / unknown → ex
 | E4 | Is recourse still feasible under the guideline-informed taxonomy (M1, T-HTN)? Coverage M1 vs M0; ECD_self(M0) − ECD_self(M1) when ≥ 40 common patients | descriptive |
 | E5 | Screening consequence (top-30% McNemar) | secondary |
 
-Sets: `S0` (paper) = `S_M0` (code), `S02` (paper) = `S_star` (code).
+Naming: `S0` (paper) = `S_M0` (code), `S02` (paper) = `S_star` (code); the paper calls T-HTN the "guideline-based rules" (mode M1).
 
 ## Constraint modes
 

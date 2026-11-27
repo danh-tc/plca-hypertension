@@ -88,7 +88,7 @@ header(fig, "Cấm nhóm biến chẩn đoán khi sinh CF chỉ giảm bất đ�
 fig.savefig(os.path.join(out, "fig3.png"), dpi=200)
 plt.close(fig)
 
-# ---------------- Figure 4: valid-recourse coverage by constraint mode (T-HTN run)
+# ---------------- Figure 4: valid-recourse coverage by constraint mode 
 thtn = root
 rows = []
 for src, slab in (("f_self", "f_self"), ("f_clin", "f_clin")):
@@ -99,7 +99,7 @@ for src, slab in (("f_self", "f_self"), ("f_clin", "f_clin")):
                      c1.loc[(src, "M1_taxonomy"), "valid_recourse_coverage_pct"]))
 fig, ax = plt.subplots(figsize=(6.6, 3.8))
 fig.subplots_adjust(left=0.2, right=0.97, top=0.74, bottom=0.12)
-modes = [("M0: ràng buộc cơ sở", GREY), ("M2: cấm nhóm biến chẩn đoán", "#8fb5e6"), ("M1: T-HTN", BLUE)]
+modes = [("M0: ràng buộc cơ sở", GREY), ("M2: cấm nhóm biến chẩn đoán", "#8fb5e6"), ("M1: quy tắc theo hướng dẫn", BLUE)]
 h = 0.26
 for i, (lab, *vals) in enumerate(rows):
     for k, (v, (mlab, col)) in enumerate(zip(vals, modes)):
@@ -116,7 +116,7 @@ ax.axvline(0, color=GREY, lw=0.8)
 ax.grid(axis="x", color="#e6e6e6", lw=0.7)
 ax.set_axisbelow(True)
 ax.legend(loc="lower center", bbox_to_anchor=(0.42, 1.0), ncol=3, frameon=False, fontsize=8.3, handlelength=1.0)
-header(fig, "Taxonomy dựa trên hướng dẫn gần như không còn CF hợp lệ",
+header(fig, "Quy tắc theo hướng dẫn gần như không còn để lại CF hợp lệ",
        "Tỷ lệ người (trong 200 người được chọn) có ít nhất một CF hợp lệ, theo chế độ ràng buộc")
 fig.savefig(os.path.join(out, "fig4.png"), dpi=200)
 plt.close(fig)

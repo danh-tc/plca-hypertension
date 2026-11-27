@@ -82,7 +82,7 @@ FIGS = {
           "và CF sinh mới khi cấm thay đổi nhóm biến (M2). Mức giảm dưới mỗi nhóm tính theo độ lớn |A|; ở seed 43, A đổi dấu sau khi hoàn nguyên."),
     "4": ("fig4.png", r"\columnwidth", "figure",
           "Tỷ lệ người có ít nhất một CF hợp lệ ở M0 (ràng buộc cơ sở), M2 (cấm nhóm biến liên quan đến chẩn đoán) "
-          "và M1 (T-HTN), theo mô hình sinh CF và seed (200 người được chọn ở mỗi seed)."),
+          "và M1 (bộ quy tắc theo hướng dẫn), theo mô hình sinh CF và seed (200 người được chọn ở mỗi seed)."),
 }
 
 def fig_tex(n):

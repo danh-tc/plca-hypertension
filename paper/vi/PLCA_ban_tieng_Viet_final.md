@@ -11,7 +11,7 @@ Cong-Danh Tran — [Đơn vị, Thành phố, Việt Nam] · Email: [email] · O
 - Mô hình học từ nhãn tự khai dựa vào thông tin tiếp cận y tế nhiều hơn mô hình học từ nhãn kiểu hình tăng huyết áp ở cấu hình chính.
 - Ở cả hai giai đoạn NHANES, những thay đổi thuộc nhóm biến liên quan đến chẩn đoán góp phần làm cho hai mô hình phụ có mức giảm điểm dự đoán khác nhau khi đánh giá cùng một CF.
 - Trong giai đoạn 2015–2018, đưa nhóm biến đó trong CF đã sinh về giá trị ban đầu thu hẹp chênh lệch 50–67%; giữ nguyên nhóm biến khi sinh CF mới chỉ thu hẹp 9–27%.
-- Với bộ quy tắc T-HTN, DiCE chỉ tìm được CF hợp lệ cho 3–12% số người được chọn ở giai đoạn 2015–2018.
+- Với bộ quy tắc theo hướng dẫn, DiCE chỉ tìm được CF hợp lệ cho 3–12% số người được chọn ở giai đoạn 2015–2018.
 - Khác biệt về mức độ dựa vào thông tin tiếp cận y tế không được xác nhận khi so sánh với nhãn chỉ dựa trên huyết áp đo ở người không dùng thuốc hạ áp.
 
 **Từ khóa:** Counterfactual explanations; Explainable artificial intelligence; Clinical decision support; Label bias; Hypertension; Algorithmic recourse; NHANES; DiCE; XGBoost.
@@ -24,7 +24,7 @@ Cong-Danh Tran — [Đơn vị, Thành phố, Việt Nam] · Email: [email] · O
 
 **Phương pháp.** Mỗi người trong dữ liệu NHANES có hai nhãn: nhãn dựa trên việc từng được thông báo mắc tăng huyết áp và nhãn dựa trên huyết áp đo được hoặc việc đang dùng thuốc hạ áp (nhãn kiểu hình). Các mô hình XGBoost dùng cùng cấu hình, cùng đặc trưng và cùng dữ liệu, chỉ khác nhãn huấn luyện. Một mô hình đối chứng học từ nhãn kiểu hình sau khi một số nhãn được đảo ngẫu nhiên theo từng lớp. Quy trình gồm đo độ quan trọng của nhóm biến, sinh CF bằng DiCE, đưa mỗi CF vào cả hai mô hình phụ để tính mức giảm điểm, đưa nhóm biến trong CF về giá trị ban đầu (ablation), và sinh CF mới có ràng buộc. Quy trình được phát triển trên NHANES 2011–2014 (10.311 người) và được chạy với các mô hình huấn luyện lại từ đầu trên NHANES 2015–2018 (10.151 người).
 
-**Kết quả.** Trong giai đoạn 2015–2018, hai nhãn khác nhau ở 12,9% người trưởng thành sau khi áp dụng trọng số khảo sát. Khi xáo trộn thông tin tiếp cận y tế, AUC của mô hình học nhãn tự khai giảm nhiều hơn mô hình học nhãn kiểu hình 0,014 [0,008; 0,019]. Tỷ trọng độ quan trọng của nhóm này cũng cao hơn mô hình đối chứng nhiễu nhãn. Tuy nhiên, khác biệt không được xác nhận khi dùng nhãn chỉ dựa trên huyết áp đo ở người không dùng thuốc. Khi đưa nhóm biến liên quan đến chẩn đoán trong CF về giá trị ban đầu, điểm của mô hình phụ học nhãn tự khai tăng trở lại nhiều hơn mô hình phụ học nhãn kiểu hình trung bình 4,3 điểm bách phân vị (E2 = 0,043; cận dưới 0,037; cùng dấu ở ba seed). Trên cùng tập người ở mỗi seed, thao tác này làm chênh lệch giữa mức giảm điểm của hai mô hình phụ thu hẹp 50–67%, trong khi giữ nguyên nhóm biến khi sinh CF mới chỉ thu hẹp 9–27%. Đây là so sánh mô tả; tác động của việc giữ nguyên nhóm biến không ổn định ở giai đoạn 2011–2014. Với bộ quy tắc T-HTN, chỉ 3–12% số người được chọn ở giai đoạn 2015–2018 có CF hợp lệ, nên chưa đủ dữ liệu để đánh giá mức giảm chênh lệch.
+**Kết quả.** Trong giai đoạn 2015–2018, hai nhãn khác nhau ở 12,9% người trưởng thành sau khi áp dụng trọng số khảo sát. Khi xáo trộn thông tin tiếp cận y tế, AUC của mô hình học nhãn tự khai giảm nhiều hơn mô hình học nhãn kiểu hình 0,014 [0,008; 0,019]. Tỷ trọng độ quan trọng của nhóm này cũng cao hơn mô hình đối chứng nhiễu nhãn. Tuy nhiên, khác biệt không được xác nhận khi dùng nhãn chỉ dựa trên huyết áp đo ở người không dùng thuốc. Khi đưa nhóm biến liên quan đến chẩn đoán trong CF về giá trị ban đầu, điểm của mô hình phụ học nhãn tự khai tăng trở lại nhiều hơn mô hình phụ học nhãn kiểu hình trung bình 4,3 điểm bách phân vị (E2 = 0,043; cận dưới 0,037; cùng dấu ở ba seed). Trên cùng tập người ở mỗi seed, thao tác này làm chênh lệch giữa mức giảm điểm của hai mô hình phụ thu hẹp 50–67%, trong khi giữ nguyên nhóm biến khi sinh CF mới chỉ thu hẹp 9–27%. Đây là so sánh mô tả; tác động của việc giữ nguyên nhóm biến không ổn định ở giai đoạn 2011–2014. Với bộ quy tắc theo hướng dẫn, chỉ 3–12% số người được chọn ở giai đoạn 2015–2018 có CF hợp lệ, nên chưa đủ dữ liệu để đánh giá mức giảm chênh lệch.
 
 **Kết luận.** Biết nhóm biến nào góp phần làm cho hai mô hình có mức giảm điểm dự đoán khác nhau không có nghĩa là giữ nguyên nhóm biến ấy khi sinh CF mới sẽ làm giảm được chênh lệch một cách ổn định. PLCA cung cấp quy trình kiểm định bằng hai nhãn để đánh giá riêng những vấn đề này trước khi cân nhắc sử dụng CF trong hệ hỗ trợ quyết định lâm sàng. PLCA không phải công cụ chẩn đoán; CF không phải lời khuyên điều trị.
 
@@ -44,7 +44,7 @@ Cong-Danh Tran — [Đơn vị, Thành phố, Việt Nam] · Email: [email] · O
 | Ablation | Thao tác đưa nhóm biến trong CF về giá trị trước khi thay đổi; không xóa cột dữ liệu, không huấn luyện lại mô hình. |
 | Feature locking | Giữ nguyên giá trị nhóm biến của từng người trong suốt quá trình sinh CF mới. |
 | Mitigation | Trong bài này, làm giảm chênh lệch về mức giảm điểm dự đoán giữa hai mô hình phụ. Không đồng nghĩa với giảm huyết áp hay loại bỏ mọi dạng thiên lệch. |
-| Taxonomy T-HTN | Bộ quy tắc xác định biến nào được thay đổi, thay đổi theo chiều nào và trong khoảng nào. |
+| Bộ quy tắc theo hướng dẫn (M1) | Bộ quy tắc xác định biến nào được thay đổi, thay đổi theo chiều nào và trong khoảng nào. |
 | Valid-CF coverage | Tỷ lệ người được thuật toán tìm thấy ít nhất một CF thỏa ràng buộc và làm mô hình sinh CF đổi kết quả. |
 | Seed | Giá trị khởi tạo bộ sinh số ngẫu nhiên. Các seed không phải các mẫu nghiên cứu độc lập. |
 | Bootstrap | Lấy mẫu lại có hoàn lại để đánh giá độ biến thiên của đại lượng ước lượng. |
@@ -86,9 +86,9 @@ PLCA phân biệt ba câu hỏi:
 
 1. **Reliance — Mức độ dựa vào đặc trưng:** Mô hình học nhãn tự khai có cần thông tin tiếp cận y tế để phân loại nhiều hơn mô hình học nhãn kiểu hình hay không?
 2. **Attribution — Mức đóng góp của đặc trưng:** Khi cùng một CF được đưa vào hai mô hình phụ, những thay đổi thuộc nhóm biến liên quan đến chẩn đoán góp phần bao nhiêu vào chênh lệch giữa mức giảm điểm của hai mô hình?
-3. **Mitigation — Tác động của việc hạn chế đặc trưng:** Nếu giữ nguyên nhóm biến đó khi sinh CF mới, chênh lệch có giảm không? Khi áp dụng bộ quy tắc T-HTN, còn đủ CF hợp lệ để đánh giá chênh lệch hay không?
+3. **Mitigation — Tác động của việc hạn chế đặc trưng:** Nếu giữ nguyên nhóm biến đó khi sinh CF mới, chênh lệch có giảm không? Khi áp dụng bộ quy tắc theo hướng dẫn, còn đủ CF hợp lệ để đánh giá chênh lệch hay không?
 
-**Đóng góp của nghiên cứu.** Thứ nhất, PLCA xây dựng cách kiểm định trong đó CF từ mỗi mô hình được đưa vào cả hai mô hình phụ, tạo thành bốn phép đánh giá cùng nhãn và khác nhãn. Một mô hình đối chứng nhiễu nhãn được dùng để bổ sung phép so sánh về độ quan trọng của nhóm biến. Thứ hai, PLCA phân biệt phép đo đóng góp của nhóm biến trong CF đã sinh (E2) với phép đánh giá việc sinh CF mới khi giữ nguyên nhóm biến (E3). Thứ ba, kết quả thực nghiệm cho thấy nhóm biến liên quan đến chẩn đoán có đóng góp vào chênh lệch mức giảm điểm ở cả hai giai đoạn NHANES, trong khi tác động của việc giữ nguyên nhóm biến không ổn định. Bộ quy tắc T-HTN còn làm giảm mạnh tỷ lệ người có CF hợp lệ, khiến chưa đủ dữ liệu để đánh giá mức giảm chênh lệch.
+**Đóng góp của nghiên cứu.** Thứ nhất, PLCA xây dựng cách kiểm định trong đó CF từ mỗi mô hình được đưa vào cả hai mô hình phụ, tạo thành bốn phép đánh giá cùng nhãn và khác nhãn. Một mô hình đối chứng nhiễu nhãn được dùng để bổ sung phép so sánh về độ quan trọng của nhóm biến. Thứ hai, PLCA phân biệt phép đo đóng góp của nhóm biến trong CF đã sinh (E2) với phép đánh giá việc sinh CF mới khi giữ nguyên nhóm biến (E3). Thứ ba, kết quả thực nghiệm cho thấy nhóm biến liên quan đến chẩn đoán có đóng góp vào chênh lệch mức giảm điểm ở cả hai giai đoạn NHANES, trong khi tác động của việc giữ nguyên nhóm biến không ổn định. Bộ quy tắc theo hướng dẫn còn làm giảm mạnh tỷ lệ người có CF hợp lệ, khiến chưa đủ dữ liệu để đánh giá mức giảm chênh lệch.
 
 PLCA không đưa ra thuật toán sinh CF hay phép xáo trộn đặc trưng mới. Đóng góp nằm ở cách kết hợp các phép phân tích trên hai định nghĩa nhãn lâm sàng của cùng một người, nhằm phân biệt mức độ mô hình dựa vào đặc trưng, mức đóng góp của đặc trưng trong CF đã sinh, và kết quả của việc hạn chế đặc trưng khi sinh CF mới.
 
@@ -106,7 +106,7 @@ CF có thể thay đổi khi dùng một mô hình khác, kể cả khi các mô
 
 ### 2.3. Sinh CF có ràng buộc theo kiến thức chuyên môn
 
-Thieu [9] sử dụng bộ quy tắc về chiều thay đổi của đặc trưng cho bệnh tiểu đường. DANCE [20] đưa kiến thức chuyên môn vào quá trình sinh CF. FACE [21] hướng tới những CF có khả năng thực hiện tốt hơn trong thực tế. PLCA sử dụng bộ quy tắc T-HTN dựa trên hướng dẫn tăng huyết áp năm 2025 để kiểm tra kết quả của việc giới hạn các thay đổi. Nghiên cứu không giả định trước rằng áp dụng bộ quy tắc sẽ giảm chênh lệch giữa hai mô hình hoặc bảo đảm tính khả thi lâm sàng.
+Thieu [9] sử dụng bộ quy tắc về chiều thay đổi của đặc trưng cho bệnh tiểu đường. DANCE [20] đưa kiến thức chuyên môn vào quá trình sinh CF. FACE [21] hướng tới những CF có khả năng thực hiện tốt hơn trong thực tế. PLCA sử dụng một bộ quy tắc dựa trên hướng dẫn tăng huyết áp năm 2025 để kiểm tra kết quả của việc giới hạn các thay đổi. Nghiên cứu không giả định trước rằng áp dụng bộ quy tắc sẽ giảm chênh lệch giữa hai mô hình hoặc bảo đảm tính khả thi lâm sàng.
 
 ### 2.4. Cách định nghĩa nhãn và CF
 
@@ -243,10 +243,10 @@ DiCE [2] phiên bản 0.12, với phương pháp tìm kiếm random, được y�
 | Chế độ | Thuật toán được phép làm gì? | Mục đích so sánh |
 |---|---|---|
 | M0 — Ràng buộc cơ sở | Giữ nguyên tuổi, giới và chủng tộc/dân tộc; cho phép thay đổi những biến còn lại trong phạm vi tìm kiếm. | Mốc so sánh. |
-| M1 — T-HTN | Chỉ cho phép thay đổi tám đặc trưng theo các quy tắc cụ thể; giữ nguyên mọi biến còn lại và những giá trị được điền thay ở từng người. | Kiểm tra khả năng tìm CF khi áp dụng bộ quy tắc có căn cứ từ hướng dẫn y khoa. |
-| M2 — Giữ nguyên nhóm biến liên quan đến chẩn đoán | Như M0, đồng thời giữ nguyên cả ba nhóm: tiếp cận y tế, chẩn đoán bệnh khác và SRH. Không áp dụng các quy tắc T-HTN. | Kiểm tra tác động của việc không cho phép thay đổi nhóm biến liên quan đến chẩn đoán. |
+| M1 — Quy tắc theo hướng dẫn | Chỉ cho phép thay đổi tám đặc trưng theo các quy tắc cụ thể; giữ nguyên mọi biến còn lại và những giá trị được điền thay ở từng người. | Kiểm tra khả năng tìm CF khi áp dụng bộ quy tắc có căn cứ từ hướng dẫn y khoa. |
+| M2 — Giữ nguyên nhóm biến liên quan đến chẩn đoán | Như M0, đồng thời giữ nguyên cả ba nhóm: tiếp cận y tế, chẩn đoán bệnh khác và SRH. Không áp dụng bộ quy tắc theo hướng dẫn. | Kiểm tra tác động của việc không cho phép thay đổi nhóm biến liên quan đến chẩn đoán. |
 
-Trong M1, bộ quy tắc T-HTN được xây dựng từ khuyến nghị y khoa, cách chuyển khuyến nghị thành quy tắc trên biến NHANES, ý nghĩa của dữ liệu và các quyết định thiết kế nghiên cứu. Bảo hiểm và nơi khám thường xuyên chỉ được chuyển từ không có sang có; tình trạng đang hút thuốc chỉ được chuyển sang không hút thuốc hiện tại; lượng rượu mỗi ngày có uống chỉ được giảm xuống mức thấp nhất là một ly nếu ban đầu lớn hơn một; vận động vừa và mạnh chỉ được chuyển từ không sang có. BMI chỉ được giảm khi vượt ngưỡng 25 kg/m² (23 đối với nhóm châu Á không Hispanic), và không giảm dưới ngưỡng [34]. Vòng eo chỉ được giảm khi vượt ngưỡng 102 cm ở nam hoặc 88 cm ở nữ, và không giảm dưới ngưỡng tương ứng [35,36]. Các biến khác, gồm SRH, cholesterol toàn phần và HbA1c, được giữ nguyên. Nếu giá trị của một biến được điền thay do thiếu dữ liệu, biến đó được giữ nguyên cho người tương ứng ở M1 và M3. Bảng A4 trình bày căn cứ và giới hạn của từng quy tắc.
+Trong M1, bộ quy tắc theo hướng dẫn được xây dựng từ khuyến nghị y khoa, cách chuyển khuyến nghị thành quy tắc trên biến NHANES, ý nghĩa của dữ liệu và các quyết định thiết kế nghiên cứu. Bảo hiểm và nơi khám thường xuyên chỉ được chuyển từ không có sang có; tình trạng đang hút thuốc chỉ được chuyển sang không hút thuốc hiện tại; lượng rượu mỗi ngày có uống chỉ được giảm xuống mức thấp nhất là một ly nếu ban đầu lớn hơn một; vận động vừa và mạnh chỉ được chuyển từ không sang có. BMI chỉ được giảm khi vượt ngưỡng 25 kg/m² (23 đối với nhóm châu Á không Hispanic), và không giảm dưới ngưỡng [34]. Vòng eo chỉ được giảm khi vượt ngưỡng 102 cm ở nam hoặc 88 cm ở nữ, và không giảm dưới ngưỡng tương ứng [35,36]. Các biến khác, gồm SRH, cholesterol toàn phần và HbA1c, được giữ nguyên. Nếu giá trị của một biến được điền thay do thiếu dữ liệu, biến đó được giữ nguyên cho người tương ứng ở M1 và M3. Bảng A4 trình bày căn cứ và giới hạn của từng quy tắc.
 
 M1 và M2 là hai cách giới hạn khác nhau, không phải hai mức liên tiếp của cùng một bộ quy tắc. Chẳng hạn, M1 cho phép tăng khả năng tiếp cận y tế, còn M2 không cho phép thay đổi nhóm này.
 
@@ -322,7 +322,7 @@ Dùng tập chung trong một phép so sánh giúp tránh thay đổi danh sách
 | E1 — Reliance | Mô hình học nhãn tự khai dựa vào thông tin tiếp cận y tế nhiều hơn không? | Chênh lệch mức giảm AUC của nhóm tiếp cận y tế giữa f_self và f_clin; chênh lệch tỷ trọng độ quan trọng giữa f_self và f_placebo. | Chính |
 | E2 — Attribution | Những thay đổi thuộc nhóm biến liên quan đến chẩn đoán trong CF đã sinh góp phần bao nhiêu vào chênh lệch mức giảm điểm giữa hai mô hình phụ? | Đưa nhóm biến trong CF ở M0 về giá trị ban đầu, tính lại điểm trên hai mô hình phụ và đo phần thay đổi của A. | Phụ |
 | E3 — Mitigation | Giữ nguyên nhóm biến liên quan đến chẩn đoán khi sinh CF mới có thu hẹp chênh lệch không? | A(M0) > 0 và \|A(M2)\| < \|A(M0)\|, kiểm định qua A(M0) − A(M2) > 0 và A(M0) + A(M2) > 0. | Chính |
-| E4 — T-HTN | Khi áp dụng bộ quy tắc T-HTN, thuật toán còn tìm được CF hợp lệ cho bao nhiêu người? | So sánh tỷ lệ người có CF hợp lệ giữa M1 và M0; xét ECD_self(M0) − ECD_self(M1) khi có ít nhất 40 người chung. | Mô tả |
+| E4 — Quy tắc theo hướng dẫn | Khi áp dụng bộ quy tắc theo hướng dẫn, thuật toán còn tìm được CF hợp lệ cho bao nhiêu người? | So sánh tỷ lệ người có CF hợp lệ giữa M1 và M0; xét ECD_self(M0) − ECD_self(M1) khi có ít nhất 40 người chung. | Mô tả |
 | E5 — Sàng lọc mô phỏng | Với cùng số người được chọn để sàng lọc, hai mô hình chọn được bao nhiêu người thuộc G01? | Tỷ lệ người G01 nằm trong nhóm 30% có điểm cao nhất; kiểm định McNemar [37]. | Phụ |
 
 #### 3.6.1. Đo đóng góp của nhóm biến trong CF đã sinh (E2)
@@ -367,7 +367,7 @@ $$A(M0)>0\quad\text{và}\quad |A(M2)|<|A(M0)|.$$
 
 **E3.** Nghiên cứu lấy mẫu lại theo người tham gia 5.000 lần. Mỗi điều kiện sử dụng cận dưới một phía là phân vị 2,5% của phân bố bootstrap, tương ứng mức α = 0,025 một phía. Kiểm định giao–hợp (intersection–union test) yêu cầu cả ba điều kiện cùng đạt; chỉ một điều kiện không đạt thì E3 không đạt. Phép phân tích yêu cầu ít nhất 80 người đủ điều kiện sinh CF và ít nhất 40 người trong S02. Các khoảng bootstrap chỉ phản ánh biến thiên trong tập người có CF hợp lệ, với các mô hình đã huấn luyện; chúng không bảo đảm kiểm soát chính xác sai số của toàn bộ quy trình chọn người, huấn luyện và sinh CF.
 
-**E4.** Đây là phân tích mô tả, không thực hiện kiểm định giả thuyết. Báo cáo tỷ lệ người có CF hợp lệ ở M1 và M0, cùng các thay đổi trong những CF hợp lệ. Chỉ diễn giải ECD_self(M0) − ECD_self(M1) khi ít nhất 40 người có CF hợp lệ do f_self sinh ở cả M0 và M1. Nếu không đủ 40 người, không dùng giá trị ECD này để kết luận hiệu quả của T-HTN; Bảng A5 ghi giá trị tính được để đối chiếu.
+**E4.** Đây là phân tích mô tả, không thực hiện kiểm định giả thuyết. Báo cáo tỷ lệ người có CF hợp lệ ở M1 và M0, cùng các thay đổi trong những CF hợp lệ. Chỉ diễn giải ECD_self(M0) − ECD_self(M1) khi ít nhất 40 người có CF hợp lệ do f_self sinh ở cả M0 và M1. Nếu không đủ 40 người, không dùng giá trị ECD này để kết luận hiệu quả của bộ quy tắc theo hướng dẫn; Bảng A5 ghi giá trị tính được để đối chiếu.
 
 **Các seed.** E2, E3 và E4 được chạy ở seed 42, 43 và 44. Seed 42 là seed chính. Với E2 và E3, seed chính phải thỏa điều kiện đã nêu; các seed 43 và 44 phải có ước lượng điểm cùng hướng theo giả thuyết (với E3, cả ba thành phần đều phải dương). Điều kiện này chỉ đánh giá tính nhất quán về dấu, không yêu cầu mọi cận dưới ở seed phụ đều dương. Nếu seed phụ không đủ mẫu, ghi rõ không đánh giá được độ ổn định. Không xem ba seed là ba lần kiểm chứng độc lập. Phân tích độ nhạy chỉ dùng seed 42.
 
@@ -391,7 +391,7 @@ Toàn bộ kết quả cuối được lấy từ một lần thực thi quy tr�
 
 ## 4. Kết quả
 
-Trong giai đoạn 2015–2018, E1 đáp ứng tiêu chí đã đặt; E3 đáp ứng tiêu chí ở seed 42 và có ước lượng cùng hướng ở seed 43 và 44; E2 có cận dưới bootstrap dương ở cả ba seed. E4 cho thấy tỷ lệ người có CF hợp lệ rất thấp khi sử dụng T-HTN, nên không đủ dữ liệu để đánh giá mức giảm chênh lệch theo ECD. E5 đạt tiêu chí ở phân tích gộp, nhưng không đạt khi phân tích riêng từng chu kỳ. Bảng 3 trình bày các kết quả này; Bảng A5 tóm tắt kết quả ở cả hai giai đoạn.
+Trong giai đoạn 2015–2018, E1 đáp ứng tiêu chí đã đặt; E3 đáp ứng tiêu chí ở seed 42 và có ước lượng cùng hướng ở seed 43 và 44; E2 có cận dưới bootstrap dương ở cả ba seed. E4 cho thấy tỷ lệ người có CF hợp lệ rất thấp khi sử dụng bộ quy tắc theo hướng dẫn, nên không đủ dữ liệu để đánh giá mức giảm chênh lệch theo ECD. E5 đạt tiêu chí ở phân tích gộp, nhưng không đạt khi phân tích riêng từng chu kỳ. Bảng 3 trình bày các kết quả này; Bảng A5 tóm tắt kết quả ở cả hai giai đoạn.
 
 **Bảng 3. Tổng hợp các tiêu chí đánh giá trên NHANES 2015–2018.**
 
@@ -470,15 +470,15 @@ Tại seed 42, ECD_self giảm từ 0,089 xuống 0,070, trong khi ECD_clin tăn
 
 Nghiên cứu cũng tính I để xem CF có làm điểm giảm nhiều hơn trên mô hình phụ học cùng nhãn hay không. Ở M0, I dương ở cả ba seed (0,058; 0,088; 0,070). Khi chuyển sang M2, A giảm nhưng I lần lượt là 0,052; 0,114; 0,144, nghĩa là I chỉ giảm nhẹ ở seed 42 và tăng ở hai seed còn lại. Do đó, thu hẹp chênh lệch giữa mức giảm điểm của g_self và g_clin không đồng nghĩa với việc giảm lợi thế của CF trên mô hình phụ học cùng nhãn. Đây là phân tích mô tả không có khoảng tin cậy. Bảng A3 trình bày thêm kết quả tính trung bình theo từng CF, với cách lấy trung bình và tập người khác Bảng A2.
 
-### 4.5. Phát hiện 3: Bộ quy tắc T-HTN làm giảm mạnh tỷ lệ tìm được CF hợp lệ (E4)
+### 4.5. Phát hiện 3: Bộ quy tắc theo hướng dẫn làm giảm mạnh tỷ lệ tìm được CF hợp lệ (E4)
 
-Trong giai đoạn 2015–2018, với T-HTN, DiCE tìm được ít nhất một CF hợp lệ cho 9,0–12,0% số người được chọn khi dùng f_self, và 3,0–7,5% khi dùng f_clin. Trong khi đó, tỷ lệ tương ứng ở các mô hình và seed của M0 nằm trong khoảng 92–100%, và ở M2 là 86–99% (Hình 4).
+Trong giai đoạn 2015–2018, với bộ quy tắc theo hướng dẫn, DiCE tìm được ít nhất một CF hợp lệ cho 9,0–12,0% số người được chọn khi dùng f_self, và 3,0–7,5% khi dùng f_clin. Trong khi đó, tỷ lệ tương ứng ở các mô hình và seed của M0 nằm trong khoảng 92–100%, và ở M2 là 86–99% (Hình 4).
 
 Mọi người được chọn đều còn ít nhất một biến có thể thay đổi theo quy tắc. Nguyên nhân chủ yếu của việc không có CF là DiCE không tìm được bộ giá trị phù hợp trong quá trình tìm kiếm (88–97% số trường hợp, tùy mô hình và seed). Điều này không chứng minh rằng không tồn tại bất kỳ bộ giá trị nào có thể làm mô hình đổi kết quả.
 
-Số người có CF hợp lệ từ f_self ở cả M0 và M1 lần lượt là 18, 24 và 21 ở ba seed. Tất cả đều dưới ngưỡng 40 đã đặt ra cho việc diễn giải ECD. Do đó, nghiên cứu không kết luận T-HTN có hoặc không có tác dụng thu hẹp chênh lệch về mức giảm điểm của hai mô hình phụ.
+Số người có CF hợp lệ từ f_self ở cả M0 và M1 lần lượt là 18, 24 và 21 ở ba seed. Tất cả đều dưới ngưỡng 40 đã đặt ra cho việc diễn giải ECD. Do đó, nghiên cứu không kết luận bộ quy tắc theo hướng dẫn có hoặc không có tác dụng thu hẹp chênh lệch về mức giảm điểm của hai mô hình phụ.
 
-Mọi CF hợp lệ tìm được dưới T-HTN ở giai đoạn này đều có thay đổi làm giảm BMI hoặc vòng eo. Mức giảm BMI tương đối trung bình nằm trong khoảng xấp xỉ 26–37% tùy nguồn CF và seed; 74–94% số CF hợp lệ có mức giảm BMI lớn hơn 10%. Những tỷ lệ này được tính trên các CF hợp lệ đã tìm thấy, vốn rất ít, chứ không phải trên toàn bộ 200 người được chọn. Không CF hợp lệ nào ở giai đoạn 2015–2018 thay đổi nhóm tiếp cận y tế, dù quy tắc cho phép tăng bảo hiểm hoặc có nơi khám thường xuyên.
+Mọi CF hợp lệ tìm được dưới bộ quy tắc theo hướng dẫn ở giai đoạn này đều có thay đổi làm giảm BMI hoặc vòng eo. Mức giảm BMI tương đối trung bình nằm trong khoảng xấp xỉ 26–37% tùy nguồn CF và seed; 74–94% số CF hợp lệ có mức giảm BMI lớn hơn 10%. Những tỷ lệ này được tính trên các CF hợp lệ đã tìm thấy, vốn rất ít, chứ không phải trên toàn bộ 200 người được chọn. Không CF hợp lệ nào ở giai đoạn 2015–2018 thay đổi nhóm tiếp cận y tế, dù quy tắc cho phép tăng bảo hiểm hoặc có nơi khám thường xuyên.
 
 ![Hình 4 — Tỷ lệ tìm được CF hợp lệ](https://raw.githubusercontent.com/danh-tc/plca-hypertension/1536d52e4ef7cb86939999d6d76808a94bfc9c1e/paper/vi/fig4.png)
 
@@ -529,7 +529,7 @@ Hai mô hình có AUC tương đối gần nhau vẫn có thể dựa vào các 
 
 **Thứ hai, biết nhóm biến góp phần bao nhiêu vào chênh lệch trong CF đã có không cho biết giữ nguyên nhóm biến đó khi sinh CF mới sẽ thu hẹp được chênh lệch bao nhiêu.** Đây là phát hiện trung tâm, được trình bày ở mục 5.2.
 
-**Thứ ba, tuân thủ quy tắc về chiều thay đổi không bảo đảm thuật toán còn tìm được CF hợp lệ.** Bộ quy tắc T-HTN không cho phép các thay đổi trái với quy tắc đã định, nhưng rất ít người có CF hợp lệ dưới các ràng buộc đó. Kết quả được bàn luận ở mục 5.3.
+**Thứ ba, tuân thủ quy tắc về chiều thay đổi không bảo đảm thuật toán còn tìm được CF hợp lệ.** Bộ quy tắc theo hướng dẫn không cho phép các thay đổi trái với quy tắc đã định, nhưng rất ít người có CF hợp lệ dưới các ràng buộc đó. Kết quả được bàn luận ở mục 5.3.
 
 ### 5.2. Biết mức đóng góp không bảo đảm biết cách giảm chênh lệch
 
@@ -551,9 +551,9 @@ So sánh giữa ablation và M2 là so sánh mô tả, không có kiểm định
 
 ### 5.3. Quy tắc thay đổi đặc trưng và tỷ lệ tìm được CF
 
-T-HTN quy định những thay đổi được phép dựa trên hướng dẫn y khoa, cách biểu diễn thông tin trong NHANES, ý nghĩa của dữ liệu và quyết định thiết kế của nghiên cứu. Chẳng hạn, thông tin về tiền sử chẩn đoán và sức khỏe tự đánh giá được giữ nguyên; BMI và vòng eo chỉ được giảm trong những khoảng đã xác định.
+Bộ quy tắc theo hướng dẫn quy định những thay đổi được phép dựa trên hướng dẫn y khoa, cách biểu diễn thông tin trong NHANES, ý nghĩa của dữ liệu và quyết định thiết kế của nghiên cứu. Chẳng hạn, thông tin về tiền sử chẩn đoán và sức khỏe tự đánh giá được giữ nguyên; BMI và vòng eo chỉ được giảm trong những khoảng đã xác định.
 
-Trong giai đoạn 2015–2018, đối với nhóm người được chọn để sinh CF (không dùng thuốc và được cả hai mô hình dự đoán dương tính), khoảng chín phần mười không có CF hợp lệ được tìm thấy khi áp dụng T-HTN với ngân sách tìm kiếm của DiCE. Kết quả này cho thấy hai hạn chế khác nhau của việc giới hạn đặc trưng. M2 vẫn tìm được CF cho phần lớn người nhưng mức giảm chênh lệch giữa hai mô hình phụ không ổn định giữa hai giai đoạn. M1 sử dụng các quy tắc chặt chẽ hơn và có căn cứ hướng dẫn rõ ràng, nhưng tỷ lệ tìm được CF thấp đến mức không đủ số người chung để đánh giá ECD.
+Trong giai đoạn 2015–2018, đối với nhóm người được chọn để sinh CF (không dùng thuốc và được cả hai mô hình dự đoán dương tính), khoảng chín phần mười không có CF hợp lệ được tìm thấy khi áp dụng bộ quy tắc theo hướng dẫn với ngân sách tìm kiếm của DiCE. Kết quả này cho thấy hai hạn chế khác nhau của việc giới hạn đặc trưng. M2 vẫn tìm được CF cho phần lớn người nhưng mức giảm chênh lệch giữa hai mô hình phụ không ổn định giữa hai giai đoạn. M1 sử dụng các quy tắc chặt chẽ hơn và có căn cứ hướng dẫn rõ ràng, nhưng tỷ lệ tìm được CF thấp đến mức không đủ số người chung để đánh giá ECD.
 
 Ngay cả những CF hợp lệ tìm được trong M1 cũng thường yêu cầu giảm BMI hơn 10%. Chỉ quy định BMI được phép giảm mà không được tăng không bảo đảm mức giảm phù hợp cho từng người hoặc một khoảng thời gian can thiệp cụ thể. Khi thêm giới hạn giảm BMI và vòng eo tối đa 5% ở M3, tỷ lệ tìm được CF gần bằng 0. Nghiên cứu không xác định rằng mọi trường hợp giảm BMI hơn 10% đều không thể thực hiện; các kết quả này chỉ mô tả yêu cầu thay đổi của CF và tác động của kịch bản giới hạn biên độ.
 
@@ -567,14 +567,14 @@ Các kết quả gợi ý bốn việc nên xem xét khi đánh giá CF trước
 
 1. Khi có hai định nghĩa nhãn trên cùng một người, nên kiểm tra mức độ mô hình dựa vào các nhóm biến và sự khác nhau của CF theo định nghĩa nhãn. Hai giá trị AUC gần nhau không bảo đảm hai mô hình sử dụng cùng thông tin hoặc đưa ra CF giống nhau.
 2. Nên phân biệt đặc trưng mô tả tình trạng đã được ghi nhận (ví dụ tiền sử chẩn đoán bệnh khác, SRH) với mục tiêu can thiệp thực tế. Không mặc định việc đổi giá trị một biến trong CF tương đương với thay đổi sức khỏe ngoài đời.
-3. Cần đánh giá trực tiếp tác động của việc giữ nguyên nhóm biến khi sinh CF mới. Trong PLCA, tác động này không ổn định: chỉ thu hẹp một phần chênh lệch ở 2015–2018 và không đạt tiêu chí E3 ở 2011–2014. Với T-HTN, tỷ lệ tìm được CF thấp khiến hiệu quả thu hẹp chênh lệch chưa được đánh giá. Vì vậy, ngoài việc báo cáo tỷ lệ CF làm mô hình đổi kết quả, nên báo cáo mức thay đổi điểm và số người có CF hợp lệ ở từng chế độ.
+3. Cần đánh giá trực tiếp tác động của việc giữ nguyên nhóm biến khi sinh CF mới. Trong PLCA, tác động này không ổn định: chỉ thu hẹp một phần chênh lệch ở 2015–2018 và không đạt tiêu chí E3 ở 2011–2014. Với bộ quy tắc theo hướng dẫn, tỷ lệ tìm được CF thấp khiến hiệu quả thu hẹp chênh lệch chưa được đánh giá. Vì vậy, ngoài việc báo cáo tỷ lệ CF làm mô hình đổi kết quả, nên báo cáo mức thay đổi điểm và số người có CF hợp lệ ở từng chế độ.
 4. Khi dùng các quy tắc về chiều và khoảng thay đổi, đặc biệt khi giới hạn thêm biên độ ở M3, cần xem xét khả năng thuật toán tìm được CF trong ngân sách đã định. Không tìm thấy CF không phải bằng chứng rằng người bệnh không thể thay đổi tình trạng sức khỏe.
 
 **Điều kiện áp dụng PLCA cho bài toán khác.** Cần có hai định nghĩa kết quả được ghi nhận trên cùng một người; hai bài toán dự đoán dùng chung tập đặc trưng; có thể huấn luyện mô hình với cùng cấu hình; và có thể xác định trước nhóm biến cần kiểm tra cùng các chế độ sinh CF. Điều kiện A(M0) > 0 trong E3 là giả thuyết riêng của nghiên cứu tăng huyết áp, không phải yêu cầu chung của mọi ứng dụng PLCA. Khi áp dụng cho bài toán khác, tiêu chí cần được xác định phù hợp với câu hỏi nghiên cứu và dữ liệu phát hiện. Nghiên cứu này chưa kiểm tra PLCA trên bệnh hoặc nguồn dữ liệu khác.
 
 ### 5.5. So sánh với nghiên cứu trước
 
-Kết quả phù hợp với giả thuyết về biến đại diện (proxy) do Thieu [9] nêu, trên một bệnh và bộ dữ liệu khác. T-HTN dựa trên hướng dẫn tăng huyết áp thay vì hướng dẫn của Hiệp hội Đái tháo đường Hoa Kỳ (ADA); nghiên cứu không đánh giá trực tiếp bộ quy tắc tiểu đường gốc của Thieu.
+Kết quả phù hợp với giả thuyết về biến đại diện (proxy) do Thieu [9] nêu, trên một bệnh và bộ dữ liệu khác. Bộ quy tắc dựa trên hướng dẫn tăng huyết áp thay vì hướng dẫn của Hiệp hội Đái tháo đường Hoa Kỳ (ADA); nghiên cứu không đánh giá trực tiếp bộ quy tắc tiểu đường gốc của Thieu.
 
 Cerrato và cộng sự [10] đánh giá sự thay đổi của tập CF khi thay định nghĩa nhãn. PLCA bổ sung cách đưa cùng một CF vào hai mô hình phụ, đồng thời đo riêng mức đóng góp của nhóm biến trong CF đã sinh và tác động của việc giữ nguyên nhóm biến khi sinh CF mới.
 
@@ -592,9 +592,9 @@ Mothilal và cộng sự [24] đã nghiên cứu quan hệ giữa quy kết đ�
 
 **Phạm vi suy luận từ CF.** Kết quả chỉ áp dụng cho tập người được chọn, CF hợp lệ tìm được và các mô hình đã huấn luyện. Nghiên cứu dùng một mô hình phụ cho mỗi nhãn, nên chỉ kiểm soát được một phần sự khác nhau giữa những mô hình tương đương. Ba seed không phải ba lần đánh giá độc lập. Quy đổi điểm sang bách phân vị không loại bỏ hết khác biệt về độ nhạy giữa hai mô hình. Khoảng bootstrap ở phần CF cũng không phản ánh toàn bộ biến thiên do huấn luyện lại mô hình và tìm CF.
 
-**Trọng số khảo sát và bộ quy tắc T-HTN.** Các mô hình không dùng trọng số khảo sát, dù thống kê mô tả mẫu có sử dụng. Bộ quy tắc T-HTN và giới hạn biên độ chưa được chuyên gia lâm sàng thẩm định. Các khuyến nghị về natri, kali, chế độ ăn DASH và quản lý căng thẳng không được biểu diễn vì các yếu tố đó không nằm trong tập đặc trưng. CF không phải lời khuyên y khoa. Nghiên cứu không đăng ký trước.
+**Trọng số khảo sát và bộ quy tắc theo hướng dẫn.** Các mô hình không dùng trọng số khảo sát, dù thống kê mô tả mẫu có sử dụng. Bộ quy tắc theo hướng dẫn và giới hạn biên độ chưa được chuyên gia lâm sàng thẩm định. Các khuyến nghị về natri, kali, chế độ ăn DASH và quản lý căng thẳng không được biểu diễn vì các yếu tố đó không nằm trong tập đặc trưng. CF không phải lời khuyên y khoa. Nghiên cứu không đăng ký trước.
 
-**Các phân tích được bổ sung trong quá trình nghiên cứu.** E2 được bổ sung trong giai đoạn phát hiện sau khi E3 không đạt ở một lần phân tích thử; định nghĩa và vai trò của E2 được xác định trước khi tính trên dữ liệu 2015–2018. I được bổ sung để mô tả thêm sự khác nhau giữa đánh giá cùng nhãn và khác nhãn, không phải tiêu chí kiểm định mới. E4 được báo cáo dưới dạng phân tích mô tả, không phải một kiểm định xác nhận độc lập đối với T-HTN.
+**Các phân tích được bổ sung trong quá trình nghiên cứu.** E2 được bổ sung trong giai đoạn phát hiện sau khi E3 không đạt ở một lần phân tích thử; định nghĩa và vai trò của E2 được xác định trước khi tính trên dữ liệu 2015–2018. I được bổ sung để mô tả thêm sự khác nhau giữa đánh giá cùng nhãn và khác nhãn, không phải tiêu chí kiểm định mới. E4 được báo cáo dưới dạng phân tích mô tả, không phải một kiểm định xác nhận độc lập đối với bộ quy tắc theo hướng dẫn.
 
 Bảng A1 tóm tắt những kết luận mà dữ liệu hỗ trợ và những kết luận nằm ngoài phạm vi nghiên cứu.
 
@@ -602,7 +602,7 @@ Bảng A1 tóm tắt những kết luận mà dữ liệu hỗ trợ và những
 
 Trong NHANES, khi huấn luyện hai mô hình phân loại tăng huyết áp bằng hai định nghĩa nhãn của cùng một người, các mô hình có thể dựa vào những nhóm biến khác nhau và có mức giảm điểm khác nhau trước cùng một CF. Ở cấu hình chính, mô hình học nhãn tự khai dựa vào thông tin tiếp cận y tế nhiều hơn mô hình học nhãn kiểu hình. Trong các CF đã sinh, những thay đổi thuộc nhóm biến liên quan đến chẩn đoán góp phần vào chênh lệch giữa mức giảm điểm của hai mô hình phụ ở cả hai giai đoạn dữ liệu.
 
-Tuy nhiên, giữ nguyên nhóm biến đó khi sinh CF mới không làm chênh lệch giảm một cách ổn định giữa các giai đoạn và seed. Bộ quy tắc T-HTN làm giảm mạnh tỷ lệ người được DiCE tìm thấy CF hợp lệ, nên không đủ dữ liệu để đánh giá mức giảm chênh lệch của bộ quy tắc này.
+Tuy nhiên, giữ nguyên nhóm biến đó khi sinh CF mới không làm chênh lệch giảm một cách ổn định giữa các giai đoạn và seed. Bộ quy tắc theo hướng dẫn làm giảm mạnh tỷ lệ người được DiCE tìm thấy CF hợp lệ, nên không đủ dữ liệu để đánh giá mức giảm chênh lệch của bộ quy tắc này.
 
 Thông điệp chính là: xác định được nhóm biến góp phần làm cho hai mô hình có mức giảm điểm khác nhau không đủ để suy ra rằng giữ nguyên nhóm biến ấy khi sinh CF mới sẽ giải quyết được sự khác biệt. PLCA cung cấp cách kiểm tra riêng mức độ mô hình dựa vào nhóm biến, mức đóng góp của nhóm biến trong CF đã sinh và kết quả của việc hạn chế nhóm biến khi sinh CF mới. Những phép kiểm tra này có thể hỗ trợ đánh giá CF trước khi cân nhắc sử dụng chúng trong hệ hỗ trợ quyết định lâm sàng.
 
@@ -620,7 +620,7 @@ Nghiên cứu không xác định tác động nhân quả của các đặc tr�
 
 - Ở cấu hình chính trên NHANES, mô hình học nhãn tự khai dựa vào thông tin tiếp cận y tế nhiều hơn; kết quả được quan sát ở cả hai giai đoạn, với các mô hình huấn luyện lại từ đầu. Phát hiện không được xác nhận khi so sánh với nhãn chỉ dựa trên huyết áp đo ở người không dùng thuốc.
 - Nhóm biến liên quan đến chẩn đoán góp phần làm cho hai mô hình phụ có mức giảm điểm khác nhau trước cùng một CF, nhưng tác động của việc giữ nguyên nhóm biến đó khi sinh CF mới không ổn định.
-- T-HTN làm giảm mạnh tỷ lệ người có CF hợp lệ tìm được bằng DiCE trong cấu hình đã sử dụng. Cần đánh giá cả cách định nghĩa nhãn và kết quả của việc giới hạn đặc trưng trước khi dùng CF để hỗ trợ quyết định.
+- Bộ quy tắc theo hướng dẫn làm giảm mạnh tỷ lệ người có CF hợp lệ tìm được bằng DiCE trong cấu hình đã sử dụng. Cần đánh giá cả cách định nghĩa nhãn và kết quả của việc giới hạn đặc trưng trước khi dùng CF để hỗ trợ quyết định.
 
 ## Thông tin công bố
 
@@ -650,7 +650,7 @@ Dữ liệu NHANES do Trung tâm Thống kê Y tế Quốc gia (NCHS), thuộc C
 
 ## Phụ lục A. Nội dung bổ sung
 
-Phụ lục trình bày phạm vi kết luận, các thành phần của đại lượng A và I, kết quả tính theo từng CF, căn cứ của T-HTN, kết quả trên hai giai đoạn dữ liệu và công thức chi tiết. Chi tiết bổ sung của M2-phys và M3 có trong các file kết quả của repository. Bảng kiểm TRIPOD+AI cần được hoàn thiện trước khi nộp; bản biên tập này không tự xác nhận việc hoàn tất bảng kiểm.
+Phụ lục trình bày phạm vi kết luận, các thành phần của đại lượng A và I, kết quả tính theo từng CF, căn cứ của bộ quy tắc theo hướng dẫn, kết quả trên hai giai đoạn dữ liệu và công thức chi tiết. Chi tiết bổ sung của M2-phys và M3 có trong các file kết quả của repository. Bảng kiểm TRIPOD+AI cần được hoàn thiện trước khi nộp; bản biên tập này không tự xác nhận việc hoàn tất bảng kiểm.
 
 ### Bảng A1. Phạm vi kết luận
 
@@ -660,7 +660,7 @@ Phụ lục trình bày phạm vi kết luận, các thành phần của đại 
 | Mô hình đối chứng với cơ chế đảo nhãn ngẫu nhiên theo lớp không tái tạo được mức độ dựa vào nhóm tiếp cận y tế như f_self. | Mọi cơ chế nhiễu nhãn đều đã được loại trừ. |
 | Trong CF đã sinh, các thay đổi thuộc nhóm liên quan đến chẩn đoán góp phần vào chênh lệch mức giảm điểm giữa hai mô hình phụ. | E2 đo tác động nhân quả hoặc xác định chính xác tỷ lệ mô hình sử dụng “lối tắt” (shortcut). |
 | Giữ nguyên nhóm biến khi sinh CF mới có tác động không ổn định lên \|A\|; ở 2015–2018 chỉ thu hẹp một phần chênh lệch. | Kết quả đúng với mọi thuật toán sinh CF hoặc mọi bộ dữ liệu. |
-| Khi sử dụng T-HTN, DiCE chỉ tìm được CF hợp lệ cho rất ít người trong cấu hình đã kiểm tra. | Không tồn tại CF hợp lệ nào khác, hoặc T-HTN đã được thẩm định lâm sàng. |
+| Khi sử dụng bộ quy tắc theo hướng dẫn, DiCE chỉ tìm được CF hợp lệ cho rất ít người trong cấu hình đã kiểm tra. | Không tồn tại CF hợp lệ nào khác, hoặc bộ quy tắc theo hướng dẫn đã được thẩm định lâm sàng. |
 | Có thể thực hiện quy trình kiểm định bằng hai nhãn trên dữ liệu NHANES công khai. | Các CF là lời khuyên điều trị hoặc đã được bác sĩ thẩm định. |
 
 ### Bảng A2. Các thành phần của A và I trên cùng tập người S02
@@ -693,7 +693,7 @@ Bảng này tính mức giảm bách phân vị trung bình trên từng mô hì
 
 Khác với Bảng A2, Bảng A3 lấy trung bình trực tiếp trên các CF hợp lệ của mỗi chế độ mà không tính trung bình theo từng người trước. Tập người cũng không bị giới hạn vào S02. Vì vậy, không dùng các giá trị ở đây thay cho kết quả E3 tính theo người. Các dòng M1 chỉ có rất ít CF. Nguồn: `results/confirmation/cf_primary/seed42/C7_transfer_by_channel.csv`, gộp hai tập con theo số CF.
 
-### Bảng A4. Bộ quy tắc T-HTN: biến được phép thay đổi và căn cứ
+### Bảng A4. Bộ quy tắc theo hướng dẫn: biến được phép thay đổi và căn cứ
 
 Các mã sau cho biết quy tắc được xây dựng từ đâu, không phải thang xếp hạng mức chứng cứ lâm sàng: G = khuyến nghị trong hướng dẫn; P = chuyển khuyến nghị hoặc ngưỡng phân loại thành quy tắc trên biến đại diện NHANES; S = giới hạn xuất phát từ ý nghĩa của dữ liệu; D = quyết định thiết kế nghiên cứu; I = biến được giữ nguyên vì được coi là bất biến trong bài toán.
 
@@ -710,7 +710,7 @@ Các mã sau cho biết quy tắc được xây dựng từ đâu, không phải
 
 Mọi khoảng tìm kiếm còn chịu giới hạn miền giá trị theo tập huấn luyện; giá trị được điền thay do thiếu dữ liệu được giữ nguyên riêng ở M1 và M3. M3 kế thừa M1 và thêm giới hạn giảm tối đa 5% cho BMI và vòng eo, với cận dưới max(T, 0,95x) đối với giá trị ban đầu vượt ngưỡng. Mức 5% đối với BMI dựa trên mục tiêu giảm cân tối thiểu trong hướng dẫn; mức 5% đối với vòng eo là giả định thiết kế (D). Không coi đây là ngưỡng tối đa có thể giảm trong điều trị thực tế.
 
-**Giới hạn của T-HTN.** Các ngưỡng BMI 23/25 là ranh giới phân loại dùng để xây dựng quy tắc, không phải mục tiêu điều trị bắt buộc. Phân nhóm RIDRETH3 = 6 là phân loại khảo sát, không phải phép xác định nguồn gốc di truyền. Ngưỡng vòng eo 102/88 cm là ngưỡng nhận diện béo bụng theo chuẩn Mỹ, được áp dụng chung cho các nhóm trong nghiên cứu, khác với cách sử dụng BMI theo nhóm dân số. Quy tắc ALQ130 không mô phỏng việc bỏ rượu hoàn toàn. Hai biến vận động chỉ có giá trị có/không; chuyển từ không sang có không chứng minh người đó đạt thời lượng vận động được khuyến nghị. BMI và vòng eo được thay đổi độc lập nên không bảo đảm các giá trị luôn phù hợp với nhau về sinh lý. Các yếu tố như tiền sử gia đình, natri, kali, chế độ ăn DASH và quản lý căng thẳng không có trong tập đặc trưng sử dụng. Các mã G/P không có nghĩa quy tắc trên biến đại diện đã được thẩm định lâm sàng.
+**Giới hạn của bộ quy tắc theo hướng dẫn.** Các ngưỡng BMI 23/25 là ranh giới phân loại dùng để xây dựng quy tắc, không phải mục tiêu điều trị bắt buộc. Phân nhóm RIDRETH3 = 6 là phân loại khảo sát, không phải phép xác định nguồn gốc di truyền. Ngưỡng vòng eo 102/88 cm là ngưỡng nhận diện béo bụng theo chuẩn Mỹ, được áp dụng chung cho các nhóm trong nghiên cứu, khác với cách sử dụng BMI theo nhóm dân số. Quy tắc ALQ130 không mô phỏng việc bỏ rượu hoàn toàn. Hai biến vận động chỉ có giá trị có/không; chuyển từ không sang có không chứng minh người đó đạt thời lượng vận động được khuyến nghị. BMI và vòng eo được thay đổi độc lập nên không bảo đảm các giá trị luôn phù hợp với nhau về sinh lý. Các yếu tố như tiền sử gia đình, natri, kali, chế độ ăn DASH và quản lý căng thẳng không có trong tập đặc trưng sử dụng. Các mã G/P không có nghĩa quy tắc trên biến đại diện đã được thẩm định lâm sàng.
 
 ### Bảng A5. Kết quả chính trên hai giai đoạn dữ liệu
 
@@ -792,4 +792,4 @@ Mỗi người có trọng số bằng nhau, và hai nguồn CF có trọng số
 
 ## Ghi chú ký hiệu (không thuộc bài gửi tạp chí)
 
-Trong mã nguồn và các file kết quả, tiêu chí đóng góp E2 mang tên `E6`, tập S0 mang tên `S_M0` và tập S02 mang tên `S_star`.
+Trong mã nguồn và các file kết quả, tiêu chí đóng góp E2 mang tên `E6`, tập S0 mang tên `S_M0`, tập S02 mang tên `S_star`, và bộ quy tắc theo hướng dẫn (M1) mang tên `T-HTN` (`THTN`, `docs/taxonomy_THTN.md`).
