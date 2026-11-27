@@ -1,0 +1,260 @@
+{
+  "utc_time": "2026-11-26T16:56:19+00:00",
+  "git_sha": "85a813b0f5028d376e73e50a6ab5199ef606511c",
+  "python": "3.12.3",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "cpu": "x86_64",
+  "cpu_count_logical": 12,
+  "packages": {
+    "attrs": "26.1.0",
+    "certifi": "2026.11.20",
+    "charset-normalizer": "3.5.3",
+    "cloudpickle": "3.1.3",
+    "dice_ml": "0.12",
+    "idna": "3.20",
+    "iniconfig": "2.3.1",
+    "joblib": "1.6.0",
+    "jsonschema": "4.26.0",
+    "jsonschema-specifications": "2025.9.1",
+    "lightgbm": "4.7.0",
+    "narwhals": "2.29.0",
+    "numpy": "2.5.5",
+    "nvidia-nccl-cu13": "2.32.6",
+    "packaging": "26.4",
+    "pandas": "3.1.1",
+    "pip": "26.3",
+    "pluggy": "1.7.0",
+    "pyarrow": "26.0.1",
+    "Pygments": "2.21.0",
+    "pytest": "9.2.0",
+    "python-dateutil": "4.0.0",
+    "raiutils": "0.4.3",
+    "referencing": "0.37.0",
+    "requests": "2.34.2",
+    "rpds-py": "2026.9.1",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "threadpoolctl": "3.8.0",
+    "tqdm": "4.70.1",
+    "typing_extensions": "4.16.0",
+    "tzdata": "2026.6",
+    "urllib3": "2.8.0",
+    "xgboost": "3.4.1"
+  },
+  "data_dir": "data/raw",
+  "n_data_files": 53,
+  "data_files": {
+    ".gitkeep": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ALQ_G.XPT": {
+      "bytes": 451360,
+      "sha256": "5f06ba3506f9d69cedffa0380ad0cecbc15df2d6d9b7a3644ac3e2678aaac5e5"
+    },
+    "ALQ_H.XPT": {
+      "bytes": 476080,
+      "sha256": "174e4dd21e05f81df8bc786a6e76253a2cdc07503cd7cde4c7dd1c1b9d3e3098"
+    },
+    "ALQ_I.XPT": {
+      "bytes": 460960,
+      "sha256": "ed445c40ec3f3f993f78321f86e513340d4f131708c7624d88803bde3909102d"
+    },
+    "ALQ_J.XPT": {
+      "bytes": 444800,
+      "sha256": "53006d407764ad16491f823d25f2781ba55363aee9cb304d3f5d9450cf25d5c1"
+    },
+    "BMX_G.XPT": {
+      "bytes": 1946720,
+      "sha256": "4814bfc3047ed400b9d43d285f8c3ea7c940ac6489404a9b699579715d158ec3"
+    },
+    "BMX_H.XPT": {
+      "bytes": 2045520,
+      "sha256": "fd5e9fc6e6aab0a4aee6e699f51497bbc9b62101f7f43aee924c473e38fd9442"
+    },
+    "BMX_I.XPT": {
+      "bytes": 1989600,
+      "sha256": "d31da84e14212b4e58e8340598a5b8e2144fac83333563e966eb1b332e4141d6"
+    },
+    "BMX_J.XPT": {
+      "bytes": 1466000,
+      "sha256": "8d675e42d8826ac98714b2c3dd4c5138a5e353fb4424f7eff5e6db4a01ce838a"
+    },
+    "BPQ_G.XPT": {
+      "bytes": 743920,
+      "sha256": "39c5a0ee1d76e6f3df867c0057986a21f4a028038002c43214c5af8bdec83cae"
+    },
+    "BPQ_H.XPT": {
+      "bytes": 726720,
+      "sha256": "aa6ddeab80c73b074ccfd04ad010da404ecb91c048476a194594ce9552d03d49"
+    },
+    "BPQ_I.XPT": {
+      "bytes": 559120,
+      "sha256": "7f7e51cd0497eb648f64eaafaf7ed07825d617c32b2cd6853ed249fce1143a38"
+    },
+    "BPQ_J.XPT": {
+      "bytes": 544560,
+      "sha256": "63cfe1c331a1e7d3534328ac86312a21ffee3e01aa189bc1f74d06855239e5aa"
+    },
+    "BPX_G.XPT": {
+      "bytes": 2021600,
+      "sha256": "1dd66110f41465d601cd54f1e3c6010baafb9375f09fbcaa3aef2536876146fd"
+    },
+    "BPX_H.XPT": {
+      "bytes": 1809600,
+      "sha256": "b6641efc30ac9b9de328dfbf4110d0d120439aadca2c2bc89f2e77310d1a0c8e"
+    },
+    "BPX_I.XPT": {
+      "bytes": 1607120,
+      "sha256": "45d5c9fa101ccc6da82241bd45c99611595e699665eed2cfed232e9070b52cc1"
+    },
+    "BPX_J.XPT": {
+      "bytes": 1466000,
+      "sha256": "f98f1d9a4c18173e715c749b4294f6f1525140d5ad5751316bb17cc038fb3423"
+    },
+    "DEMO_G.XPT": {
+      "bytes": 3753760,
+      "sha256": "eaf0525d1952626885af3e935415a1f66ad62c18698080e7354789c125af252d"
+    },
+    "DEMO_H.XPT": {
+      "bytes": 3833200,
+      "sha256": "f8f0cbb3085a323d4cde22349b164878fea1e64dbc404e65b5815c7816b547d7"
+    },
+    "DEMO_I.XPT": {
+      "bytes": 3756480,
+      "sha256": "c9297c6c37ae8f78f29be9568fa2a03cf3b112616a39afee04030fc775a66a0d"
+    },
+    "DEMO_J.XPT": {
+      "bytes": 3412720,
+      "sha256": "c0b46e0345ea19404928656277c8b0d10b0cca348a9b2fe4fc3c67e8b7ee73ec"
+    },
+    "DIQ_G.XPT": {
+      "bytes": 3978560,
+      "sha256": "a9d5475e0cd66d6a7bc30230345ed0172a9abcbc0a7a4145a35025c827a52a87"
+    },
+    "DIQ_H.XPT": {
+      "bytes": 4228960,
+      "sha256": "c74c7ccef65e6997dfac1db1e73bc3f63dec67c70b2e322ffc14f14ce27429a9"
+    },
+    "DIQ_I.XPT": {
+      "bytes": 4144720,
+      "sha256": "e87587479b29f175b63eee5dd40d582837e3e3fe2665503012085eefdb978e0d"
+    },
+    "DIQ_J.XPT": {
+      "bytes": 3851840,
+      "sha256": "1ecbf5360dfc331d1efbf32198553dc30e9a1f4cff0a907ed30ca72bac797f89"
+    },
+    "GHB_G.XPT": {
+      "bytes": 105840,
+      "sha256": "8ff7cc95461fdfd47d2c9640b944a2bcd45926a3c0e64c98a09a4cef6c0f88d7"
+    },
+    "GHB_H.XPT": {
+      "bytes": 112720,
+      "sha256": "0695894ad55ac96f315a8415401977b0856c402d16762115b534bcd5dfeae89e"
+    },
+    "GHB_I.XPT": {
+      "bytes": 108960,
+      "sha256": "e4bc626cd12f6057c7806aef4f85874c9bf1407a7480d6621a4af142260addd2"
+    },
+    "GHB_J.XPT": {
+      "bytes": 103520,
+      "sha256": "35f07094573a0061a03ed609a5a363b34eb1b1c7065d1623b43d72e132a8a654"
+    },
+    "HIQ_G.XPT": {
+      "bytes": 1330000,
+      "sha256": "074351daf2979b949c72636f767fa4f9578ceaaee10fe6eb877462229f25d009"
+    },
+    "HIQ_H.XPT": {
+      "bytes": 1386960,
+      "sha256": "1c2eec87f78f361cc8989973516bb8dd1b371da2cc70349dc6c84066c878a21e"
+    },
+    "HIQ_I.XPT": {
+      "bytes": 1359200,
+      "sha256": "08ff064a49bb59f4ec78c6f97095a4fd42e1d55db7d8884fcb34f7c722e943c2"
+    },
+    "HIQ_J.XPT": {
+      "bytes": 1187520,
+      "sha256": "96dfdd98507ea6dc67cb2c2b6999da3c035f3f8a9a87cf34756fe30762387860"
+    },
+    "HUQ_G.XPT": {
+      "bytes": 782640,
+      "sha256": "b9ef438747fdc746185a2eb0bec9e63e36212efdc774f2c8bec7f680a60ee924"
+    },
+    "HUQ_H.XPT": {
+      "bytes": 816160,
+      "sha256": "a35e8ca0c5b7ca6a86a8d787cbd0c3132a10ef5f66b8b432c57885f7bbaa04dd"
+    },
+    "HUQ_I.XPT": {
+      "bytes": 799840,
+      "sha256": "583c2a8ff7268900871e04e8c381c17f1fd64b3f549c9f27a198720f653500b0"
+    },
+    "HUQ_J.XPT": {
+      "bytes": 742480,
+      "sha256": "0d8814ca6a72c003eb89885a3a24dcff3b475dfed454089cf4890f9ab9da06d2"
+    },
+    "MCQ_G.XPT": {
+      "bytes": 6905520,
+      "sha256": "7538eb86c72b81fd5e76b56120fcb068ed38149d44650e9e750670ad58658d52"
+    },
+    "MCQ_H.XPT": {
+      "bytes": 7439280,
+      "sha256": "5c83210e6e1fe929282621322ed0f94d95cdb0a37ccaff36f703ab0b2e7b9dc6"
+    },
+    "MCQ_I.XPT": {
+      "bytes": 6907360,
+      "sha256": "8b2bd62f5bcd5820d6aac380e4bad233d22ecab42fcf4a3a9a023ffc6b9f4002"
+    },
+    "MCQ_J.XPT": {
+      "bytes": 5420800,
+      "sha256": "79c50c805a377fcd61d44fae8b86a16af0a5741f8b1aeebda918d7d743c68f98"
+    },
+    "PAQ_G.XPT": {
+      "bytes": 1533680,
+      "sha256": "6b56874f6c3af191aebcb10316c028bc1ae1d4f89d0aafc00cc080c9f533b32a"
+    },
+    "PAQ_H.XPT": {
+      "bytes": 7297920,
+      "sha256": "fa35acbb489594e8e55350f7402a12b5a607805c28ec16246929d33237bd3269"
+    },
+    "PAQ_I.XPT": {
+      "bytes": 6973680,
+      "sha256": "c508dc563a907b2fcd05048f37008197257a3e1c6eb64563623c60459c1afc9d"
+    },
+    "PAQ_J.XPT": {
+      "bytes": 799600,
+      "sha256": "048120aa3a5c8b5cd457ad3e13dfd62d728b12ea6644960e933ad374ec907e79"
+    },
+    "SMQ_G.XPT": {
+      "bytes": 1946960,
+      "sha256": "69f2375f036a815082b1e97110e79c505b91e0985c61696f8eaacf94828115dc"
+    },
+    "SMQ_H.XPT": {
+      "bytes": 2170000,
+      "sha256": "86d74bb8842ce6d60350944417cbd3e9ee39dd5a9fa1bda33426f276b673861f"
+    },
+    "SMQ_I.XPT": {
+      "bytes": 2681040,
+      "sha256": "529ce1c407e99dce937ca75d14c8c630e0c9c30a4a9a851760cd2884bbb28fe0"
+    },
+    "SMQ_J.XPT": {
+      "bytes": 2305600,
+      "sha256": "73c3708e540cbf520a566508aa629c3e4ba53cad77dae9388ca36384646455f4"
+    },
+    "TCHOL_G.XPT": {
+      "bytes": 188960,
+      "sha256": "08682d7bcee71c1a5c5d977ebfe5f55eda43354a4ff76b07c3fbb487075e0731"
+    },
+    "TCHOL_H.XPT": {
+      "bytes": 200240,
+      "sha256": "0867a9d340dc84eec8dc1f08672e7ffd0a364b57a92533973c460acb4f52d643"
+    },
+    "TCHOL_I.XPT": {
+      "bytes": 193760,
+      "sha256": "e7f51cf7c002db01d023278922d89d72318c679967e72ff259ba532b2d72e54d"
+    },
+    "TCHOL_J.XPT": {
+      "bytes": 179680,
+      "sha256": "0291a6a4f6d82dac8392c8c992b519946824dfeda01647935520cf506ed9f4ab"
+    }
+  }
+}
