@@ -78,7 +78,7 @@ FIGS = {
           "Mức giảm AUC khi hoán vị từng nhóm biến ở ba mô hình (NHANES 2015–2018, seed 42, bootstrap hai tầng B = 100). "
           "Chấm là ước lượng điểm, vạch là khoảng 95\\%. Không vẽ nhóm nhân khẩu học (f\\_self 0,103; f\\_clin 0,211)."),
     "3": ("fig3.png", r"\columnwidth", "figure",
-          "Độ bất đối xứng chuyển giao A trên cùng tập bệnh nhân S* ở mỗi seed: CF không ràng buộc (M0), CF đã sinh sau khi hoàn nguyên, "
+          "Độ bất đối xứng chuyển giao A trên cùng tập bệnh nhân S* ở mỗi seed: CF với ràng buộc cơ sở (M0), CF đã sinh sau khi hoàn nguyên, "
           "và CF sinh mới khi cấm thay đổi nhóm biến (M2). Mức giảm dưới mỗi nhóm tính theo độ lớn |A|; ở seed 43, A đổi dấu sau khi hoàn nguyên."),
     "4": ("fig4.png", r"\columnwidth", "figure",
           "Tỷ lệ người có ít nhất một CF hợp lệ ở M0 (ràng buộc cơ sở), M2 (cấm nhóm biến liên quan đến chẩn đoán) "

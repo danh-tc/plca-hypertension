@@ -143,13 +143,13 @@ nghĩa nhãn làm thay đổi tập CF trên dữ liệu thu nhập. Khác với
 nghiên cứu này, PLCA xem xét hai mô hình phản ứng thế nào trước cùng một
 CF, và đánh giá riêng hiệu quả của việc cố định biến.
 
-Hai mô hình học hai nhãn khác nhau tất nhiên sẽ cho CF khác nhau; điều
-đó tự nó không có gì bất ngờ. Điều chưa được làm rõ là khác biệt ấy có
-cấu trúc thế nào và các cách hạn chế nó hiệu quả đến đâu. Khi thấy CF
-dùng một nhóm biến không phù hợp, cách xử lý tự nhiên là cấm thay đổi
-nhóm biến đó. Nhưng biết một nhóm biến đóng góp vào khác biệt không có
-nghĩa là cấm nó sẽ xóa được khác biệt, vì thuật toán sinh CF có thể
-chuyển sang tổ hợp thay đổi khác.
+Hai mô hình học hai nhãn khác nhau có thể cho CF khác nhau; điều đó tự
+nó không có gì bất ngờ. Điều chưa được làm rõ là khác biệt ấy có cấu
+trúc thế nào và các cách hạn chế nó hiệu quả đến đâu. Khi thấy CF dùng
+một nhóm biến không phù hợp, cách xử lý tự nhiên là cấm thay đổi nhóm
+biến đó. Nhưng biết một nhóm biến đóng góp vào khác biệt không có nghĩa
+là cấm nó sẽ xóa được khác biệt, vì thuật toán sinh CF có thể chuyển
+sang tổ hợp thay đổi khác.
 
 \subsection{1.4. Nghiên cứu này}
 
@@ -675,7 +675,7 @@ hướng tương tự, còn nhóm sinh lý có độ quan trọng khá gần nha
 hình (0,033 và 0,031). Ngược lại, nhóm nhân khẩu học -- kinh tế xã hội
 quan trọng hơn ở f\_clin (0,211 so với 0,103), nên khác biệt giữa hai mô
 hình không chỉ nằm ở nhóm tiếp cận y tế; đây là mô tả, không cho phép
-suy ra cơ chế. Kết quả này giống với giai đoạn phát hiện (0,014
+suy ra cơ chế. Kết quả này giống với giai đoạn phát hiện (0,015
 {[}0,009; 0,022{]}). Khi loại nhóm G01 khỏi tập huấn luyện, chênh lệch
 giảm còn 0,005 {[}0,000; 0,010{]}, so với 0,014 khi loại ngẫu nhiên cùng
 số người (phân tích mô tả).
@@ -732,7 +732,7 @@ vậy, tác động của việc cố định nhóm biến không ổn định g
 hai cách tính cũng dùng tập CF và tập người khác nhau, nên không thể quy
 toàn bộ khác biệt cho bước lọc CF hợp lệ.
 
-\begin{figure}[!t]\centering\includegraphics[width=\columnwidth]{fig3.png}\figcap{3}{Độ bất đối xứng chuyển giao A trên cùng tập bệnh nhân S* ở mỗi seed: CF không ràng buộc (M0), CF đã sinh sau khi hoàn nguyên, và CF sinh mới khi cấm thay đổi nhóm biến (M2). Mức giảm dưới mỗi nhóm tính theo độ lớn |A|; ở seed 43, A đổi dấu sau khi hoàn nguyên.}\end{figure}
+\begin{figure}[!t]\centering\includegraphics[width=\columnwidth]{fig3.png}\figcap{3}{Độ bất đối xứng chuyển giao A trên cùng tập bệnh nhân S* ở mỗi seed: CF với ràng buộc cơ sở (M0), CF đã sinh sau khi hoàn nguyên, và CF sinh mới khi cấm thay đổi nhóm biến (M2). Mức giảm dưới mỗi nhóm tính theo độ lớn |A|; ở seed 43, A đổi dấu sau khi hoàn nguyên.}\end{figure}
 
 Hình 3 thể hiện điểm mấu chốt của bài. Khi sửa các CF đã có bằng cách
 trả nhóm biến liên quan đến chẩn đoán về giá trị ban đầu, độ lớn của bất
@@ -973,13 +973,13 @@ tả, không phải kiểm định lý thuyết của Zanger-Tishler và cộng 
   đo, E1 không lặp lại ở cả hai giai đoạn; kết quả phụ thuộc vào quần
   thể và cách định nghĩa kiểu hình.
 \item
-  \textbf{Độ ổn định:} E3 nhạy với seed và cách chọn CF, và chỉ nhất
-  quán về hướng chứ không có cận dưới dương ở seed phụ; ở seed 43 và 44,
-  cận dưới của A(M0) − A(M2) âm dù ước lượng điểm dương; trên dữ liệu
-  2011--2014, E3 không đạt. E5 đạt ở phân tích gộp nhưng không đạt khi
-  tách từng chu kỳ. Như mọi nghiên cứu học máy, kết quả có thể thay đổi
-  nhẹ giữa các môi trường tính toán do sai số số học và tính ngẫu nhiên
-  của thuật toán sinh CF.
+  \textbf{Độ ổn định:} E3 nhạy với seed và cách chọn CF; ở giai đoạn
+  2015--2018, E3 chỉ nhất quán về hướng chứ không có cận dưới dương ở
+  seed phụ; ở seed 43 và 44, cận dưới của A(M0) − A(M2) âm dù ước lượng
+  điểm dương; trên dữ liệu 2011--2014, E3 không đạt. E5 đạt ở phân tích
+  gộp nhưng không đạt khi tách từng chu kỳ. Như mọi nghiên cứu học máy,
+  kết quả có thể thay đổi nhẹ giữa các môi trường tính toán do sai số số
+  học và tính ngẫu nhiên của thuật toán sinh CF.
 \item
   \textbf{Suy luận ở tầng CF:} kết luận có điều kiện theo tập người được
   chọn, các CF hợp lệ và các mô hình đã huấn luyện. Chỉ một mô hình phụ
@@ -1110,7 +1110,7 @@ A4); tóm tắt hai giai đoạn (Bảng A5); bảng kiểm TRIPOD+AI.
 Mô hình học nhãn tự khai dựa vào biến tiếp cận y tế nhiều hơn mô hình học kiểu hình, trên NHANES với các định nghĩa đã nêu & Tiếp cận y tế là nguyên nhân gây tăng huyết áp, hoặc mô hình "sai" theo nghĩa nhân quả \\
 Mô hình đối chứng nhiễu nhãn theo lớp không tạo ra được mức phụ thuộc đó & Mọi cơ chế nhiễu nhãn đều đã bị loại trừ \\
 Trong các CF đã sinh, thay đổi ở nhóm biến liên quan đến chẩn đoán góp phần vào khác biệt giữa hai mô hình (đóng góp phụ thuộc mô hình) & E6 là quy kết nhân quả, hay đã xác định được tỷ lệ "lối tắt" (shortcut) \\
-Cấm nhóm biến đó khi sinh CF làm giảm một phần độ lớn bất đối xứng, trong các cấu hình đã kiểm tra & Kết quả này đúng với mọi thuật toán sinh CF hoặc mọi bộ dữ liệu \\
+Cấm nhóm biến đó khi sinh CF có tác động không ổn định lên bất đối xứng (chỉ giảm một phần ở 2015–2018) & Kết quả này đúng với mọi thuật toán sinh CF hoặc mọi bộ dữ liệu \\
 Với DiCE, taxonomy dựa trên hướng dẫn để lại CF hợp lệ cho rất ít người & Không tồn tại thay đổi nào làm mô hình đổi kết luận; taxonomy đã được thẩm định lâm sàng \\
 Kiểm định bằng hai nhãn là khả thi trên dữ liệu công khai & CF trong nghiên cứu là lời khuyên y khoa hay đã được bác sĩ thẩm định \\
 \bottomrule
@@ -1160,7 +1160,8 @@ Số ly rượu trong ngày có uống (ALQ130) & Nếu > 1: giảm trong [1, x]
 Vận động giải trí vừa (PAQ665), mạnh (PAQ650) & Chỉ tăng (0 → 1) & G/P & [34], khuyến nghị 7 (Class 1/A); [40] \\
 BMI (BMXBMI) & Nếu > T: giảm trong [T, x]; T = 23 với người châu Á không gốc Tây Ban Nha (RIDRETH3 = 6), 25 với người khác & G/P & [34], khuyến nghị 1 (Class 1/A) \\
 Vòng eo (BMXWAIST) & Nếu > T: giảm trong [T, x]; T = 102 cm (nam), 88 cm (nữ) & P & [35,36] \\
-Các biến còn lại & Cố định & S/D & Không có khuyến nghị về chiều, hoặc là nhân khẩu học, tiền sử, chỉ báo trạng thái \\
+Tuổi, giới, chủng tộc/dân tộc & Cố định & I & Biến bất biến \\
+Các biến còn lại & Cố định & S/D & Không có khuyến nghị về chiều, hoặc là nhân khẩu học – kinh tế xã hội, tiền sử bệnh, chỉ báo trạng thái \\
 \bottomrule
 \end{tabularx}
 \tabnote{Mã I: biến bất biến (tuổi, giới, chủng tộc/dân tộc). Mọi khoảng còn bị giới hạn trong miền giá trị của tập huấn luyện. Biến bị thiếu dữ liệu rồi được điền thay được cố định cho người đó, chỉ ở M1 và M3. M3 thêm giới hạn BMI và vòng eo giảm tối đa 5\% (cận dưới max(T; 0,95x)); mức 5\% cho BMI dựa trên mục tiêu giảm cân tối thiểu của hướng dẫn, còn mức 5\% cho vòng eo là giả định thiết kế (D). Giới hạn: ngưỡng BMI 23/25 là ngưỡng vận hành lấy từ ranh giới phân loại, không phải mục tiêu điều trị; ngưỡng vòng eo 102/88 cm là ngưỡng xác định béo bụng theo chuẩn Mỹ, áp dụng chung cho mọi nhóm dân số, khác với ngưỡng BMI theo nhóm dân số; quy tắc cho ALQ130 không mô phỏng việc bỏ rượu hoàn toàn; biến vận động là nhị phân nên 0 → 1 không có nghĩa là đạt liều vận động khuyến nghị; BMI và vòng eo được thay đổi độc lập nên không bảo đảm nhất quán sinh lý; tiền sử gia đình, natri, kali, chế độ ăn DASH và quản lý căng thẳng không có trong tập biến.}
