@@ -132,7 +132,7 @@ Dữ liệu được chia thành hai giai đoạn. Giai đoạn phát hiện (di
 
 Mẫu phân tích gồm những người từ 20 tuổi trở lên, không mang thai, có số đo huyết áp hợp lệ, có câu trả lời cho câu hỏi về chẩn đoán tăng huyết áp (BPQ020) và xác định được tình trạng dùng thuốc hạ áp. NHANES đo huyết áp bằng phương pháp nghe. Nếu một người có từ hai lần đo hợp lệ trở lên, nghiên cứu lấy trung bình các lần đo hợp lệ trong lần đo thứ hai đến thứ tư. Nếu chỉ có một lần đo hợp lệ, nghiên cứu sử dụng lần đo đó.
 
-![Hình 1 — Thiết kế PLCA](https://raw.githubusercontent.com/danh-tc/plca-hypertension/64ae91cfbb815ec1ecd217c22792c9522d1e4fdc/paper/vi/fig1.png)
+![Hình 1 — Thiết kế PLCA](https://raw.githubusercontent.com/danh-tc/plca-hypertension/1536d52e4ef7cb86939999d6d76808a94bfc9c1e/paper/vi/fig1.png)
 
 **Hình 1.** Quy trình PLCA. Hai mô hình chính dùng cùng đặc trưng, cùng dữ liệu và cùng cấu hình, nhưng học hai nhãn khác nhau. Mỗi CF được đưa vào cả hai mô hình phụ để tính mức giảm điểm. E2 sử dụng các CF đã sinh; E3 sinh CF mới khi không cho phép thay đổi nhóm biến. Các kết quả được so sánh trong phạm vi mô hình và dữ liệu nghiên cứu, không được dùng để kết luận quan hệ nhân quả lâm sàng.
 
@@ -418,7 +418,7 @@ So với nhóm G00, những người G01 có tuổi trung bình cao hơn (56,4 s
 
 AUC trên tập kiểm tra của f_self và f_clin lần lượt là 0,806 và 0,831. Hai giá trị này được tính với hai nhãn tương ứng khác nhau nên không thể dùng riêng chúng để kết luận mô hình nào dự đoán bệnh thật tốt hơn. Mặc dù AUC tương đối gần nhau, mức độ dựa vào từng nhóm biến khác nhau giữa hai mô hình.
 
-![Hình 2 — Độ quan trọng theo nhóm biến](https://raw.githubusercontent.com/danh-tc/plca-hypertension/64ae91cfbb815ec1ecd217c22792c9522d1e4fdc/paper/vi/fig2.png)
+![Hình 2 — Độ quan trọng theo nhóm biến](https://raw.githubusercontent.com/danh-tc/plca-hypertension/1536d52e4ef7cb86939999d6d76808a94bfc9c1e/paper/vi/fig2.png)
 
 **Hình 2.** Mức giảm AUC khi hoán vị từng nhóm biến ở ba mô hình, NHANES 2015–2018, seed 42, bootstrap hai tầng B = 100. Chấm biểu thị ước lượng điểm, vạch biểu thị khoảng 95%. Không vẽ nhóm nhân khẩu học – kinh tế xã hội (f_self = 0,103; f_clin = 0,211). Nguồn: `results/confirmation/model_level/baseline/P2_group_importance.csv`.
 
@@ -458,7 +458,7 @@ Khi đưa tất cả CF mà DiCE trả về vào phân tích, kể cả CF khôn
 
 Trên dữ liệu 2011–2014, E3 không đạt theo tiêu chí chính. A(M2) âm ở seed 42 (−0,032) và seed 43 (−0,037), nghĩa là mô hình phụ có mức giảm điểm lớn hơn đã thay đổi. Ở seed 42, |A| vẫn giảm khoảng 20%, nhưng cận dưới của A(M0) + A(M2) là −0,028, không đủ để đáp ứng điều kiện thống kê. Ở seed 43, |A| tăng khoảng 26%. Ở seed 44, |A| giảm khoảng 51%. Vì vậy, tác động của việc giữ nguyên nhóm biến không ổn định về cả độ lớn lẫn hướng giữa các seed và giai đoạn dữ liệu.
 
-![Hình 3 — So sánh đưa nhóm biến về giá trị ban đầu và giữ nguyên nhóm biến khi sinh CF mới](https://raw.githubusercontent.com/danh-tc/plca-hypertension/64ae91cfbb815ec1ecd217c22792c9522d1e4fdc/paper/vi/fig3.png)
+![Hình 3 — So sánh đưa nhóm biến về giá trị ban đầu và giữ nguyên nhóm biến khi sinh CF mới](https://raw.githubusercontent.com/danh-tc/plca-hypertension/1536d52e4ef7cb86939999d6d76808a94bfc9c1e/paper/vi/fig3.png)
 
 **Hình 3.** A ở M0, A sau ablation và A ở M2, tính trên cùng tập S02 của từng seed, NHANES 2015–2018. Mức giảm được tính theo |A|. Ở seed 43, A đổi dấu sau ablation. Nguồn: `results/confirmation/cf_primary/seed*/C6_endpoints_E3_E4.csv` và `C10_ablation.csv` (tập S02).
 
@@ -480,7 +480,7 @@ Số người có CF hợp lệ từ f_self ở cả M0 và M1 lần lượt là
 
 Mọi CF hợp lệ tìm được dưới T-HTN ở giai đoạn này đều có thay đổi làm giảm BMI hoặc vòng eo. Mức giảm BMI tương đối trung bình nằm trong khoảng xấp xỉ 26–37% tùy nguồn CF và seed; 74–94% số CF hợp lệ có mức giảm BMI lớn hơn 10%. Những tỷ lệ này được tính trên các CF hợp lệ đã tìm thấy, vốn rất ít, chứ không phải trên toàn bộ 200 người được chọn. Không CF hợp lệ nào ở giai đoạn 2015–2018 thay đổi nhóm tiếp cận y tế, dù quy tắc cho phép tăng bảo hiểm hoặc có nơi khám thường xuyên.
 
-![Hình 4 — Tỷ lệ tìm được CF hợp lệ](https://raw.githubusercontent.com/danh-tc/plca-hypertension/64ae91cfbb815ec1ecd217c22792c9522d1e4fdc/paper/vi/fig4.png)
+![Hình 4 — Tỷ lệ tìm được CF hợp lệ](https://raw.githubusercontent.com/danh-tc/plca-hypertension/1536d52e4ef7cb86939999d6d76808a94bfc9c1e/paper/vi/fig4.png)
 
 **Hình 4.** Tỷ lệ người có ít nhất một CF hợp lệ theo M0, M2 và M1, theo từng mô hình sinh CF và seed (200 người được chọn ở mỗi seed, NHANES 2015–2018). Nguồn: `results/confirmation/cf_primary/seed*/C1_summary.csv`.
 
