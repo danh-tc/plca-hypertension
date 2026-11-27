@@ -1,5 +1,5 @@
 """Build the English review PDF: renumber citations by first appearance, pandoc -> LaTeX -> xelatex."""
-import re, subprocess, pathlib
+import re, subprocess, pathlib, sys
 
 ROOT = pathlib.Path(__file__).parent
 TITLE = "Attribution is not mitigation: a paired-label counterfactual audit of hypertension classification models"
@@ -74,6 +74,8 @@ front, body, back, appx = mathify(front), mathify(body), mathify(back), mathify(
 md = (front + "\n\n" + body + "\n\n" + back + "\n\n# References\n\n::: {.refs}\n" + reflist + "\n:::\n\n"
       + "\\clearpage\n\n" + appx)
 (ROOT / "paper_en.md").write_text(md, encoding="utf-8")
+if "--md-only" in sys.argv:
+    sys.exit(0)
 
 header = r"""
 \usepackage{fontspec}

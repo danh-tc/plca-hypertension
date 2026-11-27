@@ -271,7 +271,17 @@ treatment and were coded as untreated. \(Y_{\mathrm{clin}}\) is a
 phenotype, not ground truth, and its treatment component still depends
 on past diagnosis. Pairs (\(Y_{\mathrm{self}}\), \(Y_{\mathrm{clin}}\))
 define four groups: G00, G01 (examination-positive only), G10
-(self-report-positive only) and G11.
+(self-report-positive only) and G11. Fig. 1 summarises the design.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=\textheight]{fig1.png}
+\caption{Fig. 1. Design of PLCA. The models differ only in the training
+label. At the CF level, each CF is scored by both evaluation models,
+which gives a 2 × 2 same-label and cross-label matrix (dark cells: same
+label). E2 analyses generated CFs; E3 generates new CFs with the group
+locked.}
+\end{figure}
 
 \subsection{2.2. Features}
 
@@ -357,11 +367,10 @@ Table A4 lists each rule and its basis.
 To ask whether one CF affects the two label definitions differently, we
 trained one \emph{evaluation model} per label, \(g_{\mathrm{self}}\) and
 \(g_{\mathrm{clin}}\), on the same bootstrap sample of the training set.
-Every CF, from either source, was scored by both. Because the two models
-have different score distributions, scores were converted to
-percentiles: \(p_m(x)\) is the share of test-set people whose \(g_m\)
-score is not higher than that of x. The \emph{score drop} of a CF \(x'\)
-for person x is
+Every CF was scored by both. Because the two models have different score
+distributions, scores were converted to percentiles: \(p_m(x)\) is the
+share of test-set people whose \(g_m\) score is not higher than that of
+x. The \emph{score drop} of a CF \(x'\) for person x is
 
 \[\Delta_m(x') = p_m(x) - p_m(x').\]
 
@@ -643,16 +652,16 @@ Under M1, DiCE found a valid CF for 9.0--12.0\% of people with
 \(f_{\mathrm{self}}\) and 3.0--7.5\% with \(f_{\mathrm{clin}}\),
 compared with 92--100\% under M0 and 86--99\% under M2 (Fig. 4). Every
 person had at least one changeable feature; in 88--97\% of failures DiCE
-simply found no CF. Only 18, 24 and 21 people had valid
-\(f_{\mathrm{self}}\) CFs in both M0 and M1, below the threshold of 40,
-so we do not conclude whether the rules reduce the difference. All valid
-M1 CFs lowered BMI or waist, often by a large amount: the mean relative
-BMI reduction was 26--37\%, and 74--94\% of valid CFs reduced BMI by
-more than 10\%. No valid M1 CF in 2015--2018 changed access to care,
-although the rules allowed it. Coverage was also low in 2011--2014
-(8.5--18.0\% with \(f_{\mathrm{self}}\)). When BMI and waist reductions
-were limited to 5\% (M3), coverage fell to 0.5\% (\(f_{\mathrm{self}}\))
-and 0\% (\(f_{\mathrm{clin}}\)).
+found no CF. Only 18, 24 and 21 people had valid \(f_{\mathrm{self}}\)
+CFs in both M0 and M1, below the threshold of 40, so we do not conclude
+whether the rules reduce the difference. All valid M1 CFs lowered BMI or
+waist, often by a large amount: the mean relative BMI reduction was
+26--37\%, and 74--94\% of valid CFs reduced BMI by more than 10\%. No
+valid M1 CF in 2015--2018 changed access to care, although the rules
+allowed it. Coverage was also low in 2011--2014 (8.5--18.0\% with
+\(f_{\mathrm{self}}\)). When BMI and waist reductions were limited to
+5\% (M3), coverage fell to 0.5\% (\(f_{\mathrm{self}}\)) and 0\%
+(\(f_{\mathrm{clin}}\)).
 
 \begin{figure}
 \centering

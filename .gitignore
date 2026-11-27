@@ -13,4 +13,6 @@ outputs/*
 paper/en/*.aux
 paper/en/*.log
 paper/en/*.out
+paper/en/_tmp.*
+paper/en/jj-*.png
 paper/en/pp-*.png
