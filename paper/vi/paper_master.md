@@ -28,7 +28,7 @@ Cong-Danh Tran — \[Đơn vị, Thành phố, Việt Nam\] · Email: \[email\] 
 
 **Methods.** Trên dữ liệu NHANES, mỗi người có hai nhãn: chẩn đoán tự khai và kiểu hình dựa trên huyết áp đo hoặc việc dùng thuốc. Các mô hình XGBoost có cùng cấu hình, chỉ khác nhãn, kèm một mô hình đối chứng học nhãn bị đảo ngẫu nhiên theo lớp (class-conditional). Quy trình kiểm định gồm: độ quan trọng của nhóm biến, đánh giá chéo CF (sinh bằng DiCE) trên các mô hình phụ, hoàn nguyên nhóm biến (ablation) và sinh CF có ràng buộc. Quy trình được phát triển trên dữ liệu 2011–2014 (n = 10.311); kết quả được báo cáo trên dữ liệu 2015–2018 (n = 10.151), với mọi mô hình huấn luyện lại từ đầu.
 
-**Results.** Trong mẫu 2015–2018, hai nhãn không thống nhất ở 12,9% người trưởng thành (có trọng số khảo sát). Mô hình học nhãn tự khai có mức giảm AUC lớn hơn khi hoán vị nhóm biến tiếp cận y tế (chênh lệch 0,014 [0,008; 0,019]), và tỷ trọng độ quan trọng của nhóm này cao hơn so với mô hình đối chứng nhiễu nhãn. Tuy nhiên, khác biệt không lặp lại khi so với nhãn chỉ dựa trên huyết áp đo ở nhóm không dùng thuốc. Phép hoàn nguyên cho E6 = 0,043 trên thang thứ hạng 0–1, tức 4,3 điểm bách phân vị (cận dưới 0,037; cùng chiều ở cả ba seed). Độ lớn chênh lệch phản ứng giữa hai mô hình phụ (A) giảm 50–67% sau khi hoàn nguyên (đổi dấu ở một seed), nhưng chỉ giảm 9–27% khi cố định nhóm biến lúc sinh CF (so sánh mô tả); trên dữ liệu 2011–2014, tác động của việc cố định không ổn định giữa các seed. Với taxonomy theo chiều dựa trên hướng dẫn tăng huyết áp 2025, chỉ 3–12% người có CF hợp lệ, nên hiệu quả khắc phục của taxonomy không đánh giá được.
+**Results.** Trong mẫu 2015–2018, hai nhãn không thống nhất ở 12,9% người trưởng thành (có trọng số khảo sát). Mô hình học nhãn tự khai có mức giảm AUC lớn hơn khi hoán vị nhóm biến tiếp cận y tế (chênh lệch 0,014 [0,008; 0,019]), và tỷ trọng độ quan trọng của nhóm này cao hơn so với mô hình đối chứng nhiễu nhãn. Tuy nhiên, khác biệt không lặp lại khi so với nhãn chỉ dựa trên huyết áp đo ở nhóm không dùng thuốc. Phép hoàn nguyên cho E2 = 0,043 trên thang thứ hạng 0–1, tức 4,3 điểm bách phân vị (cận dưới 0,037; cùng chiều ở cả ba seed). Độ lớn chênh lệch phản ứng giữa hai mô hình phụ (A) giảm 50–67% sau khi hoàn nguyên (đổi dấu ở một seed), nhưng chỉ giảm 9–27% khi cố định nhóm biến lúc sinh CF (so sánh mô tả); trên dữ liệu 2011–2014, tác động của việc cố định không ổn định giữa các seed. Với taxonomy theo chiều dựa trên hướng dẫn tăng huyết áp 2025, chỉ 3–12% người có CF hợp lệ, nên hiệu quả khắc phục của taxonomy không đánh giá được.
 
 **Conclusions.** Xác định được nhóm biến đóng góp vào khác biệt phản ứng trước CF không có nghĩa là hạn chế nhóm đó khi sinh CF sẽ giải quyết được khác biệt. PLCA cung cấp một phương pháp đánh giá dựa trên nhãn kép để xem xét riêng từng tính chất này trước khi cân nhắc đưa CF vào hệ hỗ trợ quyết định lâm sàng. PLCA không phải công cụ chẩn đoán; CF không phải lời khuyên y khoa.
 
@@ -59,7 +59,7 @@ Chúng tôi đề xuất PLCA (Paired-Label Counterfactual Audit), một phươn
 **Đóng góp** của bài:
 
 1. Một thiết kế kiểm định dựa trên hai nhãn của cùng một người: CF sinh từ mỗi mô hình được đưa vào cả hai mô hình phụ để tính điểm, tạo thành thiết kế đối xứng 2 × 2 (cùng nhãn và khác nhãn), kèm mô hình đối chứng nhiễu nhãn ở tầng mô hình.
-2. Một phép phân tích đóng góp trên các CF đã sinh (E6), tách biệt với phép đánh giá việc sinh CF có ràng buộc (E3), và cho thấy hai phép này trả lời hai câu hỏi khác nhau.
+2. Một phép phân tích đóng góp trên các CF đã sinh (E2), tách biệt với phép đánh giá việc sinh CF có ràng buộc (E3), và cho thấy hai phép này trả lời hai câu hỏi khác nhau.
 3. Bằng chứng thực nghiệm rằng đóng góp của nhóm biến liên quan đến chẩn đoán xuất hiện ở cả hai giai đoạn dữ liệu, trong khi tác động của việc cố định nhóm biến đó không ổn định (chỉ giảm một phần ở 2015–2018, không đạt tiêu chí ở 2011–2014), và rằng ràng buộc theo chiều dựa trên hướng dẫn điều trị gần như không còn để lại CF hợp lệ, khiến hiệu quả khắc phục của nó không đánh giá được.
 
 PLCA không đề xuất thuật toán sinh CF hay phép nhiễu loạn mới. Đóng góp của bài nằm ở một quy trình kiểm định thống nhất trên hai định nghĩa nhãn lâm sàng được ghi nhận đồng thời, phân biệt rõ mức phụ thuộc của mô hình, đóng góp của nhóm biến trong các CF đã sinh, và hiệu quả của việc sinh CF có ràng buộc.
@@ -84,7 +84,7 @@ Nghiên cứu của Cerrato và cộng sự \[10\] gần nhất với câu hỏi
 
 ### 2.5 Quy kết theo nhóm biến
 
-Các phương pháp đo độ quan trọng theo nhóm biến, dựa trên hoán vị, huấn luyện lại hoặc giá trị Shapley, đã được hệ thống hóa \[23\]. E6 không đề xuất phương pháp quy kết mới: E6 hoàn nguyên một nhóm biến trong các CF đã sinh, đưa CF đã hoàn nguyên vào hai mô hình phụ học hai nhãn, rồi lấy trung bình cân bằng theo mô hình sinh CF và theo bệnh nhân. Đại lượng cần ước lượng (estimand) là đóng góp của nhóm biến vào chênh lệch phản ứng (tính theo thứ hạng) giữa hai mô hình phụ, với điều kiện là các CF đã sinh.
+Các phương pháp đo độ quan trọng theo nhóm biến, dựa trên hoán vị, huấn luyện lại hoặc giá trị Shapley, đã được hệ thống hóa \[23\]. E2 không đề xuất phương pháp quy kết mới: E2 hoàn nguyên một nhóm biến trong các CF đã sinh, đưa CF đã hoàn nguyên vào hai mô hình phụ học hai nhãn, rồi lấy trung bình cân bằng theo mô hình sinh CF và theo bệnh nhân. Đại lượng cần ước lượng (estimand) là đóng góp của nhóm biến vào chênh lệch phản ứng (tính theo thứ hạng) giữa hai mô hình phụ, với điều kiện là các CF đã sinh.
 
 Mothilal và cộng sự \[24\] cho thấy phương pháp quy kết và CF có thể xếp hạng đặc trưng không giống nhau; khi giới hạn các đặc trưng được phép thay đổi lúc sinh CF, những đặc trưng xếp hạng cao không nhất thiết là cần hay đủ để thay đổi kết quả. Với các định nghĩa hình thức về độ nhạy và độ bền của recourse, phương pháp quy kết nói chung không thể bảo đảm đồng thời cả hai tính chất \[25\]. Các phương pháp quy kết thỏa tính đầy đủ và tính tuyến tính có thể cho kết luận sai khi dùng để suy luận về hành vi của mô hình \[26\]; mức đáp ứng của đặc trưng (feature responsiveness) là một hướng tiếp cận khác cho recourse \[27\]. PLCA mở rộng các nghiên cứu này sang bối cảnh hai định nghĩa nhãn lâm sàng được ghi nhận đồng thời, và đánh giá riêng đóng góp của nhóm biến trong các CF đã sinh với hiệu quả của việc hạn chế nhóm đó khi sinh CF. Bài không cho rằng mình là nghiên cứu đầu tiên chỉ ra quy kết khác với khắc phục.
 
@@ -131,7 +131,7 @@ Hình 1 tóm tắt thiết kế nghiên cứu. Ở mỗi tầng, hai mô hình d
 | DBP, mmHg, TB (SD) | 71,7 (11,4) | 69,7 (9,1) | 82,3 (13,1) | 72,5 (10,0) | 73,2 (13,7) |
 | Đang dùng thuốc hạ áp, % | 24,1 | 0 | 0 | 0 | 89,2 |
 
-*G00: cả hai nhãn âm tính; G01: kiểu hình dương tính, không cho biết đã được chẩn đoán; G10: đã được chẩn đoán, kiểu hình âm tính; G11: cả hai nhãn dương tính. Tỷ lệ và trung bình có trọng số khảo sát (WTMEC2YR chia cho số chu kỳ); n không có trọng số. Khoảng tin cậy 95% theo thiết kế mẫu (tuyến tính hóa Taylor, 30 tầng, 60 đơn vị mẫu bậc một, ước lượng nhóm con trên toàn bộ mẫu MEC) chỉ được báo cáo cho ba biến tiếp cận y tế; các dòng còn lại là ước lượng điểm. Biến nơi khám và đi khám thiếu dữ liệu ở một người thuộc G00. Tỷ lệ dùng thuốc bằng 0 ở G00, G01 và G10 là do định nghĩa: câu hỏi về thuốc chỉ được hỏi người đã được chẩn đoán, và người đang dùng thuốc thì có Y\_clin = 1. Nguồn: results/table1/T1c\_demographics\_confirmation.csv và results/confirmation/design\_se.*
+*G00: cả hai nhãn âm tính; G01: kiểu hình dương tính, không cho biết đã được chẩn đoán; G10: đã được chẩn đoán, kiểu hình âm tính; G11: cả hai nhãn dương tính. Tỷ lệ và trung bình có trọng số khảo sát (WTMEC2YR chia cho số chu kỳ); n không có trọng số. Khoảng tin cậy 95% theo thiết kế mẫu (tuyến tính hóa Taylor, 30 tầng, 60 đơn vị mẫu bậc một, ước lượng nhóm con trên toàn bộ mẫu MEC) chỉ được báo cáo cho ba biến tiếp cận y tế; các dòng còn lại là ước lượng điểm. Biến nơi khám và đi khám thiếu dữ liệu ở một người thuộc G00. Tỷ lệ dùng thuốc bằng 0 ở G00, G01 và G10 là do định nghĩa: câu hỏi về thuốc chỉ được hỏi người đã được chẩn đoán, và người đang dùng thuốc thì có Y\_clin = 1. Nguồn: results/confirmation/T1c\_demographics\_confirmation.csv và results/confirmation/design\_se.*
 
 ### 3.2 Nhãn và các nhóm không thống nhất nhãn
 
@@ -155,7 +155,7 @@ Từ tập kiểm tra, chọn tối đa 200 người không dùng thuốc và đ
 
 Một CF được coi là hợp lệ khi thỏa mọi ràng buộc và làm mô hình sinh ra nó đổi kết luận. Để đo mức tác động chéo, với mỗi nhãn có thêm một mô hình phụ được huấn luyện trên cùng một mẫu bootstrap lấy từ tập huấn luyện, ký hiệu g\_self và g\_clin để phân biệt với hai mô hình sinh CF f\_self và f\_clin; mỗi CF được đưa vào cả hai mô hình phụ để tính điểm.
 
-**Ma trận chuyển giao.** Với CF x′ của bệnh nhân i, mức giảm điểm trên mô hình phụ g\_m là F\_m(g\_m(x\_i)) − F\_m(g\_m(x′)), trong đó F\_m là hàm phân phối thực nghiệm của điểm g\_m trên tập kiểm tra; nhờ vậy điểm của hai mô hình phụ được quy về cùng thang thứ hạng 0–1. Mọi đại lượng ở tầng CF (R, ECD, A, I, E6) đều tính trên thang này; 0,01 tương ứng với 1 điểm bách phân vị. Gọi R\_sm là mức giảm trung bình khi CF sinh từ mô hình s được đưa vào mô hình phụ m (chỉ số thứ nhất là mô hình sinh CF, chỉ số thứ hai là mô hình phụ; s = self, c = clin). Đơn vị phân tích là bệnh nhân: trước hết lấy trung bình trên các CF hợp lệ của mỗi người, sau đó lấy trung bình trên mọi người trong tập phân tích. Bốn giá trị này tạo thành ma trận 2×2 (Hình 1):
+**Ma trận chuyển giao.** Với CF x′ của bệnh nhân i, mức giảm điểm trên mô hình phụ g\_m là F\_m(g\_m(x\_i)) − F\_m(g\_m(x′)), trong đó F\_m là hàm phân phối thực nghiệm của điểm g\_m trên tập kiểm tra; nhờ vậy điểm của hai mô hình phụ được quy về cùng thang thứ hạng 0–1. Mọi đại lượng ở tầng CF (R, ECD, A, I, E2) đều tính trên thang này; 0,01 tương ứng với 1 điểm bách phân vị. Gọi R\_sm là mức giảm trung bình khi CF sinh từ mô hình s được đưa vào mô hình phụ m (chỉ số thứ nhất là mô hình sinh CF, chỉ số thứ hai là mô hình phụ; s = self, c = clin). Đơn vị phân tích là bệnh nhân: trước hết lấy trung bình trên các CF hợp lệ của mỗi người, sau đó lấy trung bình trên mọi người trong tập phân tích. Bốn giá trị này tạo thành ma trận 2×2 (Hình 1):
 
 ```latex
 \begin{array}{l|cc}
@@ -175,9 +175,9 @@ A = \mathrm{ECD}_{\mathrm{self}} - \mathrm{ECD}_{\mathrm{clin}} = (R_{ss} + R_{c
 I = \mathrm{ECD}_{\mathrm{self}} + \mathrm{ECD}_{\mathrm{clin}} = (R_{ss} + R_{cc}) - (R_{sc} + R_{cs})
 ```
 
-ECD (expected cross-label discrepancy, chênh lệch kỳ vọng giữa hai nhãn) của một mô hình sinh CF là hiệu giữa hai ô trên cùng một hàng. ECD dương nghĩa là CF làm giảm bách phân vị điểm của mô hình phụ cùng nhãn nhiều hơn so với mô hình phụ khác nhãn. Độ bất đối xứng chuyển giao A bằng tổng cột trái trừ tổng cột phải (A/2 là chênh lệch trung bình giữa hai cột), tức cho biết mô hình phụ học Y\_self phản ứng mạnh hơn mô hình phụ học Y\_clin bao nhiêu khi tính đều CF từ cả hai mô hình. Như vậy, A so sánh hai mô hình phụ với nhau, chứ không đo riêng việc CF có "khớp" với mô hình phụ cùng nhãn hay không. Đại lượng đo điều đó là lợi thế cùng nhãn I, bằng tổng đường chéo trừ tổng ngoài đường chéo (I/2 là chênh lệch trung bình giữa ô cùng nhãn và ô khác nhãn). I dương không đòi hỏi ECD của cả hai mô hình đều dương. I là phân tích mô tả, được bổ sung sau khi có kết quả (Bảng A2). Việc quy về bách phân vị đưa điểm về cùng thang thứ hạng, nhưng không bảo đảm hai mô hình phụ nhạy như nhau. A và E6 đo chênh lệch phản ứng theo thứ hạng, không đo tác động lên nguy cơ bệnh thật; ngoài ra, chỉ dùng một mô hình phụ cho mỗi nhãn thì chưa loại trừ được khả năng các mô hình tương đương khác cho kết quả khác. Công thức đầy đủ tính theo từng CF được trình bày ở Phụ lục A.
+ECD (expected cross-label discrepancy, chênh lệch kỳ vọng giữa hai nhãn) của một mô hình sinh CF là hiệu giữa hai ô trên cùng một hàng. ECD dương nghĩa là CF làm giảm bách phân vị điểm của mô hình phụ cùng nhãn nhiều hơn so với mô hình phụ khác nhãn. Độ bất đối xứng chuyển giao A bằng tổng cột trái trừ tổng cột phải (A/2 là chênh lệch trung bình giữa hai cột), tức cho biết mô hình phụ học Y\_self phản ứng mạnh hơn mô hình phụ học Y\_clin bao nhiêu khi tính đều CF từ cả hai mô hình. Như vậy, A so sánh hai mô hình phụ với nhau, chứ không đo riêng việc CF có "khớp" với mô hình phụ cùng nhãn hay không. Đại lượng đo điều đó là lợi thế cùng nhãn I, bằng tổng đường chéo trừ tổng ngoài đường chéo (I/2 là chênh lệch trung bình giữa ô cùng nhãn và ô khác nhãn). I dương không đòi hỏi ECD của cả hai mô hình đều dương. I là phân tích mô tả, được bổ sung sau khi có kết quả (Bảng A2). Việc quy về bách phân vị đưa điểm về cùng thang thứ hạng, nhưng không bảo đảm hai mô hình phụ nhạy như nhau. A và E2 đo chênh lệch phản ứng theo thứ hạng, không đo tác động lên nguy cơ bệnh thật; ngoài ra, chỉ dùng một mô hình phụ cho mỗi nhãn thì chưa loại trừ được khả năng các mô hình tương đương khác cho kết quả khác. Công thức đầy đủ tính theo từng CF được trình bày ở Phụ lục A.
 
-Tập phân tích: S\_M0 gồm những người có ít nhất một CF hợp lệ từ mỗi mô hình ở chế độ M0; S\* = S\_M0 ∩ S\_M2 gồm những người có CF hợp lệ từ cả hai mô hình ở cả M0 và M2. E3 được tính trên S\*, E6 trên S\_M0, và phần ECD của E4 trên những người có CF hợp lệ từ f\_self ở cả M0 và M1.
+Tập phân tích: S0 gồm những người có ít nhất một CF hợp lệ từ mỗi mô hình ở chế độ M0; S02 = S0 ∩ S\_M2 gồm những người có CF hợp lệ từ cả hai mô hình ở cả M0 và M2. E3 được tính trên S02, E2 trên S0, và phần ECD của E4 trên những người có CF hợp lệ từ f\_self ở cả M0 và M1.
 
 ### 3.6 Tiêu chí đánh giá
 
@@ -186,32 +186,32 @@ Tập phân tích: S\_M0 gồm những người có ít nhất một CF hợp l�
 | Tiêu chí | Câu hỏi | Đại lượng | Vai trò |
 | --- | --- | --- | --- |
 | E1 | Phụ thuộc | Mức giảm AUC của nhóm tiếp cận y tế, f\_self − f\_clin; tỷ trọng so với f\_placebo | Chính |
-| E6 | Đóng góp | Hoàn nguyên nhóm biến liên quan đến chẩn đoán trong CF ở M0; đo mức thay đổi chênh lệch phản ứng giữa hai mô hình phụ | Phụ |
+| E2 | Đóng góp | Hoàn nguyên nhóm biến liên quan đến chẩn đoán trong CF ở M0; đo mức thay đổi chênh lệch phản ứng giữa hai mô hình phụ | Phụ |
 | E3 | Khắc phục bằng cố định biến | A(M0) > 0, A(M0) − A(M2) > 0 và A(M0) + A(M2) > 0, tức \|A\| giảm khi cố định biến | Chính |
 | E4 | Taxonomy dựa trên hướng dẫn có còn để lại CF hợp lệ không | Tỷ lệ có CF hợp lệ ở M1 so với M0; ECD của f\_self ở M0 trừ ở M1 khi có ít nhất 40 người chung | Mô tả |
 | E5 | Hệ quả trong sàng lọc | Tỷ lệ người G01 nằm trong 30% điểm cao nhất, kiểm định McNemar \[37\] | Phụ |
 
-E6 dùng lại các CF đã sinh ở M0. Với mỗi CF x′, tạo bản hoàn nguyên x′\_abl bằng cách trả ba nhóm tiếp cận y tế, chẩn đoán bệnh khác và SRH về giá trị ban đầu của bệnh nhân, giữ nguyên mọi biến khác. Đóng góp của nhóm biến trên mô hình phụ g\_m là mức điểm bách phân vị được phục hồi khi hoàn nguyên, C\_m. E6 là trung bình của C\_self − C\_clin, lấy lần lượt trên các CF của mỗi người, trên hai mô hình sinh CF và trên các bệnh nhân (công thức đầy đủ ở Phụ lục A):
+E2 dùng lại các CF đã sinh ở M0. Với mỗi CF x′, tạo bản hoàn nguyên x′\_abl bằng cách trả ba nhóm tiếp cận y tế, chẩn đoán bệnh khác và SRH về giá trị ban đầu của bệnh nhân, giữ nguyên mọi biến khác. Đóng góp của nhóm biến trên mô hình phụ g\_m là mức điểm bách phân vị được phục hồi khi hoàn nguyên, C\_m. E2 là trung bình của C\_self − C\_clin, lấy lần lượt trên các CF của mỗi người, trên hai mô hình sinh CF và trên các bệnh nhân (công thức đầy đủ ở Phụ lục A):
 
 ```latex
 C_m = F_m\big(g_m(x'_{\mathrm{abl}})\big) - F_m\big(g_m(x')\big)
 \qquad
-\mathrm{E6} = \overline{C_{\mathrm{self}} - C_{\mathrm{clin}}} = \tfrac{1}{2}\left[ A(\mathrm{M0}) - A_{\mathrm{abl}} \right]
+\mathrm{E2} = \overline{C_{\mathrm{self}} - C_{\mathrm{clin}}} = \tfrac{1}{2}\left[ A(\mathrm{M0}) - A_{\mathrm{abl}} \right]
 ```
 
-Đẳng thức thứ hai đúng vì C\_m bằng mức giảm điểm trước trừ sau khi hoàn nguyên, trên cùng bệnh nhân và cùng CF; A\_abl là A tính lại trên các CF đã hoàn nguyên. Nói cách khác, E6 bằng một nửa mức giảm của A khi hoàn nguyên nhóm biến liên quan đến chẩn đoán. CF từ hai mô hình có trọng số bằng nhau; đơn vị phân tích là bệnh nhân. CF không thay đổi biến nào trong nhóm thì có đóng góp bằng 0; đóng góp âm được giữ nguyên. CF sau khi hoàn nguyên không cần còn làm mô hình sinh ra nó đổi kết luận. E6 cần ít nhất 80 người đủ điều kiện sinh CF và ít nhất 40 người có CF hợp lệ từ cả hai mô hình ở M0; khác với E3, E6 không đòi hỏi CF hợp lệ ở M2, bootstrap theo bệnh nhân với B = 5.000. E6 đạt khi phân vị 2,5% dương ở seed 42 và ước lượng điểm dương ở các seed 43, 44 đủ mẫu. E6 là tiêu chí phụ; bài không kiểm soát sai số loại I chung (FWER) cho cả tiêu chí chính lẫn tiêu chí phụ.
+Đẳng thức thứ hai đúng vì C\_m bằng mức giảm điểm trước trừ sau khi hoàn nguyên, trên cùng bệnh nhân và cùng CF; A\_abl là A tính lại trên các CF đã hoàn nguyên. Nói cách khác, E2 bằng một nửa mức giảm của A khi hoàn nguyên nhóm biến liên quan đến chẩn đoán. CF từ hai mô hình có trọng số bằng nhau; đơn vị phân tích là bệnh nhân. CF không thay đổi biến nào trong nhóm thì có đóng góp bằng 0; đóng góp âm được giữ nguyên. CF sau khi hoàn nguyên không cần còn làm mô hình sinh ra nó đổi kết luận. E2 cần ít nhất 80 người đủ điều kiện sinh CF và ít nhất 40 người có CF hợp lệ từ cả hai mô hình ở M0; khác với E3, E2 không đòi hỏi CF hợp lệ ở M2, bootstrap theo bệnh nhân với B = 5.000. E2 đạt khi phân vị 2,5% dương ở seed 42 và ước lượng điểm dương ở các seed 43, 44 đủ mẫu. E2 là tiêu chí phụ; bài không kiểm soát sai số loại I chung (FWER) cho cả tiêu chí chính lẫn tiêu chí phụ.
 
-E6 là một đại lượng đo đóng góp của nhóm biến, có điều kiện theo các CF đã sinh (counterfactual-conditioned group contribution contrast); giá trị của nó phụ thuộc vào điểm xuất phát và các thay đổi khác trong CF. E6 không phải giá trị Shapley, không phải quy kết nhân quả, cũng không phải một cách phân rã dự đoán duy nhất; đóng góp của các nhóm không nhất thiết cộng dồn được.
+E2 là một đại lượng đo đóng góp của nhóm biến, có điều kiện theo các CF đã sinh (counterfactual-conditioned group contribution contrast); giá trị của nó phụ thuộc vào điểm xuất phát và các thay đổi khác trong CF. E2 không phải giá trị Shapley, không phải quy kết nhân quả, cũng không phải một cách phân rã dự đoán duy nhất; đóng góp của các nhóm không nhất thiết cộng dồn được.
 
-E6 đo đóng góp có dấu vào A; E6 dương không bảo đảm độ lớn \|A\| giảm. E6 được báo cáo trên S\_M0; kết quả trên S\* chỉ dùng để đối chiếu mô tả với E3, kèm A\_abl và mức thay đổi của \|A\|. Cần lưu ý rằng E6 sửa các CF đã có, còn E3 sinh CF mới trong một không gian bị giới hạn; CF sau khi hoàn nguyên không cần hợp lệ, còn CF ở M2 bắt buộc phải hợp lệ. Vì vậy, hai phép này không phải hai cách khắc phục tương đương. Hoàn nguyên là công cụ để phân tích đóng góp, không phải một cách sinh CF.
+E2 đo đóng góp có dấu vào A; E2 dương không bảo đảm độ lớn \|A\| giảm. E2 được báo cáo trên S0; kết quả trên S02 chỉ dùng để đối chiếu mô tả với E3, kèm A\_abl và mức thay đổi của \|A\|. Cần lưu ý rằng E2 sửa các CF đã có, còn E3 sinh CF mới trong một không gian bị giới hạn; CF sau khi hoàn nguyên không cần hợp lệ, còn CF ở M2 bắt buộc phải hợp lệ. Vì vậy, hai phép này không phải hai cách khắc phục tương đương. Hoàn nguyên là công cụ để phân tích đóng góp, không phải một cách sinh CF.
 
 ### 3.7 Phân tích thống kê
 
 - **E1:** tiêu chí về khả năng lặp lại kết quả thực nghiệm. E1 đạt khi phân vị 2,5% của chênh lệch tuyệt đối (f\_self − f\_clin) lớn hơn 0, trung bình chênh lệch tỷ trọng so với f\_placebo lớn hơn 0, và tỷ trọng tính được ở ít nhất 80% số lần bootstrap.
-- **E3:** bootstrap theo bệnh nhân (B = 5.000), cận dưới một phía là phân vị 2,5% (α = 0,025 một phía); kiểm định giao–hợp (intersection–union), tức cả ba điều kiện phải cùng đạt. Khoảng bootstrap là có điều kiện trên tập bệnh nhân có CF hợp lệ, nên không bảo đảm kiểm soát chính xác sai số cho toàn bộ quy trình. Cần ít nhất 80 người đủ điều kiện sinh CF và ít nhất 40 người trong S\*.
+- **E3:** bootstrap theo bệnh nhân (B = 5.000), cận dưới một phía là phân vị 2,5% (α = 0,025 một phía); kiểm định giao–hợp (intersection–union), tức cả ba điều kiện phải cùng đạt. Khoảng bootstrap là có điều kiện trên tập bệnh nhân có CF hợp lệ, nên không bảo đảm kiểm soát chính xác sai số cho toàn bộ quy trình. Cần ít nhất 80 người đủ điều kiện sinh CF và ít nhất 40 người trong S02.
 - **E4:** báo cáo mô tả, không kiểm định. ECD\_self(M0) − ECD\_self(M1) chỉ được diễn giải khi có ít nhất 40 người có CF hợp lệ từ f\_self ở cả M0 và M1; dưới ngưỡng này chỉ báo cáo tỷ lệ có CF hợp lệ và mức thay đổi của các biến được dùng.
-- **Seed:** E3, E4 và E6 được chạy với ba giá trị khởi tạo ngẫu nhiên (seed); các phân tích độ nhạy chỉ chạy với seed 42. Với E3 và E6, seed 42 là seed quyết định; ở seed 43 và 44, ước lượng điểm phải cùng chiều (với E3 là cả ba thành phần). Điều kiện này là nhất quán về hướng, không đòi hỏi ý nghĩa thống kê ở seed phụ. Nếu một seed phụ không đủ mẫu, tiêu chí được ghi là "không đánh giá được độ ổn định" chứ không bỏ qua seed đó.
-- **E5 và E6:** tiêu chí phụ, ngoài nhóm kiểm định chính. Với E5, mỗi mô hình đánh dấu đúng round(30% × n\_test) người có điểm cao nhất; nếu bằng điểm thì ưu tiên theo mã SEQN tăng dần; dùng kiểm định McNemar chính xác \[37\], α = 0,05. Giá trị p này có điều kiện theo các mô hình đã huấn luyện và tập kiểm tra, không phải suy luận cho dân số Mỹ.
+- **Seed:** E2, E3 và E4 được chạy với ba giá trị khởi tạo ngẫu nhiên (seed); các phân tích độ nhạy chỉ chạy với seed 42. Với E3 và E2, seed 42 là seed quyết định; ở seed 43 và 44, ước lượng điểm phải cùng chiều (với E3 là cả ba thành phần). Điều kiện này là nhất quán về hướng, không đòi hỏi ý nghĩa thống kê ở seed phụ. Nếu một seed phụ không đủ mẫu, tiêu chí được ghi là "không đánh giá được độ ổn định" chứ không bỏ qua seed đó.
+- **E2 và E5:** tiêu chí phụ. Với E5, mỗi mô hình đánh dấu đúng round(30% × n\_test) người có điểm cao nhất; nếu bằng điểm thì ưu tiên theo mã SEQN tăng dần; dùng kiểm định McNemar chính xác \[37\], α = 0,05. Giá trị p này có điều kiện theo các mô hình đã huấn luyện và tập kiểm tra, không phải suy luận cho dân số Mỹ.
 - **Phạm vi suy luận:** ở tầng CF, kết luận có điều kiện theo tập người đã chọn, các CF hợp lệ và các mô hình đã huấn luyện.
 - **Bảng mô tả:** dùng trọng số khảo sát và sai số chuẩn theo thiết kế mẫu (phương pháp tuyến tính hóa Taylor) \[29\]; các mô hình không dùng trọng số.
 
@@ -221,24 +221,24 @@ Các phân tích sau không dùng để kết luận về tiêu chí đánh giá
 
 ### 3.9 Môi trường tính toán và tái lập
 
-Toàn bộ kết quả trong bài lấy từ một lần chạy toàn bộ quy trình (scripts/run\_all.sh) trên một máy tính xách tay chạy Linux (Intel Core i5-1335U, 12 luồng, 16 GB RAM) với Python 3.12.3, numpy 2.5.5, pandas 3.1.1, scikit-learn 1.9.1, xgboost 3.4.1 và dice-ml 0.12. Seed 42 là seed chính; seed 43 và 44 dùng để đánh giá độ ổn định ở tầng CF. Mỗi lần chạy ghi lại phiên bản thư viện, commit Git và cấu hình. Việc bổ sung E6 sau khi E3 không đạt ở một lần chạy thử được khai báo ở mục 5.6. Nghiên cứu không được đăng ký. Bài được báo cáo theo hướng dẫn TRIPOD+AI \[38\].
+Toàn bộ kết quả trong bài lấy từ một lần chạy toàn bộ quy trình (scripts/run\_all.sh) trên một máy tính xách tay chạy Linux (Intel Core i5-1335U, 12 luồng, 16 GB RAM) với Python 3.12.3, numpy 2.5.5, pandas 3.1.1, scikit-learn 1.9.1, xgboost 3.4.1 và dice-ml 0.12. Seed 42 là seed chính; seed 43 và 44 dùng để đánh giá độ ổn định ở tầng CF. Mỗi lần chạy ghi lại phiên bản thư viện, commit Git và cấu hình. Việc bổ sung E2 sau khi E3 không đạt ở một lần chạy thử được khai báo ở mục 5.6. Nghiên cứu không được đăng ký. Bài được báo cáo theo hướng dẫn TRIPOD+AI \[38\].
 
 ## 4. Kết quả
 
-Trên dữ liệu 2015–2018 (Bảng 3), E1 đạt (bootstrap hai tầng B = 100, seed 42); E3 đạt và nhất quán về hướng ở cả ba seed; E6 đạt, với cận dưới dương ở cả ba seed; E4 cho thấy dưới T-HTN chỉ khoảng một phần mười người còn CF hợp lệ, nên không ước lượng được hiệu quả khắc phục; E5 đạt ở phân tích gộp nhưng không đạt khi tách từng chu kỳ. Bảng A5 tóm tắt các tiêu chí trên cả hai giai đoạn dữ liệu. Kết quả được trình bày theo ba phát hiện (mục 4.2–4.5); cách sắp xếp này không làm thay đổi vai trò chính hay phụ của các tiêu chí.
+Trên dữ liệu 2015–2018 (Bảng 3), E1 đạt (bootstrap hai tầng B = 100, seed 42); E3 đạt và nhất quán về hướng ở cả ba seed; E2 đạt, với cận dưới dương ở cả ba seed; E4 cho thấy dưới T-HTN chỉ khoảng một phần mười người còn CF hợp lệ, nên không ước lượng được hiệu quả khắc phục; E5 đạt ở phân tích gộp nhưng không đạt khi tách từng chu kỳ. Bảng A5 tóm tắt các tiêu chí trên cả hai giai đoạn dữ liệu. Kết quả được trình bày theo ba phát hiện (mục 4.2–4.5); cách sắp xếp này không làm thay đổi vai trò chính hay phụ của các tiêu chí.
 
 **Bảng 3.** Tổng hợp kết quả các tiêu chí đánh giá, NHANES 2015–2018.
 
 | Tiêu chí (vai trò) | Đại lượng | Seed 42 | Seed 43 | Seed 44 | Kết luận |
 | --- | --- | --- | --- | --- | --- |
 | E1 (chính) | Chênh lệch mức giảm AUC của nhóm tiếp cận y tế, f\_self − f\_clin; tỷ trọng so với f\_placebo | 0,014 \[0,008; 0,019\]; +7,0 điểm % \[2,4; 11,0\] | — | — | Đạt |
+| E2 (phụ) | Đóng góp của nhóm biến liên quan đến chẩn đoán (hoàn nguyên), trên S0 | 0,043 (0,037); n = 187 | 0,044 (0,037); n = 184 | 0,058 (0,049); n = 197 | Đạt; cận dưới dương ở cả ba seed |
 | E3 (chính) | A(M0); A(M0) − A(M2); A(M0) + A(M2) | 0,120 (0,097); 0,033 (0,012); 0,208 (0,160); n = 172 | 0,058 (0,028); 0,014 (−0,009); 0,103 (0,042); n = 168 | 0,181 (0,156); 0,016 (−0,004); 0,346 (0,300); n = 175 | Đạt, nhất quán về hướng |
 | E3 tính trên mọi CF (độ nhạy) | A(M0) − A(M2) | 0,011 (−0,010) | 0,004 (−0,018) | −0,012 (−0,031) | Không đạt; đổi dấu ở seed 44 |
 | E4 (mô tả) | Có CF hợp lệ ở M1 so với M0, f\_self | 9,0% so với 100%; n chung = 18 | 12,0% so với 99,5%; n chung = 24 | 10,5% so với 99,5%; n chung = 21 | Rất ít CF hợp lệ; ECD không đủ điều kiện diễn giải (n < 40) |
 | E5 (phụ) | Tỷ lệ người G01 trong 30% điểm cao nhất, f\_self so với f\_clin | 27,8% so với 33,3%; p = 0,029 | — | — | Đạt ở phân tích gộp; không đạt theo từng chu kỳ |
-| E6 (phụ) | Đóng góp của nhóm biến liên quan đến chẩn đoán (hoàn nguyên), trên S\_M0 | 0,043 (0,037); n = 187 | 0,044 (0,037); n = 184 | 0,058 (0,049); n = 197 | Đạt; cận dưới dương ở cả ba seed |
 
-*Ngoặc tròn: cận dưới một phía (phân vị 2,5%, bootstrap theo bệnh nhân, B = 5.000), có điều kiện theo các mô hình đã huấn luyện và tập phân tích. Ngoặc vuông: khoảng thực nghiệm 95% từ bootstrap hai tầng (B = 100), gồm cả huấn luyện lại và lấy mẫu kiểm tra. n là số người có đủ dữ liệu trong 200 người được chọn. E1 và E5 chỉ được đánh giá ở seed 42. Ở seed 43 và 44, ước lượng phải cùng chiều (với E3 là cả ba thành phần); E3 dùng tập S\* riêng của từng seed; ở seed 43 và 44, cận dưới của A(M0) − A(M2) âm nhưng ước lượng điểm cùng chiều, nên E3 vẫn đạt điều kiện nhất quán về hướng.*
+*Ngoặc tròn: cận dưới một phía (phân vị 2,5%, bootstrap theo bệnh nhân, B = 5.000), có điều kiện theo các mô hình đã huấn luyện và tập phân tích. Ngoặc vuông: khoảng thực nghiệm 95% từ bootstrap hai tầng (B = 100), gồm cả huấn luyện lại và lấy mẫu kiểm tra. n là số người có đủ dữ liệu trong 200 người được chọn. E1 và E5 chỉ được đánh giá ở seed 42. Ở seed 43 và 44, ước lượng phải cùng chiều (với E3 là cả ba thành phần); E3 dùng tập S02 riêng của từng seed; ở seed 43 và 44, cận dưới của A(M0) − A(M2) âm nhưng ước lượng điểm cùng chiều, nên E3 vẫn đạt điều kiện nhất quán về hướng.*
 
 ### 4.1 Đặc điểm mẫu
 
@@ -252,13 +252,13 @@ f\_self và f\_clin có AUC trên tập kiểm tra gần nhau (0,806 và 0,831; 
 
 Mức giảm AUC khi hoán vị nhóm tiếp cận y tế ở f\_self cao hơn ở f\_clin 0,014 \[0,008; 0,019\]; tỷ trọng của nhóm này trong tổng độ quan trọng cũng cao hơn so với f\_placebo 7,0 điểm phần trăm \[2,4; 11,0\] (9,8% so với 2,8%). Mô hình đối chứng nhiễu nhãn không tạo ra được mức phụ thuộc này. Nhóm chẩn đoán bệnh khác và nhóm sức khỏe tự đánh giá cho xu hướng tương tự, còn nhóm sinh lý có độ quan trọng khá gần nhau ở hai mô hình (0,033 và 0,031). Ngược lại, nhóm nhân khẩu học – kinh tế xã hội quan trọng hơn ở f\_clin (0,211 so với 0,103), nên khác biệt giữa hai mô hình không chỉ nằm ở nhóm tiếp cận y tế; đây là mô tả, không cho phép suy ra cơ chế. Kết quả này giống với giai đoạn phát hiện (0,015 \[0,009; 0,022\]). Khi loại nhóm G01 khỏi tập huấn luyện, chênh lệch giảm còn 0,005 \[0,000; 0,010\], so với 0,014 khi loại ngẫu nhiên cùng số người (phân tích mô tả).
 
-Phát hiện này có giới hạn rõ ràng. Khi so f\_self với mô hình học huyết áp đo ở nhóm không dùng thuốc, chênh lệch về tiếp cận y tế không lặp lại: −0,003 \[−0,017; 0,011\], và −0,003 \[−0,017; 0,009\] ở giai đoạn phát hiện. Khoảng tin cậy chứa 0 nghĩa là không xác nhận được chênh lệch, chứ không chứng minh hai mô hình phụ thuộc như nhau. Vì vậy, mức phụ thuộc vào biến tiếp cận y tế gắn với cách định nghĩa kiểu hình và quần thể được xét.
+Phát hiện này có giới hạn rõ ràng. Khi so f\_self với mô hình học huyết áp đo ở nhóm không dùng thuốc, chênh lệch về tiếp cận y tế không lặp lại: −0,003 \[−0,017; 0,011\]. Khoảng tin cậy chứa 0 nghĩa là không xác nhận được chênh lệch, chứ không chứng minh hai mô hình phụ thuộc như nhau. Vì vậy, mức phụ thuộc vào biến tiếp cận y tế gắn với cách định nghĩa kiểu hình và quần thể được xét.
 
-### 4.3 Phát hiện 2a: nhóm biến liên quan đến chẩn đoán đóng góp vào khác biệt phản ứng giữa hai mô hình (E6)
+### 4.3 Phát hiện 2a: nhóm biến liên quan đến chẩn đoán đóng góp vào khác biệt phản ứng giữa hai mô hình (E2)
 
-Khi hoàn nguyên nhóm biến liên quan đến chẩn đoán, điểm của mô hình phụ học nhãn tự khai tăng trở lại nhiều hơn so với mô hình phụ học kiểu hình: E6 = 0,043 (cận dưới 0,037; 187 người). Kết quả ở seed 43 và 44 cùng chiều (0,044 và 0,058). Hiệu ứng xuất hiện với CF từ cả hai mô hình (0,057 và 0,030). Trên S\_M0, 49–65% CF hợp lệ có thay đổi ít nhất một biến thuộc nhóm này (tùy mô hình sinh CF và seed).
+Khi hoàn nguyên nhóm biến liên quan đến chẩn đoán, điểm của mô hình phụ học nhãn tự khai tăng trở lại nhiều hơn so với mô hình phụ học kiểu hình: E2 = 0,043 (cận dưới 0,037; 187 người). Kết quả ở seed 43 và 44 cùng chiều (0,044 và 0,058). Hiệu ứng xuất hiện với CF từ cả hai mô hình (0,057 và 0,030). Trên S0, 49–65% CF hợp lệ có thay đổi ít nhất một biến thuộc nhóm này (tùy mô hình sinh CF và seed).
 
-**Bảng 4.** Đóng góp của từng nhóm biến khi hoàn nguyên riêng (E6, seed 42).
+**Bảng 4.** Đóng góp của từng nhóm biến khi hoàn nguyên riêng (E2, seed 42).
 
 | Nhóm được hoàn nguyên (seed 42) | Đóng góp |
 | --- | --- |
@@ -272,13 +272,13 @@ Khi hoàn nguyên nhóm biến liên quan đến chẩn đoán, điểm của m�
 
 Trên 172 người có CF hợp lệ từ cả hai mô hình ở cả hai chế độ, A(M0) = 0,120 (cận dưới 0,097). Khi cố định nhóm biến liên quan đến chẩn đoán, A giảm còn 0,087; hiệu số 0,033 có cận dưới 0,012, và điều kiện về độ lớn có cận dưới 0,160. Ước lượng điểm của cả ba thành phần đều dương ở seed 43 và 44, nên E3 đạt và nhất quán về hướng; tuy nhiên biên an toàn mỏng, vì ở hai seed này cận dưới của hiệu số A(M0) − A(M2) âm (−0,009 và −0,004). Tuy nhiên, khi tính trên mọi CF mà DiCE trả về (kể cả CF không làm mô hình sinh ra nó đổi kết luận), E3 không đạt ở cả ba seed (Bảng 3): hiệu số nhỏ hơn ở cả ba seed và đổi dấu ở seed 44 (−0,012). Trên dữ liệu 2011–2014, E3 không đạt, và A(M2) đổi dấu ở seed 42 và 43 (−0,032 và −0,037). Ở seed 42, độ lớn của A giảm khoảng 20%, nhưng cận dưới bootstrap của A(M0) + A(M2) âm (−0,028). Ở seed 43, độ lớn của A tăng khoảng 26%. Ở seed 44, độ lớn của A giảm khoảng 51% (Bảng A5). Như vậy, tác động của việc cố định nhóm biến không ổn định giữa các giai đoạn và các seed, và kết quả nhạy với cách chọn CF đưa vào phân tích; hai cách tính cũng dùng tập CF và tập người khác nhau, nên không thể quy toàn bộ khác biệt cho bước lọc CF hợp lệ.
 
-&#91;embedded content: Hình 3 · NHANES 2015–2018 · results/confirmation/cf\_primary/seed\*/C6\_endpoints\_E3\_E4.csv và C10\_ablation.csv (tập S\_star)\]
+&#91;embedded content: Hình 3 · NHANES 2015–2018 · results/confirmation/cf\_primary/seed\*/C6\_endpoints\_E3\_E4.csv và C10\_ablation.csv (tập S02)\]
 
-Hình 3 thể hiện điểm mấu chốt của bài. Khi sửa các CF đã có bằng cách trả nhóm biến liên quan đến chẩn đoán về giá trị ban đầu, độ lớn của bất đối xứng, \|A\|, giảm 50–67% (giảm tuyệt đối 0,039–0,091); ở seed 43, A còn đổi dấu sau khi hoàn nguyên (từ 0,058 xuống −0,019). Nhưng khi cấm hẳn các biến đó và để DiCE tìm CF mới, độ lớn bất đối xứng chỉ giảm 9–27% (giảm tuyệt đối 0,014–0,033), phù hợp với giả thuyết rằng thuật toán đã chuyển sang dùng các biến khác. Khoảng cách giữa hai mức giảm chỉ mang tính mô tả; không có tiêu chí riêng để kiểm định nó. Hai thành phần của A thay đổi theo hai hướng khác nhau (seed 42): ECD của f\_self giảm từ 0,089 xuống 0,070, còn ECD của f\_clin tăng từ −0,031 lên −0,018. ECD của f\_clin ở M0 âm ở seed 42 và 44, dương nhẹ ở seed 43. A dương nghĩa là, khi tính đều CF từ hai mô hình, mô hình phụ học Y\_self phản ứng mạnh hơn. Bảng A2 trình bày từng thành phần trên S\*. Ở M0, I dương (0,058; 0,088; 0,070), tức có lợi thế cùng nhãn khi gộp CF từ hai mô hình, dù điều này không nhất thiết đúng với từng mô hình riêng lẻ. Khi cố định biến, A giảm nhưng I không giảm một cách nhất quán (0,052; 0,114; 0,144: giảm nhẹ ở seed 42, tăng ở seed 43 và 44). Đây là mô tả bổ sung, không có khoảng tin cậy: giảm chênh lệch giữa hai mô hình phụ không đồng nghĩa với giảm lợi thế cùng nhãn. Bảng A3 mô tả phản ứng tính theo từng CF, với tập dữ liệu và cách lấy trung bình khác Bảng A2.
+Hình 3 thể hiện điểm mấu chốt của bài. Khi sửa các CF đã có bằng cách trả nhóm biến liên quan đến chẩn đoán về giá trị ban đầu, độ lớn của bất đối xứng, \|A\|, giảm 50–67% (giảm tuyệt đối 0,039–0,091); ở seed 43, A còn đổi dấu sau khi hoàn nguyên (từ 0,058 xuống −0,019). Nhưng khi cấm hẳn các biến đó và để DiCE tìm CF mới, độ lớn bất đối xứng chỉ giảm 9–27% (giảm tuyệt đối 0,014–0,033), phù hợp với giả thuyết rằng thuật toán đã chuyển sang dùng các biến khác. Khoảng cách giữa hai mức giảm chỉ mang tính mô tả; không có tiêu chí riêng để kiểm định nó. Hai thành phần của A thay đổi theo hai hướng khác nhau (seed 42): ECD của f\_self giảm từ 0,089 xuống 0,070, còn ECD của f\_clin tăng từ −0,031 lên −0,018. ECD của f\_clin ở M0 âm ở seed 42 và 44, dương nhẹ ở seed 43. A dương nghĩa là, khi tính đều CF từ hai mô hình, mô hình phụ học Y\_self phản ứng mạnh hơn. Bảng A2 trình bày từng thành phần trên S02. Ở M0, I dương (0,058; 0,088; 0,070), tức có lợi thế cùng nhãn khi gộp CF từ hai mô hình, dù điều này không nhất thiết đúng với từng mô hình riêng lẻ. Khi cố định biến, A giảm nhưng I không giảm một cách nhất quán (0,052; 0,114; 0,144: giảm nhẹ ở seed 42, tăng ở seed 43 và 44). Đây là mô tả bổ sung, không có khoảng tin cậy: giảm chênh lệch giữa hai mô hình phụ không đồng nghĩa với giảm lợi thế cùng nhãn. Bảng A3 mô tả phản ứng tính theo từng CF, với tập dữ liệu và cách lấy trung bình khác Bảng A2.
 
 ### 4.5 Phát hiện 3: taxonomy dựa trên hướng dẫn gần như không còn CF hợp lệ (E4)
 
-Dưới T-HTN, chỉ 9,0–12,0% người có CF hợp lệ từ f\_self và 3,0–7,5% từ f\_clin, so với 92–100% ở M0 và 86–99% ở M2 (Hình 4). Mọi người đều còn ít nhất một biến được phép thay đổi; phần lớn trường hợp thất bại là DiCE không tìm được CF (88–97%). Số người có CF hợp lệ ở cả M0 và M1 chỉ là 18, 24 và 21 ở ba seed, dưới ngưỡng 40, nên phần ECD của E4 không được diễn giải. Mọi CF hợp lệ dưới T-HTN đều giảm BMI hoặc vòng eo, và mức giảm thường lớn: BMI giảm trung bình 27–37% so với giá trị ban đầu, và 74–94% CF giảm BMI hơn 10% (tính trên các CF hợp lệ, vốn rất ít). Không CF hợp lệ nào thay đổi biến tiếp cận y tế, dù các biến này được phép tăng.
+Dưới T-HTN, chỉ 9,0–12,0% người có CF hợp lệ từ f\_self và 3,0–7,5% từ f\_clin, so với 92–100% ở M0 và 86–99% ở M2 (Hình 4). Mọi người đều còn ít nhất một biến được phép thay đổi; phần lớn trường hợp thất bại là DiCE không tìm được CF (88–97%). Số người có CF hợp lệ ở cả M0 và M1 chỉ là 18, 24 và 21 ở ba seed, dưới ngưỡng 40, nên phần ECD của E4 không được diễn giải. Mọi CF hợp lệ dưới T-HTN đều giảm BMI hoặc vòng eo, và mức giảm thường lớn: BMI giảm trung bình 26–37% so với giá trị ban đầu, và 74–94% CF giảm BMI hơn 10% (tính trên các CF hợp lệ, vốn rất ít). Không CF hợp lệ nào thay đổi biến tiếp cận y tế, dù các biến này được phép tăng.
 
 &#91;embedded content: Hình 4 · NHANES 2015–2018 · results/confirmation/cf\_primary/seed\*/C1\_summary.csv · tỷ lệ có CF hợp lệ theo chế độ\]
 
@@ -288,18 +288,18 @@ Với ngân sách sàng lọc 30%, f\_self xếp 27,8% người G01 vào nhóm �
 
 ### 4.7 Phân tích độ nhạy
 
-**Bảng 5.** Phân tích độ nhạy cho E1, E3 và E6 (NHANES 2015–2018). Các phân tích này không dùng để kết luận về tiêu chí đánh giá. Ở tầng CF, phân tích độ nhạy chỉ chạy với seed 42, nên "đạt" nghĩa là thỏa điều kiện ở seed chính, không phải đạt và nhất quán về hướng. Số người trong ngoặc cho thấy E6 giữ được nhiều người hơn E3, vì E6 không đòi hỏi việc sinh CF có ràng buộc thành công.
+**Bảng 5.** Phân tích độ nhạy cho E1, E2 và E3 (NHANES 2015–2018). Các phân tích này không dùng để kết luận về tiêu chí đánh giá. Ở tầng CF, phân tích độ nhạy chỉ chạy với seed 42, nên "đạt" nghĩa là thỏa điều kiện ở seed chính, không phải đạt và nhất quán về hướng. Số người trong ngoặc cho thấy E2 giữ được nhiều người hơn E3, vì E2 không đòi hỏi việc sinh CF có ràng buộc thành công.
 
-| Phân tích | E1 | E3 | E6 |
+| Phân tích | E1 | E2 | E3 |
 | --- | --- | --- | --- |
 | Ngưỡng 130/80 mmHg | 0,019, đạt | — | — |
 | Nhãn tự khai (được báo ≥2 lần) | 0,017, đạt | — | — |
 | Từng chu kỳ 2015–2016 / 2017–2018 | 0,011 / 0,015, đạt | — | — |
 | f\_self so với f\_bp, nhóm không dùng thuốc | −0,003, **không đạt** | — | — |
-| Hồi quy logistic | 0,008, đạt | đạt (88 người) | 0,085 (191 người) |
-| DiCE genetic | — | đạt (177 người) | 0,105 (192 người) |
-| Tập bệnh nhân có kiểu hình dương tính | — | đạt (104 người) | 0,033 (109 người) |
-| Tính trên mọi CF | — | **không đạt** | — |
+| Hồi quy logistic | 0,008, đạt | 0,085 (191 người) | đạt (88 người) |
+| DiCE genetic | — | 0,105 (192 người) | đạt (177 người) |
+| Tập bệnh nhân có kiểu hình dương tính | — | 0,033 (109 người) | đạt (104 người) |
+| Tính trên mọi CF | — | — | **không đạt** |
 
 M2-phys (chỉ cố định nhóm sinh lý) làm A tăng từ 0,137 lên 0,191 trên 89 người chung, trong khi M2 làm A giảm. Trên cùng 89 người này, hiệu số A(M0) − A(M2) là 0,032 \[0,003; 0,062\], nên kết quả ủng hộ tính đặc hiệu tương đối của M2; tuy vậy, hai cách cố định khác nhau về số biến và vai trò dự đoán. Với M3, chỉ 0,5% (f\_self) và 0% (f\_clin) bệnh nhân có CF hợp lệ. Trong hồi quy logistic, không có cặp hệ số nào trái dấu rõ rệt giữa hai nhãn; khác biệt chủ yếu nằm ở độ lớn (ví dụ, hệ số của số lần đi khám là 0,21 so với 0,10).
 
@@ -311,7 +311,7 @@ Với DiCE genetic, A giảm từ 0,242 (M0) xuống 0,169 (M2), tức giảm 30
 
 Hai mô hình có hiệu năng gần nhau vẫn có thể dựa vào những yếu tố khác nhau và sinh ra những CF khác nhau, chỉ vì nhãn được tạo ra theo cách khác. Bản thân điều này không có gì bất ngờ. Đóng góp của bài nằm ở việc tách bạch ba đại lượng mà các nghiên cứu ứng dụng AI giải thích được (XAI) dễ đánh đồng.
 
-1. **Phụ thuộc ở tầng mô hình khác với đóng góp trong CF.** E1 đo mức mô hình dựa vào nhóm tiếp cận y tế trên toàn bộ dữ liệu; E6 đo đóng góp của những thay đổi thuộc nhóm biến liên quan đến chẩn đoán (gồm tiếp cận y tế, chẩn đoán bệnh khác và SRH) trong các CF cụ thể. Hai đại lượng liên quan với nhau nhưng không cùng nhóm biến và không cùng estimand. Một nhóm biến quan trọng với mô hình có thể ít xuất hiện trong CF, và ngược lại. Trong nghiên cứu này, hai đại lượng cùng chiều (mô hình học nhãn tự khai dựa vào tiếp cận y tế nhiều hơn, và nhóm biến liên quan đến chẩn đoán đóng góp vào khác biệt phản ứng), nhưng bài không kiểm định trực tiếp sự khác nhau giữa chúng; đây là phân biệt về mặt khái niệm, có ý nghĩa cho việc thiết kế quy trình kiểm định. Mức phụ thuộc ở tầng mô hình cũng có giới hạn: nó không lặp lại khi so với nhãn chỉ dựa trên huyết áp đo ở nhóm không dùng thuốc.
+1. **Phụ thuộc ở tầng mô hình khác với đóng góp trong CF.** E1 đo mức mô hình dựa vào nhóm tiếp cận y tế trên toàn bộ dữ liệu; E2 đo đóng góp của những thay đổi thuộc nhóm biến liên quan đến chẩn đoán (gồm tiếp cận y tế, chẩn đoán bệnh khác và SRH) trong các CF cụ thể. Hai đại lượng liên quan với nhau nhưng không cùng nhóm biến và không cùng estimand. Một nhóm biến quan trọng với mô hình có thể ít xuất hiện trong CF, và ngược lại. Trong nghiên cứu này, hai đại lượng cùng chiều (mô hình học nhãn tự khai dựa vào tiếp cận y tế nhiều hơn, và nhóm biến liên quan đến chẩn đoán đóng góp vào khác biệt phản ứng), nhưng bài không kiểm định trực tiếp sự khác nhau giữa chúng; đây là phân biệt về mặt khái niệm, có ý nghĩa cho việc thiết kế quy trình kiểm định. Mức phụ thuộc ở tầng mô hình cũng có giới hạn: nó không lặp lại khi so với nhãn chỉ dựa trên huyết áp đo ở nhóm không dùng thuốc.
 2. **Đóng góp khác với khắc phục.** Đây là phát hiện chính (mục 5.2).
 3. **Hợp lý chưa chắc còn tìm được CF.** Một taxonomy dựa trên hướng dẫn điều trị chặn được các đề xuất ngược chiều, nhưng gần như không còn CF hợp lệ (mục 5.3).
 
@@ -340,11 +340,11 @@ Kết quả phù hợp với giả thuyết về biến đại diện (proxy) c�
 
 - **Dữ liệu và nhãn:** thiết kế cắt ngang; Y\_self phản ánh việc đã từng được chẩn đoán trong quá khứ, còn Y\_clin là huyết áp tại thời điểm khảo sát hoặc việc đang dùng thuốc. Khác biệt giữa hai nhãn vì vậy bao gồm cả cách ghi nhận lẫn khung thời gian của kết cục, không thể quy riêng cho tiếp cận y tế. Không có nhãn "sự thật".
 - **Khả năng khái quát:** chỉ một bệnh và một nguồn dữ liệu của Mỹ; các mô hình là phương tiện thực nghiệm, chưa được đánh giá về lợi ích lâm sàng. Áp dụng cho các bệnh khác có hai nhãn (ví dụ tiểu đường tự khai so với HbA1c) là hướng kiểm chứng tiếp theo.
-- **Nhóm không dùng thuốc:** khi so với nhãn chỉ dựa trên huyết áp đo, E1 không lặp lại ở cả hai giai đoạn; kết quả phụ thuộc vào quần thể và cách định nghĩa kiểu hình.
+- **Nhóm không dùng thuốc:** khi so với nhãn chỉ dựa trên huyết áp đo, E1 không lặp lại ở giai đoạn 2015–2018; kết quả phụ thuộc vào quần thể và cách định nghĩa kiểu hình.
 - **Độ ổn định:** E3 nhạy với seed và cách chọn CF; ở giai đoạn 2015–2018, E3 chỉ nhất quán về hướng chứ không có cận dưới dương ở seed phụ; ở seed 43 và 44, cận dưới của A(M0) − A(M2) âm dù ước lượng điểm dương; trên dữ liệu 2011–2014, E3 không đạt. E5 đạt ở phân tích gộp nhưng không đạt khi tách từng chu kỳ. Như mọi nghiên cứu học máy, kết quả có thể thay đổi nhẹ giữa các môi trường tính toán do sai số số học và tính ngẫu nhiên của thuật toán sinh CF.
 - **Suy luận ở tầng CF:** kết luận có điều kiện theo tập người được chọn, các CF hợp lệ và các mô hình đã huấn luyện. Chỉ một mô hình phụ cho mỗi nhãn là đối chứng có giới hạn; ba seed không phải ba lần xác nhận độc lập. Việc quy về bách phân vị không loại bỏ hết khác biệt về độ nhạy giữa hai mô hình.
 - **Phương pháp:** các mô hình không dùng trọng số khảo sát. Taxonomy và các giới hạn biên độ chưa được chuyên gia thẩm định và không biểu diễn được các khuyến nghị về natri, kali, chế độ ăn DASH và quản lý căng thẳng, vì các yếu tố này không có trong tập biến; CF không phải lời khuyên y khoa. Nghiên cứu không được đăng ký.
-- **Tiêu chí phụ và phân tích bổ sung:** E6 được thêm vào trong giai đoạn phát hiện, sau khi E3 không đạt ở một lần chạy thử; định nghĩa và vai trò của E6 được xác định trước khi tính trên dữ liệu 2015–2018. I là phân tích mô tả bổ sung; bài không thêm kiểm định hay tiêu chí mới.
+- **Tiêu chí phụ và phân tích bổ sung:** E2 được thêm vào trong giai đoạn phát hiện, sau khi E3 không đạt ở một lần chạy thử; định nghĩa và vai trò của E2 được xác định trước khi tính trên dữ liệu 2015–2018. I là phân tích mô tả bổ sung; bài không thêm kiểm định hay tiêu chí mới.
 
 **Tóm tắt phạm vi kết luận.** Bảng A1 (Phụ lục) liệt kê những gì bài khẳng định và không khẳng định, để người đọc và người phản biện tiện tra cứu.
 
@@ -400,14 +400,14 @@ Phụ lục gồm: định nghĩa đầy đủ các đại lượng ở tầng C
 | --- | --- |
 | Mô hình học nhãn tự khai dựa vào biến tiếp cận y tế nhiều hơn mô hình học kiểu hình, trên NHANES với các định nghĩa đã nêu | Tiếp cận y tế là nguyên nhân gây tăng huyết áp, hoặc mô hình "sai" theo nghĩa nhân quả |
 | Mô hình đối chứng nhiễu nhãn theo lớp không tạo ra được mức phụ thuộc đó | Mọi cơ chế nhiễu nhãn đều đã bị loại trừ |
-| Trong các CF đã sinh, thay đổi ở nhóm biến liên quan đến chẩn đoán góp phần vào khác biệt giữa hai mô hình (đóng góp phụ thuộc mô hình) | E6 là quy kết nhân quả, hay đã xác định được tỷ lệ "lối tắt" (shortcut) |
+| Trong các CF đã sinh, thay đổi ở nhóm biến liên quan đến chẩn đoán góp phần vào khác biệt giữa hai mô hình (đóng góp phụ thuộc mô hình) | E2 là quy kết nhân quả, hay đã xác định được tỷ lệ "lối tắt" (shortcut) |
 | Cấm nhóm biến đó khi sinh CF có tác động không ổn định lên bất đối xứng (chỉ giảm một phần ở 2015–2018) | Kết quả này đúng với mọi thuật toán sinh CF hoặc mọi bộ dữ liệu |
 | Với DiCE, taxonomy dựa trên hướng dẫn để lại CF hợp lệ cho rất ít người | Không tồn tại thay đổi nào làm mô hình đổi kết luận; taxonomy đã được thẩm định lâm sàng |
 | Kiểm định bằng hai nhãn là khả thi trên dữ liệu công khai | CF trong nghiên cứu là lời khuyên y khoa hay đã được bác sĩ thẩm định |
 
-**Bảng A2.** Các thành phần của A trên tập S\*, tính theo bệnh nhân (mô tả): ECD của hai mô hình, A = ECD\_self − ECD\_clin và lợi thế cùng nhãn I = ECD\_self + ECD\_clin.
+**Bảng A2.** Các thành phần của A trên tập S02, tính theo bệnh nhân (mô tả): ECD của hai mô hình, A = ECD\_self − ECD\_clin và lợi thế cùng nhãn I = ECD\_self + ECD\_clin.
 
-| Seed | Chế độ | n (S\*) | ECD\_self | ECD\_clin | A | I |
+| Seed | Chế độ | n (S02) | ECD\_self | ECD\_clin | A | I |
 | --- | --- | --- | --- | --- | --- | --- |
 | 42 | M0 | 172 | 0,089 | −0,031 | 0,120 | 0,058 |
 | 42 | M2 | 172 | 0,070 | −0,018 | 0,087 | 0,052 |
@@ -429,7 +429,7 @@ Phụ lục gồm: định nghĩa đầy đủ các đại lượng ở tầng C
 | f\_clin | M1 | 27 | 0,126 | 0,256 | 0,130 |
 | f\_clin | M2 | 851 | 0,221 | 0,205 | −0,016 |
 
-*Lấy trung bình trên mọi CF hợp lệ (đơn vị là CF, không lấy trung bình theo bệnh nhân trước) và trên mọi người có CF hợp lệ ở từng chế độ, nên khác với Bảng A2 và với ECD trong bài (tính theo bệnh nhân, trên tập S\*). Cột cuối là ECD tính theo CF. Nguồn: results/confirmation/cf\_primary/seed42/C7\_transfer\_by\_channel.csv, gộp hai tập con theo số CF. Dòng M1 dựa trên rất ít CF.*
+*Lấy trung bình trên mọi CF hợp lệ (đơn vị là CF, không lấy trung bình theo bệnh nhân trước) và trên mọi người có CF hợp lệ ở từng chế độ, nên khác với Bảng A2 và với ECD trong bài (tính theo bệnh nhân, trên tập S02). Cột cuối là ECD tính theo CF. Nguồn: results/confirmation/cf\_primary/seed42/C7\_transfer\_by\_channel.csv, gộp hai tập con theo số CF. Dòng M1 dựa trên rất ít CF.*
 
 **Bảng A4.** Taxonomy T-HTN (chế độ M1): quy tắc và căn cứ. Mã nguồn gốc: G khuyến nghị trực tiếp; P chuyển khuyến nghị thành quy tắc trên biến NHANES; S ràng buộc theo ngữ nghĩa dữ liệu; D giả định thiết kế.
 
@@ -446,18 +446,18 @@ Phụ lục gồm: định nghĩa đầy đủ các đại lượng ở tầng C
 
 *Mã I: biến bất biến (tuổi, giới, chủng tộc/dân tộc). Mọi khoảng còn bị giới hạn trong miền giá trị của tập huấn luyện. Biến bị thiếu dữ liệu rồi được điền thay được cố định cho người đó, chỉ ở M1 và M3. M3 thêm giới hạn BMI và vòng eo giảm tối đa 5% (cận dưới max(T; 0,95x)); mức 5% cho BMI dựa trên mục tiêu giảm cân tối thiểu của hướng dẫn, còn mức 5% cho vòng eo là giả định thiết kế (D). Giới hạn: ngưỡng BMI 23/25 là ngưỡng vận hành lấy từ ranh giới phân loại, không phải mục tiêu điều trị; ngưỡng vòng eo 102/88 cm là ngưỡng xác định béo bụng theo chuẩn Mỹ, áp dụng chung cho mọi nhóm dân số, khác với ngưỡng BMI theo nhóm dân số; quy tắc cho ALQ130 không mô phỏng việc bỏ rượu hoàn toàn; biến vận động là nhị phân nên 0 → 1 không có nghĩa là đạt liều vận động khuyến nghị; BMI và vòng eo được thay đổi độc lập nên không bảo đảm nhất quán sinh lý; tiền sử gia đình, natri, kali, chế độ ăn DASH và quản lý căng thẳng không có trong tập biến.*
 
-**Bảng A5.** Tóm tắt các tiêu chí trên hai giai đoạn dữ liệu (cùng mã nguồn và cùng lần chạy). Giai đoạn 2011–2014 được dùng để xây dựng quy trình, kể cả E6, nên kết quả ở giai đoạn này không phải đánh giá độc lập.
+**Bảng A5.** Tóm tắt các tiêu chí trên hai giai đoạn dữ liệu (cùng mã nguồn và cùng lần chạy). Giai đoạn 2011–2014 được dùng để xây dựng quy trình, kể cả E2, nên kết quả ở giai đoạn này không phải đánh giá độc lập.
 
 | Tiêu chí | 2011–2014 (n = 10.311) | 2015–2018 (n = 10.151) |
 | --- | --- | --- |
 | E1: chênh lệch mức giảm AUC khi hoán vị nhóm biến tiếp cận y tế | 0,015 [0,009; 0,022]; đạt | 0,014 [0,008; 0,019]; đạt |
+| E2 (cận dưới), seed 42/43/44 | 0,042 (0,035) / 0,036 (0,031) / 0,035 (0,027); đạt | 0,043 (0,037) / 0,044 (0,037) / 0,058 (0,049); đạt |
 | E3 (seed 42): A(M0); A(M2); cận dưới của A(M0) + A(M2) | 0,040; −0,032; −0,028; không đạt | 0,120; 0,087; 0,160; đạt |
 | E3, seed 43 và 44: A(M2) | −0,037; 0,045 | 0,044; 0,165 |
 | E4: tỷ lệ có CF hợp lệ ở M1, f\_self (seed 42/43/44) | 18,0 / 8,5 / 12,5%; n chung 36 / 17 / 25 | 9,0 / 12,0 / 10,5%; n chung 18 / 24 / 21 |
 | E4: ECD\_self(M0) − ECD\_self(M1) | không đủ điều kiện diễn giải (n < 40) | không đủ điều kiện diễn giải (n < 40); giá trị thô 0,025 / 0,029 / 0,008 |
-| E6 (cận dưới), seed 42/43/44 | 0,042 (0,035) / 0,036 (0,031) / 0,035 (0,027); đạt | 0,043 (0,037) / 0,044 (0,037) / 0,058 (0,049); đạt |
 
-*E3 và E6 được tính trên hai tập người khác nhau (S\* và S\_M0), nên so sánh độ ổn định giữa hai tiêu chí chỉ mang tính mô tả. Nguồn: results/discovery và results/confirmation.*
+*E3 và E2 được tính trên hai tập người khác nhau (S02 và S0), nên so sánh độ ổn định giữa hai tiêu chí chỉ mang tính mô tả. Nguồn: results/discovery và results/confirmation.*
 
 **Định nghĩa đầy đủ.** Với bệnh nhân i trong tập phân tích S, gọi K\_i,s là số CF hợp lệ sinh từ mô hình s, và Δ\_m(x′) = F\_m(g\_m(x\_i)) − F\_m(g\_m(x′)) là mức giảm bách phân vị trên mô hình phụ g\_m (s̄ là nhãn còn lại). Khi đó:
 
@@ -465,21 +465,21 @@ Phụ lục gồm: định nghĩa đầy đủ các đại lượng ở tầng C
 \mathrm{ECD}_s = \frac{1}{|S|}\sum_{i \in S} \frac{1}{K_{i,s}} \sum_{j=1}^{K_{i,s}} \left[ \Delta_{s}(x'_{ij}) - \Delta_{\bar{s}}(x'_{ij}) \right]
 ```
 
-Với E6, C\_m = F\_m(g\_m(x′\_abl)) − F\_m(g\_m(x′)) = Δ\_m(x′) − Δ\_m(x′\_abl), và:
+Với E2, C\_m = F\_m(g\_m(x′\_abl)) − F\_m(g\_m(x′)) = Δ\_m(x′) − Δ\_m(x′\_abl), và:
 
 ```latex
 D_i^{(s)} = \frac{1}{K_{i,s}} \sum_{j=1}^{K_{i,s}} \left( C_{\mathrm{self}} - C_{\mathrm{clin}} \right)
 \qquad
-\mathrm{E6} = \frac{1}{2|S_{M0}|} \sum_{i \in S_{M0}} \left( D_i^{(\mathrm{self})} + D_i^{(\mathrm{clin})} \right)
+\mathrm{E2} = \frac{1}{2|S_0|} \sum_{i \in S_0} \left( D_i^{(\mathrm{self})} + D_i^{(\mathrm{clin})} \right)
 ```
 
-Vì C\_m = Δ\_m(x′) − Δ\_m(x′\_abl) trên cùng bệnh nhân và cùng CF, khi lấy trung bình như trên ta có A(M0) − A\_abl = 2·E6, như đẳng thức ở mục 3.6.
+Vì C\_m = Δ\_m(x′) − Δ\_m(x′\_abl) trên cùng bệnh nhân và cùng CF, khi lấy trung bình như trên ta có A(M0) − A\_abl = 2·E2, như đẳng thức ở mục 3.6.
 
 ### References
 
 *Đánh số theo thứ tự xuất hiện trong bài, định dạng Elsevier như bài Thieu. 40 tài liệu, đã tra lại ngày 26/11/2026; các tài liệu đánh dấu (T) lấy nguyên từ danh mục tham khảo của Thieu \[11\]. Chỗ ghi \[kiểm tra\] là thông tin chưa tìm được nguồn xác nhận (trang hoặc DOI), cần bổ sung trước khi nộp.*
 
-1. S. Wachter, B. Mittelstadt, C. Russell, Counterfactual explanations without opening the black box: automated decisions and the GDPR, Harv. J. Law Technol. 31 (2) (2017) 841–887, https://doi.org/10.2139/ssrn.3063289 (T)
+1. S. Wachter, B. Mittelstadt, C. Russell, Counterfactual explanations without opening the black box: automated decisions and the GDPR, Harv. J. Law Technol. 31 (2) (2018) 841–887, https://doi.org/10.2139/ssrn.3063289 (T)
 2. R.K. Mothilal, A. Sharma, C. Tan, Explaining machine learning classifiers through diverse counterfactual explanations, in: Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency (FAT\*), 2020, pp. 607–617, https://doi.org/10.1145/3351095.3372850 (T)
 3. R.T. Sutton, D. Pincock, D.C. Baumgart, D.C. Sadowski, R.N. Fedorak, K.I. Kroeker, An overview of clinical decision support systems: benefits, risks, and strategies for success, NPJ Digit. Med. 3 (2020) 17, https://doi.org/10.1038/s41746-020-0221-y (T)
 4. P.K. Whelton, R.M. Carey, W.S. Aronow, et al., 2017 ACC/AHA/AAPA/ABC/ACPM/AGS/APhA/ASH/ASPC/NMA/PCNA guideline for the prevention, detection, evaluation, and management of high blood pressure in adults, Hypertension 71 (6) (2018) e13–e115, https://doi.org/10.1161/HYP.0000000000000065
@@ -488,7 +488,7 @@ Vì C\_m = Δ\_m(x′) − Δ\_m(x′\_abl) trên cùng bệnh nhân và cùng C
 7. Z. Obermeyer, B. Powers, C. Vogeli, S. Mullainathan, Dissecting racial bias in an algorithm used to manage the health of populations, Science 366 (6464) (2019) 447–453, https://doi.org/10.1126/science.aax2342 (T)
 8. T. Chang, M.W. Sjoding, J. Wiens, Disparate censorship & undertesting: a source of label bias in clinical machine learning, in: Proceedings of the 7th Machine Learning for Healthcare Conference, PMLR 182, 2022, pp. 343–390
 9. V. Thieu, Knowledge-guided counterfactual explanations for diabetes risk decision support: a directional intervention taxonomy, Int. J. Med. Inform. 219 (2026) 106555, https://doi.org/10.1016/j.ijmedinf.2026.106555
-10. M. Cerrato, O. Sahlgren, X. Heilmann, Taking the whys seriously: limitations of counterfactual explanations in justification and recourse, arXiv preprint arXiv:2608.30956, 2026
+10. M. Cerrato, O. Sahlgren, X. Heilmann, Taking the whys seriously: limitations of counterfactual explanations in justification and recourse, arXiv preprint arXiv:2608.30956, 2026, https://doi.org/10.48550/arXiv.2608.30956
 11. M. Zanger-Tishler, J. Nyarko, S. Goel, Risk scores, label bias, and everything but the kitchen sink, Sci. Adv. 10 (13) (2024) eadi8411, https://doi.org/10.1126/sciadv.adi8411
 12. R. Guidotti, Counterfactual explanations and how to find them: literature review and benchmarking, Data Min. Knowl. Discov. 38 (5) (2024) 2770–2824, https://doi.org/10.1007/s10618-022-00831-6 (T)
 13. A.-H. Karimi, G. Barthe, B. Schölkopf, I. Valera, A survey of algorithmic recourse: contrastive explanations and consequential recommendations, ACM Comput. Surv. 55 (5) (2022) Article 95, https://doi.org/10.1145/3527848 (T)
@@ -498,7 +498,7 @@ Vì C\_m = Δ\_m(x′) − Δ\_m(x′\_abl) trên cùng bệnh nhân và cùng C
 17. B. Turbal, I. Voitsitska, L. Semenova, ElliCE: efficient and provably robust algorithmic recourse via the Rashomon sets, in: Advances in Neural Information Processing Systems 38 (NeurIPS 2025), 2025, https://doi.org/10.52202/085713-4128
 18. J. Jiang, F. Leofante, A. Rago, F. Toni, Robust counterfactual explanations in machine learning: a survey, in: Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence (IJCAI-24), Survey Track, 2024, pp. 8086–8094, https://doi.org/10.24963/ijcai.2024/894
 19. M. Pawelczyk, S. Bielawski, J. van den Heuvel, T. Richter, G. Kasneci, CARLA: a Python library to benchmark algorithmic recourse and counterfactual explanation algorithms, in: Proceedings of the NeurIPS 2021 Datasets and Benchmarks Track, 2021, arXiv:2108.00783 (T)
-20. S. Bobek, Ł. Bałec, G.J. Nalepa, Actionable and diverse counterfactual explanations incorporating domain knowledge and causal constraints, arXiv preprint arXiv:2511.20236, 2025
+20. S. Bobek, Ł. Bałec, G.J. Nalepa, Actionable and diverse counterfactual explanations incorporating domain knowledge and plausibility constraints, arXiv preprint arXiv:2511.20236v3, 2026, https://doi.org/10.48550/arXiv.2511.20236
 21. R. Poyiadzi, K. Sokol, R. Santos-Rodriguez, T. De Bie, P. Flach, FACE: feasible and actionable counterfactual explanations, in: Proceedings of the 2020 AAAI/ACM Conference on AI, Ethics, and Society (AIES ’20), 2020, pp. 344–350, https://doi.org/10.1145/3375627.3375850 (T)
 22. A. Raikovskaia, N. Rakhimzhanov, O.S. Pianykh, Interpretation drift in explainable AI under label noise, Sci. Rep. 16 (2026) 8528, https://doi.org/10.1038/s41598-026-37070-4
 23. Q. Au, J. Herbinger, C. Stachl, B. Bischl, G. Casalicchio, Grouped feature importance and combined features effect plot, Data Min. Knowl. Discov. 36 (4) (2022) 1401–1450, https://doi.org/10.1007/s10618-022-00840-5
@@ -526,12 +526,12 @@ Vì C\_m = Δ\_m(x′) − Δ\_m(x′\_abl) trên cùng bệnh nhân và cùng C
 | --- | --- | --- |
 | Hình 1 | Sơ đồ thiết kế: hai nhãn, ba tầng kiểm tra, hai giai đoạn | Đã có, mục 3.1 |
 | Hình 2 | Độ quan trọng theo nhóm biến của ba mô hình (E1) | Đã có, mục 4.2 |
-| Hình 3 | A(M0), A sau ablation và A(M2) trên S\*, ba seed (E3, E6) | Đã có, mục 4.4 |
+| Hình 3 | A(M0), A sau ablation và A(M2) trên S02, ba seed (E3, E2) | Đã có, mục 4.4 |
 | Hình 4 | Tỷ lệ có CF hợp lệ theo chế độ M0, M2, M1 (T-HTN) | Đã có, mục 4.5 |
 | Bảng 1 | Cỡ mẫu và hồ sơ tiếp cận y tế theo nhóm G | Đã có, mục 4.1; đầy đủ (T1c) |
 | Bảng 2 | Định nghĩa endpoint | Đã có, mục 3.6 |
 | Bảng 3 | Tổng hợp các endpoint | Đã có, đầu mục 4 |
-| Bảng 4 | E6 theo từng nhóm biến | Đã có, mục 4.3 |
+| Bảng 4 | E2 theo từng nhóm biến | Đã có, mục 4.3 |
 | Bảng 5 | Phân tích độ nhạy | Đã có, mục 4.7 |
 | Bảng A1 | Phạm vi khẳng định | Đã có, Phụ lục |
 | Phụ lục | Kết quả giai đoạn phát hiện, M2-phys, M3, taxonomy T-HTN (Bảng A4), TRIPOD+AI checklist | Cần soạn |

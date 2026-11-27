@@ -73,7 +73,7 @@ def table_tex(num, caption, rows, note):
 
 FIGS = {
     "1": ("fig1.png", r"0.66\textwidth", "figure*",
-          "Thiết kế quy trình kiểm định nhãn kép (PLCA). Hai mô hình chỉ khác nhau ở nhãn. Ở tầng CF, mỗi CF được đưa vào cả hai mô hình phụ để tính điểm, tạo thành ma trận 2 × 2 cùng nhãn – khác nhãn (ô tô đậm là cùng nhãn). E6 phân tích đóng góp trên các CF đã sinh; E3 đánh giá việc sinh CF mới khi cấm thay đổi nhóm biến."),
+          "Thiết kế quy trình kiểm định nhãn kép (PLCA). Hai mô hình chỉ khác nhau ở nhãn. Ở tầng CF, mỗi CF được đưa vào cả hai mô hình phụ để tính điểm, tạo thành ma trận 2 × 2 cùng nhãn – khác nhãn (ô tô đậm là cùng nhãn). E2 phân tích đóng góp trên các CF đã sinh; E3 đánh giá việc sinh CF mới khi cấm thay đổi nhóm biến."),
     "2": ("fig2.png", r"\columnwidth", "figure",
           "Mức giảm AUC khi hoán vị từng nhóm biến ở ba mô hình (NHANES 2015–2018, seed 42, bootstrap hai tầng B = 100). "
           "Chấm là ước lượng điểm, vạch là khoảng 95\\%. Không vẽ nhóm nhân khẩu học (f\\_self 0,103; f\\_clin 0,211)."),
