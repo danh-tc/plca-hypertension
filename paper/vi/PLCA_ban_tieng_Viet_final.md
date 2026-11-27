@@ -299,7 +299,7 @@ Cách đọc chính xác là **A/2 bằng chênh lệch giữa mức giảm đi�
 
 Dấu của A và độ lớn |A| mang ý nghĩa khác nhau. Dấu cho biết mô hình nào có mức giảm điểm lớn hơn. Độ lớn cho biết hai mức giảm cách nhau bao xa. A đổi dấu chưa chắc đồng nghĩa với chênh lệch tăng. Ví dụ A giảm từ 0,040 xuống −0,032 thì mô hình có mức giảm điểm lớn hơn đã thay đổi, nhưng |A| vẫn giảm khoảng 20%.
 
-Phụ lục A2 báo cáo thêm một đại lượng mô tả, I = ECD_self + ECD_clin, cho biết xét chung hai nguồn CF thì mức giảm điểm trên mô hình phụ cùng nhãn lớn hơn trên mô hình phụ khác nhãn bao nhiêu. I không phải tiêu chí đánh giá. A bằng 0 không có nghĩa là CF giống nhau, CF tốt, hay hai nhãn không còn khác biệt.
+Phụ lục A2 báo cáo thêm một đại lượng mô tả, I = ECD_self + ECD_clin. Tương tự A, I/2 là chênh lệch trung bình giữa mức giảm điểm trên mô hình phụ cùng nhãn và trên mô hình phụ khác nhãn, khi CF từ hai nguồn được tính với trọng số bằng nhau. I không phải tiêu chí đánh giá. A bằng 0 không có nghĩa là CF giống nhau, CF tốt, hay hai nhãn không còn khác biệt.
 
 Các đại lượng trên chỉ đo thay đổi điểm của mô hình trên thang thứ hạng. Chúng không đo mức thay đổi nguy cơ tăng huyết áp thật. Do nghiên cứu chỉ dùng một mô hình phụ cho mỗi nhãn, vẫn có thể có kết quả khác nếu huấn luyện những mô hình tương đương khác. Phụ lục A trình bày công thức chi tiết cho từng CF.
 
@@ -308,7 +308,7 @@ Các đại lượng trên chỉ đo thay đổi điểm của mô hình trên t
 Không phải người được chọn nào cũng có CF hợp lệ từ cả hai mô hình ở mọi chế độ. Vì vậy, nghiên cứu xác định riêng tập người cho từng phép phân tích:
 
 - S0: những người có ít nhất một CF hợp lệ từ cả f_self và f_clin ở M0. Đây là tập chính để tính E2.
-- S02: những người có CF hợp lệ từ cả hai mô hình ở cả M0 và M2 (giao của S0 và S_M2). Đây là tập để tính E3. Khi đối chiếu mức giảm |A| do ablation với mức giảm |A| do giữ nguyên nhóm biến, E2 cũng được tính lại trên chính S02.
+- S02: những người có CF hợp lệ từ cả hai mô hình ở cả M0 và M2 (tức là những người trong S0 cũng có CF hợp lệ từ cả hai mô hình ở M2). Đây là tập để tính E3. Khi đối chiếu mức giảm |A| do ablation với mức giảm |A| do giữ nguyên nhóm biến, E2 cũng được tính lại trên chính S02.
 - Đối với phần ECD của E4: những người có CF hợp lệ từ f_self ở cả M0 và M1. Tỷ lệ tìm được CF được báo cáo riêng theo từng mô hình sinh và chế độ.
 
 Dùng tập chung trong một phép so sánh giúp tránh thay đổi danh sách người giữa hai chế độ. Tuy nhiên, kết quả vẫn chỉ áp dụng cho nhóm người có CF hợp lệ cần thiết, không đại diện tự động cho toàn bộ 200 người được chọn hoặc dân số NHANES.
@@ -367,7 +367,7 @@ $$A(M0)>0\quad\text{và}\quad |A(M2)|<|A(M0)|.$$
 
 **E3.** Nghiên cứu lấy mẫu lại theo người tham gia 5.000 lần. Mỗi điều kiện sử dụng cận dưới một phía là phân vị 2,5% của phân bố bootstrap, tương ứng mức α = 0,025 một phía. Kiểm định giao–hợp (intersection–union test) yêu cầu cả ba điều kiện cùng đạt; chỉ một điều kiện không đạt thì E3 không đạt. Phép phân tích yêu cầu ít nhất 80 người đủ điều kiện sinh CF và ít nhất 40 người trong S02. Các khoảng bootstrap chỉ phản ánh biến thiên trong tập người có CF hợp lệ, với các mô hình đã huấn luyện; chúng không bảo đảm kiểm soát chính xác sai số của toàn bộ quy trình chọn người, huấn luyện và sinh CF.
 
-**E4.** Đây là phân tích mô tả, không thực hiện kiểm định giả thuyết. Báo cáo tỷ lệ người có CF hợp lệ ở M1 và M0, cùng các thay đổi trong những CF hợp lệ. Chỉ diễn giải ECD_self(M0) − ECD_self(M1) khi ít nhất 40 người có CF hợp lệ do f_self sinh ở cả M0 và M1. Nếu không đủ 40 người, không dùng giá trị ECD này để kết luận hiệu quả của bộ quy tắc theo hướng dẫn; Bảng A5 ghi giá trị tính được để đối chiếu.
+**E4.** Đây là phân tích mô tả, không thực hiện kiểm định giả thuyết. Báo cáo tỷ lệ người có CF hợp lệ ở M1 và M0, cùng các thay đổi trong những CF hợp lệ. Chỉ diễn giải ECD_self(M0) − ECD_self(M1) khi ít nhất 40 người có CF hợp lệ do f_self sinh ở cả M0 và M1. Ngưỡng 40 người (và 80 người đủ điều kiện sinh CF) là lựa chọn thiết kế, dùng chung cho E2, E3 và E4, nhằm tránh diễn giải trên mẫu quá nhỏ. Nếu không đủ 40 người, không dùng giá trị ECD này để kết luận hiệu quả của bộ quy tắc theo hướng dẫn; Bảng A5 ghi giá trị tính được để đối chiếu.
 
 **Các seed.** E2, E3 và E4 được chạy ở seed 42, 43 và 44. Seed 42 là seed chính. Với E2 và E3, seed chính phải thỏa điều kiện đã nêu; các seed 43 và 44 phải có ước lượng điểm cùng hướng theo giả thuyết (với E3, cả ba thành phần đều phải dương). Điều kiện này chỉ đánh giá tính nhất quán về dấu, không yêu cầu mọi cận dưới ở seed phụ đều dương. Nếu seed phụ không đủ mẫu, ghi rõ không đánh giá được độ ổn định. Không xem ba seed là ba lần kiểm chứng độc lập. Phân tích độ nhạy chỉ dùng seed 42.
 

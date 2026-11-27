@@ -42,8 +42,8 @@ Medication status is tri-state (yes / no incl. structural skips / unknown → ex
 |---|---|---|
 | E1 | Do the two models rely differently on access-to-care features? | primary |
 | E2 | Contribution of diagnosis-related features in generated CFs (paired ablation); named `E6` in code and result files | secondary |
-| E3 | Does locking diagnosis-related features (M2) remove the response asymmetry? | primary |
-| E4 | Is recourse still feasible under the guideline-informed taxonomy (M1, T-HTN)? Coverage M1 vs M0; ECD_self(M0) − ECD_self(M1) when ≥ 40 common patients | descriptive |
+| E3 | Does locking diagnosis-related features (M2) reduce the response gap? | primary |
+| E4 | Can valid CFs still be found under the guideline-based rules (M1, code name T-HTN)? Coverage M1 vs M0; ECD_self(M0) − ECD_self(M1) when ≥ 40 common patients | descriptive |
 | E5 | Screening consequence (top-30% McNemar) | secondary |
 
 Naming: `S0` (paper) = `S_M0` (code), `S02` (paper) = `S_star` (code); the paper calls T-HTN the "guideline-based rules" (mode M1).
