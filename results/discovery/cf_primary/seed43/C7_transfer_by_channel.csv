@@ -1,0 +1,17 @@
+definition,source,mode,subset,n_cfs,n_patients,dr_within_alt,dr_cross_alt,flip_cross_alt_pct
+channel_directional,f_clin,M0_global,no_channel,593,180,0.2216,0.1468,41.6526
+channel_directional,f_clin,M0_global,uses_channel,182,105,0.2302,0.3037,71.4286
+channel_directional,f_clin,M1_taxonomy,no_channel,48,11,0.167,0.1138,14.5833
+channel_directional,f_clin,M2_locked,no_channel,913,195,0.2274,0.1621,42.8258
+channel_directional,f_self,M0_global,no_channel,242,105,0.2039,0.1934,58.2645
+channel_directional,f_self,M0_global,uses_channel,480,176,0.2676,0.1515,25.8333
+channel_directional,f_self,M1_taxonomy,no_channel,73,17,0.159,0.1393,31.5068
+channel_directional,f_self,M2_locked,no_channel,716,159,0.2231,0.1996,53.9106
+channel_any_change,f_clin,M0_global,no_channel,527,175,0.2224,0.1496,42.8843
+channel_any_change,f_clin,M0_global,uses_channel,248,135,0.2261,0.2561,60.8871
+channel_any_change,f_clin,M1_taxonomy,no_channel,48,11,0.167,0.1138,14.5833
+channel_any_change,f_clin,M2_locked,no_channel,913,195,0.2274,0.1621,42.8258
+channel_any_change,f_self,M0_global,no_channel,229,102,0.203,0.1933,56.7686
+channel_any_change,f_self,M0_global,uses_channel,493,181,0.2663,0.1526,27.3834
+channel_any_change,f_self,M1_taxonomy,no_channel,73,17,0.159,0.1393,31.5068
+channel_any_change,f_self,M2_locked,no_channel,716,159,0.2231,0.1996,53.9106

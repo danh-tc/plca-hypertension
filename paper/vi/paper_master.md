@@ -232,7 +232,7 @@ Trên dữ liệu 2015–2018 (Bảng 3), E1 đạt (bootstrap hai tầng B = 10
 | Tiêu chí (vai trò) | Đại lượng | Seed 42 | Seed 43 | Seed 44 | Kết luận |
 | --- | --- | --- | --- | --- | --- |
 | E1 (chính) | Chênh lệch mức giảm AUC của nhóm tiếp cận y tế, f\_self − f\_clin; tỷ trọng so với f\_placebo | 0,014 \[0,008; 0,019\]; +7,0 điểm % \[2,4; 11,0\] | — | — | Đạt |
-| E3 (chính) | A(M0); A(M0) − A(M2); A(M0) + A(M2) | 0,120 (0,097); 0,033 (0,013); 0,208 (0,161); n = 172 | 0,058 (0,029); 0,014 (−0,009); 0,103 (0,046); n = 168 | 0,181 (0,155); 0,016 (−0,004); 0,346 (0,299); n = 175 | Đạt, nhất quán về hướng |
+| E3 (chính) | A(M0); A(M0) − A(M2); A(M0) + A(M2) | 0,120 (0,097); 0,033 (0,012); 0,208 (0,160); n = 172 | 0,058 (0,028); 0,014 (−0,009); 0,103 (0,042); n = 168 | 0,181 (0,156); 0,016 (−0,004); 0,346 (0,300); n = 175 | Đạt, nhất quán về hướng |
 | E3 tính trên mọi CF (độ nhạy) | A(M0) − A(M2) | 0,011 (−0,010) | 0,004 (−0,018) | −0,012 (−0,031) | Không đạt; đổi dấu ở seed 44 |
 | E4 (mô tả) | Có CF hợp lệ ở M1 so với M0, f\_self; ECD\_self(M0) − ECD\_self(M1) | 9,0% so với 100%; 0,025, n = 18 | 12,0% so với 99,5%; 0,029, n = 24 | 10,5% so với 99,5%; 0,008, n = 21 | Rất ít CF hợp lệ; ECD không diễn giải được (n < 40) |
 | E5 (phụ) | Tỷ lệ người G01 trong 30% điểm cao nhất, f\_self so với f\_clin | 27,8% so với 33,3%; p = 0,029 | — | — | Đạt ở phân tích gộp; không đạt theo từng chu kỳ |
@@ -270,7 +270,7 @@ Khi hoàn nguyên nhóm biến liên quan đến chẩn đoán, điểm của m�
 
 ### 4.4 Phát hiện 2b: cố định nhóm biến đó khi sinh CF chỉ giảm được một phần khác biệt (E3)
 
-Trên 172 người có CF hợp lệ từ cả hai mô hình ở cả hai chế độ, A(M0) = 0,120 (cận dưới 0,097). Khi cố định nhóm biến liên quan đến chẩn đoán, A giảm còn 0,087; hiệu số 0,033 có cận dưới 0,013, và điều kiện về độ lớn có cận dưới 0,161. Ước lượng điểm của cả ba thành phần đều dương ở seed 43 và 44, nên E3 đạt và nhất quán về hướng; tuy nhiên biên an toàn mỏng, vì ở hai seed này cận dưới của hiệu số A(M0) − A(M2) âm (−0,009 và −0,004). Tuy nhiên, khi tính trên mọi CF mà DiCE trả về (kể cả CF không làm mô hình sinh ra nó đổi kết luận), E3 không đạt ở cả ba seed (Bảng 3): hiệu số nhỏ hơn ở cả ba seed và đổi dấu ở seed 44 (−0,012). Như vậy, kết quả nhạy với cách chọn CF đưa vào phân tích; hai cách tính cũng dùng tập CF và tập người khác nhau, nên không thể quy toàn bộ khác biệt cho bước lọc CF hợp lệ.
+Trên 172 người có CF hợp lệ từ cả hai mô hình ở cả hai chế độ, A(M0) = 0,120 (cận dưới 0,097). Khi cố định nhóm biến liên quan đến chẩn đoán, A giảm còn 0,087; hiệu số 0,033 có cận dưới 0,012, và điều kiện về độ lớn có cận dưới 0,160. Ước lượng điểm của cả ba thành phần đều dương ở seed 43 và 44, nên E3 đạt và nhất quán về hướng; tuy nhiên biên an toàn mỏng, vì ở hai seed này cận dưới của hiệu số A(M0) − A(M2) âm (−0,009 và −0,004). Tuy nhiên, khi tính trên mọi CF mà DiCE trả về (kể cả CF không làm mô hình sinh ra nó đổi kết luận), E3 không đạt ở cả ba seed (Bảng 3): hiệu số nhỏ hơn ở cả ba seed và đổi dấu ở seed 44 (−0,012). Như vậy, kết quả nhạy với cách chọn CF đưa vào phân tích; hai cách tính cũng dùng tập CF và tập người khác nhau, nên không thể quy toàn bộ khác biệt cho bước lọc CF hợp lệ.
 
 &#91;embedded content: Hình 3 · NHANES 2015–2018 · results/confirmation/cf\_primary/seed\*/C6\_endpoints\_E3\_E4.csv và C10\_ablation.csv (tập S\_star)\]
 

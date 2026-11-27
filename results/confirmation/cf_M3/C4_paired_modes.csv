@@ -1,0 +1,3 @@
+source,comparison,n_common,ECD_M0,ECD_mode,diff,diff_lo,diff_hi
+f_self,M0_global - M3_evidence,1,-0.0648,-0.0274,-0.0374,-0.0374,-0.0374
+f_clin,M0_global - M3_evidence,0,,,,,

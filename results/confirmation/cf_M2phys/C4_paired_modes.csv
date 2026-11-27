@@ -1,0 +1,5 @@
+source,comparison,n_common,ECD_M0,ECD_mode,diff,diff_lo,diff_hi
+f_self,M0_global - M2_locked,197,0.0921,0.0672,0.0248,0.0134,0.0362
+f_self,M0_global - M2_phys,196,0.0958,0.1205,-0.0248,-0.0364,-0.013
+f_clin,M0_global - M2_locked,173,-0.0308,-0.017,-0.0138,-0.0265,-0.0007
+f_clin,M0_global - M2_phys,95,-0.0461,-0.0899,0.0438,0.0216,0.0666

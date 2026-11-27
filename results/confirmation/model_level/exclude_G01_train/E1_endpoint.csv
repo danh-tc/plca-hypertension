@@ -1,0 +1,2 @@
+B,abs_self_minus_clin_mean,abs_lo_2.5,abs_hi_97.5,share_B_defined,share_self_minus_placebo_mean,share_lo_2.5,share_hi_97.5,placebo_share_interpretable,E1_met,interval_type
+100,0.005004319494957381,7.612336129910317e-06,0.00963852978761752,100,0.019838203401675355,-0.03019136204322563,0.06351326620909073,True,True,two-level (train refit x test resample)

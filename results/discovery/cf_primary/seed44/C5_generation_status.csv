@@ -1,0 +1,1201 @@
+source,mode,query,group,n_vary,status,n_returned,error_type,error_message
+self,M0_global,0,G00,16,success,5,,
+self,M0_global,1,G00,16,success,5,,
+self,M0_global,2,G01,16,success,5,,
+self,M0_global,3,G10,16,success,5,,
+self,M0_global,4,G00,16,success,5,,
+self,M0_global,5,G01,16,success,5,,
+self,M0_global,6,G00,16,success,5,,
+self,M0_global,7,G11,16,success,5,,
+self,M0_global,8,G00,16,success,5,,
+self,M0_global,9,G00,16,success,5,,
+self,M0_global,10,G10,16,success,5,,
+self,M0_global,11,G00,16,success,5,,
+self,M0_global,12,G00,16,success,5,,
+self,M0_global,13,G00,16,success,5,,
+self,M0_global,14,G00,16,success,5,,
+self,M0_global,15,G11,16,success,5,,
+self,M0_global,16,G00,16,success,5,,
+self,M0_global,17,G11,16,success,5,,
+self,M0_global,18,G00,16,success,5,,
+self,M0_global,19,G01,16,success,5,,
+self,M0_global,20,G00,16,success,5,,
+self,M0_global,21,G01,16,success,5,,
+self,M0_global,22,G01,16,success,5,,
+self,M0_global,23,G11,16,success,5,,
+self,M0_global,24,G00,16,success,5,,
+self,M0_global,25,G00,16,success,5,,
+self,M0_global,26,G00,16,success,5,,
+self,M0_global,27,G00,16,success,5,,
+self,M0_global,28,G00,16,success,5,,
+self,M0_global,29,G00,16,success,5,,
+self,M0_global,30,G01,16,success,5,,
+self,M0_global,31,G00,16,success,5,,
+self,M0_global,32,G00,16,success,5,,
+self,M0_global,33,G00,16,success,5,,
+self,M0_global,34,G10,16,success,5,,
+self,M0_global,35,G01,16,success,5,,
+self,M0_global,36,G00,16,success,5,,
+self,M0_global,37,G10,16,success,5,,
+self,M0_global,38,G01,16,success,5,,
+self,M0_global,39,G01,16,success,5,,
+self,M0_global,40,G00,16,success,5,,
+self,M0_global,41,G11,16,success,5,,
+self,M0_global,42,G00,16,success,5,,
+self,M0_global,43,G00,16,success,5,,
+self,M0_global,44,G00,16,success,5,,
+self,M0_global,45,G00,16,success,5,,
+self,M0_global,46,G00,16,success,5,,
+self,M0_global,47,G01,16,success,5,,
+self,M0_global,48,G00,16,success,5,,
+self,M0_global,49,G01,16,success,5,,
+self,M0_global,50,G01,16,success,5,,
+self,M0_global,51,G00,16,success,5,,
+self,M0_global,52,G00,16,success,5,,
+self,M0_global,53,G00,16,success,5,,
+self,M0_global,54,G10,16,success,5,,
+self,M0_global,55,G00,16,success,5,,
+self,M0_global,56,G00,16,success,5,,
+self,M0_global,57,G01,16,success,5,,
+self,M0_global,58,G00,16,success,5,,
+self,M0_global,59,G00,16,success,5,,
+self,M0_global,60,G10,16,success,5,,
+self,M0_global,61,G10,16,success,5,,
+self,M0_global,62,G00,16,success,5,,
+self,M0_global,63,G00,16,success,5,,
+self,M0_global,64,G00,16,success,5,,
+self,M0_global,65,G10,16,success,5,,
+self,M0_global,66,G00,16,success,5,,
+self,M0_global,67,G00,16,success,5,,
+self,M0_global,68,G00,16,success,5,,
+self,M0_global,69,G01,16,success,5,,
+self,M0_global,70,G00,16,success,5,,
+self,M0_global,71,G00,16,success,5,,
+self,M0_global,72,G00,16,success,5,,
+self,M0_global,73,G11,16,success,5,,
+self,M0_global,74,G00,16,success,5,,
+self,M0_global,75,G00,16,success,5,,
+self,M0_global,76,G10,16,success,5,,
+self,M0_global,77,G01,16,success,5,,
+self,M0_global,78,G00,16,success,5,,
+self,M0_global,79,G01,16,success,5,,
+self,M0_global,80,G00,16,success,5,,
+self,M0_global,81,G01,16,success,5,,
+self,M0_global,82,G00,16,success,5,,
+self,M0_global,83,G00,16,success,5,,
+self,M0_global,84,G00,16,success,5,,
+self,M0_global,85,G00,16,success,5,,
+self,M0_global,86,G10,16,success,5,,
+self,M0_global,87,G00,16,success,5,,
+self,M0_global,88,G11,16,success,5,,
+self,M0_global,89,G00,16,success,5,,
+self,M0_global,90,G00,16,success,5,,
+self,M0_global,91,G00,16,success,5,,
+self,M0_global,92,G00,16,success,5,,
+self,M0_global,93,G11,16,success,5,,
+self,M0_global,94,G10,16,success,5,,
+self,M0_global,95,G00,16,success,5,,
+self,M0_global,96,G10,16,success,5,,
+self,M0_global,97,G00,16,success,5,,
+self,M0_global,98,G00,16,success,5,,
+self,M0_global,99,G10,16,success,5,,
+self,M0_global,100,G00,16,success,5,,
+self,M0_global,101,G11,16,success,5,,
+self,M0_global,102,G11,16,success,5,,
+self,M0_global,103,G00,16,success,5,,
+self,M0_global,104,G00,16,success,5,,
+self,M0_global,105,G00,16,success,5,,
+self,M0_global,106,G00,16,success,5,,
+self,M0_global,107,G00,16,success,5,,
+self,M0_global,108,G00,16,success,5,,
+self,M0_global,109,G00,16,success,5,,
+self,M0_global,110,G01,16,success,5,,
+self,M0_global,111,G00,16,success,5,,
+self,M0_global,112,G11,16,success,5,,
+self,M0_global,113,G01,16,success,5,,
+self,M0_global,114,G00,16,success,5,,
+self,M0_global,115,G01,16,success,5,,
+self,M0_global,116,G01,16,success,5,,
+self,M0_global,117,G10,16,success,5,,
+self,M0_global,118,G00,16,success,5,,
+self,M0_global,119,G00,16,success,5,,
+self,M0_global,120,G00,16,success,5,,
+self,M0_global,121,G00,16,success,5,,
+self,M0_global,122,G00,16,success,5,,
+self,M0_global,123,G10,16,success,5,,
+self,M0_global,124,G00,16,success,5,,
+self,M0_global,125,G00,16,success,5,,
+self,M0_global,126,G00,16,success,5,,
+self,M0_global,127,G00,16,success,5,,
+self,M0_global,128,G00,16,success,5,,
+self,M0_global,129,G01,16,success,5,,
+self,M0_global,130,G01,16,success,5,,
+self,M0_global,131,G00,16,success,5,,
+self,M0_global,132,G00,16,success,5,,
+self,M0_global,133,G00,16,success,5,,
+self,M0_global,134,G01,16,success,5,,
+self,M0_global,135,G10,16,success,5,,
+self,M0_global,136,G00,16,success,5,,
+self,M0_global,137,G01,16,success,5,,
+self,M0_global,138,G00,16,success,5,,
+self,M0_global,139,G00,16,success,5,,
+self,M0_global,140,G00,16,success,5,,
+self,M0_global,141,G00,16,success,5,,
+self,M0_global,142,G00,16,success,5,,
+self,M0_global,143,G01,16,success,5,,
+self,M0_global,144,G00,16,success,5,,
+self,M0_global,145,G00,16,success,5,,
+self,M0_global,146,G00,16,success,5,,
+self,M0_global,147,G00,16,success,5,,
+self,M0_global,148,G01,16,success,5,,
+self,M0_global,149,G01,16,success,5,,
+self,M0_global,150,G10,16,success,5,,
+self,M0_global,151,G01,16,success,5,,
+self,M0_global,152,G00,16,success,5,,
+self,M0_global,153,G01,16,success,5,,
+self,M0_global,154,G00,16,success,5,,
+self,M0_global,155,G00,16,success,5,,
+self,M0_global,156,G11,16,success,5,,
+self,M0_global,157,G11,16,success,5,,
+self,M0_global,158,G00,16,success,5,,
+self,M0_global,159,G00,16,success,5,,
+self,M0_global,160,G00,16,success,5,,
+self,M0_global,161,G01,16,success,5,,
+self,M0_global,162,G00,16,success,5,,
+self,M0_global,163,G01,16,success,5,,
+self,M0_global,164,G00,16,success,5,,
+self,M0_global,165,G00,16,success,5,,
+self,M0_global,166,G00,16,success,5,,
+self,M0_global,167,G00,16,success,5,,
+self,M0_global,168,G00,16,success,5,,
+self,M0_global,169,G01,16,success,5,,
+self,M0_global,170,G01,16,success,5,,
+self,M0_global,171,G01,16,success,5,,
+self,M0_global,172,G11,16,success,5,,
+self,M0_global,173,G00,16,success,5,,
+self,M0_global,174,G00,16,success,5,,
+self,M0_global,175,G01,16,success,5,,
+self,M0_global,176,G01,16,success,5,,
+self,M0_global,177,G01,16,success,5,,
+self,M0_global,178,G10,16,success,5,,
+self,M0_global,179,G00,16,success,5,,
+self,M0_global,180,G00,16,success,5,,
+self,M0_global,181,G00,16,success,5,,
+self,M0_global,182,G00,16,success,5,,
+self,M0_global,183,G00,16,success,5,,
+self,M0_global,184,G11,16,success,5,,
+self,M0_global,185,G00,16,success,5,,
+self,M0_global,186,G00,16,success,5,,
+self,M0_global,187,G00,16,success,5,,
+self,M0_global,188,G10,16,success,5,,
+self,M0_global,189,G00,16,success,5,,
+self,M0_global,190,G00,16,success,5,,
+self,M0_global,191,G00,16,success,5,,
+self,M0_global,192,G00,16,success,5,,
+self,M0_global,193,G00,16,success,5,,
+self,M0_global,194,G01,16,success,5,,
+self,M0_global,195,G11,16,success,5,,
+self,M0_global,196,G00,16,success,5,,
+self,M0_global,197,G00,16,success,5,,
+self,M0_global,198,G00,16,success,5,,
+self,M0_global,199,G10,16,success,5,,
+self,M1_taxonomy,0,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,1,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,2,G01,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,3,G10,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,4,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,5,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,6,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,7,G11,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,8,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,9,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,10,G10,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,11,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,12,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,13,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,14,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,15,G11,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,16,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,17,G11,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,18,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,19,G01,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,20,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,21,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,22,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,23,G11,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,24,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,25,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,26,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,27,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,28,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,29,G00,3,success,5,,
+self,M1_taxonomy,30,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,31,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,32,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,33,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,34,G10,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,35,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,36,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,37,G10,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,38,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,39,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,40,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,41,G11,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,42,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,43,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,44,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,45,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,46,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,47,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,48,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,49,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,50,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,51,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,52,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,53,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,54,G10,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,55,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,56,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,57,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,58,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,59,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,60,G10,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,61,G10,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,62,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,63,G00,4,success,5,,
+self,M1_taxonomy,64,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,65,G10,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,66,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,67,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,68,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,69,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,70,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,71,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,72,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,73,G11,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,74,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,75,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,76,G10,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,77,G01,6,success,5,,
+self,M1_taxonomy,78,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,79,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,80,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,81,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,82,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,83,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,84,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,85,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,86,G10,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,87,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,88,G11,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,89,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,90,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,91,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,92,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,93,G11,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,94,G10,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,95,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,96,G10,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,97,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,98,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,99,G10,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,100,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,101,G11,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,102,G11,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,103,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,104,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,105,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,106,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,107,G00,1,success,2,,
+self,M1_taxonomy,108,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,109,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,110,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,111,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,112,G11,7,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,113,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,114,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,115,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,116,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,117,G10,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,118,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,119,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,120,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,121,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,122,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,123,G10,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,124,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,125,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,126,G00,4,success,5,,
+self,M1_taxonomy,127,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,128,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,129,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,130,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,131,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,132,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,133,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,134,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,135,G10,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,136,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,137,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,138,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,139,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,140,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,141,G00,4,success,5,,
+self,M1_taxonomy,142,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,143,G01,5,success,5,,
+self,M1_taxonomy,144,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,145,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,146,G00,5,success,5,,
+self,M1_taxonomy,147,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,148,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,149,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,150,G10,5,success,5,,
+self,M1_taxonomy,151,G01,4,success,5,,
+self,M1_taxonomy,152,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,153,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,154,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,155,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,156,G11,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,157,G11,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,158,G00,4,success,5,,
+self,M1_taxonomy,159,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,160,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,161,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,162,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,163,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,164,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,165,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,166,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,167,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,168,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,169,G01,2,success,4,,
+self,M1_taxonomy,170,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,171,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,172,G11,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,173,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,174,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,175,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,176,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,177,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,178,G10,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,179,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,180,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,181,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,182,G00,6,success,5,,
+self,M1_taxonomy,183,G00,4,success,5,,
+self,M1_taxonomy,184,G11,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,185,G00,6,success,5,,
+self,M1_taxonomy,186,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,187,G00,4,success,5,,
+self,M1_taxonomy,188,G10,3,success,5,,
+self,M1_taxonomy,189,G00,5,success,5,,
+self,M1_taxonomy,190,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,191,G00,5,success,5,,
+self,M1_taxonomy,192,G00,3,success,5,,
+self,M1_taxonomy,193,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,194,G01,3,success,5,,
+self,M1_taxonomy,195,G11,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M1_taxonomy,196,G00,4,success,5,,
+self,M1_taxonomy,197,G00,5,success,5,,
+self,M1_taxonomy,198,G00,4,success,5,,
+self,M1_taxonomy,199,G10,4,success,5,,
+self,M2_locked,0,G00,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M2_locked,1,G00,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M2_locked,2,G01,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M2_locked,3,G10,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M2_locked,4,G00,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M2_locked,5,G01,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M2_locked,6,G00,10,success,5,,
+self,M2_locked,7,G11,10,success,5,,
+self,M2_locked,8,G00,10,success,5,,
+self,M2_locked,9,G00,10,success,5,,
+self,M2_locked,10,G10,10,success,3,,
+self,M2_locked,11,G00,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M2_locked,12,G00,10,success,1,,
+self,M2_locked,13,G00,10,success,5,,
+self,M2_locked,14,G00,10,success,5,,
+self,M2_locked,15,G11,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M2_locked,16,G00,10,success,5,,
+self,M2_locked,17,G11,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M2_locked,18,G00,10,success,5,,
+self,M2_locked,19,G01,10,success,5,,
+self,M2_locked,20,G00,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M2_locked,21,G01,10,success,5,,
+self,M2_locked,22,G01,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M2_locked,23,G11,10,success,5,,
+self,M2_locked,24,G00,10,success,5,,
+self,M2_locked,25,G00,10,success,5,,
+self,M2_locked,26,G00,10,success,5,,
+self,M2_locked,27,G00,10,success,1,,
+self,M2_locked,28,G00,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M2_locked,29,G00,10,success,5,,
+self,M2_locked,30,G01,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M2_locked,31,G00,10,success,5,,
+self,M2_locked,32,G00,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M2_locked,33,G00,10,success,5,,
+self,M2_locked,34,G10,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M2_locked,35,G01,10,success,5,,
+self,M2_locked,36,G00,10,success,5,,
+self,M2_locked,37,G10,10,success,5,,
+self,M2_locked,38,G01,10,success,5,,
+self,M2_locked,39,G01,10,success,5,,
+self,M2_locked,40,G00,10,success,5,,
+self,M2_locked,41,G11,10,success,5,,
+self,M2_locked,42,G00,10,success,5,,
+self,M2_locked,43,G00,10,success,5,,
+self,M2_locked,44,G00,10,success,5,,
+self,M2_locked,45,G00,10,success,5,,
+self,M2_locked,46,G00,10,success,5,,
+self,M2_locked,47,G01,10,success,5,,
+self,M2_locked,48,G00,10,success,5,,
+self,M2_locked,49,G01,10,success,5,,
+self,M2_locked,50,G01,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M2_locked,51,G00,10,success,5,,
+self,M2_locked,52,G00,10,success,5,,
+self,M2_locked,53,G00,10,success,1,,
+self,M2_locked,54,G10,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M2_locked,55,G00,10,success,5,,
+self,M2_locked,56,G00,10,success,5,,
+self,M2_locked,57,G01,10,success,5,,
+self,M2_locked,58,G00,10,success,5,,
+self,M2_locked,59,G00,10,success,5,,
+self,M2_locked,60,G10,10,success,5,,
+self,M2_locked,61,G10,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M2_locked,62,G00,10,success,5,,
+self,M2_locked,63,G00,10,success,5,,
+self,M2_locked,64,G00,10,success,5,,
+self,M2_locked,65,G10,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M2_locked,66,G00,10,success,5,,
+self,M2_locked,67,G00,10,success,5,,
+self,M2_locked,68,G00,10,success,5,,
+self,M2_locked,69,G01,10,success,5,,
+self,M2_locked,70,G00,10,success,5,,
+self,M2_locked,71,G00,10,success,5,,
+self,M2_locked,72,G00,10,success,5,,
+self,M2_locked,73,G11,10,success,5,,
+self,M2_locked,74,G00,10,success,5,,
+self,M2_locked,75,G00,10,success,5,,
+self,M2_locked,76,G10,10,success,5,,
+self,M2_locked,77,G01,10,success,5,,
+self,M2_locked,78,G00,10,success,5,,
+self,M2_locked,79,G01,10,success,5,,
+self,M2_locked,80,G00,10,success,5,,
+self,M2_locked,81,G01,10,success,5,,
+self,M2_locked,82,G00,10,success,5,,
+self,M2_locked,83,G00,10,success,5,,
+self,M2_locked,84,G00,10,success,5,,
+self,M2_locked,85,G00,10,success,5,,
+self,M2_locked,86,G10,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M2_locked,87,G00,10,success,5,,
+self,M2_locked,88,G11,10,success,5,,
+self,M2_locked,89,G00,10,success,5,,
+self,M2_locked,90,G00,10,success,5,,
+self,M2_locked,91,G00,10,success,5,,
+self,M2_locked,92,G00,10,success,5,,
+self,M2_locked,93,G11,10,success,5,,
+self,M2_locked,94,G10,10,success,5,,
+self,M2_locked,95,G00,10,success,5,,
+self,M2_locked,96,G10,10,success,5,,
+self,M2_locked,97,G00,10,success,5,,
+self,M2_locked,98,G00,10,success,5,,
+self,M2_locked,99,G10,10,success,5,,
+self,M2_locked,100,G00,10,success,5,,
+self,M2_locked,101,G11,10,success,5,,
+self,M2_locked,102,G11,10,success,5,,
+self,M2_locked,103,G00,10,success,5,,
+self,M2_locked,104,G00,10,success,5,,
+self,M2_locked,105,G00,10,success,1,,
+self,M2_locked,106,G00,10,success,5,,
+self,M2_locked,107,G00,10,success,5,,
+self,M2_locked,108,G00,10,success,5,,
+self,M2_locked,109,G00,10,success,5,,
+self,M2_locked,110,G01,10,success,5,,
+self,M2_locked,111,G00,10,success,5,,
+self,M2_locked,112,G11,10,success,5,,
+self,M2_locked,113,G01,10,success,5,,
+self,M2_locked,114,G00,10,success,5,,
+self,M2_locked,115,G01,10,success,5,,
+self,M2_locked,116,G01,10,success,5,,
+self,M2_locked,117,G10,10,success,5,,
+self,M2_locked,118,G00,10,success,5,,
+self,M2_locked,119,G00,10,success,5,,
+self,M2_locked,120,G00,10,success,5,,
+self,M2_locked,121,G00,10,success,5,,
+self,M2_locked,122,G00,10,success,5,,
+self,M2_locked,123,G10,10,success,5,,
+self,M2_locked,124,G00,10,success,5,,
+self,M2_locked,125,G00,10,success,5,,
+self,M2_locked,126,G00,10,success,5,,
+self,M2_locked,127,G00,10,success,5,,
+self,M2_locked,128,G00,10,success,5,,
+self,M2_locked,129,G01,10,success,5,,
+self,M2_locked,130,G01,10,success,5,,
+self,M2_locked,131,G00,10,success,5,,
+self,M2_locked,132,G00,10,success,5,,
+self,M2_locked,133,G00,10,success,5,,
+self,M2_locked,134,G01,10,success,5,,
+self,M2_locked,135,G10,10,success,5,,
+self,M2_locked,136,G00,10,success,5,,
+self,M2_locked,137,G01,10,success,5,,
+self,M2_locked,138,G00,10,success,5,,
+self,M2_locked,139,G00,10,success,5,,
+self,M2_locked,140,G00,10,success,5,,
+self,M2_locked,141,G00,10,success,5,,
+self,M2_locked,142,G00,10,success,5,,
+self,M2_locked,143,G01,10,success,5,,
+self,M2_locked,144,G00,10,success,5,,
+self,M2_locked,145,G00,10,success,5,,
+self,M2_locked,146,G00,10,success,5,,
+self,M2_locked,147,G00,10,success,5,,
+self,M2_locked,148,G01,10,success,5,,
+self,M2_locked,149,G01,10,success,5,,
+self,M2_locked,150,G10,10,success,5,,
+self,M2_locked,151,G01,10,success,5,,
+self,M2_locked,152,G00,10,success,5,,
+self,M2_locked,153,G01,10,success,5,,
+self,M2_locked,154,G00,10,success,5,,
+self,M2_locked,155,G00,10,success,5,,
+self,M2_locked,156,G11,10,success,5,,
+self,M2_locked,157,G11,10,success,5,,
+self,M2_locked,158,G00,10,success,5,,
+self,M2_locked,159,G00,10,success,5,,
+self,M2_locked,160,G00,10,success,5,,
+self,M2_locked,161,G01,10,success,5,,
+self,M2_locked,162,G00,10,success,5,,
+self,M2_locked,163,G01,10,success,5,,
+self,M2_locked,164,G00,10,success,5,,
+self,M2_locked,165,G00,10,success,5,,
+self,M2_locked,166,G00,10,success,5,,
+self,M2_locked,167,G00,10,success,5,,
+self,M2_locked,168,G00,10,success,5,,
+self,M2_locked,169,G01,10,success,5,,
+self,M2_locked,170,G01,10,success,5,,
+self,M2_locked,171,G01,10,success,5,,
+self,M2_locked,172,G11,10,success,5,,
+self,M2_locked,173,G00,10,success,5,,
+self,M2_locked,174,G00,10,success,5,,
+self,M2_locked,175,G01,10,success,5,,
+self,M2_locked,176,G01,10,success,5,,
+self,M2_locked,177,G01,10,success,5,,
+self,M2_locked,178,G10,10,success,5,,
+self,M2_locked,179,G00,10,success,5,,
+self,M2_locked,180,G00,10,success,5,,
+self,M2_locked,181,G00,10,success,5,,
+self,M2_locked,182,G00,10,success,5,,
+self,M2_locked,183,G00,10,success,5,,
+self,M2_locked,184,G11,10,success,5,,
+self,M2_locked,185,G00,10,success,5,,
+self,M2_locked,186,G00,10,success,5,,
+self,M2_locked,187,G00,10,success,5,,
+self,M2_locked,188,G10,10,success,5,,
+self,M2_locked,189,G00,10,success,5,,
+self,M2_locked,190,G00,10,success,5,,
+self,M2_locked,191,G00,10,success,5,,
+self,M2_locked,192,G00,10,success,5,,
+self,M2_locked,193,G00,10,success,5,,
+self,M2_locked,194,G01,10,success,5,,
+self,M2_locked,195,G11,10,success,5,,
+self,M2_locked,196,G00,10,success,5,,
+self,M2_locked,197,G00,10,success,5,,
+self,M2_locked,198,G00,10,success,5,,
+self,M2_locked,199,G10,10,success,5,,
+clin,M0_global,0,G00,16,success,5,,
+clin,M0_global,1,G00,16,success,5,,
+clin,M0_global,2,G01,16,success,5,,
+clin,M0_global,3,G10,16,success,5,,
+clin,M0_global,4,G00,16,success,5,,
+clin,M0_global,5,G01,16,success,5,,
+clin,M0_global,6,G00,16,success,5,,
+clin,M0_global,7,G11,16,success,5,,
+clin,M0_global,8,G00,16,success,5,,
+clin,M0_global,9,G00,16,success,5,,
+clin,M0_global,10,G10,16,success,5,,
+clin,M0_global,11,G00,16,success,5,,
+clin,M0_global,12,G00,16,success,5,,
+clin,M0_global,13,G00,16,success,5,,
+clin,M0_global,14,G00,16,success,5,,
+clin,M0_global,15,G11,16,success,5,,
+clin,M0_global,16,G00,16,success,5,,
+clin,M0_global,17,G11,16,success,5,,
+clin,M0_global,18,G00,16,success,5,,
+clin,M0_global,19,G01,16,success,5,,
+clin,M0_global,20,G00,16,success,2,,
+clin,M0_global,21,G01,16,success,5,,
+clin,M0_global,22,G01,16,success,5,,
+clin,M0_global,23,G11,16,success,5,,
+clin,M0_global,24,G00,16,success,5,,
+clin,M0_global,25,G00,16,success,5,,
+clin,M0_global,26,G00,16,success,5,,
+clin,M0_global,27,G00,16,success,5,,
+clin,M0_global,28,G00,16,success,5,,
+clin,M0_global,29,G00,16,success,5,,
+clin,M0_global,30,G01,16,success,5,,
+clin,M0_global,31,G00,16,success,5,,
+clin,M0_global,32,G00,16,success,5,,
+clin,M0_global,33,G00,16,success,5,,
+clin,M0_global,34,G10,16,success,5,,
+clin,M0_global,35,G01,16,success,5,,
+clin,M0_global,36,G00,16,success,5,,
+clin,M0_global,37,G10,16,success,5,,
+clin,M0_global,38,G01,16,success,5,,
+clin,M0_global,39,G01,16,success,5,,
+clin,M0_global,40,G00,16,success,5,,
+clin,M0_global,41,G11,16,success,5,,
+clin,M0_global,42,G00,16,success,5,,
+clin,M0_global,43,G00,16,success,5,,
+clin,M0_global,44,G00,16,success,5,,
+clin,M0_global,45,G00,16,success,5,,
+clin,M0_global,46,G00,16,success,5,,
+clin,M0_global,47,G01,16,success,5,,
+clin,M0_global,48,G00,16,success,5,,
+clin,M0_global,49,G01,16,success,5,,
+clin,M0_global,50,G01,16,success,5,,
+clin,M0_global,51,G00,16,success,5,,
+clin,M0_global,52,G00,16,success,5,,
+clin,M0_global,53,G00,16,success,5,,
+clin,M0_global,54,G10,16,success,5,,
+clin,M0_global,55,G00,16,success,5,,
+clin,M0_global,56,G00,16,success,5,,
+clin,M0_global,57,G01,16,success,5,,
+clin,M0_global,58,G00,16,success,5,,
+clin,M0_global,59,G00,16,success,5,,
+clin,M0_global,60,G10,16,success,5,,
+clin,M0_global,61,G10,16,success,5,,
+clin,M0_global,62,G00,16,success,5,,
+clin,M0_global,63,G00,16,success,5,,
+clin,M0_global,64,G00,16,success,5,,
+clin,M0_global,65,G10,16,success,5,,
+clin,M0_global,66,G00,16,success,5,,
+clin,M0_global,67,G00,16,success,5,,
+clin,M0_global,68,G00,16,success,5,,
+clin,M0_global,69,G01,16,success,5,,
+clin,M0_global,70,G00,16,success,5,,
+clin,M0_global,71,G00,16,success,5,,
+clin,M0_global,72,G00,16,success,5,,
+clin,M0_global,73,G11,16,success,5,,
+clin,M0_global,74,G00,16,success,5,,
+clin,M0_global,75,G00,16,success,5,,
+clin,M0_global,76,G10,16,success,5,,
+clin,M0_global,77,G01,16,success,5,,
+clin,M0_global,78,G00,16,success,5,,
+clin,M0_global,79,G01,16,success,5,,
+clin,M0_global,80,G00,16,success,5,,
+clin,M0_global,81,G01,16,success,5,,
+clin,M0_global,82,G00,16,success,5,,
+clin,M0_global,83,G00,16,success,5,,
+clin,M0_global,84,G00,16,success,5,,
+clin,M0_global,85,G00,16,success,5,,
+clin,M0_global,86,G10,16,success,5,,
+clin,M0_global,87,G00,16,success,5,,
+clin,M0_global,88,G11,16,success,5,,
+clin,M0_global,89,G00,16,success,5,,
+clin,M0_global,90,G00,16,success,5,,
+clin,M0_global,91,G00,16,success,5,,
+clin,M0_global,92,G00,16,success,5,,
+clin,M0_global,93,G11,16,success,5,,
+clin,M0_global,94,G10,16,success,5,,
+clin,M0_global,95,G00,16,success,5,,
+clin,M0_global,96,G10,16,success,5,,
+clin,M0_global,97,G00,16,success,5,,
+clin,M0_global,98,G00,16,success,5,,
+clin,M0_global,99,G10,16,success,5,,
+clin,M0_global,100,G00,16,success,5,,
+clin,M0_global,101,G11,16,success,5,,
+clin,M0_global,102,G11,16,success,5,,
+clin,M0_global,103,G00,16,success,5,,
+clin,M0_global,104,G00,16,success,5,,
+clin,M0_global,105,G00,16,success,5,,
+clin,M0_global,106,G00,16,success,5,,
+clin,M0_global,107,G00,16,success,5,,
+clin,M0_global,108,G00,16,success,5,,
+clin,M0_global,109,G00,16,success,5,,
+clin,M0_global,110,G01,16,success,5,,
+clin,M0_global,111,G00,16,success,5,,
+clin,M0_global,112,G11,16,success,5,,
+clin,M0_global,113,G01,16,success,5,,
+clin,M0_global,114,G00,16,success,5,,
+clin,M0_global,115,G01,16,success,5,,
+clin,M0_global,116,G01,16,success,5,,
+clin,M0_global,117,G10,16,success,5,,
+clin,M0_global,118,G00,16,success,5,,
+clin,M0_global,119,G00,16,success,5,,
+clin,M0_global,120,G00,16,success,5,,
+clin,M0_global,121,G00,16,success,5,,
+clin,M0_global,122,G00,16,success,5,,
+clin,M0_global,123,G10,16,success,5,,
+clin,M0_global,124,G00,16,success,5,,
+clin,M0_global,125,G00,16,success,5,,
+clin,M0_global,126,G00,16,success,5,,
+clin,M0_global,127,G00,16,success,5,,
+clin,M0_global,128,G00,16,success,5,,
+clin,M0_global,129,G01,16,success,5,,
+clin,M0_global,130,G01,16,success,5,,
+clin,M0_global,131,G00,16,success,5,,
+clin,M0_global,132,G00,16,success,5,,
+clin,M0_global,133,G00,16,success,5,,
+clin,M0_global,134,G01,16,success,5,,
+clin,M0_global,135,G10,16,success,5,,
+clin,M0_global,136,G00,16,success,5,,
+clin,M0_global,137,G01,16,success,5,,
+clin,M0_global,138,G00,16,success,5,,
+clin,M0_global,139,G00,16,success,5,,
+clin,M0_global,140,G00,16,success,5,,
+clin,M0_global,141,G00,16,success,5,,
+clin,M0_global,142,G00,16,success,5,,
+clin,M0_global,143,G01,16,success,5,,
+clin,M0_global,144,G00,16,success,5,,
+clin,M0_global,145,G00,16,success,5,,
+clin,M0_global,146,G00,16,success,5,,
+clin,M0_global,147,G00,16,success,5,,
+clin,M0_global,148,G01,16,success,5,,
+clin,M0_global,149,G01,16,success,5,,
+clin,M0_global,150,G10,16,success,5,,
+clin,M0_global,151,G01,16,success,5,,
+clin,M0_global,152,G00,16,success,5,,
+clin,M0_global,153,G01,16,success,5,,
+clin,M0_global,154,G00,16,success,5,,
+clin,M0_global,155,G00,16,success,5,,
+clin,M0_global,156,G11,16,success,5,,
+clin,M0_global,157,G11,16,success,5,,
+clin,M0_global,158,G00,16,success,5,,
+clin,M0_global,159,G00,16,success,5,,
+clin,M0_global,160,G00,16,success,5,,
+clin,M0_global,161,G01,16,success,5,,
+clin,M0_global,162,G00,16,success,5,,
+clin,M0_global,163,G01,16,success,5,,
+clin,M0_global,164,G00,16,success,5,,
+clin,M0_global,165,G00,16,success,5,,
+clin,M0_global,166,G00,16,success,5,,
+clin,M0_global,167,G00,16,success,5,,
+clin,M0_global,168,G00,16,success,5,,
+clin,M0_global,169,G01,16,success,5,,
+clin,M0_global,170,G01,16,success,5,,
+clin,M0_global,171,G01,16,success,5,,
+clin,M0_global,172,G11,16,success,5,,
+clin,M0_global,173,G00,16,success,5,,
+clin,M0_global,174,G00,16,success,5,,
+clin,M0_global,175,G01,16,success,5,,
+clin,M0_global,176,G01,16,success,5,,
+clin,M0_global,177,G01,16,success,4,,
+clin,M0_global,178,G10,16,success,5,,
+clin,M0_global,179,G00,16,success,5,,
+clin,M0_global,180,G00,16,success,5,,
+clin,M0_global,181,G00,16,success,5,,
+clin,M0_global,182,G00,16,success,5,,
+clin,M0_global,183,G00,16,success,5,,
+clin,M0_global,184,G11,16,success,5,,
+clin,M0_global,185,G00,16,success,5,,
+clin,M0_global,186,G00,16,success,5,,
+clin,M0_global,187,G00,16,success,5,,
+clin,M0_global,188,G10,16,success,5,,
+clin,M0_global,189,G00,16,success,5,,
+clin,M0_global,190,G00,16,success,5,,
+clin,M0_global,191,G00,16,success,5,,
+clin,M0_global,192,G00,16,success,5,,
+clin,M0_global,193,G00,16,success,5,,
+clin,M0_global,194,G01,16,success,5,,
+clin,M0_global,195,G11,16,success,5,,
+clin,M0_global,196,G00,16,success,5,,
+clin,M0_global,197,G00,16,success,5,,
+clin,M0_global,198,G00,16,success,5,,
+clin,M0_global,199,G10,16,success,5,,
+clin,M1_taxonomy,0,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,1,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,2,G01,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,3,G10,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,4,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,5,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,6,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,7,G11,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,8,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,9,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,10,G10,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,11,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,12,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,13,G00,4,success,5,,
+clin,M1_taxonomy,14,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,15,G11,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,16,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,17,G11,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,18,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,19,G01,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,20,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,21,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,22,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,23,G11,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,24,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,25,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,26,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,27,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,28,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,29,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,30,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,31,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,32,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,33,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,34,G10,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,35,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,36,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,37,G10,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,38,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,39,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,40,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,41,G11,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,42,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,43,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,44,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,45,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,46,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,47,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,48,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,49,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,50,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,51,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,52,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,53,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,54,G10,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,55,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,56,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,57,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,58,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,59,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,60,G10,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,61,G10,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,62,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,63,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,64,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,65,G10,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,66,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,67,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,68,G00,4,success,5,,
+clin,M1_taxonomy,69,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,70,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,71,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,72,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,73,G11,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,74,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,75,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,76,G10,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,77,G01,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,78,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,79,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,80,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,81,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,82,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,83,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,84,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,85,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,86,G10,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,87,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,88,G11,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,89,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,90,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,91,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,92,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,93,G11,4,success,4,,
+clin,M1_taxonomy,94,G10,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,95,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,96,G10,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,97,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,98,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,99,G10,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,100,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,101,G11,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,102,G11,4,success,5,,
+clin,M1_taxonomy,103,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,104,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,105,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,106,G00,5,success,5,,
+clin,M1_taxonomy,107,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,108,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,109,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,110,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,111,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,112,G11,7,success,5,,
+clin,M1_taxonomy,113,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,114,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,115,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,116,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,117,G10,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,118,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,119,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,120,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,121,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,122,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,123,G10,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,124,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,125,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,126,G00,4,success,5,,
+clin,M1_taxonomy,127,G00,5,success,5,,
+clin,M1_taxonomy,128,G00,4,success,5,,
+clin,M1_taxonomy,129,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,130,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,131,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,132,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,133,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,134,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,135,G10,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,136,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,137,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,138,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,139,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,140,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,141,G00,4,success,5,,
+clin,M1_taxonomy,142,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,143,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,144,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,145,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,146,G00,5,success,5,,
+clin,M1_taxonomy,147,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,148,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,149,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,150,G10,5,success,5,,
+clin,M1_taxonomy,151,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,152,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,153,G01,5,success,5,,
+clin,M1_taxonomy,154,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,155,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,156,G11,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,157,G11,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,158,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,159,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,160,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,161,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,162,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,163,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,164,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,165,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,166,G00,4,success,5,,
+clin,M1_taxonomy,167,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,168,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,169,G01,2,success,5,,
+clin,M1_taxonomy,170,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,171,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,172,G11,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,173,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,174,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,175,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,176,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,177,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,178,G10,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,179,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,180,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,181,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,182,G00,6,success,5,,
+clin,M1_taxonomy,183,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,184,G11,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,185,G00,6,success,5,,
+clin,M1_taxonomy,186,G00,5,success,5,,
+clin,M1_taxonomy,187,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,188,G10,3,success,5,,
+clin,M1_taxonomy,189,G00,5,success,5,,
+clin,M1_taxonomy,190,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,191,G00,5,success,5,,
+clin,M1_taxonomy,192,G00,3,success,5,,
+clin,M1_taxonomy,193,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,194,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,195,G11,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M1_taxonomy,196,G00,4,success,5,,
+clin,M1_taxonomy,197,G00,5,success,5,,
+clin,M1_taxonomy,198,G00,4,success,5,,
+clin,M1_taxonomy,199,G10,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M2_locked,0,G00,10,success,1,,
+clin,M2_locked,1,G00,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M2_locked,2,G01,10,success,2,,
+clin,M2_locked,3,G10,10,success,1,,
+clin,M2_locked,4,G00,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M2_locked,5,G01,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M2_locked,6,G00,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M2_locked,7,G11,10,success,5,,
+clin,M2_locked,8,G00,10,success,5,,
+clin,M2_locked,9,G00,10,success,5,,
+clin,M2_locked,10,G10,10,success,2,,
+clin,M2_locked,11,G00,10,success,1,,
+clin,M2_locked,12,G00,10,success,2,,
+clin,M2_locked,13,G00,10,success,5,,
+clin,M2_locked,14,G00,10,success,5,,
+clin,M2_locked,15,G11,10,success,1,,
+clin,M2_locked,16,G00,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M2_locked,17,G11,10,success,3,,
+clin,M2_locked,18,G00,10,success,5,,
+clin,M2_locked,19,G01,10,success,5,,
+clin,M2_locked,20,G00,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M2_locked,21,G01,10,success,5,,
+clin,M2_locked,22,G01,10,success,2,,
+clin,M2_locked,23,G11,10,success,5,,
+clin,M2_locked,24,G00,10,success,5,,
+clin,M2_locked,25,G00,10,success,5,,
+clin,M2_locked,26,G00,10,success,2,,
+clin,M2_locked,27,G00,10,success,5,,
+clin,M2_locked,28,G00,10,success,4,,
+clin,M2_locked,29,G00,10,success,5,,
+clin,M2_locked,30,G01,10,success,1,,
+clin,M2_locked,31,G00,10,success,5,,
+clin,M2_locked,32,G00,10,success,5,,
+clin,M2_locked,33,G00,10,success,5,,
+clin,M2_locked,34,G10,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M2_locked,35,G01,10,success,5,,
+clin,M2_locked,36,G00,10,success,5,,
+clin,M2_locked,37,G10,10,success,5,,
+clin,M2_locked,38,G01,10,success,5,,
+clin,M2_locked,39,G01,10,success,5,,
+clin,M2_locked,40,G00,10,success,5,,
+clin,M2_locked,41,G11,10,success,5,,
+clin,M2_locked,42,G00,10,success,5,,
+clin,M2_locked,43,G00,10,success,5,,
+clin,M2_locked,44,G00,10,success,5,,
+clin,M2_locked,45,G00,10,success,5,,
+clin,M2_locked,46,G00,10,success,5,,
+clin,M2_locked,47,G01,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M2_locked,48,G00,10,success,5,,
+clin,M2_locked,49,G01,10,success,5,,
+clin,M2_locked,50,G01,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M2_locked,51,G00,10,success,5,,
+clin,M2_locked,52,G00,10,success,5,,
+clin,M2_locked,53,G00,10,success,5,,
+clin,M2_locked,54,G10,10,success,5,,
+clin,M2_locked,55,G00,10,success,5,,
+clin,M2_locked,56,G00,10,success,5,,
+clin,M2_locked,57,G01,10,success,5,,
+clin,M2_locked,58,G00,10,success,3,,
+clin,M2_locked,59,G00,10,success,5,,
+clin,M2_locked,60,G10,10,success,5,,
+clin,M2_locked,61,G10,10,success,5,,
+clin,M2_locked,62,G00,10,success,5,,
+clin,M2_locked,63,G00,10,success,5,,
+clin,M2_locked,64,G00,10,success,5,,
+clin,M2_locked,65,G10,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M2_locked,66,G00,10,success,5,,
+clin,M2_locked,67,G00,10,success,5,,
+clin,M2_locked,68,G00,10,success,5,,
+clin,M2_locked,69,G01,10,success,5,,
+clin,M2_locked,70,G00,10,success,5,,
+clin,M2_locked,71,G00,10,success,5,,
+clin,M2_locked,72,G00,10,success,5,,
+clin,M2_locked,73,G11,10,success,5,,
+clin,M2_locked,74,G00,10,success,5,,
+clin,M2_locked,75,G00,10,success,5,,
+clin,M2_locked,76,G10,10,success,5,,
+clin,M2_locked,77,G01,10,success,5,,
+clin,M2_locked,78,G00,10,success,5,,
+clin,M2_locked,79,G01,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M2_locked,80,G00,10,success,5,,
+clin,M2_locked,81,G01,10,success,5,,
+clin,M2_locked,82,G00,10,success,5,,
+clin,M2_locked,83,G00,10,success,5,,
+clin,M2_locked,84,G00,10,success,5,,
+clin,M2_locked,85,G00,10,success,5,,
+clin,M2_locked,86,G10,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M2_locked,87,G00,10,success,5,,
+clin,M2_locked,88,G11,10,success,5,,
+clin,M2_locked,89,G00,10,success,5,,
+clin,M2_locked,90,G00,10,success,5,,
+clin,M2_locked,91,G00,10,success,5,,
+clin,M2_locked,92,G00,10,success,5,,
+clin,M2_locked,93,G11,10,success,5,,
+clin,M2_locked,94,G10,10,success,5,,
+clin,M2_locked,95,G00,10,success,5,,
+clin,M2_locked,96,G10,10,success,5,,
+clin,M2_locked,97,G00,10,success,5,,
+clin,M2_locked,98,G00,10,success,5,,
+clin,M2_locked,99,G10,10,success,5,,
+clin,M2_locked,100,G00,10,success,5,,
+clin,M2_locked,101,G11,10,success,5,,
+clin,M2_locked,102,G11,10,success,5,,
+clin,M2_locked,103,G00,10,success,5,,
+clin,M2_locked,104,G00,10,success,5,,
+clin,M2_locked,105,G00,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M2_locked,106,G00,10,success,5,,
+clin,M2_locked,107,G00,10,success,5,,
+clin,M2_locked,108,G00,10,success,5,,
+clin,M2_locked,109,G00,10,success,5,,
+clin,M2_locked,110,G01,10,success,5,,
+clin,M2_locked,111,G00,10,success,5,,
+clin,M2_locked,112,G11,10,success,5,,
+clin,M2_locked,113,G01,10,success,5,,
+clin,M2_locked,114,G00,10,success,5,,
+clin,M2_locked,115,G01,10,success,5,,
+clin,M2_locked,116,G01,10,success,5,,
+clin,M2_locked,117,G10,10,success,5,,
+clin,M2_locked,118,G00,10,success,5,,
+clin,M2_locked,119,G00,10,success,5,,
+clin,M2_locked,120,G00,10,success,5,,
+clin,M2_locked,121,G00,10,success,5,,
+clin,M2_locked,122,G00,10,success,3,,
+clin,M2_locked,123,G10,10,success,5,,
+clin,M2_locked,124,G00,10,success,5,,
+clin,M2_locked,125,G00,10,success,5,,
+clin,M2_locked,126,G00,10,success,5,,
+clin,M2_locked,127,G00,10,success,5,,
+clin,M2_locked,128,G00,10,success,5,,
+clin,M2_locked,129,G01,10,success,5,,
+clin,M2_locked,130,G01,10,success,4,,
+clin,M2_locked,131,G00,10,success,5,,
+clin,M2_locked,132,G00,10,success,5,,
+clin,M2_locked,133,G00,10,success,5,,
+clin,M2_locked,134,G01,10,success,5,,
+clin,M2_locked,135,G10,10,success,5,,
+clin,M2_locked,136,G00,10,success,5,,
+clin,M2_locked,137,G01,10,success,5,,
+clin,M2_locked,138,G00,10,success,5,,
+clin,M2_locked,139,G00,10,success,5,,
+clin,M2_locked,140,G00,10,success,5,,
+clin,M2_locked,141,G00,10,success,5,,
+clin,M2_locked,142,G00,10,success,5,,
+clin,M2_locked,143,G01,10,success,5,,
+clin,M2_locked,144,G00,10,success,5,,
+clin,M2_locked,145,G00,10,success,5,,
+clin,M2_locked,146,G00,10,success,5,,
+clin,M2_locked,147,G00,10,success,5,,
+clin,M2_locked,148,G01,10,success,5,,
+clin,M2_locked,149,G01,10,success,5,,
+clin,M2_locked,150,G10,10,success,5,,
+clin,M2_locked,151,G01,10,success,5,,
+clin,M2_locked,152,G00,10,success,5,,
+clin,M2_locked,153,G01,10,success,5,,
+clin,M2_locked,154,G00,10,success,5,,
+clin,M2_locked,155,G00,10,success,5,,
+clin,M2_locked,156,G11,10,success,5,,
+clin,M2_locked,157,G11,10,success,5,,
+clin,M2_locked,158,G00,10,success,5,,
+clin,M2_locked,159,G00,10,success,5,,
+clin,M2_locked,160,G00,10,success,5,,
+clin,M2_locked,161,G01,10,success,5,,
+clin,M2_locked,162,G00,10,success,5,,
+clin,M2_locked,163,G01,10,success,5,,
+clin,M2_locked,164,G00,10,success,5,,
+clin,M2_locked,165,G00,10,success,5,,
+clin,M2_locked,166,G00,10,success,5,,
+clin,M2_locked,167,G00,10,success,5,,
+clin,M2_locked,168,G00,10,success,5,,
+clin,M2_locked,169,G01,10,success,5,,
+clin,M2_locked,170,G01,10,success,5,,
+clin,M2_locked,171,G01,10,success,5,,
+clin,M2_locked,172,G11,10,success,5,,
+clin,M2_locked,173,G00,10,success,5,,
+clin,M2_locked,174,G00,10,success,5,,
+clin,M2_locked,175,G01,10,success,5,,
+clin,M2_locked,176,G01,10,success,5,,
+clin,M2_locked,177,G01,10,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M2_locked,178,G10,10,success,5,,
+clin,M2_locked,179,G00,10,success,5,,
+clin,M2_locked,180,G00,10,success,5,,
+clin,M2_locked,181,G00,10,success,5,,
+clin,M2_locked,182,G00,10,success,5,,
+clin,M2_locked,183,G00,10,success,5,,
+clin,M2_locked,184,G11,10,success,5,,
+clin,M2_locked,185,G00,10,success,5,,
+clin,M2_locked,186,G00,10,success,5,,
+clin,M2_locked,187,G00,10,success,5,,
+clin,M2_locked,188,G10,10,success,5,,
+clin,M2_locked,189,G00,10,success,5,,
+clin,M2_locked,190,G00,10,success,5,,
+clin,M2_locked,191,G00,10,success,5,,
+clin,M2_locked,192,G00,10,success,5,,
+clin,M2_locked,193,G00,10,success,5,,
+clin,M2_locked,194,G01,10,success,5,,
+clin,M2_locked,195,G11,10,success,5,,
+clin,M2_locked,196,G00,10,success,5,,
+clin,M2_locked,197,G00,10,success,5,,
+clin,M2_locked,198,G00,10,success,5,,
+clin,M2_locked,199,G10,10,success,5,,

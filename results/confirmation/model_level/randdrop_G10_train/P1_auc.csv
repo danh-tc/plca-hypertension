@@ -1,0 +1,4 @@
+model,auc_mean,ci_low,ci_high
+f_clin,0.8307,0.8198,0.8447
+f_placebo,0.73,0.7089,0.7544
+f_self,0.8062,0.7925,0.8189

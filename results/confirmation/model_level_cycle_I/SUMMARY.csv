@@ -1,0 +1,5 @@
+config,group,contrast,mean,ci_low,ci_high,abs_auc_drop_self,abs_auc_drop_clin,abs_auc_drop_placebo,auc_self,auc_clin
+baseline,access,share_self_minus_placebo,0.0537,-0.0056,0.1181,0.0178,0.0072,0.0068,0.8164,0.8441
+baseline,access,share_self_minus_clin,0.0631,0.0164,0.1087,0.0178,0.0072,0.0068,0.8164,0.8441
+baseline,other_diagnoses,share_self_minus_placebo,0.1165,0.0341,0.1853,0.0325,0.0105,0.0091,0.8164,0.8441
+baseline,self_rated_health,share_self_minus_placebo,0.0251,-0.0138,0.0626,0.0096,0.0055,0.0043,0.8164,0.8441

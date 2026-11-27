@@ -1,0 +1,25 @@
+characteristic,Overall,G00,G01,G10,G11
+n (unweighted),"10,151","5,533",785,562,"3,271"
+"Age, years, mean (SD)",48.4 (17.2),42.1 (15.6),56.4 (15.3),44.5 (15.5),61.2 (13.0)
+"Age 20-39, %",35.2,49.0,16.6,46.0,6.9
+"Age 40-59, %",35.8,35.4,40.5,34.3,35.8
+"Age >= 60, %",29.0,15.6,42.9,19.7,57.3
+"Female, %",51.1,52.3,45.3,41.7,51.9
+"Race/ethnicity: Mexican American, %",8.7,10.2,9.1,8.8,5.3
+"Race/ethnicity: Other Hispanic, %",6.5,7.2,6.0,6.8,5.1
+"Race/ethnicity: Non-Hispanic White, %",63.7,62.7,63.7,63.8,65.8
+"Race/ethnicity: Non-Hispanic Black, %",11.3,9.7,12.1,10.9,14.7
+"Race/ethnicity: Non-Hispanic Asian, %",5.7,6.3,5.7,3.8,4.7
+"Race/ethnicity: Other / multiracial, %",4.2,4.0,3.4,6.0,4.5
+"Education: < High school, %",12.5,11.5,13.6,12.2,14.6
+"Education: High school / GED, %",24.2,22.6,28.0,24.3,26.8
+"Education: Some college / AA, %",31.7,30.6,28.1,35.1,34.3
+"Education: College graduate +, %",31.6,35.4,30.3,28.4,24.3
+"Income-to-poverty ratio < 1.3, %",20.3,19.8,20.5,25.5,20.1
+"Health insurance, %",86.5,84.0,88.8,82.4,92.5
+"BMI, kg/m2, mean (SD)",29.6 (7.1),28.3 (6.7),30.3 (7.3),30.9 (7.4),32.0 (7.2)
+"SBP, mmHg, mean (SD)",123.7 (17.7),115.8 (10.8),148.2 (13.1),122.0 (9.7),135.3 (20.0)
+"DBP, mmHg, mean (SD)",71.7 (11.4),69.7 (9.1),82.3 (13.1),72.5 (10.0),73.2 (13.7)
+"On BP medication, %",24.1,0.0,0.0,0.0,89.2
+"Y_self = 1, %",32.9,0.0,0.0,100.0,100.0
+"Y_clin140 = 1, %",34.0,0.0,100.0,0.0,100.0

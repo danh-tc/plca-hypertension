@@ -1,0 +1,801 @@
+source,mode,query,group,n_vary,status,n_returned,error_type,error_message
+self,M0_global,0,G10,16,success,5,,
+self,M0_global,1,G10,16,success,5,,
+self,M0_global,2,G01,16,success,5,,
+self,M0_global,3,G00,16,success,5,,
+self,M0_global,4,G01,16,success,5,,
+self,M0_global,5,G00,16,success,5,,
+self,M0_global,6,G00,16,success,5,,
+self,M0_global,7,G00,16,success,5,,
+self,M0_global,8,G10,16,success,5,,
+self,M0_global,9,G01,16,success,5,,
+self,M0_global,10,G01,16,success,5,,
+self,M0_global,11,G10,16,success,5,,
+self,M0_global,12,G01,16,success,5,,
+self,M0_global,13,G00,16,success,5,,
+self,M0_global,14,G10,16,success,5,,
+self,M0_global,15,G00,16,success,5,,
+self,M0_global,16,G01,16,success,5,,
+self,M0_global,17,G00,16,success,5,,
+self,M0_global,18,G01,16,success,5,,
+self,M0_global,19,G00,16,success,5,,
+self,M0_global,20,G10,16,success,5,,
+self,M0_global,21,G00,16,success,5,,
+self,M0_global,22,G10,16,success,5,,
+self,M0_global,23,G00,16,success,5,,
+self,M0_global,24,G00,16,success,5,,
+self,M0_global,25,G11,16,success,5,,
+self,M0_global,26,G01,16,success,5,,
+self,M0_global,27,G01,16,success,5,,
+self,M0_global,28,G00,16,success,5,,
+self,M0_global,29,G00,16,success,5,,
+self,M0_global,30,G00,16,success,5,,
+self,M0_global,31,G00,16,success,5,,
+self,M0_global,32,G00,16,success,5,,
+self,M0_global,33,G00,16,success,5,,
+self,M0_global,34,G10,16,success,5,,
+self,M0_global,35,G00,16,success,5,,
+self,M0_global,36,G00,16,success,5,,
+self,M0_global,37,G00,16,success,5,,
+self,M0_global,38,G10,16,success,5,,
+self,M0_global,39,G00,16,success,5,,
+self,M0_global,40,G00,16,success,5,,
+self,M0_global,41,G01,16,success,5,,
+self,M0_global,42,G00,16,success,5,,
+self,M0_global,43,G01,16,success,5,,
+self,M0_global,44,G00,16,success,5,,
+self,M0_global,45,G00,16,success,5,,
+self,M0_global,46,G00,16,success,5,,
+self,M0_global,47,G01,16,success,5,,
+self,M0_global,48,G01,16,success,5,,
+self,M0_global,49,G01,16,success,5,,
+self,M0_global,50,G11,16,success,5,,
+self,M0_global,51,G00,16,success,5,,
+self,M0_global,52,G00,16,success,5,,
+self,M0_global,53,G10,16,success,5,,
+self,M0_global,54,G00,16,success,5,,
+self,M0_global,55,G00,16,success,5,,
+self,M0_global,56,G01,16,success,5,,
+self,M0_global,57,G00,16,success,5,,
+self,M0_global,58,G01,16,success,5,,
+self,M0_global,59,G01,16,success,5,,
+self,M0_global,60,G00,16,success,5,,
+self,M0_global,61,G11,16,success,5,,
+self,M0_global,62,G00,16,success,5,,
+self,M0_global,63,G00,16,success,5,,
+self,M0_global,64,G00,16,success,5,,
+self,M0_global,65,G11,16,success,5,,
+self,M0_global,66,G00,16,success,5,,
+self,M0_global,67,G01,16,success,5,,
+self,M0_global,68,G01,16,success,5,,
+self,M0_global,69,G11,16,success,5,,
+self,M0_global,70,G01,16,success,5,,
+self,M0_global,71,G11,16,success,5,,
+self,M0_global,72,G10,16,success,5,,
+self,M0_global,73,G01,16,success,5,,
+self,M0_global,74,G00,16,success,5,,
+self,M0_global,75,G01,16,success,5,,
+self,M0_global,76,G00,16,success,5,,
+self,M0_global,77,G01,16,success,5,,
+self,M0_global,78,G00,16,success,5,,
+self,M0_global,79,G01,16,success,5,,
+self,M0_global,80,G10,16,success,5,,
+self,M0_global,81,G00,16,success,5,,
+self,M0_global,82,G00,16,success,5,,
+self,M0_global,83,G00,16,success,5,,
+self,M0_global,84,G00,16,success,5,,
+self,M0_global,85,G11,16,success,5,,
+self,M0_global,86,G00,16,success,5,,
+self,M0_global,87,G00,16,success,5,,
+self,M0_global,88,G00,16,success,5,,
+self,M0_global,89,G00,16,success,5,,
+self,M0_global,90,G00,16,success,5,,
+self,M0_global,91,G00,16,success,5,,
+self,M0_global,92,G00,16,success,5,,
+self,M0_global,93,G00,16,success,5,,
+self,M0_global,94,G00,16,success,5,,
+self,M0_global,95,G01,16,success,5,,
+self,M0_global,96,G01,16,success,5,,
+self,M0_global,97,G00,16,success,5,,
+self,M0_global,98,G00,16,success,5,,
+self,M0_global,99,G00,16,success,5,,
+self,M0_global,100,G00,16,success,5,,
+self,M0_global,101,G11,16,success,5,,
+self,M0_global,102,G11,16,success,5,,
+self,M0_global,103,G00,16,success,5,,
+self,M0_global,104,G00,16,success,5,,
+self,M0_global,105,G10,16,success,5,,
+self,M0_global,106,G00,16,success,5,,
+self,M0_global,107,G00,16,success,5,,
+self,M0_global,108,G00,16,success,5,,
+self,M0_global,109,G00,16,success,5,,
+self,M0_global,110,G10,16,success,5,,
+self,M0_global,111,G01,16,success,5,,
+self,M0_global,112,G00,16,success,5,,
+self,M0_global,113,G01,16,success,5,,
+self,M0_global,114,G00,16,success,5,,
+self,M0_global,115,G01,16,success,5,,
+self,M0_global,116,G10,16,success,5,,
+self,M0_global,117,G01,16,success,5,,
+self,M0_global,118,G01,16,success,5,,
+self,M0_global,119,G00,16,success,5,,
+self,M0_global,120,G10,16,success,5,,
+self,M0_global,121,G00,16,success,5,,
+self,M0_global,122,G00,16,success,5,,
+self,M0_global,123,G10,16,success,5,,
+self,M0_global,124,G00,16,success,5,,
+self,M0_global,125,G00,16,success,5,,
+self,M0_global,126,G01,16,success,5,,
+self,M0_global,127,G00,16,success,5,,
+self,M0_global,128,G00,16,success,5,,
+self,M0_global,129,G00,16,success,5,,
+self,M0_global,130,G00,16,success,5,,
+self,M0_global,131,G00,16,success,5,,
+self,M0_global,132,G01,16,success,5,,
+self,M0_global,133,G01,16,success,5,,
+self,M0_global,134,G01,16,success,5,,
+self,M0_global,135,G11,16,success,5,,
+self,M0_global,136,G00,16,success,5,,
+self,M0_global,137,G00,16,success,5,,
+self,M0_global,138,G00,16,success,5,,
+self,M0_global,139,G00,16,success,5,,
+self,M0_global,140,G00,16,success,5,,
+self,M0_global,141,G01,16,success,5,,
+self,M0_global,142,G00,16,success,5,,
+self,M0_global,143,G00,16,success,5,,
+self,M0_global,144,G01,16,success,5,,
+self,M0_global,145,G00,16,success,5,,
+self,M0_global,146,G00,16,success,5,,
+self,M0_global,147,G00,16,success,5,,
+self,M0_global,148,G00,16,success,5,,
+self,M0_global,149,G00,16,success,5,,
+self,M0_global,150,G00,16,success,5,,
+self,M0_global,151,G01,16,success,5,,
+self,M0_global,152,G00,16,success,5,,
+self,M0_global,153,G00,16,success,5,,
+self,M0_global,154,G00,16,success,5,,
+self,M0_global,155,G10,16,success,5,,
+self,M0_global,156,G00,16,success,5,,
+self,M0_global,157,G00,16,success,5,,
+self,M0_global,158,G00,16,success,5,,
+self,M0_global,159,G10,16,success,5,,
+self,M0_global,160,G00,16,success,5,,
+self,M0_global,161,G00,16,success,5,,
+self,M0_global,162,G00,16,success,5,,
+self,M0_global,163,G00,16,success,5,,
+self,M0_global,164,G00,16,success,5,,
+self,M0_global,165,G01,16,success,5,,
+self,M0_global,166,G01,16,success,5,,
+self,M0_global,167,G01,16,success,5,,
+self,M0_global,168,G00,16,success,5,,
+self,M0_global,169,G01,16,success,5,,
+self,M0_global,170,G00,16,success,5,,
+self,M0_global,171,G00,16,success,5,,
+self,M0_global,172,G01,16,success,5,,
+self,M0_global,173,G00,16,success,5,,
+self,M0_global,174,G00,16,success,5,,
+self,M0_global,175,G00,16,success,5,,
+self,M0_global,176,G00,16,success,5,,
+self,M0_global,177,G11,16,success,5,,
+self,M0_global,178,G01,16,success,5,,
+self,M0_global,179,G10,16,success,5,,
+self,M0_global,180,G00,16,success,5,,
+self,M0_global,181,G10,16,success,5,,
+self,M0_global,182,G01,16,success,5,,
+self,M0_global,183,G00,16,success,5,,
+self,M0_global,184,G00,16,success,5,,
+self,M0_global,185,G00,16,success,5,,
+self,M0_global,186,G00,16,success,5,,
+self,M0_global,187,G00,16,success,5,,
+self,M0_global,188,G00,16,success,5,,
+self,M0_global,189,G00,16,success,5,,
+self,M0_global,190,G00,16,success,5,,
+self,M0_global,191,G00,16,success,5,,
+self,M0_global,192,G10,16,success,5,,
+self,M0_global,193,G01,16,success,5,,
+self,M0_global,194,G00,16,success,5,,
+self,M0_global,195,G00,16,success,5,,
+self,M0_global,196,G10,16,success,5,,
+self,M0_global,197,G00,16,success,5,,
+self,M0_global,198,G01,16,success,5,,
+self,M0_global,199,G00,16,success,5,,
+self,M3_evidence,0,G10,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,1,G10,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,2,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,3,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,4,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,5,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,6,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,7,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,8,G10,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,9,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,10,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,11,G10,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,12,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,13,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,14,G10,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,15,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,16,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,17,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,18,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,19,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,20,G10,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,21,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,22,G10,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,23,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,24,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,25,G11,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,26,G01,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,27,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,28,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,29,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,30,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,31,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,32,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,33,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,34,G10,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,35,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,36,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,37,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,38,G10,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,39,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,40,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,41,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,42,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,43,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,44,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,45,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,46,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,47,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,48,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,49,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,50,G11,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,51,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,52,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,53,G10,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,54,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,55,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,56,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,57,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,58,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,59,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,60,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,61,G11,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,62,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,63,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,64,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,65,G11,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,66,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,67,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,68,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,69,G11,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,70,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,71,G11,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,72,G10,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,73,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,74,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,75,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,76,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,77,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,78,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,79,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,80,G10,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,81,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,82,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,83,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,84,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,85,G11,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,86,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,87,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,88,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,89,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,90,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,91,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,92,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,93,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,94,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,95,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,96,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,97,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,98,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,99,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,100,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,101,G11,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,102,G11,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,103,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,104,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,105,G10,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,106,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,107,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,108,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,109,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,110,G10,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,111,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,112,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,113,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,114,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,115,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,116,G10,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,117,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,118,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,119,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,120,G10,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,121,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,122,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,123,G10,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,124,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,125,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,126,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,127,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,128,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,129,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,130,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,131,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,132,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,133,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,134,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,135,G11,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,136,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,137,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,138,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,139,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,140,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,141,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,142,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,143,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,144,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,145,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,146,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,147,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,148,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,149,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,150,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,151,G01,7,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,152,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,153,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,154,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,155,G10,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,156,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,157,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,158,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,159,G10,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,160,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,161,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,162,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,163,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,164,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,165,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,166,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,167,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,168,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,169,G01,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,170,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,171,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,172,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,173,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,174,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,175,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,176,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,177,G11,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,178,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,179,G10,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,180,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,181,G10,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,182,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,183,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,184,G00,8,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,185,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,186,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,187,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,188,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,189,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,190,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,191,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,192,G10,5,success,5,,
+self,M3_evidence,193,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,194,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,195,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,196,G10,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,197,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,198,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+self,M3_evidence,199,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M0_global,0,G10,16,success,1,,
+clin,M0_global,1,G10,16,success,5,,
+clin,M0_global,2,G01,16,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M0_global,3,G00,16,success,5,,
+clin,M0_global,4,G01,16,success,5,,
+clin,M0_global,5,G00,16,success,5,,
+clin,M0_global,6,G00,16,success,5,,
+clin,M0_global,7,G00,16,success,5,,
+clin,M0_global,8,G10,16,success,5,,
+clin,M0_global,9,G01,16,success,5,,
+clin,M0_global,10,G01,16,success,5,,
+clin,M0_global,11,G10,16,success,5,,
+clin,M0_global,12,G01,16,success,5,,
+clin,M0_global,13,G00,16,success,5,,
+clin,M0_global,14,G10,16,success,5,,
+clin,M0_global,15,G00,16,success,5,,
+clin,M0_global,16,G01,16,success,5,,
+clin,M0_global,17,G00,16,success,5,,
+clin,M0_global,18,G01,16,success,5,,
+clin,M0_global,19,G00,16,success,5,,
+clin,M0_global,20,G10,16,success,5,,
+clin,M0_global,21,G00,16,success,5,,
+clin,M0_global,22,G10,16,success,5,,
+clin,M0_global,23,G00,16,success,5,,
+clin,M0_global,24,G00,16,success,5,,
+clin,M0_global,25,G11,16,success,5,,
+clin,M0_global,26,G01,16,success,5,,
+clin,M0_global,27,G01,16,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M0_global,28,G00,16,success,5,,
+clin,M0_global,29,G00,16,success,5,,
+clin,M0_global,30,G00,16,success,5,,
+clin,M0_global,31,G00,16,success,5,,
+clin,M0_global,32,G00,16,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M0_global,33,G00,16,success,5,,
+clin,M0_global,34,G10,16,success,5,,
+clin,M0_global,35,G00,16,success,5,,
+clin,M0_global,36,G00,16,success,5,,
+clin,M0_global,37,G00,16,success,5,,
+clin,M0_global,38,G10,16,success,5,,
+clin,M0_global,39,G00,16,success,5,,
+clin,M0_global,40,G00,16,success,5,,
+clin,M0_global,41,G01,16,success,5,,
+clin,M0_global,42,G00,16,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M0_global,43,G01,16,success,5,,
+clin,M0_global,44,G00,16,success,5,,
+clin,M0_global,45,G00,16,success,5,,
+clin,M0_global,46,G00,16,success,5,,
+clin,M0_global,47,G01,16,success,5,,
+clin,M0_global,48,G01,16,success,5,,
+clin,M0_global,49,G01,16,success,5,,
+clin,M0_global,50,G11,16,success,5,,
+clin,M0_global,51,G00,16,success,5,,
+clin,M0_global,52,G00,16,success,5,,
+clin,M0_global,53,G10,16,success,5,,
+clin,M0_global,54,G00,16,success,5,,
+clin,M0_global,55,G00,16,success,5,,
+clin,M0_global,56,G01,16,success,5,,
+clin,M0_global,57,G00,16,success,5,,
+clin,M0_global,58,G01,16,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M0_global,59,G01,16,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M0_global,60,G00,16,success,5,,
+clin,M0_global,61,G11,16,success,5,,
+clin,M0_global,62,G00,16,success,5,,
+clin,M0_global,63,G00,16,success,5,,
+clin,M0_global,64,G00,16,success,5,,
+clin,M0_global,65,G11,16,success,5,,
+clin,M0_global,66,G00,16,success,5,,
+clin,M0_global,67,G01,16,success,5,,
+clin,M0_global,68,G01,16,success,5,,
+clin,M0_global,69,G11,16,success,5,,
+clin,M0_global,70,G01,16,success,5,,
+clin,M0_global,71,G11,16,success,5,,
+clin,M0_global,72,G10,16,success,5,,
+clin,M0_global,73,G01,16,success,5,,
+clin,M0_global,74,G00,16,success,5,,
+clin,M0_global,75,G01,16,success,5,,
+clin,M0_global,76,G00,16,success,5,,
+clin,M0_global,77,G01,16,success,5,,
+clin,M0_global,78,G00,16,success,5,,
+clin,M0_global,79,G01,16,success,5,,
+clin,M0_global,80,G10,16,success,5,,
+clin,M0_global,81,G00,16,success,5,,
+clin,M0_global,82,G00,16,success,1,,
+clin,M0_global,83,G00,16,success,5,,
+clin,M0_global,84,G00,16,success,5,,
+clin,M0_global,85,G11,16,success,5,,
+clin,M0_global,86,G00,16,success,5,,
+clin,M0_global,87,G00,16,success,5,,
+clin,M0_global,88,G00,16,success,5,,
+clin,M0_global,89,G00,16,success,5,,
+clin,M0_global,90,G00,16,success,5,,
+clin,M0_global,91,G00,16,success,5,,
+clin,M0_global,92,G00,16,success,5,,
+clin,M0_global,93,G00,16,success,5,,
+clin,M0_global,94,G00,16,success,5,,
+clin,M0_global,95,G01,16,success,5,,
+clin,M0_global,96,G01,16,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M0_global,97,G00,16,success,5,,
+clin,M0_global,98,G00,16,success,5,,
+clin,M0_global,99,G00,16,success,5,,
+clin,M0_global,100,G00,16,success,5,,
+clin,M0_global,101,G11,16,success,5,,
+clin,M0_global,102,G11,16,success,5,,
+clin,M0_global,103,G00,16,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M0_global,104,G00,16,success,5,,
+clin,M0_global,105,G10,16,success,5,,
+clin,M0_global,106,G00,16,success,5,,
+clin,M0_global,107,G00,16,success,5,,
+clin,M0_global,108,G00,16,success,5,,
+clin,M0_global,109,G00,16,success,5,,
+clin,M0_global,110,G10,16,success,5,,
+clin,M0_global,111,G01,16,success,5,,
+clin,M0_global,112,G00,16,success,5,,
+clin,M0_global,113,G01,16,success,5,,
+clin,M0_global,114,G00,16,success,5,,
+clin,M0_global,115,G01,16,success,5,,
+clin,M0_global,116,G10,16,success,5,,
+clin,M0_global,117,G01,16,success,5,,
+clin,M0_global,118,G01,16,success,5,,
+clin,M0_global,119,G00,16,success,5,,
+clin,M0_global,120,G10,16,success,5,,
+clin,M0_global,121,G00,16,success,5,,
+clin,M0_global,122,G00,16,success,5,,
+clin,M0_global,123,G10,16,success,5,,
+clin,M0_global,124,G00,16,success,5,,
+clin,M0_global,125,G00,16,success,5,,
+clin,M0_global,126,G01,16,success,5,,
+clin,M0_global,127,G00,16,success,5,,
+clin,M0_global,128,G00,16,success,5,,
+clin,M0_global,129,G00,16,success,5,,
+clin,M0_global,130,G00,16,success,5,,
+clin,M0_global,131,G00,16,success,5,,
+clin,M0_global,132,G01,16,success,5,,
+clin,M0_global,133,G01,16,success,5,,
+clin,M0_global,134,G01,16,success,5,,
+clin,M0_global,135,G11,16,success,5,,
+clin,M0_global,136,G00,16,success,5,,
+clin,M0_global,137,G00,16,success,5,,
+clin,M0_global,138,G00,16,success,5,,
+clin,M0_global,139,G00,16,success,5,,
+clin,M0_global,140,G00,16,success,5,,
+clin,M0_global,141,G01,16,success,5,,
+clin,M0_global,142,G00,16,success,5,,
+clin,M0_global,143,G00,16,success,5,,
+clin,M0_global,144,G01,16,success,5,,
+clin,M0_global,145,G00,16,success,5,,
+clin,M0_global,146,G00,16,success,5,,
+clin,M0_global,147,G00,16,success,5,,
+clin,M0_global,148,G00,16,success,5,,
+clin,M0_global,149,G00,16,success,5,,
+clin,M0_global,150,G00,16,success,5,,
+clin,M0_global,151,G01,16,success,5,,
+clin,M0_global,152,G00,16,success,5,,
+clin,M0_global,153,G00,16,success,5,,
+clin,M0_global,154,G00,16,success,5,,
+clin,M0_global,155,G10,16,success,5,,
+clin,M0_global,156,G00,16,success,5,,
+clin,M0_global,157,G00,16,success,5,,
+clin,M0_global,158,G00,16,success,5,,
+clin,M0_global,159,G10,16,success,5,,
+clin,M0_global,160,G00,16,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M0_global,161,G00,16,success,5,,
+clin,M0_global,162,G00,16,success,5,,
+clin,M0_global,163,G00,16,success,5,,
+clin,M0_global,164,G00,16,success,5,,
+clin,M0_global,165,G01,16,success,4,,
+clin,M0_global,166,G01,16,success,5,,
+clin,M0_global,167,G01,16,success,5,,
+clin,M0_global,168,G00,16,success,5,,
+clin,M0_global,169,G01,16,success,5,,
+clin,M0_global,170,G00,16,success,5,,
+clin,M0_global,171,G00,16,success,5,,
+clin,M0_global,172,G01,16,success,5,,
+clin,M0_global,173,G00,16,success,5,,
+clin,M0_global,174,G00,16,success,5,,
+clin,M0_global,175,G00,16,success,5,,
+clin,M0_global,176,G00,16,success,5,,
+clin,M0_global,177,G11,16,success,5,,
+clin,M0_global,178,G01,16,success,5,,
+clin,M0_global,179,G10,16,success,5,,
+clin,M0_global,180,G00,16,success,5,,
+clin,M0_global,181,G10,16,success,5,,
+clin,M0_global,182,G01,16,success,5,,
+clin,M0_global,183,G00,16,success,5,,
+clin,M0_global,184,G00,16,success,5,,
+clin,M0_global,185,G00,16,success,5,,
+clin,M0_global,186,G00,16,success,5,,
+clin,M0_global,187,G00,16,success,5,,
+clin,M0_global,188,G00,16,success,5,,
+clin,M0_global,189,G00,16,success,5,,
+clin,M0_global,190,G00,16,success,5,,
+clin,M0_global,191,G00,16,success,5,,
+clin,M0_global,192,G10,16,success,5,,
+clin,M0_global,193,G01,16,success,5,,
+clin,M0_global,194,G00,16,success,5,,
+clin,M0_global,195,G00,16,success,5,,
+clin,M0_global,196,G10,16,success,5,,
+clin,M0_global,197,G00,16,success,5,,
+clin,M0_global,198,G01,16,success,5,,
+clin,M0_global,199,G00,16,success,5,,
+clin,M3_evidence,0,G10,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,1,G10,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,2,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,3,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,4,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,5,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,6,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,7,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,8,G10,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,9,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,10,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,11,G10,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,12,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,13,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,14,G10,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,15,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,16,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,17,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,18,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,19,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,20,G10,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,21,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,22,G10,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,23,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,24,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,25,G11,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,26,G01,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,27,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,28,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,29,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,30,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,31,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,32,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,33,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,34,G10,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,35,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,36,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,37,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,38,G10,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,39,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,40,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,41,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,42,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,43,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,44,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,45,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,46,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,47,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,48,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,49,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,50,G11,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,51,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,52,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,53,G10,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,54,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,55,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,56,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,57,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,58,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,59,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,60,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,61,G11,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,62,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,63,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,64,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,65,G11,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,66,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,67,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,68,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,69,G11,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,70,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,71,G11,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,72,G10,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,73,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,74,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,75,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,76,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,77,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,78,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,79,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,80,G10,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,81,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,82,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,83,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,84,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,85,G11,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,86,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,87,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,88,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,89,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,90,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,91,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,92,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,93,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,94,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,95,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,96,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,97,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,98,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,99,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,100,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,101,G11,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,102,G11,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,103,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,104,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,105,G10,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,106,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,107,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,108,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,109,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,110,G10,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,111,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,112,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,113,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,114,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,115,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,116,G10,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,117,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,118,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,119,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,120,G10,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,121,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,122,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,123,G10,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,124,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,125,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,126,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,127,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,128,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,129,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,130,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,131,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,132,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,133,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,134,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,135,G11,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,136,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,137,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,138,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,139,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,140,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,141,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,142,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,143,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,144,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,145,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,146,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,147,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,148,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,149,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,150,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,151,G01,7,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,152,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,153,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,154,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,155,G10,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,156,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,157,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,158,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,159,G10,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,160,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,161,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,162,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,163,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,164,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,165,G01,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,166,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,167,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,168,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,169,G01,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,170,G00,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,171,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,172,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,173,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,174,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,175,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,176,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,177,G11,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,178,G01,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,179,G10,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,180,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,181,G10,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,182,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,183,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,184,G00,8,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,185,G00,1,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,186,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,187,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,188,G00,6,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,189,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,190,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,191,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,192,G10,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,193,G01,5,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,194,G00,2,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,195,G00,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,196,G10,3,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,197,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,198,G01,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.
+clin,M3_evidence,199,G00,4,no_cf_found,0,UserConfigValidationException,No counterfactuals found for any of the query points! Kindly check your configuration.

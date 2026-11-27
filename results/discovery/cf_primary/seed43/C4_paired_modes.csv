@@ -1,0 +1,5 @@
+source,comparison,n_common,ECD_M0,ECD_mode,diff,diff_lo,diff_hi
+f_self,M0_global - M1_taxonomy,17,0.0637,0.0237,0.0399,-0.0181,0.0908
+f_self,M0_global - M2_locked,156,0.0666,0.0217,0.0449,0.0302,0.0601
+f_clin,M0_global - M1_taxonomy,11,-0.0036,0.0488,-0.0524,-0.0815,-0.022
+f_clin,M0_global - M2_locked,192,0.0397,0.0657,-0.0261,-0.0382,-0.0143

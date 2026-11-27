@@ -1,0 +1,13 @@
+definition,source,mode,subset,n_cfs,n_patients,dr_within_alt,dr_cross_alt,flip_cross_alt_pct
+channel_directional,f_clin,M0_global,no_channel,19,16,0.187,0.1978,42.1053
+channel_directional,f_clin,M0_global,uses_channel,851,192,0.2657,0.3861,84.6063
+channel_directional,f_clin,M2_locked,no_channel,797,179,0.2193,0.2795,66.7503
+channel_directional,f_self,M0_global,no_channel,29,19,0.1766,0.1682,17.2414
+channel_directional,f_self,M0_global,uses_channel,929,199,0.327,0.1953,28.4177
+channel_directional,f_self,M2_locked,no_channel,920,196,0.2595,0.1535,16.9565
+channel_any_change,f_clin,M0_global,no_channel,8,6,0.2247,0.2792,75.0
+channel_any_change,f_clin,M0_global,uses_channel,862,192,0.2644,0.383,83.7587
+channel_any_change,f_clin,M2_locked,no_channel,797,179,0.2193,0.2795,66.7503
+channel_any_change,f_self,M0_global,no_channel,15,13,0.1976,0.1769,6.6667
+channel_any_change,f_self,M0_global,uses_channel,943,200,0.3244,0.1948,28.4199
+channel_any_change,f_self,M2_locked,no_channel,920,196,0.2595,0.1535,16.9565

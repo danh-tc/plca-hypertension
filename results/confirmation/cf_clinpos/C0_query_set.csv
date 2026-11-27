@@ -1,0 +1,2 @@
+query_pool,n_queries,eligible,n_G01,n_G11,mean_p0_self,mean_p0_clin
+clinpos_unmedicated,115,115,85,30,0.6865304708480835,0.7369886040687561

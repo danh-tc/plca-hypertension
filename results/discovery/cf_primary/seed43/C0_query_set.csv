@@ -1,0 +1,2 @@
+query_pool,n_queries,eligible,n_G00,n_G10,n_G01,n_G11,mean_p0_self,mean_p0_clin
+unmedicated,200,332,132,24,24,20,0.7555868625640869,0.7794361710548401

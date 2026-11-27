@@ -1,0 +1,7 @@
+group,features
+demographic_SES,"age, female, education, income_pir, race_1, race_2, race_3, race_4, race_6, race_7"
+access,"insured, routine_place, visits_past_year"
+other_diagnoses,"diabetes_told, high_chol_told"
+lifestyle,"current_smoker, drinks_per_day, vigorous_rec_pa, moderate_rec_pa"
+physiology,"bmi, waist, total_chol, hba1c"
+self_rated_health,self_rated_health
