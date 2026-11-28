@@ -55,8 +55,8 @@ for comparison. Changing a label definition changes the resulting CFs
 What is still missing is a test, on the same people, of how much a
 feature group contributes to the difference between two clinical label
 definitions, and whether restricting that group reduces it. This matters
-because the usual response to an implausible CF is to lock the feature
-involved {[}12,16,17{]}.
+because a common response to an implausible CF is to restrict which
+features may change {[}12,16,17{]}.
 
 We propose the Paired-Label Counterfactual Audit (PLCA), an audit
 procedure based on two label definitions recorded for the same people.
@@ -167,7 +167,7 @@ M2, locking & As M0, with access to care, other diagnoses and self-rated health 
 
 Under M1, BMI and waist may fall only to their thresholds (25 kg/m², or
 23 for non-Hispanic Asian people; 102 cm for men, 88 cm for women)
-{[}25--29{]}; imputed values are fixed (Appendix Table A.4).
+{[}25--28{]}; imputed values are fixed (Appendix Table A.4).
 
 We trained one \emph{evaluation model} per label, \(g_{\mathrm{self}}\)
 and \(g_{\mathrm{clin}}\), on the same bootstrap sample of the training
@@ -237,11 +237,11 @@ seeds had to give point estimates in the same direction. The bootstrap
 intervals are conditional on the trained models and on the people with
 valid CFs. \emph{E5}, a secondary screening analysis, compared the
 proportion of G01 people captured in the top 30\% of scores of each CF
-model with an exact McNemar test {[}30{]}. Table 2 used survey weights
+model with an exact McNemar test {[}29{]}. Table 2 used survey weights
 and Taylor linearization {[}19{]}; the models did not use weights. Post
 hoc, we report test-set discrimination and calibration of the audited
 models (Appendix A). The study was not registered and follows TRIPOD+AI
-{[}31{]}.
+{[}30{]}.
 
 \subsection{Sensitivity analyses and reproducibility}
 
@@ -465,7 +465,7 @@ intervention.
 PLCA could serve as a pre-deployment audit step, not a clinical tool:
 its intended users are developers and governance teams validating a
 CF-based decision support model before release. It is a proof of concept
-on survey data (self-assessed technology readiness level 3--4 {[}32{]}).
+on survey data (self-assessed technology readiness level 3--4 {[}31{]}).
 A proposed path is: (i) rerun PLCA on electronic health record data
 where a diagnosis code and measured blood pressure exist for the same
 patients; (ii) have clinicians review the constraint rules and a sample
@@ -482,7 +482,7 @@ for the same people to measure how the label definition affects CF
 behavior and whether locking features removes this effect. Our results
 are consistent with that suggestion in another disease, but we did not
 test the original diabetes taxonomy. Attribution and CFs are known to
-disagree {[}33{]}.
+disagree {[}32{]}.
 
 \subsection{Limitations}
 
@@ -623,12 +623,13 @@ publication.
 \bibitem{r25} D.W. Jones, K.C. Ferdinand, S.J. Taler, et al., 2025 AHA/\allowbreak{}ACC/\allowbreak{}AANP/\allowbreak{}AAPA/\allowbreak{}ABC/\allowbreak{}ACCP/\allowbreak{}ACPM/\allowbreak{}AGS/\allowbreak{}AMA/\allowbreak{}ASPC/\allowbreak{}NMA/\allowbreak{}PCNA/\allowbreak{}SGIM guideline for the prevention, detection, evaluation and management of high blood pressure in adults: a report of the American College of Cardiology/\allowbreak{}American Heart Association Joint Committee on Clinical Practice Guidelines, Circulation 152 (11) (2025) e114–e218, \url{https://doi.org/10.1161/CIR.0000000000001356}
 \bibitem{r26} S.M. Grundy, J.I. Cleeman, S.R. Daniels, et al., Diagnosis and management of the metabolic syndrome: an American Heart Association/\allowbreak{}National Heart, Lung, and Blood Institute scientific statement, Circulation 112 (17) (2005) 2735–2752, \url{https://doi.org/10.1161/CIRCULATIONAHA.105.169404}
 \bibitem{r27} K.G.M.M. Alberti, R.H. Eckel, S.M. Grundy, et al., Harmonizing the metabolic syndrome: a joint interim statement, Circulation 120 (16) (2009) 1640–1645, \url{https://doi.org/10.1161/CIRCULATIONAHA.109.192644}
-\bibitem{r28} R.S. Blumenthal, P.B. Morris, M. Gaudino, et al., 2026 ACC/\allowbreak{}AHA/\allowbreak{}AACVPR/\allowbreak{}ABC/\allowbreak{}ACPM/\allowbreak{}ADA/\allowbreak{}AGS/\allowbreak{}APhA/\allowbreak{}ASPC/\allowbreak{}NLA/\allowbreak{}PCNA guideline on the management of dyslipidemia, J. Am. Coll. Cardiol. (2026), \url{https://doi.org/10.1016/j.jacc.2025.11.016}
-\bibitem{r29} F.C. Bull, S.S. Al-Ansari, S. Biddle, et al., World Health Organization 2020 guidelines on physical activity and sedentary behaviour, Br. J. Sports Med. 54 (24) (2020) 1451–1462, \url{https://doi.org/10.1136/bjsports-2020-102955}
-\bibitem{r30} Q. McNemar, Note on the sampling error of the difference between correlated proportions or percentages, Psychometrika 12 (2) (1947) 153–157, \url{https://doi.org/10.1007/BF02295996}
-\bibitem{r31} G.S. Collins, K.G.M. Moons, P. Dhiman, et al., TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use regression or machine learning methods, BMJ 385 (2024) e078378, \url{https://doi.org/10.1136/bmj-2023-078378}
-\bibitem{r32} A. Lavin, C.M. Gilligan-Lee, A. Visnjic, S. Ganju, D. Newman, S. Ganguly, D. Lange, A.G. Baydin, A. Sharma, A. Gibson, S. Zheng, E.P. Xing, C. Mattmann, J. Parr, Y. Gal, Technology readiness levels for machine learning systems, Nat. Commun. 13 (2022) 6039, \url{https://doi.org/10.1038/s41467-022-33128-9}
-\bibitem{r33} R.K. Mothilal, D. Mahajan, C. Tan, A. Sharma, Towards unifying feature attribution and counterfactual explanations: different means to the same end, in: Proceedings of the 2021 AAAI/\allowbreak{}ACM Conference on AI, Ethics, and Society (AIES '21), 2021, pp. 652–663, \url{https://doi.org/10.1145/3461702.3462597}
+\bibitem{r28} WHO Expert Consultation, Appropriate body-mass index for Asian populations and its implications for policy and intervention strategies, Lancet 363 (9403) (2004) 157–163, \url{https://doi.org/10.1016/S0140-6736(03)15268-3}
+\bibitem{r29} Q. McNemar, Note on the sampling error of the difference between correlated proportions or percentages, Psychometrika 12 (2) (1947) 153–157, \url{https://doi.org/10.1007/BF02295996}
+\bibitem{r30} G.S. Collins, K.G.M. Moons, P. Dhiman, et al., TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use regression or machine learning methods, BMJ 385 (2024) e078378, \url{https://doi.org/10.1136/bmj-2023-078378}
+\bibitem{r31} A. Lavin, C.M. Gilligan-Lee, A. Visnjic, S. Ganju, D. Newman, S. Ganguly, D. Lange, A.G. Baydin, A. Sharma, A. Gibson, S. Zheng, E.P. Xing, C. Mattmann, J. Parr, Y. Gal, Technology readiness levels for machine learning systems, Nat. Commun. 13 (2022) 6039, \url{https://doi.org/10.1038/s41467-022-33128-9}
+\bibitem{r32} R.K. Mothilal, D. Mahajan, C. Tan, A. Sharma, Towards unifying feature attribution and counterfactual explanations: different means to the same end, in: Proceedings of the 2021 AAAI/\allowbreak{}ACM Conference on AI, Ethics, and Society (AIES '21), 2021, pp. 652–663, \url{https://doi.org/10.1145/3461702.3462597}
+\bibitem{r33} R.S. Blumenthal, P.B. Morris, M. Gaudino, et al., 2026 ACC/\allowbreak{}AHA/\allowbreak{}AACVPR/\allowbreak{}ABC/\allowbreak{}ACPM/\allowbreak{}ADA/\allowbreak{}AGS/\allowbreak{}APhA/\allowbreak{}ASPC/\allowbreak{}NLA/\allowbreak{}PCNA guideline on the management of dyslipidemia, J. Am. Coll. Cardiol. (2026), \url{https://doi.org/10.1016/j.jacc.2025.11.016}
+\bibitem{r34} F.C. Bull, S.S. Al-Ansari, S. Biddle, et al., World Health Organization 2020 guidelines on physical activity and sedentary behaviour, Br. J. Sports Med. 54 (24) (2020) 1451–1462, \url{https://doi.org/10.1136/bjsports-2020-102955}
 \end{thebibliography}
 \clearpage
 \appendix
@@ -696,10 +697,10 @@ $f_{\mathrm{clin}}$ & M2 & 851 & 0.221 & 0.205 & −0.016 \\
 \toprule
 \textbf{Feature (NHANES)} & \textbf{Allowed change} & \textbf{Code} & \textbf{Basis} \\ \midrule
 Insurance (HIQ011), usual place of care (HUQ030) & Only no → yes & D/P & Team-based care and removing access barriers [25] \\
-Current smoking (SMQ020/SMQ040) & Only yes → no & G/P & Avoid tobacco [28] \\
+Current smoking (SMQ020/SMQ040) & Only yes → no & G/P & Avoid tobacco [33] \\
 Drinks per drinking day (ALQ130) & If x > 1, down within [1, x]; otherwise fixed & G/S & [25], recommendation 6 (Class 1/A); the floor of one follows the meaning of ALQ130 \\
-Moderate (PAQ665) and vigorous (PAQ650) recreational activity & Only no → yes & G/P & [25], recommendation 7 (Class 1/A); [29] \\
-BMI (BMXBMI) & If x > T, down within [T, x]; otherwise fixed. T = 23 for non-Hispanic Asian (RIDRETH3 = 6), 25 otherwise & G/P & [25], recommendation 1 (Class 1/A), and BMI categories \\
+Moderate (PAQ665) and vigorous (PAQ650) recreational activity & Only no → yes & G/P & [25], recommendation 7 (Class 1/A); [34] \\
+BMI (BMXBMI) & If x > T, down within [T, x]; otherwise fixed. T = 23 for non-Hispanic Asian (RIDRETH3 = 6), 25 otherwise & G/P & [25], recommendation 1 (Class 1/A); BMI cut-offs, including 23 kg/m² for Asian populations [28] \\
 Waist (BMXWAIST) & If x > T, down within [T, x]; otherwise fixed. T = 102 cm (men), 88 cm (women) & P & Abdominal obesity thresholds [26,27] \\
 Age, sex, race/ethnicity & Fixed & I & Immutable \\
 All other features (education, income, visits, diagnoses, cholesterol, HbA1c, self-rated health) & Fixed & S/D & Not a direct change target, or no general directional rule \\
@@ -857,7 +858,7 @@ governance teams. \emph{Position in the workflow:} after model
 development and before release of a CF-based decision support tool; PLCA
 does not run at the point of care and produces no patient-facing output.
 \emph{Current readiness:} technology readiness level 3--4, self-assessed
-against the machine learning TRL framework {[}32{]} (analytical proof of
+against the machine learning TRL framework {[}31{]} (analytical proof of
 concept on public survey data). \emph{Steps before any deployment:} (1)
 repeat the audit on electronic health record data with a diagnosis code
 and measured blood pressure for the same patients; (2) clinician review
