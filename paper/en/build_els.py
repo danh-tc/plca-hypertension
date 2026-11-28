@@ -143,8 +143,8 @@ doc = cls + r"""
 \begin{frontmatter}
 \title{""" + esc(TITLE) + r"""}
 \author[uit,vnu]{Cong-Danh Tran\corref{cor1}}
-\ead{[email]}
-\cortext[cor1]{Corresponding author. ORCID: [ORCID]}
+\ead{danhtc@grad.uit.edu.vn}
+\cortext[cor1]{Corresponding author. ORCID: 0009-0001-9660-8808}
 \affiliation[uit]{organization={University of Information Technology}, city={Ho Chi Minh City}, country={Viet Nam}}
 \affiliation[vnu]{organization={Vietnam National University}, city={Ho Chi Minh City}, country={Viet Nam}}
 \begin{abstract}
