@@ -1,0 +1,26 @@
+feature,group,nhanes_source,type,unit_or_coding,definition,used_in_models
+age,demographic_SES,RIDAGEYR,continuous,years,Age at screening,True
+female,demographic_SES,RIAGENDR,binary,,Sex recorded by NHANES (1 = female),True
+race_1,demographic_SES,RIDRETH3=1,binary,,Mexican American,True
+race_2,demographic_SES,RIDRETH3=2,binary,,Other Hispanic,True
+race_3,demographic_SES,RIDRETH3=3,binary,,Non-Hispanic White,True
+race_4,demographic_SES,RIDRETH3=4,binary,,Non-Hispanic Black,True
+race_6,demographic_SES,RIDRETH3=6,binary,,Non-Hispanic Asian,True
+race_7,demographic_SES,RIDRETH3=7,binary,,"Other race, including multiracial",True
+education,demographic_SES,DMDEDUC2,ordinal,1-5,Education level (codes 7/9 -> missing),True
+income_pir,demographic_SES,INDFMPIR,continuous,ratio,Family income-to-poverty ratio,True
+insured,access,HIQ011,binary,,Covered by health insurance,True
+routine_place,access,HUQ030,binary,,Has a routine place for health care,True
+visits_past_year,access,HUQ051/HUQ050,ordinal,category 0-8,"Health-care visits in past year (NHANES category, not a count)",True
+chol_checked,access,BPQ060,binary,,Ever had cholesterol checked (dropped by default),False
+diabetes_told,other_diagnoses,DIQ010,ordinal,0/0.5/1,Told diabetes (0.5 = borderline),True
+high_chol_told,other_diagnoses,BPQ080,binary,,Told high cholesterol,True
+current_smoker,lifestyle,SMQ020/SMQ040,binary,,Current smoker (never smokers = 0),True
+drinks_per_day,lifestyle,ALQ130 (+ALQ101/ALQ111),continuous,drinks/day,Average drinks per drinking day (never drinkers = 0),True
+vigorous_rec_pa,lifestyle,PAQ650,binary,,Any vigorous recreational activity,True
+moderate_rec_pa,lifestyle,PAQ665,binary,,Any moderate recreational activity,True
+bmi,physiology,BMXBMI,continuous,kg/m2,Body mass index,True
+waist,physiology,BMXWAIST,continuous,cm,Waist circumference,True
+total_chol,physiology,LBXTC,continuous,mg/dL (x0.02586 = mmol/L),Total cholesterol,True
+hba1c,physiology,LBXGH,continuous,% (NGSP),Glycated haemoglobin,True
+self_rated_health,self_rated_health,HUQ010,ordinal,1-5 (1 = excellent),Self-rated general health,True

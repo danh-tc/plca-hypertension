@@ -82,7 +82,7 @@ Sensitivity analyses (seed 42) changed the label definitions, the cycle, the mod
 
 ## 3.1. Sample
 
-In 2015–2018, the two labels disagreed for a survey-weighted 12.9% [11.8; 13.9] of adults (23.1% [21.8; 24.3] with 130/80 mmHg). Compared with G11, G01 people were less likely to have a usual place of care or a visit in the past year (Table 2).
+In 2015–2018, the two labels disagreed for a survey-weighted 12.9% [11.8; 13.9] of adults (23.1% [21.8; 24.3] with 130/80 mmHg). Compared with G11, G01 people were less likely to have a usual place of care or a visit in the past year (Table 2). The models used for CFs had test AUROC 0.810 (f_self) and 0.836 (f_clin) in 2015–2018, with balanced accuracy 0.726 and 0.752 at threshold 0.5 and calibration slopes 0.82 and 0.86 (Appendix Table A7).
 
 **Table 2.** Characteristics of the 2015–2018 sample by label pair (140/90 mmHg).
 
@@ -105,7 +105,7 @@ In 2015–2018, the two labels disagreed for a survey-weighted 12.9% [11.8; 13.9
 
 ## 3.2. Reliance (E1)
 
-Test-set AUC was 0.806 for f_self and 0.831 for f_clin. Permuting access-to-care features reduced the AUC of f_self more than that of f_clin by 0.014 [0.008; 0.019] (Fig. 2). The importance share of access to care was 9.8% in f_self and 2.8% in f_placebo (difference 7.0 percentage points [2.4; 11.0]), so class-wise random label noise did not reproduce this reliance. The result was similar in 2011–2014 (0.015 [0.009; 0.022]). Removing G01 people from training reduced it to 0.005 [0.000; 0.010] (random removal: 0.014).
+Test-set AUC (mean over bootstrap refits) was 0.806 for f_self and 0.831 for f_clin. Permuting access-to-care features reduced the AUC of f_self more than that of f_clin by 0.014 [0.008; 0.019] (Fig. 2). The importance share of access to care was 9.8% in f_self and 2.8% in f_placebo (difference 7.0 percentage points [2.4; 11.0]), so class-wise random label noise did not reproduce this reliance. The result was similar in 2011–2014 (0.015 [0.009; 0.022]). Removing G01 people from training reduced it to 0.005 [0.000; 0.010] (random removal: 0.014).
 
 An important limit: in untreated people, compared with a blood-pressure-only label, the difference was −0.003 [−0.017; 0.011]. E1 therefore depends on the phenotype definition and the population.
 

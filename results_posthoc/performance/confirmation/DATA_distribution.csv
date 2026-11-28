@@ -1,0 +1,26 @@
+period,feature,n_nonmissing,summary,value,q1,q3,min,max
+confirmation,age,10151,median [IQR],51.0,35.0,65.0,20.0,80.0
+confirmation,female,10151,% = 1,51.098,,,0.0,1.0
+confirmation,race_1,10151,% = 1,15.358,,,0.0,1.0
+confirmation,race_2,10151,% = 1,11.24,,,0.0,1.0
+confirmation,race_3,10151,% = 1,33.908,,,0.0,1.0
+confirmation,race_4,10151,% = 1,22.313,,,0.0,1.0
+confirmation,race_6,10151,% = 1,12.836,,,0.0,1.0
+confirmation,race_7,10151,% = 1,4.344,,,0.0,1.0
+confirmation,education,10141,median [IQR],4.0,3.0,4.0,1.0,5.0
+confirmation,income_pir,9000,median [IQR],2.09,1.15,3.98,0.0,5.0
+confirmation,insured,10128,% = 1,83.886,,,0.0,1.0
+confirmation,routine_place,10150,% = 1,82.128,,,0.0,1.0
+confirmation,visits_past_year,10130,median [IQR],2.0,1.0,3.0,0.0,8.0
+confirmation,chol_checked,6294,% = 1,69.765,,,0.0,1.0
+confirmation,diabetes_told,10144,median [IQR],0.0,0.0,0.0,0.0,1.0
+confirmation,high_chol_told,10080,% = 1,35.536,,,0.0,1.0
+confirmation,current_smoker,10143,% = 1,18.703,,,0.0,1.0
+confirmation,drinks_per_day,7983,median [IQR],2.0,1.0,3.0,0.0,15.0
+confirmation,vigorous_rec_pa,10150,% = 1,24.177,,,0.0,1.0
+confirmation,moderate_rec_pa,10147,% = 1,40.672,,,0.0,1.0
+confirmation,bmi,10036,median [IQR],28.5,24.7,33.4,14.5,84.4
+confirmation,waist,9638,median [IQR],99.1,88.6,110.5,57.9,171.6
+confirmation,total_chol,9577,median [IQR],186.0,161.0,214.0,76.0,545.0
+confirmation,hba1c,9696,median [IQR],5.6,5.3,6.0,3.8,17.0
+confirmation,self_rated_health,10138,median [IQR],3.0,2.0,4.0,1.0,5.0

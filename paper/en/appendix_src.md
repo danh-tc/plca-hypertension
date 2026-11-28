@@ -112,9 +112,57 @@ From Eqs. (A.1)–(A.4), $A(\mathrm{M0}) - A_{abl} = 2\,\mathrm{E2}$ when both s
 
 **Naming in the code.** E2 is `E6`, S0 is `S_M0`, S02 is `S_star`, and the guideline-based rules are `T-HTN` (`docs/taxonomy_THTN.md`).
 
-**Model performance and calibration (post hoc reporting).** [PENDING: Table A7 from `outputs_posthoc/performance/*/PERF_metrics.csv` and calibration figure; not an endpoint. Test split, threshold 0.5, test-set bootstrap B = 1,000 conditional on the fitted models, unweighted.]
+**Model performance and calibration (post hoc reporting, not an endpoint).** Table A7 and Fig. A1 were produced by `scripts/run_posthoc_performance.sh`.
 
-**Data characteristics.** [PENDING: Table A8 feature dictionary, distribution and missingness, and class balance from `outputs_posthoc/performance/*/DATA_*.csv`.]
+**Table A7.** Test-set performance and calibration of the models used to generate counterfactuals (post hoc reporting; threshold 0.5).
+
+| Metric | f_self, 2011–2014 | f_clin, 2011–2014 | f_self, 2015–2018 | f_clin, 2015–2018 |
+|---|---|---|---|---|
+| AUROC | 0.824 [0.808; 0.838] | 0.849 [0.834; 0.862] | 0.810 [0.794; 0.825] | 0.836 [0.822; 0.849] |
+| AUPRC | 0.718 [0.690; 0.747] | 0.737 [0.707; 0.764] | 0.704 [0.674; 0.731] | 0.742 [0.717; 0.768] |
+| Accuracy | 0.762 [0.747; 0.776] | 0.779 [0.764; 0.793] | 0.747 [0.732; 0.762] | 0.760 [0.745; 0.774] |
+| Balanced accuracy | 0.735 [0.719; 0.750] | 0.755 [0.739; 0.771] | 0.726 [0.710; 0.742] | 0.752 [0.736; 0.768] |
+| Sensitivity | 0.634 [0.606; 0.659] | 0.665 [0.637; 0.693] | 0.647 [0.620; 0.676] | 0.713 [0.687; 0.741] |
+| Specificity | 0.836 [0.820; 0.852] | 0.845 [0.827; 0.860] | 0.805 [0.787; 0.823] | 0.791 [0.772; 0.810] |
+| PPV | 0.693 [0.666; 0.718] | 0.711 [0.682; 0.739] | 0.661 [0.634; 0.688] | 0.694 [0.669; 0.719] |
+| NPV | 0.797 [0.779; 0.814] | 0.814 [0.797; 0.831] | 0.796 [0.778; 0.814] | 0.806 [0.787; 0.823] |
+| Prevalence (test set) | 0.368 [0.352; 0.385] | 0.365 [0.348; 0.382] | 0.370 [0.354; 0.386] | 0.400 [0.383; 0.417] |
+| Brier score | 0.162 [0.155; 0.170] | 0.152 [0.145; 0.160] | 0.171 [0.163; 0.179] | 0.163 [0.155; 0.170] |
+| Calibration intercept | 0.026 [−0.063; 0.117] | 0.044 [−0.057; 0.141] | −0.076 [−0.173; 0.017] | −0.014 [−0.113; 0.083] |
+| Calibration slope | 0.906 [0.840; 0.982] | 0.892 [0.828; 0.961] | 0.818 [0.755; 0.886] | 0.855 [0.799; 0.918] |
+
+*Each model against its own training label (f_self: Y_self; f_clin: Y_clin). XGBoost with training-split median imputation, seed 42, 30% test split (n = 3,094 and 3,046). 95% intervals: test-set bootstrap (B = 1,000) with the fitted model held fixed; retraining variability is not included. Unweighted. The refitted test AUROC matched the frozen run exactly. Calibration intercept with slope fixed at 1; slope from logistic recalibration on logit p. CF analyses use percentile scores, which depend only on the ranking of scores.*
+
+![Fig. A1. Calibration of the models used to generate counterfactuals on the 2015–2018 test split (deciles of predicted probability; dashed line: perfect calibration). Post hoc reporting.](figA1.pdf){width=82%}
+
+**Data characteristics.** Table A8 lists every feature with its NHANES source, coding, distribution and missingness.
+
+**Table A8.**Features, coding, distribution and missingness of the analytic samples (unweighted).
+
+| Feature | NHANES source; coding | 2011–2014, median [IQR] or % | Missing, % | 2015–2018, median [IQR] or % | Missing, % |
+|---|---|---|---|---|---|
+| Age | RIDAGEYR; years | 49 [34; 63] | 0.0 | 51 [35; 65] | 0.0 |
+| Female sex | RIAGENDR | 50.6% | 0.0 | 51.1% | 0.0 |
+| Race/ethnicity, % (6 indicators) | RIDRETH3 = 1 / 2 / 3 / 4 / 6 / 7 | 11.6 / 9.5 / 40.1 / 23.3 / 12.6 / 2.9 | 0.0 | 15.4 / 11.2 / 33.9 / 22.3 / 12.8 / 4.3 | 0.0 |
+| Education | DMDEDUC2; 1-5 | 4 [3; 5] | 0.1 | 4 [3; 4] | 0.1 |
+| Income-to-poverty ratio | INDFMPIR; ratio | 2.02 [1.03; 4.08] | 7.8 | 2.09 [1.15; 3.98] | 11.3 |
+| Insured | HIQ011 | 77.6% | 0.1 | 83.9% | 0.2 |
+| Usual place of care | HUQ030 | 84.2% | 0.0 | 82.1% | 0.0 |
+| Visits in past year | HUQ051, HUQ050; category 0-8 | 2 [1; 3] | 0.1 | 2 [1; 3] | 0.2 |
+| Cholesterol ever checked (not used) | BPQ060 | 64.2% | 36.5 | 69.8% | 38.0 |
+| Told diabetes | DIQ010; 0/0.5/1 | 0 [0; 0] | 0.1 | 0 [0; 0] | 0.1 |
+| Told high cholesterol | BPQ080 | 34.7% | 0.6 | 35.5% | 0.7 |
+| Current smoker | SMQ020, SMQ040 | 20.4% | 0.1 | 18.7% | 0.1 |
+| Drinks per drinking day | ALQ130 (+ALQ101, ALQ111); drinks/day | 1.0 [1.0; 3.0] | 19.3 | 2.0 [1.0; 3.0] | 21.4 |
+| Vigorous recreational activity | PAQ650 | 22.3% | 0.0 | 24.2% | 0.0 |
+| Moderate recreational activity | PAQ665 | 41.8% | 0.0 | 40.7% | 0.0 |
+| BMI | BMXBMI; kg/m2 | 27.7 [24.0; 32.3] | 1.1 | 28.5 [24.7; 33.4] | 1.1 |
+| Waist | BMXWAIST; cm | 97.2 [86.8; 108.3] | 4.9 | 99.1 [88.6; 110.5] | 5.0 |
+| Total cholesterol | LBXTC; mg/dL (x0.02586 = mmol/L) | 188 [163; 216] | 5.6 | 186 [161; 214] | 5.7 |
+| HbA1c | LBXGH; % (NGSP) | 5.5 [5.2; 5.9] | 4.1 | 5.6 [5.3; 6.0] | 4.5 |
+| Self-rated health | HUQ010; 1-5 (1 = excellent) | 3 [2; 3] | 0.1 | 3 [2; 4] | 0.1 |
+
+*Feature groups as in Section 2.2. RIDRETH3: 1 Mexican American, 2 Other Hispanic, 3 non-Hispanic White, 4 non-Hispanic Black, 6 non-Hispanic Asian, 7 other or multiracial. Missing % differed by at most 1.4 percentage points between training and test splits. Skip patterns resolved by the feature builder: never smokers have current_smoker = 0 and never drinkers have drinks_per_day = 0; BPQ060 is skipped when high cholesterol was reported and was dropped. Refused and don't-know codes were set to missing; no other outlier removal or truncation was applied. Class balance (positive %): Y_self 37.0% and Y_clin 36.5% in 2011–2014; 37.8% and 40.0% in 2015–2018; no resampling or class weighting was used.*
 
 **Clinical translation roadmap (proposed, not evaluated).** *Intended users:* model developers, clinical informatics and AI governance teams. *Position in the workflow:* after model development and before release of a CF-based decision support tool; PLCA does not run at the point of care and produces no patient-facing output. *Current readiness:* technology readiness level 3–4 (analytical proof of concept on public survey data). *Steps before any deployment:* (1) repeat the audit on electronic health record data with a diagnosis code and measured blood pressure for the same patients; (2) clinician review of the constraint rules and of a sample of CFs; (3) prespecified acceptance criteria for valid-CF coverage and for A under each constraint setting; (4) re-audit after model updates or data drift. *Not yet studied:* usability, effect on clinical decisions, and patient outcomes.
 

@@ -1,0 +1,7 @@
+period,label,split,n,n_positive,prevalence_pct
+discovery,Y_self,all,10311,3812,36.97
+discovery,Y_self,train,7217,2673,37.04
+discovery,Y_self,test,3094,1139,36.81
+discovery,Y_clin140,all,10311,3767,36.53
+discovery,Y_clin140,train,7217,2637,36.54
+discovery,Y_clin140,test,3094,1130,36.52

@@ -1,0 +1,6 @@
+family,model,auroc_refit,reference,reference_source,abs_diff,tolerance,type,pass
+cf_audit,f_self,0.823514591926781,0.823514591926781,results/discovery/cf_primary/seed42/run_manifest.json auc_test,0.0,0.001,exact refit,True
+model_level,f_self,0.826104919961648,0.8178,results/discovery/model_level/baseline/P1_auc.csv auc_mean (bootstrap mean),0.00830491996164806,0.005,consistency only,False
+cf_audit,f_clin,0.8486509381251915,0.8486509381251915,results/discovery/cf_primary/seed42/run_manifest.json auc_test,0.0,0.001,exact refit,True
+model_level,f_clin,0.8477520141304544,0.8425,results/discovery/model_level/baseline/P1_auc.csv auc_mean (bootstrap mean),0.005252014130454397,0.005,consistency only,False
+cf_audit,n_test,3094.0,3094.0,results/discovery/cf_primary/seed42/run_manifest.json n_test,0.0,0.0,exact,True

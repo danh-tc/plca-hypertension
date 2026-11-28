@@ -1,0 +1,7 @@
+period,label,split,n,n_positive,prevalence_pct
+confirmation,Y_self,all,10151,3833,37.76
+confirmation,Y_self,train,7105,2707,38.1
+confirmation,Y_self,test,3046,1126,36.97
+confirmation,Y_clin140,all,10151,4056,39.96
+confirmation,Y_clin140,train,7105,2839,39.96
+confirmation,Y_clin140,test,3046,1217,39.95

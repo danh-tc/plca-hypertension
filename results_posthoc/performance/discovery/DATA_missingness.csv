@@ -1,0 +1,26 @@
+period,feature,missing_pct_all,missing_pct_train,missing_pct_test,skip_logic_resolved,handling_cf_audit_models,handling_model_level_E1
+discovery,age,0.0,0.0,0.0,,median of training split,XGBoost native
+discovery,female,0.0,0.0,0.0,,median of training split,XGBoost native
+discovery,race_1,0.0,0.0,0.0,,median of training split,XGBoost native
+discovery,race_2,0.0,0.0,0.0,,median of training split,XGBoost native
+discovery,race_3,0.0,0.0,0.0,,median of training split,XGBoost native
+discovery,race_4,0.0,0.0,0.0,,median of training split,XGBoost native
+discovery,race_6,0.0,0.0,0.0,,median of training split,XGBoost native
+discovery,race_7,0.0,0.0,0.0,,median of training split,XGBoost native
+discovery,education,0.07,0.1,0.0,,median of training split,XGBoost native
+discovery,income_pir,7.81,7.68,8.11,,median of training split,XGBoost native
+discovery,insured,0.11,0.11,0.1,,median of training split,XGBoost native
+discovery,routine_place,0.0,0.0,0.0,,median of training split,XGBoost native
+discovery,visits_past_year,0.05,0.06,0.03,,median of training split,XGBoost native
+discovery,chol_checked,36.49,36.86,35.62,BPQ060 skipped when BPQ080 = 1 (structural); feature dropped by default,not used,not used
+discovery,diabetes_told,0.06,0.07,0.03,,median of training split,XGBoost native
+discovery,high_chol_told,0.63,0.68,0.52,,median of training split,XGBoost native
+discovery,current_smoker,0.08,0.1,0.03,SMQ040 skipped for never smokers -> set to 0,median of training split,XGBoost native
+discovery,drinks_per_day,19.27,19.58,18.55,ALQ130 skipped for never drinkers -> set to 0,median of training split,XGBoost native
+discovery,vigorous_rec_pa,0.0,0.0,0.0,,median of training split,XGBoost native
+discovery,moderate_rec_pa,0.0,0.0,0.0,,median of training split,XGBoost native
+discovery,bmi,1.13,1.09,1.23,,median of training split,XGBoost native
+discovery,waist,4.9,4.86,4.98,,median of training split,XGBoost native
+discovery,total_chol,5.56,5.5,5.69,,median of training split,XGBoost native
+discovery,hba1c,4.09,4.03,4.23,,median of training split,XGBoost native
+discovery,self_rated_health,0.06,0.08,0.0,,median of training split,XGBoost native

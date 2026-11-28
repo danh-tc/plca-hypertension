@@ -1,0 +1,26 @@
+period,feature,missing_pct_all,missing_pct_train,missing_pct_test,skip_logic_resolved,handling_cf_audit_models,handling_model_level_E1
+confirmation,age,0.0,0.0,0.0,,median of training split,XGBoost native
+confirmation,female,0.0,0.0,0.0,,median of training split,XGBoost native
+confirmation,race_1,0.0,0.0,0.0,,median of training split,XGBoost native
+confirmation,race_2,0.0,0.0,0.0,,median of training split,XGBoost native
+confirmation,race_3,0.0,0.0,0.0,,median of training split,XGBoost native
+confirmation,race_4,0.0,0.0,0.0,,median of training split,XGBoost native
+confirmation,race_6,0.0,0.0,0.0,,median of training split,XGBoost native
+confirmation,race_7,0.0,0.0,0.0,,median of training split,XGBoost native
+confirmation,education,0.1,0.13,0.03,,median of training split,XGBoost native
+confirmation,income_pir,11.34,11.34,11.33,,median of training split,XGBoost native
+confirmation,insured,0.23,0.23,0.23,,median of training split,XGBoost native
+confirmation,routine_place,0.01,0.0,0.03,,median of training split,XGBoost native
+confirmation,visits_past_year,0.21,0.18,0.26,,median of training split,XGBoost native
+confirmation,chol_checked,38.0,38.42,37.0,BPQ060 skipped when BPQ080 = 1 (structural); feature dropped by default,not used,not used
+confirmation,diabetes_told,0.07,0.06,0.1,,median of training split,XGBoost native
+confirmation,high_chol_told,0.7,0.73,0.62,,median of training split,XGBoost native
+confirmation,current_smoker,0.08,0.08,0.07,SMQ040 skipped for never smokers -> set to 0,median of training split,XGBoost native
+confirmation,drinks_per_day,21.36,21.21,21.7,ALQ130 skipped for never drinkers -> set to 0,median of training split,XGBoost native
+confirmation,vigorous_rec_pa,0.01,0.01,0.0,,median of training split,XGBoost native
+confirmation,moderate_rec_pa,0.04,0.06,0.0,,median of training split,XGBoost native
+confirmation,bmi,1.13,1.21,0.95,,median of training split,XGBoost native
+confirmation,waist,5.05,5.15,4.83,,median of training split,XGBoost native
+confirmation,total_chol,5.65,5.84,5.22,,median of training split,XGBoost native
+confirmation,hba1c,4.48,4.53,4.37,,median of training split,XGBoost native
+confirmation,self_rated_health,0.13,0.11,0.16,,median of training split,XGBoost native

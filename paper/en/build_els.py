@@ -31,20 +31,23 @@ def cells(line):
     line = line.strip().strip("|")
     return [c.strip().replace("\\|", "|") for c in re.split(r"(?<!\\)\|", line)]
 
-WIDE = {"2", "3", "A4", "A6", "1", "A1", "A5", "A3", "A2"}
+WIDE = {"2", "3", "A4", "A6", "1", "A1", "A5", "A3", "A2", "A7", "A8"}
 def table(num, cap, rows, note):
     n = len(rows[0])
     two = MODE == "journal"
     env = "table*" if (two and num in WIDE) else "table"
     width = r"\textwidth" if env == "table*" or not two else r"\columnwidth"
-    first = {"2": "0.24", "A6": "0.30", "3": "0.10", "A5": "0.30", "A4": "0.22", "1": "0.18", "5": "0.40"}.get(num)
+    first = {"A7": "0.16", "A8": "0.20", "2": "0.24", "A6": "0.30", "3": "0.10", "A5": "0.30", "A4": "0.22", "1": "0.18", "5": "0.40"}.get(num)
     spec = (r">{\raggedright\arraybackslash}p{%s\linewidth}" % first if first else r">{\raggedright\arraybackslash}X") \
         + r">{\raggedright\arraybackslash}X" * (n - 1)
+    if num == "A8":
+        L = r">{\raggedright\arraybackslash}"
+        spec = L + r"p{0.19\linewidth}" + L + r"p{0.21\linewidth}" + L + r"X" + L + r"p{0.07\linewidth}" + L + r"X" + L + r"p{0.07\linewidth}"
     body = []
     for k, r in enumerate(rows):
         c = [esc(x) for x in r]
         body.append(" & ".join(r"\textbf{%s}" % x for x in c) + r" \\ \midrule" if k == 0 else " & ".join(c) + r" \\")
-    s = [r"\begin{%s}[!htbp]" % env, r"\caption{%s}" % esc(cap), r"\label{tab%s}" % num, r"\footnotesize\def\baselinestretch{1}\selectfont\renewcommand{\arraystretch}{1.1}",
+    s = [r"\begin{%s}[!htbp]" % env, r"\caption{%s}" % esc(cap), r"\label{tab%s}" % num, (r"\scriptsize" if num in ("A7", "A8") else r"\footnotesize") + r"\def\baselinestretch{1}\selectfont\renewcommand{\arraystretch}{1.1}",
          r"\begin{tabularx}{%s}{%s}" % (width, spec), r"\toprule"] + body + [r"\bottomrule", r"\end{tabularx}"]
     if note:
         s.append(r"\par\vspace{2pt}{\scriptsize\raggedright " + esc(note.strip().strip("*")) + r"\par}")
@@ -55,7 +58,7 @@ def figure(cap, f):
     wide = f == "fig1.pdf" and MODE == "journal"
     env = "figure*" if wide else "figure"
     w = r"\textwidth" if wide else (r"\columnwidth" if MODE == "journal" else r"0.85\textwidth")
-    m = re.match(r"(Fig\. \d+)\.\s*(.*)", cap)
+    m = re.match(r"(Fig\. A?\d+)\.\s*(.*)", cap)
     return ("\n```{=latex}\n" + r"\begin{%s}[!htbp]\centering\includegraphics[width=%s]{%s}" % (env, w, f)
             + r"\caption{%s}\end{%s}" % (esc(m.group(2)), env) + "\n```\n")
 
