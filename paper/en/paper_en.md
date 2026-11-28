@@ -1,6 +1,6 @@
 ## Highlights
 
-- Models trained on self-reported labels rely more on healthcare access features.
+- Self-report models relied more on healthcare access under the primary labels.
 - Diagnosis-related features contribute to CF asymmetry in both NHANES periods.
 - Ablation reduces asymmetry by 50–67%; feature locking by 9–27% (2015–2018).
 - Guideline-based rules leave valid CFs for only 3–12% of queries (2015–2018).
@@ -12,9 +12,9 @@
 
 **Objective.** To test separately how much models rely on each feature group, how much a group contributes to the difference between two models' responses to the same CF, and whether locking that group in new CFs reduces this difference.
 
-**Methods.** In NHANES, each adult has a self-reported label and an examination-based label (blood pressure ≥140/90 mmHg or treatment). XGBoost models differed only in their training label. We measured grouped permutation importance, generated CFs with DiCE, scored each CF with one evaluation model per label, reset diagnosis-related features in generated CFs (ablation), and generated new CFs with these features locked or under guideline-based rules. The procedure was developed on 2011–2014 data (n = 10,311) and applied to 2015–2018 data (n = 10,151) with retrained models.
+**Methods.** In the National Health and Nutrition Examination Survey (NHANES), each adult has a self-reported label and an examination-based label (blood pressure ≥140/90 mmHg [18.7/12.0 kPa] or treatment). XGBoost models differed only in their training label. We measured grouped permutation importance, generated CFs with DiCE, scored each CF with one evaluation model per label, reset diagnosis-related features in generated CFs (ablation), and generated new CFs with these features locked or under guideline-based rules. The procedure was developed on 2011–2014 data (n = 10,311) and applied to 2015–2018 data (n = 10,151) with retrained models.
 
-**Results.** In 2015–2018, permuting access-to-care features reduced AUC more for the self-report model (difference 0.014 [0.008; 0.019]); this was not reproduced with a blood-pressure-only label in untreated adults. Diagnosis-related changes contributed 4.3 percentile points (lower bound 3.7) to the difference in score drops between the evaluation models, in all seeds and both periods. Ablation reduced this difference by 50–67%; locking reduced it by 9–27% and was unstable in 2011–2014. Under guideline-based rules, only 3–12% of individuals had a valid CF.
+**Results.** In 2015–2018, permuting access-to-care features reduced the area under the ROC curve (AUC) more for the self-report model (difference 0.014 [0.008; 0.019]); this was not reproduced with a blood-pressure-only label in untreated adults. Diagnosis-related changes contributed 4.3 percentile points (lower bound 3.7; 2015–2018, primary seed) to the difference in score drops between the evaluation models; this contribution was positive in all seeds and both periods. Ablation reduced this difference by 50–67%; locking reduced it by 9–27% and was unstable in 2011–2014. Under guideline-based rules, only 3–12% of individuals had a valid CF.
 
 **Conclusion.** Knowing which features contribute to a difference does not show that locking them will reduce it.
 
@@ -35,39 +35,37 @@
 
 # 1. Introduction
 
-Counterfactual explanations (CFs) describe small changes to a person's features that would change a model's prediction [1,2]. In clinical decision support [3], a CF may be shown as a suggestion, such as reducing waist circumference. However, a CF only tells us which input values would change the output of one model. It does not show that the same change in real life would improve health [4,5].
+Counterfactual explanations (CFs) describe small changes to a person's features that would change a model's prediction [1,2]. In clinical decision support [3], a CF may be shown as a suggestion, such as reducing waist circumference, although it only shows what would change one model's output, not what would improve health [4,5].
 
-A model learns whatever its training label records. Many people with hypertension have never been diagnosed [6,7], and self-reported hypertension misses part of the cases found by measurement [8]. Studies of proxy labels and under-testing show that the way an outcome is recorded can bias predictions [9–11]. For a model trained on self-reported diagnosis, health insurance or a usual place of care can be useful because they predict who has been diagnosed, not because they describe blood pressure. CFs from such a model may then suggest changing these features.
+A model learns whatever its training label records. Many people with hypertension are undiagnosed [6,7], so self-report misses cases found by measurement [8]. The way an outcome is recorded can bias predictions [9–11]. For a model trained on self-reported diagnosis, insurance or a usual place of care can predict who has been diagnosed rather than blood pressure, and its CFs may then suggest changing them.
 
-Thieu [12] proposed a directional taxonomy that restricts how each feature may change in diabetes CFs, and suggested that some implausible CFs may come from self-reported labels; the data had no measured label for comparison. Cerrato et al. [13] showed that changing the definition of a label changes the resulting CFs. CFs also change across models with similar accuracy [14,15]. What is still missing is a test, on the same people, of how much a feature group contributes to the difference between two clinical label definitions, and whether restricting that group reduces the difference.
+Thieu [12] proposed a directional taxonomy that restricts how each feature may change in diabetes CFs, and suggested that some implausible CFs may come from self-reported labels; the data had no measured label for comparison. Changing a label definition changes the resulting CFs [13], as does changing among models of similar accuracy [14,15]. What is still missing is a test, on the same people, of how much a feature group contributes to the difference between two clinical label definitions, and whether restricting that group reduces it. This matters because the usual response to an implausible CF is to lock the feature involved [12,16,17].
 
-This matters because the usual response to an implausible CF is to lock the feature involved [12,16,17]. The algorithm can then find other changes that still affect the two models differently, so measuring a group's contribution and testing its locking are separate tasks.
+We propose the Paired-Label Counterfactual Audit (PLCA), an audit procedure based on two label definitions recorded for the same people. The National Health and Nutrition Examination Survey (NHANES) suits this design because participants report whether they have ever been told that they have hypertension, and their blood pressure is measured in the same survey. PLCA asks three questions: (1) *reliance*: does the self-report model need access-to-care features more? (2) *contribution*: how much do diagnosis-related changes contribute to the difference between the two models' responses to the same CF? (3) *mitigation*: does locking these features reduce the difference, and can valid CFs still be found under guideline-based rules?
 
-We propose the Paired-Label Counterfactual Audit (PLCA), an audit procedure based on two label definitions recorded for the same people. NHANES suits this design because participants report whether they have ever been told that they have hypertension, and their blood pressure is measured in the same survey. PLCA asks three questions: (1) *reliance*: does the self-report model need access-to-care features more? (2) *contribution*: when the same CF is scored by one evaluation model per label, how much do diagnosis-related changes contribute to the difference in score drops? (3) *mitigation*: does locking these features in new CFs reduce the difference, and can valid CFs still be found under guideline-based rules?
-
-The study makes three contributions. First, PLCA scores each model's CFs with evaluation models for both labels, with a label-noise control for importance. Second, it separates the contribution of a feature group in generated CFs (E2) from the effect of locking the group in new CFs (E3). Third, on NHANES, it shows that diagnosis-related features contribute to the difference in both survey periods, that the effect of locking them is unstable, and that guideline-based rules leave valid CFs for very few people. PLCA is not a new CF algorithm or importance method; it combines existing analyses on two clinical labels for the same people.
+PLCA separates the contribution of a feature group in generated CFs (E2) from the effect of locking it in new CFs (E3). It is not a new CF algorithm or importance method; it combines existing analyses on two clinical labels for the same people.
 
 # 2. Methods
 
 ## 2.1. Data and labels
 
-We used public NHANES data [18,19]. The procedure was developed on 2011–2014 data (n = 10,311) and applied to 2015–2018 data (n = 10,151), with all models retrained from scratch. We included non-pregnant adults aged ≥20 years with valid blood pressure readings, an answer to BPQ020, and known treatment status.
+We used public NHANES data [18,19]. The procedure was developed on 2011–2014 data (n = 10,311) and applied to 2015–2018 data (n = 10,151) with all models retrained. We included non-pregnant adults aged ≥20 years with valid blood pressure readings, an answer to BPQ020, and known treatment status.
 
-Each person had two labels. *$Y_{\mathrm{self}}$* was 1 if the person had ever been told by a doctor or other health professional that they had hypertension. *$Y_{\mathrm{clin}}$*, the examination-based label, was 1 if systolic pressure was ≥140 mmHg, diastolic pressure was ≥90 mmHg, or the person was taking blood pressure medication. The 130/80 mmHg threshold [6] was a sensitivity analysis. People without a reported diagnosis are not asked about treatment and were coded as untreated. $Y_{\mathrm{clin}}$ is a phenotype, not ground truth, and its treatment component still depends on past diagnosis. Pairs ($Y_{\mathrm{self}}$, $Y_{\mathrm{clin}}$) define four groups: G00, G01 (examination-positive only), G10 (self-report-positive only) and G11. Fig. 1 summarises the design.
+Each person had two labels. *$Y_{\mathrm{self}}$* was 1 if the person had ever been told by a doctor or other health professional that they had hypertension. *$Y_{\mathrm{clin}}$*, the examination-based label, was 1 if systolic pressure was ≥140 mmHg (18.7 kPa), diastolic pressure was ≥90 mmHg (12.0 kPa), or the person was taking blood pressure medication. The 130/80 mmHg (17.3/10.7 kPa) threshold [6] was a sensitivity analysis. People without a reported diagnosis are not asked about treatment and were coded as untreated. $Y_{\mathrm{clin}}$ is a phenotype, not ground truth, and its treatment component still depends on past diagnosis. Pairs ($Y_{\mathrm{self}}$, $Y_{\mathrm{clin}}$) define four groups: G00, G01 (examination-positive only), G10 (self-report-positive only) and G11. Fig. 1 summarizes the design.
 
-![Fig. 1. Design of PLCA. The models differ only in the training label. At the CF level, each CF is scored by both evaluation models, which gives a 2 × 2 same-label and cross-label matrix (dark cells: same label). E2 analyses generated CFs; E3 generates new CFs with the group locked.](fig1.png){width=100%}
+![Fig. 1. Design of PLCA. The models differ only in the training label. At the CF level, each CF is scored by both evaluation models, which gives a 2 × 2 same-label and cross-label matrix (dark cells: same label). E2 analyses generated CFs; E3 generates new CFs with the group locked.](fig1.pdf){width=100%}
 
-## 2.2. Features
+## 2.2. Features and preprocessing
 
-Models used six feature groups: demographics and socioeconomic status; access to care (insurance, usual place of care, health care visits); other diagnoses (diabetes, high cholesterol); lifestyle (smoking, drinks per drinking day, moderate and vigorous recreational activity); physiology (body mass index (BMI), waist, total cholesterol, HbA1c); and self-rated health. Blood pressure measurements and blood pressure questions were not inputs. "Cholesterol ever checked" (BPQ060) was excluded because its missingness depends on $Y_{\mathrm{self}}$ through skip patterns (57.8% vs 26.0%); a reconstructed version was a sensitivity analysis. We call access to care, other diagnoses and self-rated health together the *diagnosis-related features*. For CF analyses, missing values were filled with the training median.
+Models used six feature groups: demographics and socioeconomic status; access to care (insurance, usual place of care, health care visits); other diagnoses (diabetes, high cholesterol); lifestyle (smoking, drinks per drinking day, moderate and vigorous recreational activity); physiology (body mass index (BMI), waist, total cholesterol, HbA1c); and self-rated health. Sex was the sex recorded by NHANES; gender was not available. Blood pressure measurements and blood pressure questions were not inputs. "Cholesterol ever checked" (BPQ060) was excluded because its missingness depends on $Y_{\mathrm{self}}$ through skip patterns (57.8% vs 26.0%). We call access to care, other diagnoses and self-rated health together the *diagnosis-related features*. Data were split before any preprocessing. For E1, XGBoost handled missing values natively; for CF analyses, missing values were filled with the training-split median. The feature dictionary, distributions and missingness are given in the supplementary material (Appendix A).
 
 ## 2.3. Reliance (E1)
 
-XGBoost [20] models (300 trees, depth 4, learning rate 0.05, row and column subsampling 0.8) were trained on a 70/30 split stratified by $Y_{\mathrm{clin}}$. *$f_{\mathrm{self}}$* learned $Y_{\mathrm{self}}$ and *$f_{\mathrm{clin}}$* learned $Y_{\mathrm{clin}}$. A label-noise control, *$f_{\mathrm{placebo}}$*, learned $Y_{\mathrm{clin}}$ after random flips whose rates depended only on the $Y_{\mathrm{clin}}$ class and matched the observed disagreement in the training data. We used grouped permutation importance [21–23]: all features in a group were permuted together on the test set and the AUC drop was recorded (mean of three permutations). Importance shares divided each group's positive importance by the sum over groups. A two-level bootstrap (B = 100) resampled both the training set (models retrained) and the test set [24]. E1 required the 2.5th percentile of the AUC-drop difference $f_{\mathrm{self}}$ − $f_{\mathrm{clin}}$ for access to care to be above 0, and a positive mean difference in importance share between $f_{\mathrm{self}}$ and $f_{\mathrm{placebo}}$.
+XGBoost [20] models (300 trees, depth 4, learning rate 0.05, row and column subsampling 0.8; fixed in advance, not tuned) were trained on a 70/30 split stratified by $Y_{\mathrm{clin}}$. *$f_{\mathrm{self}}$* learned $Y_{\mathrm{self}}$ and *$f_{\mathrm{clin}}$* learned $Y_{\mathrm{clin}}$. A label-noise control, *$f_{\mathrm{placebo}}$*, learned $Y_{\mathrm{clin}}$ after random flips whose rates depended only on the $Y_{\mathrm{clin}}$ class and matched the observed disagreement in the training data. Grouped permutation importance [21–23] permuted all features in a group together on the test set and recorded the AUC (area under the receiver operating characteristic curve) drop (mean of three permutations). Shares divided each group's positive importance by the sum over groups. A two-level bootstrap (B = 100) resampled both the training set (models retrained) and the test set [24]. E1 required the 2.5th percentile of the AUC-drop difference $f_{\mathrm{self}}$ − $f_{\mathrm{clin}}$ for access to care to be above 0, and a positive mean difference in importance share between $f_{\mathrm{self}}$ and $f_{\mathrm{placebo}}$; the share contrast was interpretable only if the share was defined in at least 80% of bootstrap draws.
 
 ## 2.4. Counterfactuals and evaluation models
 
-We selected up to 200 untreated test-set people whom both $f_{\mathrm{self}}$ and $f_{\mathrm{clin}}$ predicted as positive (probability ≥0.5), ranked by the mean percentile score of the two models. DiCE 0.12 [2] (random search) was asked for five CFs per person in each constraint mode (Table 1). A CF was *valid* if it obeyed the rules of its mode and changed the prediction of the model that generated it from positive to negative. *Valid-CF coverage* was the share of the 200 people with at least one valid CF.
+We selected up to 200 untreated test-set people whom both $f_{\mathrm{self}}$ and $f_{\mathrm{clin}}$ predicted as positive (probability ≥0.5), ranked by the mean percentile score of the two models. DiCE 0.12 [2] (random search) was asked for up to five CFs per person in each constraint mode (Table 1). A CF was *valid* if it obeyed the rules of its mode and changed the prediction of the model that generated it from positive to negative. *Valid-CF coverage* was the share of selected people with at least one valid CF.
 
 **Table 1.** Constraint modes used to generate CFs.
 
@@ -77,9 +75,9 @@ We selected up to 200 untreated test-set people whom both $f_{\mathrm{self}}$ an
 | M1, guideline-based rules | Eight features, only in the guideline direction (Appendix Table A4); everything else fixed | Can valid CFs be found under clinically motivated rules? |
 | M2, locking | As M0, with access to care, other diagnoses and self-rated health fixed | Does locking diagnosis-related features reduce the difference? |
 
-Under M1, each of the eight features may change only in the direction recommended by guidelines, and BMI and waist only down to their thresholds (25 kg/m², or 23 for non-Hispanic Asian people; 102 cm for men, 88 cm for women) [25–29]; imputed values are fixed. Appendix Table A4 lists each rule and its basis.
+Under M1, each of the eight features may change only in the direction recommended by guidelines, and BMI and waist only down to their thresholds (25 kg/m², or 23 for non-Hispanic Asian people; 102 cm for men, 88 cm for women) [25–29]; imputed values are fixed (Appendix Table A4).
 
-To ask whether one CF affects the two label definitions differently, we trained one *evaluation model* per label, $g_{\mathrm{self}}$ and $g_{\mathrm{clin}}$, on the same bootstrap sample of the training set. Every CF was scored by both. Because the two models have different score distributions, scores were converted to percentiles: $p_m(x)$ is the share of test-set people whose $g_m$ score is not higher than that of x. The *score drop* of a CF $x'$ for person x is
+We trained one *evaluation model* per label, $g_{\mathrm{self}}$ and $g_{\mathrm{clin}}$, on the same bootstrap sample of the training set, and scored every CF with both. Because the two models have different score distributions, scores were converted to percentiles: $p_m(x)$ is the share of test-set people whose $g_m$ score is not higher than that of x. The *score drop* of a CF $x'$ for person x is
 
 $$\Delta_m(x') = p_m(x) - p_m(x').$$
 
@@ -89,7 +87,7 @@ $$\mathrm{ECD}_{\mathrm{self}} = R_{ss} - R_{sc}, \qquad \mathrm{ECD}_{\mathrm{c
 
 $$A = \mathrm{ECD}_{\mathrm{self}} - \mathrm{ECD}_{\mathrm{clin}} = (R_{ss}+R_{cs}) - (R_{sc}+R_{cc}).$$
 
-ECD compares the same-label with the cross-label evaluation model. *A/2 is the difference between the mean score drops of $g_{\mathrm{self}}$ and $g_{\mathrm{clin}}$*, with both CF sources weighted equally. A > 0 means that $g_{\mathrm{self}}$ drops more. The sign of A tells which model drops more; |A| tells how far apart the drops are. These quantities say nothing about real hypertension risk.
+*A/2 is the difference between the mean score drops of $g_{\mathrm{self}}$ and $g_{\mathrm{clin}}$*, with both CF sources weighted equally; A > 0 means that $g_{\mathrm{self}}$ drops more. These quantities say nothing about real hypertension risk.
 
 ## 2.5. Contribution (E2) and locking (E3)
 
@@ -97,29 +95,29 @@ ECD compares the same-label with the cross-label evaluation model. *A/2 is the d
 
 $$\mathrm{E2} = \overline{C_{\mathrm{self}} - C_{\mathrm{clin}}} = \tfrac{1}{2}\left[A(\mathrm{M0}) - A_{\mathrm{abl}}\right],$$
 
-averaged per person and with equal weight for the two CF sources. E2 > 0 means that diagnosis-related changes make $g_{\mathrm{self}}$ drop more than $g_{\mathrm{clin}}$. The ablated CF does not need to stay valid. E2 was computed on S0, the people with at least one valid CF from both models under M0.
+averaged per person, with equal weight for the two CF sources; the ablated CF need not stay valid. E2 was computed on S0, the people with at least one valid CF from both models under M0.
 
 *E3* asks DiCE for new CFs under M2. On S02, the people in S0 who also had valid CFs from both models under M2, E3 required
 
 $$A(\mathrm{M0}) > 0 \quad \text{and} \quad |A(\mathrm{M2})| < |A(\mathrm{M0})|.$$
 
-The second condition means that the difference becomes smaller in size; a change of sign with a larger size does not count. When A(M0) > 0, it is equivalent to A(M0) − A(M2) > 0 and A(M0) + A(M2) > 0. For a descriptive comparison, $A_{\mathrm{abl}}$ was also computed on S02, and the reduction in |A| was 100·(|A(M0)| − |$A_{\mathrm{after}}$|)/|A(M0)|.
+A change of sign with a larger size does not count. When A(M0) > 0, this is equivalent to A(M0) − A(M2) > 0 and A(M0) + A(M2) > 0. For a descriptive comparison, $A_{\mathrm{abl}}$ was also computed on S02, and the reduction in |A| was 100·(|A(M0)| − |$A_{\mathrm{after}}$|)/|A(M0)|.
 
 *E4* reported valid-CF coverage under M1 and the change in $\mathrm{ECD}_{self}$ from M0 to M1, the latter only when at least 40 people had valid CFs from $f_{\mathrm{self}}$ in both modes.
 
 ## 2.6. Statistical analysis
 
-E3 used a patient bootstrap (B = 5,000); each inequality was tested with the one-sided 2.5th percentile, and all had to hold (intersection–union test). E2 was secondary and used the same bootstrap. Analyses required at least 80 eligible people and 40 people in the analysis set, a design choice to avoid interpretation in very small samples. CF analyses were run with seeds 42 (primary), 43 and 44; for E2 and E3, seed 42 decided and the other seeds had to give point estimates in the same direction. Seeds are not independent replications. The bootstrap intervals are conditional on the trained models and on the people with valid CFs. *E5*, a secondary screening analysis, compared the share of G01 people in the top 30% of scores of each model with an exact McNemar test [30]. Table 2 (descriptive) used survey weights and Taylor linearisation [19]; the models did not use weights. The study was not registered and follows TRIPOD+AI [31].
+E3 used a participant-level bootstrap (B = 5,000); each inequality was tested with the one-sided 2.5th percentile, and all had to hold (intersection–union test). E2 was secondary and used the same bootstrap. No correction for multiple endpoints was applied. Analyses required at least 80 eligible people and 40 people in the analysis set. CF analyses were run with seeds 42 (primary), 43 and 44; for E2 and E3, seed 42 decided and the other seeds had to give point estimates in the same direction. Seeds are not independent replications. The bootstrap intervals are conditional on the trained models and on the people with valid CFs. *E5*, a secondary screening analysis, compared the share of G01 people in the top 30% of scores of each model with an exact McNemar test [30]. Table 2 used survey weights and Taylor linearization [19]; the models did not use weights. As a post hoc reporting analysis, we refitted the audited models and report test-set discrimination, threshold metrics at 0.5 and calibration (Appendix A). The study was not registered and follows TRIPOD+AI [31].
 
 ## 2.7. Sensitivity analyses and reproducibility
 
-Sensitivity analyses (seed 42) changed the label definitions, the cycle, the model, the CF search and the selected people (Table 5). M2-phys locked physiology instead of diagnosis-related features, and M3 added a maximum 5% reduction in BMI and waist to M1. All results come from one run of \url{scripts/run_all.sh} on a Linux laptop (Intel Core i5-1335U, 16 GB RAM; Python 3.12.3, XGBoost 3.4.1, dice-ml 0.12).
+Sensitivity analyses (seed 42) changed the label definitions, the cycle, the model, the CF search and the selected people (Table 5). M2-phys locked physiology instead of diagnosis-related features, and M3 added a maximum 5% reduction in BMI and waist to M1. All results come from one run of \url{scripts/run_all.sh} (software and hardware: Appendix A).
 
 # 3. Results
 
 ## 3.1. Sample
 
-In 2015–2018, the two labels disagreed for 12.9% [11.8; 13.9] of adults (23.1% [21.8; 24.3] with 130/80 mmHg). Compared with G11, G01 people were less likely to have a usual place of care or a visit in the past year (Table 2).
+In 2015–2018, the two labels disagreed for a survey-weighted 12.9% [11.8; 13.9] of adults (23.1% [21.8; 24.3] with 130/80 mmHg). Compared with G11, G01 people were less likely to have a usual place of care or a visit in the past year (Table 2).
 
 **Table 2.** Characteristics of the 2015–2018 sample by label pair (140/90 mmHg).
 
@@ -138,29 +136,29 @@ In 2015–2018, the two labels disagreed for 12.9% [11.8; 13.9] of adults (23.1%
 | Systolic BP, mmHg, mean (SD) | 123.7 (17.7) | 115.8 (10.8) | 148.2 (13.1) | 122.0 (9.7) | 135.3 (20.0) |
 | On BP medication, % | 24.1 | 0 | 0 | 0 | 89.2 |
 
-*G00: both labels 0; G01: $Y_{\mathrm{clin}}$ = 1, $Y_{\mathrm{self}}$ = 0; G10: $Y_{\mathrm{self}}$ = 1, $Y_{\mathrm{clin}}$ = 0; G11: both 1. Survey-weighted (WTMEC2YR divided by the number of cycles); 95% confidence intervals for access-to-care rows by Taylor linearisation. Medication is 0 outside G11 by label definition and skip pattern. Full table: Appendix Table A6.*
+*G00: both labels 0; G01: $Y_{\mathrm{clin}}$ = 1, $Y_{\mathrm{self}}$ = 0; G10: $Y_{\mathrm{self}}$ = 1, $Y_{\mathrm{clin}}$ = 0; G11: both 1. Survey-weighted (WTMEC2YR divided by the number of cycles); 95% confidence intervals for access-to-care rows by Taylor linearization. Medication is 0 outside G11 by label definition and skip pattern. Full table: Appendix Table A6.*
 
 ## 3.2. Reliance (E1)
 
-Test-set AUC was 0.806 for $f_{\mathrm{self}}$ and 0.831 for $f_{\mathrm{clin}}$, each against its own label. Permuting access-to-care features reduced the AUC of $f_{\mathrm{self}}$ more than that of $f_{\mathrm{clin}}$ by 0.014 [0.008; 0.019] (Fig. 2). The importance share of access to care was 9.8% in $f_{\mathrm{self}}$ and 2.8% in $f_{\mathrm{placebo}}$ (difference 7.0 percentage points [2.4; 11.0]), so class-wise random label noise did not reproduce this reliance. The result was similar in 2011–2014 (0.015 [0.009; 0.022]). Removing G01 people from training reduced the difference to 0.005 [0.000; 0.010], compared with 0.014 after removing the same number of random people.
+Test-set AUC was 0.806 for $f_{\mathrm{self}}$ and 0.831 for $f_{\mathrm{clin}}$. Permuting access-to-care features reduced the AUC of $f_{\mathrm{self}}$ more than that of $f_{\mathrm{clin}}$ by 0.014 [0.008; 0.019] (Fig. 2). The importance share of access to care was 9.8% in $f_{\mathrm{self}}$ and 2.8% in $f_{\mathrm{placebo}}$ (difference 7.0 percentage points [2.4; 11.0]), so class-wise random label noise did not reproduce this reliance. The result was similar in 2011–2014 (0.015 [0.009; 0.022]). Removing G01 people from training reduced it to 0.005 [0.000; 0.010] (random removal: 0.014).
 
 An important limit: in untreated people, compared with a blood-pressure-only label, the difference was −0.003 [−0.017; 0.011]. E1 therefore depends on the phenotype definition and the population.
 
-![Fig. 2. AUC drop when each feature group is permuted, for the three models (NHANES 2015–2018, seed 42, two-level bootstrap B = 100). Dots are estimates and lines are 95% intervals. Demographics are not shown ($f_{\mathrm{self}}$ 0.103; $f_{\mathrm{clin}}$ 0.211).](fig2.png){width=82%}
+![Fig. 2. AUC drop when each feature group is permuted, for the three models (NHANES 2015–2018, seed 42, two-level bootstrap B = 100). Dots are estimates and lines are 95% intervals. Demographics are not shown ($f_{\mathrm{self}}$ 0.103; $f_{\mathrm{clin}}$ 0.211).](fig2.pdf){width=82%}
 
 ## 3.3. Contribution (E2)
 
-Resetting diagnosis-related features in M0 CFs raised the percentile score of $g_{\mathrm{self}}$ more than that of $g_{\mathrm{clin}}$ by 4.3 percentile points (E2 = 0.043; lower bound 0.037; n = 187). E2 was 0.044 (0.037) and 0.058 (0.049) in seeds 43 and 44, and positive in all three seeds of 2011–2014 (Appendix Table A5). It was positive for CFs from both $f_{\mathrm{self}}$ (0.057) and $f_{\mathrm{clin}}$ (0.030). Between 49% and 65% of valid M0 CFs changed at least one diagnosis-related feature. Access to care, other diagnoses and self-rated health each contributed, but their order changed between seeds (Table 3).
+Resetting diagnosis-related features in M0 CFs raised the percentile score of $g_{\mathrm{self}}$ more than that of $g_{\mathrm{clin}}$ by 4.3 percentile points (E2 = 0.043; lower bound 0.037; n = 187). E2 was 0.044 (0.037) and 0.058 (0.049) in seeds 43 and 44, and positive in all three seeds of 2011–2014 (Appendix Table A5). It was positive for CFs from both $f_{\mathrm{self}}$ (0.057) and $f_{\mathrm{clin}}$ (0.030). Between 49% and 65% of valid M0 CFs changed at least one diagnosis-related feature. Access to care, other diagnoses and self-rated health each contributed, but their order changed between seeds (Table 4).
 
 ## 3.4. Locking (E3)
 
-In seed 42, 172 people formed S02. A(M0) was 0.120 (lower bound 0.097). With diagnosis-related features locked, A(M2) was 0.087; A(M0) − A(M2) was 0.033 (0.012) and A(M0) + A(M2) had a lower bound of 0.160, so E3 was met (Table 3). In seeds 43 and 44, all point estimates were positive, but the lower bound of A(M0) − A(M2) was negative (−0.009 and −0.004). When all returned CFs were used, including invalid ones, E3 was not met in any seed. In 2011–2014, E3 was not met: A changed sign under M2 in seeds 42 and 43, and |A| fell by about 20% (lower bound of A(M0) + A(M2) −0.028), rose by about 26% and fell by about 51% in seeds 42–44 (Appendix Table A5).
+In seed 42, 172 people formed S02. A(M0) was 0.120 (lower bound 0.097). With diagnosis-related features locked, A(M2) was 0.087; A(M0) − A(M2) was 0.033 (0.012) and A(M0) + A(M2) had a lower bound of 0.160, so E3 was met (Table 3). In seeds 43 and 44, all point estimates were positive, but the lower bound of A(M0) − A(M2) was negative (−0.009 and −0.004). When all returned CFs were used, including invalid ones, E3 was not met in any seed. In 2011–2014, E3 was not met: A changed sign under M2 in seeds 42 and 43, and the change in |A| ranged from a 51% fall to a 26% rise (Appendix Table A5).
 
-On the same S02 sets in 2015–2018, ablation reduced |A| by 64%, 67% and 50%, while locking reduced it by 27%, 24% and 9% (Fig. 3). This is descriptive: ablation edits existing CFs, while locking asks DiCE for new valid CFs.
+On the same S02 sets in 2015–2018, ablation reduced |A| by 64%, 67% and 50%, while locking reduced it by 27%, 24% and 9% (Fig. 3). This is descriptive: ablation edits existing CFs, whereas locking generates new ones.
 
-![Fig. 3. A under M0, after ablation and under M2 (locking), on the same people (S02) in each seed, NHANES 2015–2018. Reductions are in |A|. In seed 43, A changes sign after ablation.](fig3.png){width=82%}
+![Fig. 3. A under M0, after ablation and under M2 (locking), on the same people (S02) in each seed, NHANES 2015–2018. Reductions are in |A|. In seed 43, A changes sign after ablation.](fig3.pdf){width=82%}
 
-**Table 3.** Main results, NHANES 2015–2018. Lower bounds (2.5th percentile, patient bootstrap, B = 5,000) in parentheses; 95% intervals (two-level bootstrap, B = 100) in brackets.
+**Table 3.** Main results, NHANES 2015–2018. Lower bounds (2.5th percentile, participant-level bootstrap, B = 5,000) in parentheses; 95% intervals (two-level bootstrap, B = 100) in brackets.
 
 | Endpoint | Quantity | Seed 42 | Seed 43 | Seed 44 | Conclusion |
 |--------|------------|--------------|--------------|--------------|---------|
@@ -182,15 +180,15 @@ On the same S02 sets in 2015–2018, ablation reduced |A| by 64%, 67% and 50%, w
 
 ## 3.5. Guideline-based rules (E4)
 
-Under M1, DiCE found a valid CF for 9.0–12.0% of people with $f_{\mathrm{self}}$ and 3.0–7.5% with $f_{\mathrm{clin}}$, compared with 92–100% under M0 and 86–99% under M2 (Fig. 4). Every person had at least one changeable feature; in 88–97% of failures DiCE found no CF. Only 18, 24 and 21 people had valid $f_{\mathrm{self}}$ CFs in both M0 and M1, below the threshold of 40, so we do not conclude whether the rules reduce the difference. All valid M1 CFs lowered BMI or waist, often by a large amount: the mean relative BMI reduction was 26–37%, and 74–94% of valid CFs reduced BMI by more than 10%. No valid M1 CF in 2015–2018 changed access to care, although the rules allowed it. Coverage was also low in 2011–2014 (8.5–18.0% with $f_{\mathrm{self}}$). When BMI and waist reductions were limited to 5% (M3), coverage fell to 0.5% ($f_{\mathrm{self}}$) and 0% ($f_{\mathrm{clin}}$).
+Under M1, DiCE found a valid CF for 9.0–12.0% of people with $f_{\mathrm{self}}$ and 3.0–7.5% with $f_{\mathrm{clin}}$, compared with 92–100% under M0 and 86–99% under M2 (Fig. 4). In 88–97% of failures DiCE returned no CF. Only 18–24 people had valid $f_{\mathrm{self}}$ CFs in both M0 and M1 (threshold 40), so we draw no conclusion on whether the rules reduce the difference. All valid M1 CFs lowered BMI or waist, often by a large amount: the mean relative BMI reduction was 26–37%, and 74–94% of valid CFs reduced BMI by more than 10%. No valid M1 CF in 2015–2018 changed access to care, although the rules allowed it. Coverage was also low in 2011–2014 (8.5–18.0% with $f_{\mathrm{self}}$). When BMI and waist reductions were limited to 5% (M3), coverage fell to 0.5% ($f_{\mathrm{self}}$) and 0% ($f_{\mathrm{clin}}$).
 
-![Fig. 4. Share of the 200 selected people with at least one valid CF under M0 (baseline), M2 (diagnosis-related group locked) and M1 (guideline-based rules), by CF model and seed (NHANES 2015–2018).](fig4.png){width=82%}
+![Fig. 4. Share of the 200 selected people with at least one valid CF under M0 (baseline), M2 (diagnosis-related group locked) and M1 (guideline-based rules), by CF model and seed (NHANES 2015–2018).](fig4.pdf){width=82%}
 
 ## 3.6. Screening (E5) and sensitivity analyses
 
-In the top 30% of scores, $f_{\mathrm{self}}$ selected 27.8% of G01 people and $f_{\mathrm{clin}}$ 33.3% (11 vs 25 discordant people; exact McNemar p = 0.029). It was not significant within each cycle (p = 0.21 and 0.115). G01 is partly defined by $Y_{\mathrm{clin}}$, so E5 shows different selections, not clinical benefit.
+In the top 30% of scores, $f_{\mathrm{self}}$ selected 27.8% of G01 people and $f_{\mathrm{clin}}$ 33.3% (11 vs 25 discordant people; exact McNemar p = 0.029), but not significantly within each cycle (p = 0.21 and 0.115). Because G01 is partly defined by $Y_{\mathrm{clin}}$, E5 shows different selections, not clinical benefit.
 
-E1 was met in all sensitivity analyses except the blood-pressure-only label in untreated people, including with the reconstructed cholesterol-check variable (0.016), and E3 was met at seed 42 in all three CF sensitivity analyses (Table 5). With DiCE genetic, A fell from 0.242 to 0.169 (about 30%), so the size of A depends on the CF algorithm. Locking physiology instead (M2-phys) increased A from 0.137 to 0.191 on 89 common people, whereas M2 reduced it on the same people (A(M0) − A(M2) = 0.032 [0.003; 0.062]).
+E1 was met in all sensitivity analyses except the blood-pressure-only label in untreated people, and E3 was met at seed 42 in all three CF sensitivity analyses (Table 5). With DiCE genetic, A fell from 0.242 to 0.169 (about 30%), so the size of A depends on the CF algorithm. Locking physiology instead (M2-phys) increased A from 0.137 to 0.191 on 89 common people, whereas M2 reduced it on the same people (A(M0) − A(M2) = 0.032 [0.003; 0.062]).
 
 **Table 5.** Sensitivity analyses, NHANES 2015–2018, seed 42.
 
@@ -198,6 +196,7 @@ E1 was met in all sensitivity analyses except the blood-pressure-only label in u
 |------------------------|------------|------------|------------|
 | 130/80 mmHg threshold | 0.019; met | — | — |
 | Self-report told ≥2 times | 0.017; met | — | — |
+| Reconstructed cholesterol-check variable | 0.016; met | — | — |
 | Cycle 2015–2016 / 2017–2018 | 0.011 / 0.015; met | — | — |
 | $f_{\mathrm{self}}$ vs blood-pressure-only label, untreated | −0.003; not met | — | — |
 | Logistic regression | 0.008; met | 0.085 (n = 191) | Met (n = 88) |
@@ -209,27 +208,29 @@ E1 was met in all sensitivity analyses except the blood-pressure-only label in u
 
 ## 4.1. Main findings
 
-PLCA separates three questions that are often treated as one. First, reliance (E1) and contribution (E2) differ in feature sets, people and estimands; both pointed in the same direction, but E1 was not reproduced with a blood-pressure-only label.
+First, reliance (E1) and contribution (E2) are different estimands; both pointed in the same direction, but E1 was not reproduced with a blood-pressure-only label.
 
-Second, knowing the contribution of a group does not tell us what happens when the group is locked. In 2015–2018, ablation reduced |A| by 50–67% and locking by only 9–27%; in 2011–2014, the effect of locking was unstable in both size and sign. DiCE probably replaces the locked features with other changes; we did not identify the substitution. The practical lesson is to measure the result of constrained CF generation directly, instead of inferring it from attribution.
+Second, knowing the contribution of a group does not tell us what happens when the group is locked. In 2015–2018, ablation reduced |A| by 50–67% and locking by only 9–27%; in 2011–2014, the effect of locking was unstable in both size and sign. One possible explanation, which we did not test, is that DiCE replaces the locked features with other changes that still affect the two models differently. The practical lesson is to measure the result of constrained CF generation directly, instead of inferring it from attribution.
 
-Third, following clinical directions does not guarantee that valid CFs can be found. The guideline-based rules blocked changes in implausible directions but left valid CFs for about one in ten selected people, and the CFs that remained often required large BMI reductions. A rule on direction does not limit the size of a change; adding a size limit (M3) left almost no CFs. Finding no CF does not prove that none exists; coverage depends on the algorithm, search budget, models and selected people.
+Third, following clinical directions does not guarantee that valid CFs can be found. The guideline-based rules left valid CFs for about one in ten selected people, and the remaining CFs often required large BMI reductions. A rule on direction does not limit the size of a change, and adding a size limit (M3) left almost no CFs. Finding no CF does not prove that none exists; coverage depends on the algorithm, search budget and models.
 
-## 4.2. Implications for clinical decision support
+## 4.2. Implications and clinical translation roadmap
 
-Before CFs are shown to clinicians or patients, developers should (1) check whether the label also records access to diagnosis, ideally with a second label for the same people; (2) report valid-CF coverage and score changes for each constraint setting; and (3) test constraints directly, because locking a group may not remove its effect and strict clinical rules may leave few usable CFs. Changing a recorded diagnosis or self-rated health in a CF is not an intervention. PLCA can be applied to other conditions with two outcome definitions on the same people, such as self-reported diabetes and an HbA1c-based label; the condition A(M0) > 0 in E3 is specific to this study. Transfer to clinical settings needs evaluation on clinical data.
+Before CFs are shown to clinicians or patients, developers should check whether the label also records access to diagnosis, report valid-CF coverage for each constraint setting, and test constraints directly. Changing a recorded diagnosis or self-rated health in a CF is not an intervention.
+
+PLCA could serve as a pre-deployment audit step, not a clinical tool: its intended users are developers and governance teams validating a CF-based decision support model before release. It is a proof of concept on survey data (technology readiness level 3–4). A proposed path is: (i) rerun PLCA on electronic health record data where a diagnosis code and measured blood pressure exist for the same patients; (ii) have clinicians review the constraint rules and a sample of CFs; (iii) repeat the audit when the model or data change. Whether this improves clinical decisions or patient outcomes has not been studied (Appendix A).
 
 ## 4.3. Relation to previous work
 
-The findings agree with the proxy hypothesis of Thieu [12] in a different disease and data source; we did not test the original diabetes taxonomy. Attribution and CFs are known to disagree [32]; PLCA does not claim to be the first to separate them, but tests this with two clinical labels for the same people.
+Thieu [12] designed rules for how CFs may change and suggested, without a measured comparison label, that self-reported labels may cause implausible CFs. PLCA addresses a different question: it uses two labels for the same people to measure how the label definition affects CF behavior and whether locking features removes this effect. Our results are consistent with that suggestion in another disease, but we did not test the original diabetes taxonomy. Attribution and CFs are known to disagree [32].
 
 ## 4.4. Limitations
 
-NHANES is cross-sectional, and the two labels differ in timing as well as recording, so not every disagreement reflects access to care. There is no ground truth. Results cover one condition, one country and one CF algorithm (DiCE random), with one evaluation model per label; other equivalent models could give different results. The three seeds are not independent, and the CF bootstrap does not include variation from retraining or CF search. E3 was met only in 2015–2018, and E5 only in pooled data. Models did not use survey weights. The guideline-based rules and the size limits were not reviewed by clinicians and cannot represent sodium, potassium, the DASH diet or stress management, which are not in the data. E2 was added during the development phase after E3 failed in a trial analysis; its definition and role were fixed before it was computed on 2015–2018 data. E4 is descriptive.
+NHANES is cross-sectional, and the labels differ in timing as well as recording, so not every disagreement reflects access to care. Results cover one condition, one country and one CF framework (DiCE, mainly random search), with one evaluation model per label; other equivalent models could give different results. The two periods test whether the procedure can be repeated with retrained models; they are not an external validation of the classifiers. The three seeds are not independent, and the CF bootstrap does not include variation from retraining or CF search. E3 was met only in 2015–2018, and E5 only in pooled data. Because the self-report label partly reflects access to diagnosis, models trained on it may be less accurate for groups with less access to care; we did not evaluate performance by sex or race/ethnicity. The guideline-based rules were not reviewed by clinicians and cannot represent sodium, potassium, the DASH diet or stress management. E2 was added during the development phase after E3 failed in a trial analysis; its definition and role were fixed before it was computed on 2015–2018 data. E4 is descriptive.
 
 # 5. Conclusion
 
-In NHANES, models trained on two hypertension labels for the same people relied on different features and responded differently to the same CFs. Diagnosis-related features contributed to this difference in both survey periods, but locking them when new CFs were generated did not reduce it consistently, and guideline-based rules left valid CFs for very few people. Knowing which features contribute to a difference does not show that restricting them will fix it. PLCA tests these questions separately before CFs are considered for clinical decision support. PLCA is an audit, not a diagnostic tool; CFs are not treatment advice.
+In NHANES, models trained on two hypertension labels for the same people relied on different features and responded differently to the same CFs. Diagnosis-related features contributed to this difference in both survey periods, but locking them in new CFs did not reduce it consistently, and guideline-based rules left valid CFs for very few people. Knowing which features contribute to a difference does not show that restricting them will fix it. CFs are not treatment advice.
 
 
 # CRediT authorship contribution statement
@@ -246,15 +247,15 @@ This research did not receive any specific grant from funding agencies in the pu
 
 # Ethics statement
 
-This is a secondary analysis of publicly available, de-identified NHANES data, collected by the National Center for Health Statistics under its own ethics approval. [The author should confirm with the institution whether review or exemption is required.]
+NHANES protocols were approved by the NCHS Research Ethics Review Board (Protocol #2011-17 for 2011–2016, with continuation, and Protocol #2018-01 from 26 October 2017), and participants gave written informed consent. This study is a secondary analysis of the publicly released, de-identified NHANES files; the author had no access to identifiable information and no contact with participants. [Author to state here whether institutional review or a formal exemption was obtained; do not claim an exemption without documentation.]
 
 # Data availability
 
-NHANES data are publicly available from the US National Center for Health Statistics. Analysis code, run configuration and summary results are available at https://github.com/danh-tc/plca-hypertension; all results were produced by `scripts/run_all.sh` at commit 85a813b.
+NHANES data are publicly available from the US National Center for Health Statistics. Analysis code, run configuration and summary results are available at https://github.com/danh-tc/plca-hypertension; all endpoint results were produced by `scripts/run_all.sh` at commit 85a813b; the post hoc performance and data-characteristics tables by `scripts/run_posthoc_performance.sh`.
 
 # Declaration of generative AI and AI-assisted technologies in the manuscript preparation process
 
-During the preparation of this work the author used Claude (Anthropic) and ChatGPT (OpenAI) to discuss the study design, assist with code, draft and edit text, and review the manuscript. After using these tools, the author reviewed and edited the content as needed and takes full responsibility for the content of the published article.
+During the preparation of this work the author used Claude (Anthropic) [and ChatGPT (OpenAI) — keep only if used] to discuss the study design, assist with code, draft and edit text, and review the manuscript. After using these tools, the author reviewed and edited the content as needed and takes full responsibility for the content of the published article.
 
 
 # References
@@ -392,18 +393,28 @@ During the preparation of this work the author used Claude (Anthropic) and ChatG
 | Diastolic BP, mmHg, mean (SD) | 71.7 (11.4) | 69.7 (9.1) | 82.3 (13.1) | 72.5 (10.0) | 73.2 (13.7) |
 | On BP medication, % | 24.1 | 0 | 0 | 0 | 89.2 |
 
-*Survey-weighted (WTMEC2YR divided by the number of cycles); 95% confidence intervals for access-to-care rows by Taylor linearisation with the survey design (30 strata, 60 primary sampling units). One G00 person lacks usual-place and visit data. Source: \url{results/confirmation/T1c_demographics_confirmation.csv} and \url{results/confirmation/design_se}.*
+*Survey-weighted (WTMEC2YR divided by the number of cycles); 95% confidence intervals for access-to-care rows by Taylor linearization with the survey design (30 strata, 60 primary sampling units). One G00 person lacks usual-place and visit data. Source: \url{results/confirmation/T1c_demographics_confirmation.csv} and \url{results/confirmation/design_se}.*
 
 **Detailed formulas.** Let S be the analysis set, $K_{i,s}$ the number of valid CFs from model s for person i, and $x'_{ij}$ the j-th CF. Then
 
-$$\mathrm{ECD}_s = \frac{1}{|S|}\sum_{i \in S}\frac{1}{K_{i,s}}\sum_{j=1}^{K_{i,s}}\left[\Delta_s(x'_{ij}) - \Delta_{\bar s}(x'_{ij})\right],$$
+$$\mathrm{ECD}_s = \frac{1}{|S|}\sum_{i \in S}\frac{1}{K_{i,s}}\sum_{j=1}^{K_{i,s}}\left[\Delta_s(x'_{ij}) - \Delta_{\bar s}(x'_{ij})\right], \tag{A.1}$$
 
 where $\bar s$ is the other label. For E2,
 
-$$C_m = p_m(x'_{\mathrm{abl}}) - p_m(x') = \Delta_m(x') - \Delta_m(x'_{\mathrm{abl}}), \qquad D_i^{(s)} = \frac{1}{K_{i,s}}\sum_{j=1}^{K_{i,s}}\left(C_{\mathrm{self}} - C_{\mathrm{clin}}\right),$$
+$$C_m = p_m(x'_{\mathrm{abl}}) - p_m(x') = \Delta_m(x') - \Delta_m(x'_{\mathrm{abl}}), \tag{A.2}$$
 
-$$\mathrm{E2} = \frac{1}{2|S_0|}\sum_{i \in S_0}\left(D_i^{(\mathrm{self})} + D_i^{(\mathrm{clin})}\right).$$
+$$D_i^{(s)} = \frac{1}{K_{i,s}}\sum_{j=1}^{K_{i,s}}\left(C_{\mathrm{self}} - C_{\mathrm{clin}}\right), \tag{A.3}$$
 
-Hence $A(\mathrm{M0}) - A_{\mathrm{abl}} = 2\,\mathrm{E2}$ when both sides use the same people, CFs and averaging; this does not hold directly for E2 on S0 compared with A(M0) on S02.
+$$\mathrm{E2} = \frac{1}{2|S_0|}\sum_{i \in S_0}\left(D_i^{(\mathrm{self})} + D_i^{(\mathrm{clin})}\right). \tag{A.4}$$
+
+From Eqs. (A.1)–(A.4), $A(\mathrm{M0}) - A_{\mathrm{abl}} = 2\,\mathrm{E2}$ when both sides use the same people, CFs and averaging; this does not hold directly for E2 on S0 compared with A(M0) on S02.
 
 **Naming in the code.** E2 is `E6`, S0 is `S_M0`, S02 is `S_star`, and the guideline-based rules are `T-HTN` (\url{docs/taxonomy_THTN.md}).
+
+**Model performance and calibration (post hoc reporting).** [PENDING: Table A7 from `outputs_posthoc/performance/*/PERF_metrics.csv` and calibration figure; not an endpoint. Test split, threshold 0.5, test-set bootstrap B = 1,000 conditional on the fitted models, unweighted.]
+
+**Data characteristics.** [PENDING: Table A8 feature dictionary, distribution and missingness, and class balance from `outputs_posthoc/performance/*/DATA_*.csv`.]
+
+**Clinical translation roadmap (proposed, not evaluated).** *Intended users:* model developers, clinical informatics and AI governance teams. *Position in the workflow:* after model development and before release of a CF-based decision support tool; PLCA does not run at the point of care and produces no patient-facing output. *Current readiness:* technology readiness level 3–4 (analytical proof of concept on public survey data). *Steps before any deployment:* (1) repeat the audit on electronic health record data with a diagnosis code and measured blood pressure for the same patients; (2) clinician review of the constraint rules and of a sample of CFs; (3) prespecified acceptance criteria for valid-CF coverage and for A under each constraint setting; (4) re-audit after model updates or data drift. *Not yet studied:* usability, effect on clinical decisions, and patient outcomes.
+
+**Computing environment.** All endpoint results: one run of \url{scripts/run_all.sh} at commit 85a813b on a Linux laptop (Intel Core i5-1335U, 16 GB RAM; Python 3.12.3, XGBoost 3.4.1, scikit-learn 1.9.1, dice-ml 0.12). Package versions: \url{results/pip_freeze.txt}; environment: \url{results/environment.json}.

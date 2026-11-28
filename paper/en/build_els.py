@@ -37,14 +37,14 @@ def table(num, cap, rows, note):
     two = MODE == "journal"
     env = "table*" if (two and num in WIDE) else "table"
     width = r"\textwidth" if env == "table*" or not two else r"\columnwidth"
-    first = {"2": "0.24", "A6": "0.24", "3": "0.10", "A5": "0.30", "A4": "0.22", "1": "0.18", "5": "0.40"}.get(num)
+    first = {"2": "0.24", "A6": "0.30", "3": "0.10", "A5": "0.30", "A4": "0.22", "1": "0.18", "5": "0.40"}.get(num)
     spec = (r">{\raggedright\arraybackslash}p{%s\linewidth}" % first if first else r">{\raggedright\arraybackslash}X") \
         + r">{\raggedright\arraybackslash}X" * (n - 1)
     body = []
     for k, r in enumerate(rows):
         c = [esc(x) for x in r]
         body.append(" & ".join(r"\textbf{%s}" % x for x in c) + r" \\ \midrule" if k == 0 else " & ".join(c) + r" \\")
-    s = [r"\begin{%s}[!htbp]" % env, r"\caption{%s}" % esc(cap), r"\label{tab%s}" % num, r"\footnotesize",
+    s = [r"\begin{%s}[!htbp]" % env, r"\caption{%s}" % esc(cap), r"\label{tab%s}" % num, r"\footnotesize\def\baselinestretch{1}\selectfont\renewcommand{\arraystretch}{1.1}",
          r"\begin{tabularx}{%s}{%s}" % (width, spec), r"\toprule"] + body + [r"\bottomrule", r"\end{tabularx}"]
     if note:
         s.append(r"\par\vspace{2pt}{\scriptsize\raggedright " + esc(note.strip().strip("*")) + r"\par}")
@@ -52,7 +52,7 @@ def table(num, cap, rows, note):
     return "\n```{=latex}\n" + "\n".join(s) + "\n```\n"
 
 def figure(cap, f):
-    wide = f == "fig1.png" and MODE == "journal"
+    wide = f == "fig1.pdf" and MODE == "journal"
     env = "figure*" if wide else "figure"
     w = r"\textwidth" if wide else (r"\columnwidth" if MODE == "journal" else r"0.85\textwidth")
     m = re.match(r"(Fig\. \d+)\.\s*(.*)", cap)

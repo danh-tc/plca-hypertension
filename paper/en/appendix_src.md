@@ -94,18 +94,28 @@
 | Diastolic BP, mmHg, mean (SD) | 71.7 (11.4) | 69.7 (9.1) | 82.3 (13.1) | 72.5 (10.0) | 73.2 (13.7) |
 | On BP medication, % | 24.1 | 0 | 0 | 0 | 89.2 |
 
-*Survey-weighted (WTMEC2YR divided by the number of cycles); 95% confidence intervals for access-to-care rows by Taylor linearisation with the survey design (30 strata, 60 primary sampling units). One G00 person lacks usual-place and visit data. Source: `results/confirmation/T1c_demographics_confirmation.csv` and `results/confirmation/design_se`.*
+*Survey-weighted (WTMEC2YR divided by the number of cycles); 95% confidence intervals for access-to-care rows by Taylor linearization with the survey design (30 strata, 60 primary sampling units). One G00 person lacks usual-place and visit data. Source: `results/confirmation/T1c_demographics_confirmation.csv` and `results/confirmation/design_se`.*
 
 **Detailed formulas.** Let S be the analysis set, $K_{i,s}$ the number of valid CFs from model s for person i, and $x'_{ij}$ the j-th CF. Then
 
-$$\mathrm{ECD}_s = \frac{1}{|S|}\sum_{i \in S}\frac{1}{K_{i,s}}\sum_{j=1}^{K_{i,s}}\left[\Delta_s(x'_{ij}) - \Delta_{\bar s}(x'_{ij})\right],$$
+$$\mathrm{ECD}_s = \frac{1}{|S|}\sum_{i \in S}\frac{1}{K_{i,s}}\sum_{j=1}^{K_{i,s}}\left[\Delta_s(x'_{ij}) - \Delta_{\bar s}(x'_{ij})\right], \tag{A.1}$$
 
 where $\bar s$ is the other label. For E2,
 
-$$C_m = p_m(x'_{abl}) - p_m(x') = \Delta_m(x') - \Delta_m(x'_{abl}), \qquad D_i^{(s)} = \frac{1}{K_{i,s}}\sum_{j=1}^{K_{i,s}}\left(C_{self} - C_{clin}\right),$$
+$$C_m = p_m(x'_{abl}) - p_m(x') = \Delta_m(x') - \Delta_m(x'_{abl}), \tag{A.2}$$
 
-$$\mathrm{E2} = \frac{1}{2|S_0|}\sum_{i \in S_0}\left(D_i^{(self)} + D_i^{(clin)}\right).$$
+$$D_i^{(s)} = \frac{1}{K_{i,s}}\sum_{j=1}^{K_{i,s}}\left(C_{self} - C_{clin}\right), \tag{A.3}$$
 
-Hence $A(\mathrm{M0}) - A_{abl} = 2\,\mathrm{E2}$ when both sides use the same people, CFs and averaging; this does not hold directly for E2 on S0 compared with A(M0) on S02.
+$$\mathrm{E2} = \frac{1}{2|S_0|}\sum_{i \in S_0}\left(D_i^{(self)} + D_i^{(clin)}\right). \tag{A.4}$$
+
+From Eqs. (A.1)–(A.4), $A(\mathrm{M0}) - A_{abl} = 2\,\mathrm{E2}$ when both sides use the same people, CFs and averaging; this does not hold directly for E2 on S0 compared with A(M0) on S02.
 
 **Naming in the code.** E2 is `E6`, S0 is `S_M0`, S02 is `S_star`, and the guideline-based rules are `T-HTN` (`docs/taxonomy_THTN.md`).
+
+**Model performance and calibration (post hoc reporting).** [PENDING: Table A7 from `outputs_posthoc/performance/*/PERF_metrics.csv` and calibration figure; not an endpoint. Test split, threshold 0.5, test-set bootstrap B = 1,000 conditional on the fitted models, unweighted.]
+
+**Data characteristics.** [PENDING: Table A8 feature dictionary, distribution and missingness, and class balance from `outputs_posthoc/performance/*/DATA_*.csv`.]
+
+**Clinical translation roadmap (proposed, not evaluated).** *Intended users:* model developers, clinical informatics and AI governance teams. *Position in the workflow:* after model development and before release of a CF-based decision support tool; PLCA does not run at the point of care and produces no patient-facing output. *Current readiness:* technology readiness level 3–4 (analytical proof of concept on public survey data). *Steps before any deployment:* (1) repeat the audit on electronic health record data with a diagnosis code and measured blood pressure for the same patients; (2) clinician review of the constraint rules and of a sample of CFs; (3) prespecified acceptance criteria for valid-CF coverage and for A under each constraint setting; (4) re-audit after model updates or data drift. *Not yet studied:* usability, effect on clinical decisions, and patient outcomes.
+
+**Computing environment.** All endpoint results: one run of `scripts/run_all.sh` at commit 85a813b on a Linux laptop (Intel Core i5-1335U, 16 GB RAM; Python 3.12.3, XGBoost 3.4.1, scikit-learn 1.9.1, dice-ml 0.12). Package versions: `results/pip_freeze.txt`; environment: `results/environment.json`.

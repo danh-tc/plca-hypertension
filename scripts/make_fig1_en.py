@@ -52,4 +52,5 @@ ax.text(50, 8.5, "2011–2014: develop the procedure   ·   2015–2018: report 
         ha="center", fontsize=9.2, color=SUB)
 ax.text(50, 4.5, "Results describe the models and data of this study; they are not causal clinical effects.",
         ha="center", fontsize=8.5, color=SUB, style="italic")
-fig.savefig(f"{out}/fig1.png", dpi=200, bbox_inches="tight", pad_inches=0.1)
+fig.savefig(f"{out}/fig1.png", dpi=300, bbox_inches="tight", pad_inches=0.1)
+fig.savefig(f"{out}/fig1.pdf", bbox_inches="tight", pad_inches=0.1)  # vector
