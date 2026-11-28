@@ -16,3 +16,5 @@ paper/en/*.out
 paper/en/_tmp.*
 paper/en/jj-*.png
 paper/en/pp-*.png
+outputs_posthoc/
+outputs_posthoc*.log
