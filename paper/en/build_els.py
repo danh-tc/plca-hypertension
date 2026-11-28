@@ -133,7 +133,8 @@ else:
 doc = cls + r"""
 \usepackage{fontspec}\setmainfont{TeX Gyre Termes}
 \usepackage{newunicodechar}\newunicodechar{′}{\ensuremath{'}}\newunicodechar{−}{\ensuremath{-}}\newunicodechar{≥}{\ensuremath{\geq}}\newunicodechar{≤}{\ensuremath{\leq}}\newunicodechar{×}{\ensuremath{\times}}\newunicodechar{Δ}{\ensuremath{\Delta}}\newunicodechar{→}{\ensuremath{\rightarrow}}\newunicodechar{Σ}{\ensuremath{\Sigma}}
-\usepackage{amsmath,amssymb,graphicx,booktabs,tabularx,array,xurl}
+\usepackage{amsmath,amssymb,graphicx,booktabs,tabularx,array,xurl,orcidlink}
+\AtBeginDocument{\hypersetup{hidelinks}}
 \makeatletter\def\ps@pprintTitle{\let\@oddhead\@empty\let\@evenhead\@empty\let\@oddfoot\@empty\let\@evenfoot\@oddfoot}\makeatother
 \usepackage[hidelinks]{hyperref}
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -143,9 +144,9 @@ doc = cls + r"""
 \begin{document}
 \begin{frontmatter}
 \title{""" + esc(TITLE) + r"""}
-\author[uit,vnu]{Cong-Danh Tran\corref{cor1}}
+\author[uit,vnu]{Cong-Danh Tran}
+\makeatletter\g@addto@macro\elsauthors{\,\orcidlink{0009-0001-9660-8808}}\makeatother
 \ead{danhtc@grad.uit.edu.vn}
-\cortext[cor1]{Corresponding author. ORCID: 0009-0001-9660-8808}
 \affiliation[uit]{organization={University of Information Technology}, city={Ho Chi Minh City}, country={Viet Nam}}
 \affiliation[vnu]{organization={Vietnam National University}, city={Ho Chi Minh City}, country={Viet Nam}}
 \begin{abstract}
