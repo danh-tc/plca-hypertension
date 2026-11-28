@@ -142,10 +142,11 @@ doc = cls + r"""
 \begin{document}
 \begin{frontmatter}
 \title{""" + esc(TITLE) + r"""}
-\author{Cong-Danh Tran\corref{cor1}}
+\author[uit,vnu]{Cong-Danh Tran\corref{cor1}}
 \ead{[email]}
 \cortext[cor1]{Corresponding author. ORCID: [ORCID]}
-\affiliation{organization={[Affiliation]}, city={[City]}, country={Vietnam}}
+\affiliation[uit]{organization={University of Information Technology}, city={Ho Chi Minh City}, country={Viet Nam}}
+\affiliation[vnu]{organization={Vietnam National University}, city={Ho Chi Minh City}, country={Viet Nam}}
 \begin{abstract}
 """ + "\n\n".join(r"\textbf{%s:} %s" % (a, esc(b)) for a, b in abstract) + r"""
 \end{abstract}
