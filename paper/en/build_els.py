@@ -131,12 +131,11 @@ else:
     extra = r"\usepackage{lineno}\linenumbers"
 
 doc = cls + r"""
-\usepackage{fontspec}\setmainfont{TeX Gyre Termes}
+\usepackage{iftex}\ifPDFTeX\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}\usepackage{textcomp}\renewcommand{\ttdefault}{lmtt}\else\usepackage{fontspec}\setmainfont{TeX Gyre Termes}\fi
 \usepackage{newunicodechar}\newunicodechar{′}{\ensuremath{'}}\newunicodechar{−}{\ensuremath{-}}\newunicodechar{≥}{\ensuremath{\geq}}\newunicodechar{≤}{\ensuremath{\leq}}\newunicodechar{×}{\ensuremath{\times}}\newunicodechar{Δ}{\ensuremath{\Delta}}\newunicodechar{→}{\ensuremath{\rightarrow}}\newunicodechar{Σ}{\ensuremath{\Sigma}}
-\usepackage{amsmath,amssymb,graphicx,booktabs,tabularx,array,xurl,orcidlink}
-\AtBeginDocument{\hypersetup{hidelinks}}
+\usepackage{amsmath,amssymb,graphicx,booktabs,tabularx,array,xurl}
 \makeatletter\def\ps@pprintTitle{\let\@oddhead\@empty\let\@evenhead\@empty\let\@oddfoot\@empty\let\@evenfoot\@oddfoot}\makeatother
-\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks]{hyperref}\usepackage{orcidlink}
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setlength{\emergencystretch}{3em}
 """ + extra + r"""
@@ -172,5 +171,5 @@ doc = cls + r"""
 name = f"paper_en_{MODE}"
 (ROOT / f"{name}.tex").write_text(doc, encoding="utf-8")
 for _ in range(2):
-    subprocess.run(["xelatex", "-interaction=nonstopmode", f"{name}.tex"], cwd=ROOT, stdout=subprocess.DEVNULL)
+    subprocess.run(["pdflatex", "-interaction=nonstopmode", f"{name}.tex"], cwd=ROOT, stdout=subprocess.DEVNULL)
 print("built", name, "refs", len(refs))
