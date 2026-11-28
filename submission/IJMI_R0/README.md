@@ -1,6 +1,6 @@
 # IJMI first submission (R0) - internal notes, do not upload
 
-- Built from repository commit `2827b9e`; endpoint results from experiment commit `85a813b`.
+- Built from repository commit `0fb44d5`; endpoint results from experiment commit `85a813b`.
 - Build: `python submission/build_package.py` (LaTeX route; elsarticle preprint, review, 12 pt, line numbers).
 - Manuscript.pdf: 37 pages (preview only; Manuscript.tex is the source file).
 

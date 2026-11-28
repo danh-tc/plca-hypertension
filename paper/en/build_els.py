@@ -7,7 +7,7 @@ import re, sys, subprocess, pathlib
 
 MODE = sys.argv[1] if len(sys.argv) > 1 else "submission"
 ROOT = pathlib.Path(__file__).parent
-TITLE = "Attribution is not mitigation: a paired-label counterfactual audit of hypertension classification models"
+TITLE = "Attribution is not mitigation: a paired-label counterfactual audit for hypertension clinical decision support"
 
 # reuse citation renumbering and symbol typesetting from build_en.py (writes paper_en.md)
 subprocess.run([sys.executable, "build_en.py", "--md-only"], cwd=ROOT, check=True)

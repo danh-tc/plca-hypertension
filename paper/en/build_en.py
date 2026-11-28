@@ -2,7 +2,7 @@
 import re, subprocess, pathlib, sys
 
 ROOT = pathlib.Path(__file__).parent
-TITLE = "Attribution is not mitigation: a paired-label counterfactual audit of hypertension classification models"
+TITLE = "Attribution is not mitigation: a paired-label counterfactual audit for hypertension clinical decision support"
 AUTHOR = "Cong-Danh Tran"
 AFFIL = "[Affiliation, City, Vietnam] · [email] · ORCID [ORCID]"
 

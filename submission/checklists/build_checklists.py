@@ -2,7 +2,7 @@
 Answers are the author's self-assessment; locations refer to the manuscript sections/tables."""
 import subprocess, os
 HERE = os.path.dirname(os.path.abspath(__file__))
-TITLE = "Attribution is not mitigation: a paired-label counterfactual audit of hypertension classification models"
+TITLE = "Attribution is not mitigation: a paired-label counterfactual audit for hypertension clinical decision support"
 
 IJMEDI = [
  ("Problem understanding", None, None, None),
@@ -45,7 +45,7 @@ IJMEDI = [
 
 TRIPOD = [
  ("Title", None, None, None),
- ("1", "Identify the study as developing or evaluating a prediction model, target population and outcome", "Partly", "Title names hypertension classification models; the study is an audit of model explanations rather than a prediction model study."),
+ ("1", "Identify the study as developing or evaluating a prediction model, target population and outcome", "Partly", "Title names the condition and the clinical decision support context; the study audits counterfactual explanations of classification models rather than developing a prediction model."),
  ("Abstract", None, None, None),
  ("2", "See TRIPOD+AI for Abstracts", "Partly", "Structured abstract with objective, data source, models, endpoints and results; model performance metrics are in Table A.7, not in the abstract."),
  ("Introduction", None, None, None),
