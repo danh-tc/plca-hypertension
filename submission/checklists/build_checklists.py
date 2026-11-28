@@ -39,7 +39,7 @@ IJMEDI = [
  ("26", "Interpretability and explainability", "Yes", "The study is an audit of explanations: grouped permutation importance (Sec. 2.3) and counterfactuals (Sec. 2.4--2.5). No claim of adequate interpretability is made; no user study (Sec. 4.4)."),
  ("27", "Fairness, ethics, risk of bias", "Yes", "Sec. 1, 4.4: label (measurement) bias from access to diagnosis and its possible effect on groups with less access to care; CFs are not treatment advice (Sec. 5). Performance stratified by sex or race/ethnicity was not evaluated."),
  ("28", "Environmental sustainability / carbon footprint", "No", "Not estimated. All analyses ran on one laptop CPU (Appendix A)."),
- ("29", "Code and data sharing", "Yes", "Data availability: public NHANES data; code, configuration, dependency list (pip\\_freeze.txt) and results on GitHub, archived on Zenodo [DOI to be added at release]; endpoint and post hoc scripts are separate. No web-accessible system."),
+ ("29", "Code and data sharing", "Yes", "Data availability: public NHANES data; code, configuration, dependency list (pip\\_freeze.txt) and results in a public GitHub repository; endpoint and post hoc scripts are separate. No web-accessible system."),
  ("30", "Adoption in practice; workflow position, TRL, monitoring", "No", "Not adopted in practice. Sec. 4.2 and Appendix (roadmap) state the intended workflow position (after model development, before release), self-assessed technology readiness level 3--4 (machine learning TRL framework, Lavin et al., 2022) and proposed re-audit after model or data changes; no BPMN diagram."),
 ]
 
@@ -86,7 +86,7 @@ TRIPOD = [
  ("18c", "Protocol", "Yes", "Data availability statement: no protocol was published."),
  ("18d", "Registration", "Yes", "Sec. 2.6 and Data availability statement: not registered."),
  ("18e", "Data availability", "Yes", "Data availability statement."),
- ("18f", "Code availability", "Yes", "Data availability statement (GitHub; Zenodo archive)."),
+ ("18f", "Code availability", "Yes", "Data availability statement (public GitHub repository)."),
  ("Patient and public involvement", None, None, None),
  ("19", "Patient and public involvement", "Yes", "Statement: none."),
  ("Results", None, None, None),
