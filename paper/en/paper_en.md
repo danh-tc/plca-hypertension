@@ -239,15 +239,15 @@ Cong-Danh Tran: Conceptualization, Methodology, Software, Validation, Formal ana
 
 # Declaration of competing interest
 
-The author declares no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper. [To be confirmed by the author.]
+The author declares no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
 
 # Funding
 
-This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors. [To be confirmed by the author.]
+This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.
 
 # Ethics statement
 
-NHANES protocols were approved by the NCHS Research Ethics Review Board (Protocol #2011-17 for 2011–2016, with continuation, and Protocol #2018-01 from 26 October 2017), and participants gave written informed consent. This study is a secondary analysis of the publicly released, de-identified NHANES files; the author had no access to identifiable information and no contact with participants. [Author to state here whether institutional review or a formal exemption was obtained; do not claim an exemption without documentation.]
+NHANES protocols were approved by the NCHS Research Ethics Review Board (Protocol #2011-17 for 2011–2016, with continuation, and Protocol #2018-01 from 26 October 2017), and participants gave written informed consent. This study is a secondary analysis of the publicly released, de-identified NHANES files; the author had no access to identifiable information and no contact with participants.
 
 # Data availability
 
