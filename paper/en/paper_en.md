@@ -251,11 +251,15 @@ NHANES protocols were approved by the NCHS Research Ethics Review Board (Protoco
 
 # Data availability
 
-NHANES data are publicly available from the US National Center for Health Statistics. Analysis code, run configuration and summary results are available at https://github.com/danh-tc/plca-hypertension; all endpoint results were produced by `scripts/run_all.sh` at commit 85a813b; the post hoc performance and data-characteristics tables by `scripts/run_posthoc_performance.sh`.
+NHANES data are publicly available from the US National Center for Health Statistics. Analysis code, run configuration and summary results are available at https://github.com/danh-tc/plca-hypertension; all endpoint results were produced by `scripts/run_all.sh` at commit 85a813b; the post hoc performance and data-characteristics tables by `scripts/run_posthoc_performance.sh`. No study protocol was published, and the study was not registered.
 
-# Declaration of generative AI and AI-assisted technologies in the manuscript preparation process
+# Patient and public involvement
 
-During the preparation of this work the author used Claude (Anthropic) [and ChatGPT (OpenAI) — keep only if used] to discuss the study design, assist with code, draft and edit text, and review the manuscript. After using these tools, the author reviewed and edited the content as needed and takes full responsibility for the content of the published article.
+Patients and the public were not involved in the design, conduct, reporting or dissemination of this research.
+
+# Declaration of generative AI and AI-assisted technologies in the writing process
+
+During the preparation of this work, the author used Claude (Anthropic) for language editing, clarity improvement, and assistance with manuscript preparation and analysis code. All AI-generated output was reviewed, verified, and edited by the author, who takes full responsibility for the content of this publication.
 
 
 # References
@@ -465,4 +469,4 @@ From Eqs. (A.1)–(A.4), $A(\mathrm{M0}) - A_{\mathrm{abl}} = 2\,\mathrm{E2}$ wh
 
 **Clinical translation roadmap (proposed, not evaluated).** *Intended users:* model developers, clinical informatics and AI governance teams. *Position in the workflow:* after model development and before release of a CF-based decision support tool; PLCA does not run at the point of care and produces no patient-facing output. *Current readiness:* technology readiness level 3–4 (analytical proof of concept on public survey data). *Steps before any deployment:* (1) repeat the audit on electronic health record data with a diagnosis code and measured blood pressure for the same patients; (2) clinician review of the constraint rules and of a sample of CFs; (3) prespecified acceptance criteria for valid-CF coverage and for A under each constraint setting; (4) re-audit after model updates or data drift. *Not yet studied:* usability, effect on clinical decisions, and patient outcomes.
 
-**Computing environment.** All endpoint results: one run of \url{scripts/run_all.sh} at commit 85a813b on a Linux laptop (Intel Core i5-1335U, 16 GB RAM; Python 3.12.3, XGBoost 3.4.1, scikit-learn 1.9.1, dice-ml 0.12). Package versions: \url{results/pip_freeze.txt}; environment: \url{results/environment.json}.
+**Computing environment.** All endpoint results: one run of \url{scripts/run_all.sh} at commit 85a813b on a Linux laptop (Intel Core i5-1335U, 16 GB RAM; Python 3.12.3, XGBoost 3.4.1, scikit-learn 1.9.1, dice-ml 0.12). Package versions: \url{results/pip_freeze.txt}; environment: \url{results/environment.json}. Analysis code was written with assistance from Claude (Anthropic); all code was reviewed and run by the author, and every reported number is read from the output files of these runs.

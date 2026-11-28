@@ -1,0 +1,72 @@
+\documentclass[9pt]{extarticle}
+\usepackage[a4paper,margin=1.6cm,landscape]{geometry}
+\usepackage[T1]{fontenc}\usepackage{lmodern}\usepackage{longtable,booktabs,array}
+\renewcommand{\arraystretch}{1.15}\setlength{\parindent}{0pt}
+\begin{document}
+{\large\textbf{TRIPOD+AI checklist (Collins et al., BMJ 2024;385:e078378): author self-assessment}}\\[3pt]
+Manuscript: \emph{Attribution is not mitigation: a paired-label counterfactual audit of hypertension classification models}\\
+Article type: Original research article, International Journal of Medical Informatics. Completed by the author (Cong-Danh Tran). Answers: Yes / Partly / No / NA. The study audits explanations of classifiers developed on NHANES 2011--2014 and retrained on 2015--2018; items are interpreted accordingly.\\[6pt]
+\begin{longtable}{>{\raggedright\arraybackslash}p{1.0cm}>{\raggedright\arraybackslash}p{7.2cm}>{\centering\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{14.6cm}}
+\toprule \textbf{Item} & \textbf{Checklist item (abridged)} & \textbf{Authors} & \textbf{Where reported / comment}\\ \midrule \endhead
+\multicolumn{4}{l}{\textbf{Title}}\\ \midrule
+1 & Identify the study as developing or evaluating a prediction model, target population and outcome & \textbf{Partly} & Title names hypertension classification models; the study is an audit of model explanations rather than a prediction model study.\\ \midrule
+\multicolumn{4}{l}{\textbf{Abstract}}\\ \midrule
+2 & See TRIPOD+AI for Abstracts & \textbf{Partly} & Structured abstract with objective, data source, models, endpoints and results; model performance metrics are in Table A7, not in the abstract.\\ \midrule
+\multicolumn{4}{l}{\textbf{Introduction}}\\ \midrule
+3a & Healthcare context and rationale & \textbf{Yes} & Sec. 1.\\ \midrule
+3b & Target population, intended purpose, intended users & \textbf{Yes} & Sec. 1, 4.2 (developers and governance teams; pre-deployment audit).\\ \midrule
+3c & Known health inequalities between sociodemographic groups & \textbf{Yes} & Sec. 1 (undiagnosed hypertension, access to care); Table 2.\\ \midrule
+4 & Study objectives & \textbf{Yes} & Sec. 1 (three questions); Sec. 2.3--2.5 (endpoints E1--E5).\\ \midrule
+\multicolumn{4}{l}{\textbf{Methods}}\\ \midrule
+5a & Sources of data, separately for development and evaluation & \textbf{Yes} & Sec. 2.1: NHANES 2011--2014 (development of the procedure) and 2015--2018 (application, models retrained).\\ \midrule
+5b & Dates of participant data & \textbf{Yes} & Sec. 2.1: survey cycles 2011--2012 to 2017--2018.\\ \midrule
+6a & Study setting & \textbf{Yes} & Sec. 2.1: US general population survey.\\ \midrule
+6b & Eligibility criteria & \textbf{Yes} & Sec. 2.1.\\ \midrule
+6c & Treatments and how handled & \textbf{Yes} & Sec. 2.1, 2.4: BP medication is part of Y\_clin; counterfactuals only for untreated people.\\ \midrule
+7 & Data pre-processing and quality checking & \textbf{Yes} & Sec. 2.2; Table A8.\\ \midrule
+8a & Outcome definition, how and when assessed & \textbf{Yes} & Sec. 2.1: two labels, assessed at the survey visit (cross-sectional).\\ \midrule
+8b & Qualifications of outcome assessors (if subjective) & \textbf{NA} & Outcomes are self-report and standardized BP measurement.\\ \midrule
+8c & Blinding of outcome assessment & \textbf{NA} & Survey data collected independently of this study.\\ \midrule
+9a & Choice of initial predictors & \textbf{Yes} & Sec. 2.2: six predefined feature groups; BP measurements and BP questions excluded.\\ \midrule
+9b & Definition of all predictors & \textbf{Yes} & Table A8.\\ \midrule
+9c & Qualifications of predictor assessors (if subjective) & \textbf{NA} & \\ \midrule
+10 & Study size & \textbf{Partly} & All eligible participants used; minimum analysis-set sizes pre-specified (Sec. 2.6); no formal sample-size calculation.\\ \midrule
+11 & Missing data & \textbf{Yes} & Sec. 2.2; Table A8.\\ \midrule
+12a & How the data were used (development, evaluation) & \textbf{Yes} & Sec. 2.3--2.4: 70/30 split; evaluation models on bootstrap samples of the training set.\\ \midrule
+12b & Handling of predictors & \textbf{Yes} & Sec. 2.2; Table A8.\\ \midrule
+12c & Model type, rationale, building steps, hyperparameters & \textbf{Yes} & Sec. 2.3.\\ \midrule
+12d & Heterogeneity across clusters/periods & \textbf{Yes} & Sec. 2.7, Table 5 (per cycle), Table A5 (both periods).\\ \midrule
+12e & Performance measures and plots & \textbf{Yes} & Sec. 2.6; Table A7; Fig. A1.\\ \midrule
+12f & Model updating & \textbf{NA} & No updating or recalibration.\\ \midrule
+12g & How predictions were calculated in evaluation & \textbf{Yes} & Code repository (Data availability).\\ \midrule
+13 & Class imbalance methods & \textbf{Yes} & None used (Table A8 note).\\ \midrule
+14 & Approaches to address model fairness & \textbf{No} & None; stated as a limitation (Sec. 4.4).\\ \midrule
+15 & Model output & \textbf{Yes} & Sec. 2.4.\\ \midrule
+16 & Differences between development and evaluation data & \textbf{Yes} & Sec. 2.1; Table A8 (both periods); Table A5.\\ \midrule
+17 & Ethics committee and consent & \textbf{Yes} & Ethics statement (NCHS ERB protocols; written informed consent).\\ \midrule
+\multicolumn{4}{l}{\textbf{Open science}}\\ \midrule
+18a & Funding & \textbf{Yes} & Funding statement.\\ \midrule
+18b & Conflicts of interest & \textbf{Yes} & Declaration of competing interest.\\ \midrule
+18c & Protocol & \textbf{Yes} & Data availability statement: no protocol was published.\\ \midrule
+18d & Registration & \textbf{Yes} & Sec. 2.6 and Data availability statement: not registered.\\ \midrule
+18e & Data availability & \textbf{Yes} & Data availability statement.\\ \midrule
+18f & Code availability & \textbf{Yes} & Data availability statement (GitHub; Zenodo archive).\\ \midrule
+\multicolumn{4}{l}{\textbf{Patient and public involvement}}\\ \midrule
+19 & Patient and public involvement & \textbf{Yes} & Statement: none.\\ \midrule
+\multicolumn{4}{l}{\textbf{Results}}\\ \midrule
+20a & Participant flow, numbers with and without outcome & \textbf{Partly} & Sec. 2.1, Table 2, Table A8 (n and positives per split); no flow diagram of exclusions.\\ \midrule
+20b & Characteristics overall and per data source & \textbf{Yes} & Table 2, Table A6, Table A8.\\ \midrule
+20c & Comparison of predictor distributions, development vs evaluation & \textbf{Yes} & Table A8 (both periods).\\ \midrule
+21 & Number of participants and outcome events per analysis & \textbf{Yes} & Table 3 (n per analysis set); Table A8 note (positives).\\ \midrule
+22 & Full prediction model details & \textbf{Yes} & Code and fixed configuration in the repository; models refit deterministically (Appendix A).\\ \midrule
+23a & Performance with CIs, including key subgroups & \textbf{Partly} & Table A7 with 95\% CI; subgroup performance not reported (Sec. 4.4).\\ \midrule
+23b & Heterogeneity in performance across clusters & \textbf{Yes} & Table A7 (two periods).\\ \midrule
+24 & Results of model updating & \textbf{NA} & \\ \midrule
+\multicolumn{4}{l}{\textbf{Discussion}}\\ \midrule
+25 & Overall interpretation, including fairness & \textbf{Yes} & Sec. 4.1, 4.4.\\ \midrule
+26 & Limitations & \textbf{Yes} & Sec. 4.4.\\ \midrule
+27a & Handling of poor quality or unavailable input data in use & \textbf{NA} & No deployment; missing-data handling in Sec. 2.2.\\ \midrule
+27b & User interaction with input data or the model & \textbf{Yes} & Sec. 4.2 (audit run by developers; no patient interaction).\\ \midrule
+27c & Next steps for future research & \textbf{Yes} & Sec. 4.2; Appendix (roadmap).\\ \midrule
+\end{longtable}
+\end{document}

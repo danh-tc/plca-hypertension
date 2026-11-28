@@ -16,8 +16,12 @@ NHANES protocols were approved by the NCHS Research Ethics Review Board (Protoco
 
 # Data availability
 
-NHANES data are publicly available from the US National Center for Health Statistics. Analysis code, run configuration and summary results are available at https://github.com/danh-tc/plca-hypertension; all endpoint results were produced by `scripts/run_all.sh` at commit 85a813b; the post hoc performance and data-characteristics tables by `scripts/run_posthoc_performance.sh`.
+NHANES data are publicly available from the US National Center for Health Statistics. Analysis code, run configuration and summary results are available at https://github.com/danh-tc/plca-hypertension; all endpoint results were produced by `scripts/run_all.sh` at commit 85a813b; the post hoc performance and data-characteristics tables by `scripts/run_posthoc_performance.sh`. No study protocol was published, and the study was not registered.
 
-# Declaration of generative AI and AI-assisted technologies in the manuscript preparation process
+# Patient and public involvement
 
-During the preparation of this work the author used Claude (Anthropic) [and ChatGPT (OpenAI) — keep only if used] to discuss the study design, assist with code, draft and edit text, and review the manuscript. After using these tools, the author reviewed and edited the content as needed and takes full responsibility for the content of the published article.
+Patients and the public were not involved in the design, conduct, reporting or dissemination of this research.
+
+# Declaration of generative AI and AI-assisted technologies in the writing process
+
+During the preparation of this work, the author used Claude (Anthropic) for language editing, clarity improvement, and assistance with manuscript preparation and analysis code. All AI-generated output was reviewed, verified, and edited by the author, who takes full responsibility for the content of this publication.
