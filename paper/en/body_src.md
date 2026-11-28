@@ -22,7 +22,7 @@ Each person had two labels. *Y_self* was 1 if the person had ever been told by a
 
 ## 2.2. Features and preprocessing
 
-Models used six feature groups: demographics and socioeconomic status; access to care (insurance, usual place of care, health care visits); other diagnoses (diabetes, high cholesterol); lifestyle (smoking, drinks per drinking day, moderate and vigorous recreational activity); physiology (body mass index (BMI), waist, total cholesterol, HbA1c); and self-rated health. Sex was the sex recorded by NHANES; gender was not available. Blood pressure measurements and blood pressure questions were not inputs. "Cholesterol ever checked" (BPQ060) was excluded because its missingness depends on Y_self through skip patterns (57.8% vs 26.0%). We call access to care, other diagnoses and self-rated health together the *diagnosis-related features*. Data were split before any preprocessing. For E1, XGBoost handled missing values natively; for CF analyses, missing values were filled with the training-split median. The feature dictionary, distributions and missingness are given in the supplementary material (Appendix A).
+Models used six feature groups: demographics and socioeconomic status; access to care (insurance, usual place of care, health care visits); other diagnoses (diabetes, high cholesterol); lifestyle (smoking, drinks per drinking day, moderate and vigorous recreational activity); physiology (body mass index (BMI), waist, total cholesterol, HbA1c); and self-rated health. Sex was the sex recorded by NHANES; gender was not available. Blood pressure measurements and blood pressure questions were not inputs. "Cholesterol ever checked" (BPQ060) was excluded because its missingness depends on Y_self through skip patterns (57.8% vs 26.0%). We call access to care, other diagnoses and self-rated health together the *diagnosis-related features*. Data were split before preprocessing. For E1, XGBoost handled missing values natively; for CF analyses, missing values were filled with the training-split median. The feature dictionary, distributions and missingness are given in the supplementary material (Appendix A).
 
 ## 2.3. Reliance (E1)
 
@@ -37,10 +37,10 @@ We selected up to 200 untreated test-set people whom both f_self and f_clin pred
 | Mode | What DiCE may change | Purpose |
 |------------|------------------------------------|------------------------|
 | M0, baseline | Everything except age, sex and race/ethnicity | Reference |
-| M1, guideline-based rules | Eight features, only in the guideline direction (Appendix Table A4); everything else fixed | Can valid CFs be found under clinically motivated rules? |
+| M1, guideline-based rules | Eight features, only in the guideline direction (Appendix Table A.4); everything else fixed | Can valid CFs be found under clinically motivated rules? |
 | M2, locking | As M0, with access to care, other diagnoses and self-rated health fixed | Does locking diagnosis-related features reduce the difference? |
 
-Under M1, each of the eight features may change only in the direction recommended by guidelines, and BMI and waist only down to their thresholds (25 kg/m², or 23 for non-Hispanic Asian people; 102 cm for men, 88 cm for women) [34–36,39,40]; imputed values are fixed (Appendix Table A4).
+Under M1, BMI and waist may fall only to their thresholds (25 kg/m², or 23 for non-Hispanic Asian people; 102 cm for men, 88 cm for women) [34–36,39,40]; imputed values are fixed (Appendix Table A.4).
 
 We trained one *evaluation model* per label, g_self and g_clin, on the same bootstrap sample of the training set, and scored every CF with both. Because the two models have different score distributions, scores were converted to percentiles: p_m(x) is the share of test-set people whose g_m score is not higher than that of x. The *score drop* of a CF x′ for person x is
 
@@ -82,7 +82,7 @@ Sensitivity analyses (seed 42) changed the label definitions, the cycle, the mod
 
 ## 3.1. Sample
 
-In 2015–2018, the two labels disagreed for a survey-weighted 12.9% [11.8; 13.9] of adults (23.1% [21.8; 24.3] with 130/80 mmHg). Compared with G11, G01 people were less likely to have a usual place of care or a visit in the past year (Table 2). The models used for CFs had test AUROC 0.810 (f_self) and 0.836 (f_clin) in 2015–2018, with balanced accuracy 0.726 and 0.752 at threshold 0.5 and calibration slopes 0.82 and 0.86 (Appendix Table A7).
+In 2015–2018, the two labels disagreed for a survey-weighted 12.9% [11.8; 13.9] of adults (23.1% [21.8; 24.3] with 130/80 mmHg). Compared with G11, G01 people were less likely to have a usual place of care or a visit in the past year (Table 2). The models used for CFs had test AUROC 0.810 (f_self) and 0.836 (f_clin) in 2015–2018, with balanced accuracy 0.726 and 0.752 at threshold 0.5 and calibration slopes 0.82 and 0.86 (Appendix Table A.7).
 
 **Table 2.** Characteristics of the 2015–2018 sample by label pair (140/90 mmHg).
 
@@ -101,7 +101,7 @@ In 2015–2018, the two labels disagreed for a survey-weighted 12.9% [11.8; 13.9
 | Systolic BP, mmHg, mean (SD) | 123.7 (17.7) | 115.8 (10.8) | 148.2 (13.1) | 122.0 (9.7) | 135.3 (20.0) |
 | On BP medication, % | 24.1 | 0 | 0 | 0 | 89.2 |
 
-*G00: both labels 0; G01: Y_clin = 1, Y_self = 0; G10: Y_self = 1, Y_clin = 0; G11: both 1. Survey-weighted (WTMEC2YR divided by the number of cycles); 95% confidence intervals for access-to-care rows by Taylor linearization. Medication is 0 outside G11 by label definition and skip pattern. Full table: Appendix Table A6.*
+*G00: both labels 0; G01: Y_clin = 1, Y_self = 0; G10: Y_self = 1, Y_clin = 0; G11: both 1. Survey-weighted (WTMEC2YR divided by the number of cycles); 95% confidence intervals for access-to-care rows by Taylor linearization. Medication is 0 outside G11 by label definition and skip pattern. Full table: Appendix Table A.6.*
 
 ## 3.2. Reliance (E1)
 
@@ -113,11 +113,11 @@ An important limit: in untreated people, compared with a blood-pressure-only lab
 
 ## 3.3. Contribution (E2)
 
-Resetting diagnosis-related features in M0 CFs raised the percentile score of g_self more than that of g_clin by 4.3 percentile points (E2 = 0.043; lower bound 0.037; n = 187). E2 was 0.044 (0.037) and 0.058 (0.049) in seeds 43 and 44, and positive in all three seeds of 2011–2014 (Appendix Table A5). It was positive for CFs from both f_self (0.057) and f_clin (0.030). Between 49% and 65% of valid M0 CFs changed at least one diagnosis-related feature. Access to care, other diagnoses and self-rated health each contributed, but their order changed between seeds (Table 4).
+Resetting diagnosis-related features in M0 CFs raised the percentile score of g_self more than that of g_clin by 4.3 percentile points (E2 = 0.043; lower bound 0.037; n = 187). E2 was 0.044 (0.037) and 0.058 (0.049) in seeds 43 and 44, and positive in all three seeds of 2011–2014 (Appendix Table A.5). It was positive for CFs from both f_self (0.057) and f_clin (0.030). Between 49% and 65% of valid M0 CFs changed at least one diagnosis-related feature. Access to care, other diagnoses and self-rated health each contributed, but their order changed between seeds (Table 4).
 
 ## 3.4. Locking (E3)
 
-In seed 42, 172 people formed S02. A(M0) was 0.120 (lower bound 0.097). With diagnosis-related features locked, A(M2) was 0.087; A(M0) − A(M2) was 0.033 (0.012) and A(M0) + A(M2) had a lower bound of 0.160, so E3 was met (Table 3). In seeds 43 and 44, all point estimates were positive, but the lower bound of A(M0) − A(M2) was negative (−0.009 and −0.004). When all returned CFs were used, including invalid ones, E3 was not met in any seed. In 2011–2014, E3 was not met: A changed sign under M2 in seeds 42 and 43, and the change in |A| ranged from a 51% fall to a 26% rise (Appendix Table A5).
+In seed 42, 172 people formed S02. A(M0) was 0.120 (lower bound 0.097). With diagnosis-related features locked, A(M2) was 0.087; A(M0) − A(M2) was 0.033 (0.012) and A(M0) + A(M2) had a lower bound of 0.160, so E3 was met (Table 3). In seeds 43 and 44, all point estimates were positive, but the lower bound of A(M0) − A(M2) was negative (−0.009 and −0.004). When all returned CFs were used, including invalid ones, E3 was not met in any seed. In 2011–2014, E3 was not met: A changed sign under M2 in seeds 42 and 43, and the change in |A| ranged from a 51% fall to a 26% rise (Appendix Table A.5).
 
 On the same S02 sets in 2015–2018, ablation reduced |A| by 64%, 67% and 50%, while locking reduced it by 27%, 24% and 9% (Fig. 3). This is descriptive: ablation edits existing CFs, whereas locking generates new ones.
 
@@ -183,7 +183,7 @@ Third, following clinical directions does not guarantee that valid CFs can be fo
 
 Before CFs are shown to clinicians or patients, developers should check whether the label also records access to diagnosis, report valid-CF coverage for each constraint setting, and test constraints directly. Changing a recorded diagnosis or self-rated health in a CF is not an intervention.
 
-PLCA could serve as a pre-deployment audit step, not a clinical tool: its intended users are developers and governance teams validating a CF-based decision support model before release. It is a proof of concept on survey data (technology readiness level 3–4). A proposed path is: (i) rerun PLCA on electronic health record data where a diagnosis code and measured blood pressure exist for the same patients; (ii) have clinicians review the constraint rules and a sample of CFs; (iii) repeat the audit when the model or data change. Whether this improves clinical decisions or patient outcomes has not been studied (Appendix A).
+PLCA could serve as a pre-deployment audit step, not a clinical tool: its intended users are developers and governance teams validating a CF-based decision support model before release. It is a proof of concept on survey data (self-assessed technology readiness level 3–4 [41]). A proposed path is: (i) rerun PLCA on electronic health record data where a diagnosis code and measured blood pressure exist for the same patients; (ii) have clinicians review the constraint rules and a sample of CFs; (iii) repeat the audit when the model or data change. Whether this improves clinical decisions or patient outcomes has not been studied (Appendix A).
 
 ## 4.3. Relation to previous work
 
@@ -191,7 +191,7 @@ Thieu [9] designed rules for how CFs may change and suggested, without a measure
 
 ## 4.4. Limitations
 
-NHANES is cross-sectional, and the labels differ in timing as well as recording, so not every disagreement reflects access to care. Results cover one condition, one country and one CF framework (DiCE, mainly random search), with one evaluation model per label; other equivalent models could give different results. The two periods test whether the procedure can be repeated with retrained models; they are not an external validation of the classifiers. The three seeds are not independent, and the CF bootstrap does not include variation from retraining or CF search. E3 was met only in 2015–2018, and E5 only in pooled data. Because the self-report label partly reflects access to diagnosis, models trained on it may be less accurate for groups with less access to care; we did not evaluate performance by sex or race/ethnicity. The guideline-based rules were not reviewed by clinicians and cannot represent sodium, potassium, the DASH diet or stress management. E2 was added during the development phase after E3 failed in a trial analysis; its definition and role were fixed before it was computed on 2015–2018 data. E4 is descriptive.
+NHANES is cross-sectional, and the labels differ in timing as well as recording, so not every disagreement reflects access to care. Results cover one condition, one country and one CF framework (DiCE, mainly random search), with one evaluation model per label; other equivalent models could give different results. The two periods test whether the procedure can be repeated with retrained models; they are not an external validation of the classifiers. The CF bootstrap does not include variation from retraining or CF search. E3 was met only in 2015–2018, and E5 only in pooled data. Because the self-report label partly reflects access to diagnosis, models trained on it may be less accurate for groups with less access to care; we did not evaluate performance by sex or race/ethnicity. The guideline-based rules were not reviewed by clinicians and cannot represent sodium, potassium, the DASH diet or stress management. E2 was added during the development phase after E3 failed in a trial analysis; its definition and role were fixed before it was computed on 2015–2018 data. E4 is descriptive.
 
 # 5. Conclusion
 

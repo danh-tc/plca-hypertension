@@ -14,16 +14,16 @@ Article type: Original research article, International Journal of Medical Inform
 3 & Study setting & \textbf{Yes} & Sec. 2.1: US general population, NHANES household interview and mobile examination center.\\ \midrule
 4 & Source of data & \textbf{Yes} & Sec. 2.1; Data availability: public NHANES files (NCHS).\\ \midrule
 5 & Medical task & \textbf{Yes} & Sec. 1, 2.3: binary classification of hypertension status under two label definitions; the study audits counterfactual explanations of these classifiers, not a clinical prediction task.\\ \midrule
-6 & Data collection process and data quality & \textbf{Yes} & Sec. 2.1--2.2: self-report vs examination (BP measured in the survey), questionnaire skip patterns (BPQ060 excluded, 57.8\% vs 26.0\% missing); Table A8 note.\\ \midrule
+6 & Data collection process and data quality & \textbf{Yes} & Sec. 2.1--2.2: self-report vs examination (BP measured in the survey), questionnaire skip patterns (BPQ060 excluded, 57.8\% vs 26.0\% missing); Table A.8 note.\\ \midrule
 \multicolumn{4}{l}{\textbf{Data understanding}}\\ \midrule
-7 & Subject demographics (age, sex, comorbidities, ethnicity, SES) & \textbf{Yes} & Table 2 and Table A6 (age mean/SD, sex, race/ethnicity, education, income, BMI, BP medication); Table A8 (diabetes, high cholesterol, all features, both periods).\\ \midrule
+7 & Subject demographics (age, sex, comorbidities, ethnicity, SES) & \textbf{Yes} & Table 2 and Table A.6 (age mean/SD, sex, race/ethnicity, education, income, BMI, BP medication); Table A.8 (diabetes, high cholesterol, all features, both periods).\\ \midrule
 8 & Gold standard / ground truthing & \textbf{Yes} & Sec. 2.1: labels are rule-based (self-reported diagnosis; measured BP $\geq$140/90 mmHg or medication); no human annotation, so sub-items 8.1--8.5 are not applicable. Neither label is treated as ground truth (Sec. 2.1, 4.4).\\ \midrule
-9 & Feature description (name, type, unit, distribution, encoding) & \textbf{Yes} & Sec. 2.2; Table A8 (NHANES source, coding/unit, median [IQR] or \%, missingness; race one-hot, ordinal codes). Min/max per feature in results\_posthoc/performance/*/DATA\_distribution.csv.\\ \midrule
+9 & Feature description (name, type, unit, distribution, encoding) & \textbf{Yes} & Sec. 2.2; Table A.8 (NHANES source, coding/unit, median [IQR] or \%, missingness; race one-hot, ordinal codes). Min/max per feature in results\_posthoc/performance/*/DATA\_distribution.csv.\\ \midrule
 \multicolumn{4}{l}{\textbf{Data preparation}}\\ \midrule
-10 & Outlier detection and handling & \textbf{No} & No outlier detection was performed; refused/don't-know codes were set to missing and values were otherwise used as released (Table A8 note).\\ \midrule
-11 & Missing-value management & \textbf{Yes} & Sec. 2.2; Table A8: missing rate per feature and split; training-split median imputation for CF models, XGBoost native handling for E1. Two features exceed 10\% missing (drinks per drinking day, income); alternative imputation methods were not compared.\\ \midrule
-12 & Feature pre-processing & \textbf{Yes} & Sec. 2.2; Table A8: no scaling or discretization (tree models); race one-hot; ordinal codes kept as numbers.\\ \midrule
-13 & Data imbalance analysis and adjustment & \textbf{Yes} & Table A8 note: positive class 37--40\% for both labels; Table 2 shows sex and race/ethnicity distribution; no resampling or class weighting.\\ \midrule
+10 & Outlier detection and handling & \textbf{No} & No outlier detection was performed; refused/don't-know codes were set to missing and values were otherwise used as released (Table A.8 note).\\ \midrule
+11 & Missing-value management & \textbf{Yes} & Sec. 2.2; Table A.8: missing rate per feature and split; training-split median imputation for CF models, XGBoost native handling for E1. Two features exceed 10\% missing (drinks per drinking day, income); alternative imputation methods were not compared.\\ \midrule
+12 & Feature pre-processing & \textbf{Yes} & Sec. 2.2; Table A.8: no scaling or discretization (tree models); race one-hot; ordinal codes kept as numbers.\\ \midrule
+13 & Data imbalance analysis and adjustment & \textbf{Yes} & Table A.8 note: positive class 37--40\% for both labels; Table 2 shows sex and race/ethnicity distribution; no resampling or class weighting.\\ \midrule
 \multicolumn{4}{l}{\textbf{Modeling}}\\ \midrule
 14 & Model task & \textbf{Yes} & Sec. 2.3: binary classification.\\ \midrule
 15 & Model output & \textbf{Yes} & Sec. 2.4: predicted probability; CF validity at threshold 0.5; percentile scores for evaluation models.\\ \midrule
@@ -31,10 +31,10 @@ Article type: Original research article, International Journal of Medical Inform
 \multicolumn{4}{l}{\textbf{Validation}}\\ \midrule
 17 & Data splitting, split before pre-processing & \textbf{Yes} & Sec. 2.2--2.3: 70/30 split stratified by Y\_clin; data were split before any preprocessing; imputation medians from the training split only.\\ \midrule
 18 & Model training and selection, hyperparameters & \textbf{Yes} & Sec. 2.3: hyperparameters fixed in advance (300 trees, depth 4, learning rate 0.05, subsampling 0.8), no tuning or model selection; depth and subsampling limit overfitting.\\ \midrule
-19 & Calibration (Brier score, calibration plot) & \textbf{Yes} & Sec. 3.1; Table A7 (Brier, calibration intercept and slope with 95\% CI); Fig. A1 (calibration plot). Post hoc reporting analysis.\\ \midrule
+19 & Calibration (Brier score, calibration plot) & \textbf{Yes} & Sec. 3.1; Table A.7 (Brier, calibration intercept and slope with 95\% CI); Fig. A.1 (calibration plot). Post hoc reporting analysis.\\ \midrule
 20 & Internal validation procedure & \textbf{Yes} & Sec. 2.3, 2.6: hold-out test set (30\%); two-level bootstrap for E1; participant bootstrap for CF endpoints. Test set chosen at random (stratified), not for maximal diversity; sample-size adequacy not formally assessed.\\ \midrule
 21 & External validation & \textbf{No} & Sec. 4.4: the two NHANES periods test whether the procedure can be repeated with retrained models; they are not an external validation of the classifiers.\\ \midrule
-22 & Error-based metrics with CIs & \textbf{Yes} & Table A7: accuracy, balanced accuracy, sensitivity, specificity, AUROC, AUPRC, PPV, NPV, prevalence, with test-set bootstrap 95\% CI (conditional on the fitted model). Differences between models tested via CIs (Sec. 2.3, Table 3).\\ \midrule
+22 & Error-based metrics with CIs & \textbf{Yes} & Table A.7: accuracy, balanced accuracy, sensitivity, specificity, AUROC, AUPRC, PPV, NPV, prevalence, with test-set bootstrap 95\% CI (conditional on the fitted model). Differences between models tested via CIs (Sec. 2.3, Table 3).\\ \midrule
 23 & Relevant errors described & \textbf{No} & No error analysis of individual misclassifications.\\ \midrule
 \multicolumn{4}{l}{\textbf{Deployment}}\\ \midrule
 24 & Target user & \textbf{Yes} & Sec. 4.2; Appendix (roadmap): model developers and AI governance teams before release of a CF-based decision support tool; no patient-facing use.\\ \midrule
@@ -43,6 +43,6 @@ Article type: Original research article, International Journal of Medical Inform
 27 & Fairness, ethics, risk of bias & \textbf{Yes} & Sec. 1, 4.4: label (measurement) bias from access to diagnosis and its possible effect on groups with less access to care; CFs are not treatment advice (Sec. 5). Performance stratified by sex or race/ethnicity was not evaluated.\\ \midrule
 28 & Environmental sustainability / carbon footprint & \textbf{No} & Not estimated. All analyses ran on one laptop CPU (Appendix A).\\ \midrule
 29 & Code and data sharing & \textbf{Yes} & Data availability: public NHANES data; code, configuration, dependency list (pip\_freeze.txt) and results on GitHub, archived on Zenodo [DOI to be added at release]; endpoint and post hoc scripts are separate. No web-accessible system.\\ \midrule
-30 & Adoption in practice; workflow position, TRL, monitoring & \textbf{No} & Not adopted in practice. Sec. 4.2 and Appendix (roadmap) state the intended workflow position (after model development, before release), technology readiness level 3--4 and proposed re-audit after model or data changes; no BPMN diagram.\\ \midrule
+30 & Adoption in practice; workflow position, TRL, monitoring & \textbf{No} & Not adopted in practice. Sec. 4.2 and Appendix (roadmap) state the intended workflow position (after model development, before release), self-assessed technology readiness level 3--4 (machine learning TRL framework, Lavin et al., 2022) and proposed re-audit after model or data changes; no BPMN diagram.\\ \midrule
 \end{longtable}
 \end{document}

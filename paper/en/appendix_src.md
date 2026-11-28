@@ -18,7 +18,7 @@
 | 42 | M0 | 172 | 0.089 | −0.031 | 0.120 | 0.058 |
 | 42 | M2 | 172 | 0.070 | −0.018 | 0.087 | 0.052 |
 | 43 | M0 | 168 | 0.073 | 0.015 | 0.058 | 0.088 |
-| 43 | M2 | 168 | 0.079 | 0.035 | 0.044 | 0.114 |
+| 43 | M2 | 168 | 0.079 | 0.035 | 0.045 | 0.114 |
 | 44 | M0 | 175 | 0.125 | −0.055 | 0.181 | 0.070 |
 | 44 | M2 | 175 | 0.154 | −0.010 | 0.165 | 0.144 |
 
@@ -59,7 +59,7 @@
 | E1: access-to-care AUC drop, f_self − f_clin | 0.015 [0.009; 0.022]; met | 0.014 [0.008; 0.019]; met |
 | E2 (lower bound), seeds 42/43/44 | 0.042 (0.035) / 0.036 (0.031) / 0.035 (0.027); met | 0.043 (0.037) / 0.044 (0.037) / 0.058 (0.049); met |
 | E3, seed 42: A(M0); A(M2); lower bound of A(M0) + A(M2) | 0.040; −0.032; −0.028; not met | 0.120; 0.087; 0.160; met |
-| E3, seeds 43 and 44: A(M2) | −0.037; 0.045 | 0.044; 0.165 |
+| E3, seeds 43 and 44: A(M2) | −0.037; 0.045 | 0.045; 0.165 |
 | E4: valid-CF coverage under M1, f_self (seeds 42/43/44) | 18.0 / 8.5 / 12.5%; common n 36 / 17 / 25 | 9.0 / 12.0 / 10.5%; common n 18 / 24 / 21 |
 | E4: ECD_self(M0) − ECD_self(M1) | Not interpretable (n < 40) | Not interpretable (n < 40); raw values 0.025 / 0.029 / 0.008 |
 
@@ -112,7 +112,7 @@ From Eqs. (A.1)–(A.4), $A(\mathrm{M0}) - A_{abl} = 2\,\mathrm{E2}$ when both s
 
 **Naming in the code.** E2 is `E6`, S0 is `S_M0`, S02 is `S_star`, and the guideline-based rules are `T-HTN` (`docs/taxonomy_THTN.md`).
 
-**Model performance and calibration (post hoc reporting, not an endpoint).** Table A7 and Fig. A1 were produced by `scripts/run_posthoc_performance.sh`.
+**Model performance and calibration (post hoc reporting, not an endpoint).** Table A.7 and Fig. A.1 were produced by `scripts/run_posthoc_performance.sh`.
 
 **Table A7.** Test-set performance and calibration of the models used to generate counterfactuals (post hoc reporting; threshold 0.5).
 
@@ -135,7 +135,7 @@ From Eqs. (A.1)–(A.4), $A(\mathrm{M0}) - A_{abl} = 2\,\mathrm{E2}$ when both s
 
 ![Fig. A1. Calibration of the models used to generate counterfactuals on the 2015–2018 test split (deciles of predicted probability; dashed line: perfect calibration). Post hoc reporting.](figA1.pdf){width=82%}
 
-**Data characteristics.** Table A8 lists every feature with its NHANES source, coding, distribution and missingness.
+**Data characteristics.** Table A.8 lists every feature with its NHANES source, coding, distribution and missingness.
 
 **Table A8.**Features, coding, distribution and missingness of the analytic samples (unweighted).
 
@@ -164,6 +164,6 @@ From Eqs. (A.1)–(A.4), $A(\mathrm{M0}) - A_{abl} = 2\,\mathrm{E2}$ when both s
 
 *Feature groups as in Section 2.2. RIDRETH3: 1 Mexican American, 2 Other Hispanic, 3 non-Hispanic White, 4 non-Hispanic Black, 6 non-Hispanic Asian, 7 other or multiracial. Missing % differed by at most 1.4 percentage points between training and test splits. Skip patterns resolved by the feature builder: never smokers have current_smoker = 0 and never drinkers have drinks_per_day = 0; BPQ060 is skipped when high cholesterol was reported and was dropped. Refused and don't-know codes were set to missing; no other outlier removal or truncation was applied. Class balance (positive %): Y_self 37.0% and Y_clin 36.5% in 2011–2014; 37.8% and 40.0% in 2015–2018; no resampling or class weighting was used.*
 
-**Clinical translation roadmap (proposed, not evaluated).** *Intended users:* model developers, clinical informatics and AI governance teams. *Position in the workflow:* after model development and before release of a CF-based decision support tool; PLCA does not run at the point of care and produces no patient-facing output. *Current readiness:* technology readiness level 3–4 (analytical proof of concept on public survey data). *Steps before any deployment:* (1) repeat the audit on electronic health record data with a diagnosis code and measured blood pressure for the same patients; (2) clinician review of the constraint rules and of a sample of CFs; (3) prespecified acceptance criteria for valid-CF coverage and for A under each constraint setting; (4) re-audit after model updates or data drift. *Not yet studied:* usability, effect on clinical decisions, and patient outcomes.
+**Clinical translation roadmap (proposed, not evaluated).** *Intended users:* model developers, clinical informatics and AI governance teams. *Position in the workflow:* after model development and before release of a CF-based decision support tool; PLCA does not run at the point of care and produces no patient-facing output. *Current readiness:* technology readiness level 3–4, self-assessed against the machine learning TRL framework [41] (analytical proof of concept on public survey data). *Steps before any deployment:* (1) repeat the audit on electronic health record data with a diagnosis code and measured blood pressure for the same patients; (2) clinician review of the constraint rules and of a sample of CFs; (3) prespecified acceptance criteria for valid-CF coverage and for A under each constraint setting; (4) re-audit after model updates or data drift. *Not yet studied:* usability, effect on clinical decisions, and patient outcomes.
 
 **Computing environment.** All endpoint results: one run of `scripts/run_all.sh` at commit 85a813b on a Linux laptop (Intel Core i5-1335U, 16 GB RAM; Python 3.12.3, XGBoost 3.4.1, scikit-learn 1.9.1, dice-ml 0.12). Package versions: `results/pip_freeze.txt`; environment: `results/environment.json`. Analysis code was written with assistance from Claude (Anthropic); all code was reviewed and run by the author, and every reported number is read from the output files of these runs.

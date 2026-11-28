@@ -110,7 +110,7 @@ def pandoc(text, shift=0):
     return t
 
 body_tex = pandoc(convert(body))
-body_tex = re.sub(r"\\section\{(CRediT|Declaration|Funding|Ethics|Data availability)", r"\\section*{\1", body_tex)
+body_tex = re.sub(r"\\section\{(CRediT|Declaration|Funding|Ethics|Data availability|Patient and public involvement)", r"\\section*{\1", body_tex)
 summary_tex = pandoc(summary)
 appx_tex = pandoc(convert(appx.replace("\\clearpage", "")))
 appx_tex = appx_tex.replace(r"\section{Appendix A. Supplementary material}", r"\section{Supplementary material}")
@@ -133,7 +133,7 @@ else:
 doc = cls + r"""
 \usepackage{iftex}\ifPDFTeX\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}\usepackage{textcomp}\renewcommand{\ttdefault}{lmtt}\else\usepackage{fontspec}\setmainfont{TeX Gyre Termes}\fi
 \usepackage{newunicodechar}\newunicodechar{′}{\ensuremath{'}}\newunicodechar{−}{\ensuremath{-}}\newunicodechar{≥}{\ensuremath{\geq}}\newunicodechar{≤}{\ensuremath{\leq}}\newunicodechar{×}{\ensuremath{\times}}\newunicodechar{Δ}{\ensuremath{\Delta}}\newunicodechar{→}{\ensuremath{\rightarrow}}\newunicodechar{Σ}{\ensuremath{\Sigma}}
-\usepackage{amsmath,amssymb,graphicx,booktabs,tabularx,array,xurl}
+\usepackage{amsmath,amssymb,graphicx,booktabs,tabularx,array,xurl,needspace}
 \makeatletter\def\ps@pprintTitle{\let\@oddhead\@empty\let\@evenhead\@empty\let\@oddfoot\@empty\let\@evenfoot\@oddfoot}\makeatother
 \usepackage[hidelinks]{hyperref}\usepackage{orcidlink}
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -157,7 +157,7 @@ doc = cls + r"""
 \end{keyword}
 \end{frontmatter}
 """ + body_tex.split(r"\section*{CRediT")[0] + r"""
-\section*{Summary table}
+\needspace{16\baselineskip}\section*{Summary table}
 """ + summary_tex + "\n" + r"\section*{CRediT" + body_tex.split(r"\section*{CRediT", 1)[1] + r"""
 \begin{thebibliography}{99}
 """ + refs_tex + r"""

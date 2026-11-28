@@ -1,7 +1,7 @@
 \documentclass[preprint,review,12pt,times]{elsarticle}
 \usepackage{iftex}\ifPDFTeX\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}\usepackage{textcomp}\renewcommand{\ttdefault}{lmtt}\else\usepackage{fontspec}\setmainfont{TeX Gyre Termes}\fi
 \usepackage{newunicodechar}\newunicodechar{′}{\ensuremath{'}}\newunicodechar{−}{\ensuremath{-}}\newunicodechar{≥}{\ensuremath{\geq}}\newunicodechar{≤}{\ensuremath{\leq}}\newunicodechar{×}{\ensuremath{\times}}\newunicodechar{Δ}{\ensuremath{\Delta}}\newunicodechar{→}{\ensuremath{\rightarrow}}\newunicodechar{Σ}{\ensuremath{\Sigma}}
-\usepackage{amsmath,amssymb,graphicx,booktabs,tabularx,array,xurl}
+\usepackage{amsmath,amssymb,graphicx,booktabs,tabularx,array,xurl,needspace}
 \makeatletter\def\ps@pprintTitle{\let\@oddhead\@empty\let\@evenhead\@empty\let\@oddfoot\@empty\let\@evenfoot\@oddfoot}\makeatother
 \usepackage[hidelinks]{hyperref}\usepackage{orcidlink}
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -120,8 +120,8 @@ not inputs. ``Cholesterol ever checked'' (BPQ060) was excluded because
 its missingness depends on \(Y_{\mathrm{self}}\) through skip patterns
 (57.8\% vs 26.0\%). We call access to care, other diagnoses and
 self-rated health together the \emph{diagnosis-related features}. Data
-were split before any preprocessing. For E1, XGBoost handled missing
-values natively; for CF analyses, missing values were filled with the
+were split before preprocessing. For E1, XGBoost handled missing values
+natively; for CF analyses, missing values were filled with the
 training-split median. The feature dictionary, distributions and
 missingness are given in the supplementary material (Appendix A).
 
@@ -166,17 +166,15 @@ was the share of selected people with at least one valid CF.
 \toprule
 \textbf{Mode} & \textbf{What DiCE may change} & \textbf{Purpose} \\ \midrule
 M0, baseline & Everything except age, sex and race/ethnicity & Reference \\
-M1, guideline-based rules & Eight features, only in the guideline direction (Appendix Table A4); everything else fixed & Can valid CFs be found under clinically motivated rules? \\
+M1, guideline-based rules & Eight features, only in the guideline direction (Appendix Table A.4); everything else fixed & Can valid CFs be found under clinically motivated rules? \\
 M2, locking & As M0, with access to care, other diagnoses and self-rated health fixed & Does locking diagnosis-related features reduce the difference? \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-Under M1, each of the eight features may change only in the direction
-recommended by guidelines, and BMI and waist only down to their
-thresholds (25 kg/m², or 23 for non-Hispanic Asian people; 102 cm for
-men, 88 cm for women) {[}25--29{]}; imputed values are fixed (Appendix
-Table A4).
+Under M1, BMI and waist may fall only to their thresholds (25 kg/m², or
+23 for non-Hispanic Asian people; 102 cm for men, 88 cm for women)
+{[}25--29{]}; imputed values are fixed (Appendix Table A.4).
 
 We trained one \emph{evaluation model} per label, \(g_{\mathrm{self}}\)
 and \(g_{\mathrm{clin}}\), on the same bootstrap sample of the training
@@ -269,7 +267,7 @@ care or a visit in the past year (Table 2). The models used for CFs had
 test AUROC 0.810 (\(f_{\mathrm{self}}\)) and 0.836
 (\(f_{\mathrm{clin}}\)) in 2015--2018, with balanced accuracy 0.726 and
 0.752 at threshold 0.5 and calibration slopes 0.82 and 0.86 (Appendix
-Table A7).
+Table A.7).
 
 \begin{table}[!htbp]
 \caption{Characteristics of the 2015–2018 sample by label pair (140/90 mmHg).}
@@ -292,7 +290,7 @@ Systolic BP, mmHg, mean (SD) & 123.7 (17.7) & 115.8 (10.8) & 148.2 (13.1) & 122.
 On BP medication, \% & 24.1 & 0 & 0 & 0 & 89.2 \\
 \bottomrule
 \end{tabularx}
-\par\vspace{2pt}{\scriptsize\raggedright G00: both labels 0; G01: $Y_{\mathrm{clin}}$ = 1, $Y_{\mathrm{self}}$ = 0; G10: $Y_{\mathrm{self}}$ = 1, $Y_{\mathrm{clin}}$ = 0; G11: both 1. Survey-weighted (WTMEC2YR divided by the number of cycles); 95\% confidence intervals for access-to-care rows by Taylor linearization. Medication is 0 outside G11 by label definition and skip pattern. Full table: Appendix Table A6.\par}
+\par\vspace{2pt}{\scriptsize\raggedright G00: both labels 0; G01: $Y_{\mathrm{clin}}$ = 1, $Y_{\mathrm{self}}$ = 0; G10: $Y_{\mathrm{self}}$ = 1, $Y_{\mathrm{clin}}$ = 0; G11: both 1. Survey-weighted (WTMEC2YR divided by the number of cycles); 95\% confidence intervals for access-to-care rows by Taylor linearization. Medication is 0 outside G11 by label definition and skip pattern. Full table: Appendix Table A.6.\par}
 \end{table}
 
 \subsection{Reliance (E1)}
@@ -321,7 +319,7 @@ Resetting diagnosis-related features in M0 CFs raised the percentile
 score of \(g_{\mathrm{self}}\) more than that of \(g_{\mathrm{clin}}\)
 by 4.3 percentile points (E2 = 0.043; lower bound 0.037; n = 187). E2
 was 0.044 (0.037) and 0.058 (0.049) in seeds 43 and 44, and positive in
-all three seeds of 2011--2014 (Appendix Table A5). It was positive for
+all three seeds of 2011--2014 (Appendix Table A.5). It was positive for
 CFs from both \(f_{\mathrm{self}}\) (0.057) and \(f_{\mathrm{clin}}\)
 (0.030). Between 49\% and 65\% of valid M0 CFs changed at least one
 diagnosis-related feature. Access to care, other diagnoses and
@@ -338,7 +336,7 @@ positive, but the lower bound of A(M0) − A(M2) was negative (−0.009 and
 −0.004). When all returned CFs were used, including invalid ones, E3 was
 not met in any seed. In 2011--2014, E3 was not met: A changed sign under
 M2 in seeds 42 and 43, and the change in \textbar A\textbar{} ranged
-from a 51\% fall to a 26\% rise (Appendix Table A5).
+from a 51\% fall to a 26\% rise (Appendix Table A.5).
 
 On the same S02 sets in 2015--2018, ablation reduced
 \textbar A\textbar{} by 64\%, 67\% and 50\%, while locking reduced it by
@@ -469,12 +467,13 @@ intervention.
 PLCA could serve as a pre-deployment audit step, not a clinical tool:
 its intended users are developers and governance teams validating a
 CF-based decision support model before release. It is a proof of concept
-on survey data (technology readiness level 3--4). A proposed path is:
-(i) rerun PLCA on electronic health record data where a diagnosis code
-and measured blood pressure exist for the same patients; (ii) have
-clinicians review the constraint rules and a sample of CFs; (iii) repeat
-the audit when the model or data change. Whether this improves clinical
-decisions or patient outcomes has not been studied (Appendix A).
+on survey data (self-assessed technology readiness level 3--4 {[}32{]}).
+A proposed path is: (i) rerun PLCA on electronic health record data
+where a diagnosis code and measured blood pressure exist for the same
+patients; (ii) have clinicians review the constraint rules and a sample
+of CFs; (iii) repeat the audit when the model or data change. Whether
+this improves clinical decisions or patient outcomes has not been
+studied (Appendix A).
 
 \subsection{Relation to previous work}
 
@@ -485,7 +484,7 @@ for the same people to measure how the label definition affects CF
 behavior and whether locking features removes this effect. Our results
 are consistent with that suggestion in another disease, but we did not
 test the original diabetes taxonomy. Attribution and CFs are known to
-disagree {[}32{]}.
+disagree {[}33{]}.
 
 \subsection{Limitations}
 
@@ -495,17 +494,16 @@ cover one condition, one country and one CF framework (DiCE, mainly
 random search), with one evaluation model per label; other equivalent
 models could give different results. The two periods test whether the
 procedure can be repeated with retrained models; they are not an
-external validation of the classifiers. The three seeds are not
-independent, and the CF bootstrap does not include variation from
-retraining or CF search. E3 was met only in 2015--2018, and E5 only in
-pooled data. Because the self-report label partly reflects access to
-diagnosis, models trained on it may be less accurate for groups with
-less access to care; we did not evaluate performance by sex or
-race/ethnicity. The guideline-based rules were not reviewed by
-clinicians and cannot represent sodium, potassium, the DASH diet or
-stress management. E2 was added during the development phase after E3
-failed in a trial analysis; its definition and role were fixed before it
-was computed on 2015--2018 data. E4 is descriptive.
+external validation of the classifiers. The CF bootstrap does not
+include variation from retraining or CF search. E3 was met only in
+2015--2018, and E5 only in pooled data. Because the self-report label
+partly reflects access to diagnosis, models trained on it may be less
+accurate for groups with less access to care; we did not evaluate
+performance by sex or race/ethnicity. The guideline-based rules were not
+reviewed by clinicians and cannot represent sodium, potassium, the DASH
+diet or stress management. E2 was added during the development phase
+after E3 failed in a trial analysis; its definition and role were fixed
+before it was computed on 2015--2018 data. E4 is descriptive.
 
 \section{Conclusion}
 
@@ -518,7 +516,7 @@ features contribute to a difference does not show that restricting them
 will fix it. CFs are not treatment advice.
 
 
-\section*{Summary table}
+\needspace{16\baselineskip}\section*{Summary table}
 \textbf{What was already known on the topic}
 
 \begin{itemize}
@@ -586,7 +584,7 @@ endpoint results were produced by \texttt{scripts/run\_all.sh} at commit
 \texttt{scripts/run\_posthoc\_performance.sh}. No study protocol was
 published, and the study was not registered.
 
-\section{Patient and public involvement}
+\section*{Patient and public involvement}
 
 Patients and the public were not involved in the design, conduct,
 reporting or dissemination of this research.
@@ -632,7 +630,8 @@ responsibility for the content of this publication.
 \bibitem{r29} F.C. Bull, S.S. Al-Ansari, S. Biddle, et al., World Health Organization 2020 guidelines on physical activity and sedentary behaviour, Br. J. Sports Med. 54 (24) (2020) 1451–1462, \url{https://doi.org/10.1136/bjsports-2020-102955}
 \bibitem{r30} Q. McNemar, Note on the sampling error of the difference between correlated proportions or percentages, Psychometrika 12 (2) (1947) 153–157, \url{https://doi.org/10.1007/BF02295996}
 \bibitem{r31} G.S. Collins, K.G.M. Moons, P. Dhiman, et al., TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use regression or machine learning methods, BMJ 385 (2024) e078378, \url{https://doi.org/10.1136/bmj-2023-078378}
-\bibitem{r32} R.K. Mothilal, D. Mahajan, C. Tan, A. Sharma, Towards unifying feature attribution and counterfactual explanations: different means to the same end, in: Proceedings of the 2021 AAAI/\allowbreak{}ACM Conference on AI, Ethics, and Society (AIES '21), 2021, pp. 652–663, \url{https://doi.org/10.1145/3461702.3462597}
+\bibitem{r32} A. Lavin, C.M. Gilligan-Lee, A. Visnjic, S. Ganju, D. Newman, S. Ganguly, D. Lange, A.G. Baydin, A. Sharma, A. Gibson, S. Zheng, E.P. Xing, C. Mattmann, J. Parr, Y. Gal, Technology readiness levels for machine learning systems, Nat. Commun. 13 (2022) 6039, \url{https://doi.org/10.1038/s41467-022-33128-9}
+\bibitem{r33} R.K. Mothilal, D. Mahajan, C. Tan, A. Sharma, Towards unifying feature attribution and counterfactual explanations: different means to the same end, in: Proceedings of the 2021 AAAI/\allowbreak{}ACM Conference on AI, Ethics, and Society (AIES '21), 2021, pp. 652–663, \url{https://doi.org/10.1145/3461702.3462597}
 \end{thebibliography}
 \clearpage
 \appendix
@@ -666,7 +665,7 @@ A paired-label audit can be run on public NHANES data. & CFs are treatment advic
 42 & M0 & 172 & 0.089 & −0.031 & 0.120 & 0.058 \\
 42 & M2 & 172 & 0.070 & −0.018 & 0.087 & 0.052 \\
 43 & M0 & 168 & 0.073 & 0.015 & 0.058 & 0.088 \\
-43 & M2 & 168 & 0.079 & 0.035 & 0.044 & 0.114 \\
+43 & M2 & 168 & 0.079 & 0.035 & 0.045 & 0.114 \\
 44 & M0 & 175 & 0.125 & −0.055 & 0.181 & 0.070 \\
 44 & M2 & 175 & 0.154 & −0.010 & 0.165 & 0.144 \\
 \bottomrule
@@ -722,7 +721,7 @@ All other features (education, income, visits, diagnoses, cholesterol, HbA1c, se
 E1: access-to-care AUC drop, $f_{\mathrm{self}}$ − $f_{\mathrm{clin}}$ & 0.015 [0.009; 0.022]; met & 0.014 [0.008; 0.019]; met \\
 E2 (lower bound), seeds 42/43/44 & 0.042 (0.035) / 0.036 (0.031) / 0.035 (0.027); met & 0.043 (0.037) / 0.044 (0.037) / 0.058 (0.049); met \\
 E3, seed 42: A(M0); A(M2); lower bound of A(M0) + A(M2) & 0.040; −0.032; −0.028; not met & 0.120; 0.087; 0.160; met \\
-E3, seeds 43 and 44: A(M2) & −0.037; 0.045 & 0.044; 0.165 \\
+E3, seeds 43 and 44: A(M2) & −0.037; 0.045 & 0.045; 0.165 \\
 E4: valid-CF coverage under M1, $f_{\mathrm{self}}$ (seeds 42/43/44) & 18.0 / 8.5 / 12.5\%; common n 36 / 17 / 25 & 9.0 / 12.0 / 10.5\%; common n 18 / 24 / 21 \\
 E4: $\mathrm{ECD}_{self}$(M0) − $\mathrm{ECD}_{self}$(M1) & Not interpretable (n < 40) & Not interpretable (n < 40); raw values 0.025 / 0.029 / 0.008 \\
 \bottomrule
@@ -790,7 +789,7 @@ S02 is \texttt{S\_star}, and the guideline-based rules are
 \texttt{T-HTN} (\url{docs/taxonomy_THTN.md}).
 
 \textbf{Model performance and calibration (post hoc reporting, not an
-endpoint).} Table A7 and Fig. A1 were produced by
+endpoint).} Table A.7 and Fig. A.1 were produced by
 \url{scripts/run_posthoc_performance.sh}.
 
 \begin{table}[!htbp]
@@ -819,7 +818,7 @@ Calibration slope & 0.906 [0.840; 0.982] & 0.892 [0.828; 0.961] & 0.818 [0.755; 
 
 \begin{figure}[!htbp]\centering\includegraphics[width=0.85\textwidth]{figA1.pdf}\caption{Calibration of the models used to generate counterfactuals on the 2015–2018 test split (deciles of predicted probability; dashed line: perfect calibration). Post hoc reporting.}\end{figure}
 
-\textbf{Data characteristics.} Table A8 lists every feature with its
+\textbf{Data characteristics.} Table A.8 lists every feature with its
 NHANES source, coding, distribution and missingness.
 
 \begin{table}[!htbp]
@@ -859,13 +858,14 @@ Self-rated health & HUQ010; 1-5 (1 = excellent) & 3 [2; 3] & 0.1 & 3 [2; 4] & 0.
 governance teams. \emph{Position in the workflow:} after model
 development and before release of a CF-based decision support tool; PLCA
 does not run at the point of care and produces no patient-facing output.
-\emph{Current readiness:} technology readiness level 3--4 (analytical
-proof of concept on public survey data). \emph{Steps before any
-deployment:} (1) repeat the audit on electronic health record data with
-a diagnosis code and measured blood pressure for the same patients; (2)
-clinician review of the constraint rules and of a sample of CFs; (3)
-prespecified acceptance criteria for valid-CF coverage and for A under
-each constraint setting; (4) re-audit after model updates or data drift.
+\emph{Current readiness:} technology readiness level 3--4, self-assessed
+against the machine learning TRL framework {[}32{]} (analytical proof of
+concept on public survey data). \emph{Steps before any deployment:} (1)
+repeat the audit on electronic health record data with a diagnosis code
+and measured blood pressure for the same patients; (2) clinician review
+of the constraint rules and of a sample of CFs; (3) prespecified
+acceptance criteria for valid-CF coverage and for A under each
+constraint setting; (4) re-audit after model updates or data drift.
 \emph{Not yet studied:} usability, effect on clinical decisions, and
 patient outcomes.
 

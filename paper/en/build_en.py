@@ -19,6 +19,10 @@ for l in vi.split("## Tài liệu tham khảo")[1].splitlines():
     if m:
         refs[int(m.group(1))] = m.group(2).strip()
 
+# references added after the Vietnamese version was frozen (English manuscript only)
+refs[41] = ("A. Lavin, C.M. Gilligan-Lee, A. Visnjic, S. Ganju, D. Newman, S. Ganguly, D. Lange, A.G. Baydin, "
+            "A. Sharma, A. Gibson, S. Zheng, E.P. Xing, C. Mattmann, J. Parr, Y. Gal, Technology readiness levels for "
+            "machine learning systems, Nat. Commun. 13 (2022) 6039, https://doi.org/10.1038/s41467-022-33128-9")
 # ---- renumber citations by first appearance (body, then appendix)
 CIT = re.compile(r"\[(\d+(?:\s*[–,-]\s*\d+)*)\]")
 def expand(tok):
