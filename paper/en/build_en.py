@@ -20,6 +20,7 @@ for l in vi.split("## Tài liệu tham khảo")[1].splitlines():
         refs[int(m.group(1))] = m.group(2).strip()
 
 # references added after the Vietnamese version was frozen (English manuscript only)
+refs[34] = refs[34].replace("Circulation 152 (2025)", "Circulation 152 (11) (2025)")
 refs[41] = ("A. Lavin, C.M. Gilligan-Lee, A. Visnjic, S. Ganju, D. Newman, S. Ganguly, D. Lange, A.G. Baydin, "
             "A. Sharma, A. Gibson, S. Zheng, E.P. Xing, C. Mattmann, J. Parr, Y. Gal, Technology readiness levels for "
             "machine learning systems, Nat. Commun. 13 (2022) 6039, https://doi.org/10.1038/s41467-022-33128-9")
@@ -56,13 +57,16 @@ def brk(r):
     return "".join(p if p.startswith("<http") else re.sub(r"(?<=\w)/(?=\w)", r"/\\allowbreak{}", p) for p in parts)
 reflist = "\n".join(f"{new[o]}. " + brk(re.sub(r"(https?://\S+?)(?=,?\s|,?$)", r"<\1>", refs[o])) for o in order)
 
-appx = re.sub(r"`(results/[^`]+|docs/[^`]+|scripts/[^`]+)`", lambda m: "\\url{" + m.group(1) + "}", appx)
-body = re.sub(r"`(scripts/[^`]+)`", lambda m: "\\url{" + m.group(1) + "}", body)
+def _path(m):
+    s = m.group(1).replace("_", "\\_")
+    return "\\texttt{" + s.replace("/", "/\\allowbreak{}").replace("\\_", "\\_\\allowbreak{}") + "}"
+appx = re.sub(r"`(results/[^`]+|docs/[^`]+|scripts/[^`]+)`", _path, appx)
+body = re.sub(r"`(scripts/[^`]+)`", _path, body)
 def mathify(txt):
     pieces = re.split(r"(\$\$.*?\$\$|\$[^$\n]+\$|\\url\{[^}]*\}|`[^`]*`)", txt, flags=re.S)
     rules = [(r"p_m\(x′_abl\)", r"$p_m(x'_{\\mathrm{abl}})$"), (r"p_m\(x′\)", r"$p_m(x')$"), (r"p_m\(x\)", r"$p_m(x)$"),
              (r"Δ_m\(x′\)", r"$\\Delta_m(x')$"), (r"x′_abl", r"$x'_{\\mathrm{abl}}$"), (r"x′", r"$x'$"),
-             (r"\bECD_(self|clin)\b", r"$\\mathrm{ECD}_{\1}$"), (r"\b([fgY])_(self|clin|placebo|bp)\b", r"$\1_{\\mathrm{\2}}$"), (r"\bg_m\b", r"$g_m$"),
+             (r"\bECD_(self|clin)\b", r"$\\mathrm{ECD}_{\\mathrm{\1}}$"), (r"\b([fgY])_(self|clin|placebo|bp)\b", r"$\1_{\\mathrm{\2}}$"), (r"\bg_m\b", r"$g_m$"),
              (r"\bR_sm\b", r"$R_{sm}$"), (r"\bA_(abl|after)\b", r"$A_{\\mathrm{\1}}$"), (r"\bC_(self|clin)\b", r"$C_{\\mathrm{\1}}$"), (r"\bC_m\b", r"$C_m$")]
     out = []
     for k, p in enumerate(pieces):

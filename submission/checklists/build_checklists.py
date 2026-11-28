@@ -31,7 +31,7 @@ IJMEDI = [
  ("19", "Calibration (Brier score, calibration plot)", "Yes", "Sec. 3.1; Table A.7 (Brier, calibration intercept and slope with 95\\% CI); Fig. A.1 (calibration plot). Post hoc reporting analysis."),
  ("20", "Internal validation procedure", "Yes", "Sec. 2.3, 2.6: hold-out test set (30\\%); two-level bootstrap for E1; participant bootstrap for CF endpoints. Test set chosen at random (stratified), not for maximal diversity; sample-size adequacy not formally assessed."),
  ("21", "External validation", "No", "Sec. 4.4: the two NHANES periods test whether the procedure can be repeated with retrained models; they are not an external validation of the classifiers."),
- ("22", "Error-based metrics with CIs", "Yes", "Table A.7: accuracy, balanced accuracy, sensitivity, specificity, AUROC, AUPRC, PPV, NPV, prevalence, with test-set bootstrap 95\\% CI (conditional on the fitted model). Differences between models tested via CIs (Sec. 2.3, Table 3)."),
+ ("22", "Error-based metrics with CIs", "Yes", "Table A.7: accuracy, balanced accuracy, sensitivity, specificity, AUC, AUPRC, PPV, NPV, prevalence, with test-set bootstrap 95\\% CI (conditional on the fitted model). Differences between models tested via CIs (Sec. 2.3, Table 3)."),
  ("23", "Relevant errors described", "No", "No error analysis of individual misclassifications."),
  ("Deployment", None, None, None),
  ("24", "Target user", "Yes", "Sec. 4.2; Appendix (roadmap): model developers and AI governance teams before release of a CF-based decision support tool; no patient-facing use."),

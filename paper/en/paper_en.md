@@ -14,7 +14,7 @@
 
 **Methods.** In the National Health and Nutrition Examination Survey (NHANES), each adult has a self-reported label and an examination-based label (blood pressure ≥140/90 mmHg [18.7/12.0 kPa] or treatment). XGBoost models differed only in their training label. We measured grouped permutation importance, generated CFs with DiCE, scored each CF with one evaluation model per label, reset diagnosis-related features in generated CFs (ablation), and generated new CFs with these features locked or under guideline-based rules. The procedure was developed on 2011–2014 data (n = 10,311) and applied to 2015–2018 data (n = 10,151) with retrained models.
 
-**Results.** In 2015–2018, permuting access-to-care features reduced the area under the ROC curve (AUC) more for the self-report model (difference 0.014 [0.008; 0.019]); this was not reproduced with a blood-pressure-only label in untreated adults. Diagnosis-related changes contributed 4.3 percentile points (lower bound 3.7; 2015–2018, primary seed) to the difference in score drops between the evaluation models; this contribution was positive in all seeds and both periods. Ablation reduced this difference by 50–67%; locking reduced it by 9–27% and was unstable in 2011–2014. Under guideline-based rules, only 3–12% of individuals had a valid CF.
+**Results.** In 2015–2018, permuting access-to-care features reduced the area under the receiver operating characteristic curve (AUC) more for the self-report model (difference 0.014 [0.008; 0.019]); this was not reproduced with a blood-pressure-only label in untreated adults. Diagnosis-related changes contributed 4.3 percentile points (lower bound 3.7; 2015–2018, primary seed) to the difference in score drops between the evaluation models; this contribution was positive in all seeds and both periods. Ablation reduced this difference by 50–67%; locking reduced it by 9–27% and was unstable in 2011–2014. Under guideline-based rules, only 3–12% of individuals had a valid CF.
 
 **Conclusion.** Knowing which features contribute to a difference does not show that locking them will reduce it.
 
@@ -43,7 +43,7 @@ Thieu [12] proposed a directional taxonomy that restricts how each feature may c
 
 We propose the Paired-Label Counterfactual Audit (PLCA), an audit procedure based on two label definitions recorded for the same people. The National Health and Nutrition Examination Survey (NHANES) suits this design because participants report whether they have ever been told that they have hypertension, and their blood pressure is measured in the same survey. PLCA asks three questions: (1) *reliance*: does the self-report model need access-to-care features more? (2) *contribution*: how much do diagnosis-related changes contribute to the difference between the two models' responses to the same CF? (3) *mitigation*: does locking these features reduce the difference, and can valid CFs still be found under guideline-based rules?
 
-PLCA separates the contribution of a feature group in generated CFs (E2) from the effect of locking it in new CFs (E3). It is not a new CF algorithm or importance method; it combines existing analyses on two clinical labels for the same people.
+PLCA is not a new CF algorithm or importance method; it combines existing analyses on two clinical labels for the same people.
 
 # 2. Methods
 
@@ -65,7 +65,7 @@ XGBoost [20] models (300 trees, depth 4, learning rate 0.05, row and column subs
 
 ## 2.4. Counterfactuals and evaluation models
 
-We selected up to 200 untreated test-set people whom both $f_{\mathrm{self}}$ and $f_{\mathrm{clin}}$ predicted as positive (probability ≥0.5), ranked by the mean percentile score of the two models. DiCE 0.12 [2] (random search) was asked for up to five CFs per person in each constraint mode (Table 1). A CF was *valid* if it obeyed the rules of its mode and changed the prediction of the model that generated it from positive to negative. *Valid-CF coverage* was the share of selected people with at least one valid CF.
+We selected up to 200 untreated (treated people have $Y_{\mathrm{clin}}$ = 1) test-set people whom both $f_{\mathrm{self}}$ and $f_{\mathrm{clin}}$ predicted as positive (probability ≥0.5), ranked by the mean percentile score of the two models. DiCE 0.12 [2] (random search) was asked for up to five CFs per person in each constraint mode (Table 1). A CF was *valid* if it obeyed the rules of its mode and changed the prediction of the model that generated it from positive to negative. *Valid-CF coverage* was the share of selected people with at least one valid CF.
 
 **Table 1.** Constraint modes used to generate CFs.
 
@@ -103,21 +103,21 @@ $$A(\mathrm{M0}) > 0 \quad \text{and} \quad |A(\mathrm{M2})| < |A(\mathrm{M0})|.
 
 A change of sign with a larger size does not count. When A(M0) > 0, this is equivalent to A(M0) − A(M2) > 0 and A(M0) + A(M2) > 0. For a descriptive comparison, $A_{\mathrm{abl}}$ was also computed on S02, and the reduction in |A| was 100·(|A(M0)| − |$A_{\mathrm{after}}$|)/|A(M0)|.
 
-*E4* reported valid-CF coverage under M1 and the change in $\mathrm{ECD}_{self}$ from M0 to M1, the latter only when at least 40 people had valid CFs from $f_{\mathrm{self}}$ in both modes.
+*E4* reported valid-CF coverage under M1 and the change in $\mathrm{ECD}_{\mathrm{self}}$ from M0 to M1, the latter only when at least 40 people had valid CFs from $f_{\mathrm{self}}$ in both modes.
 
 ## 2.6. Statistical analysis
 
-E3 used a participant-level bootstrap (B = 5,000); each inequality was tested with the one-sided 2.5th percentile, and all had to hold (intersection–union test). E2 was secondary and used the same bootstrap. No correction for multiple endpoints was applied. Analyses required at least 80 eligible people and 40 people in the analysis set. CF analyses were run with seeds 42 (primary), 43 and 44; for E2 and E3, seed 42 decided and the other seeds had to give point estimates in the same direction. Seeds are not independent replications. The bootstrap intervals are conditional on the trained models and on the people with valid CFs. *E5*, a secondary screening analysis, compared the share of G01 people in the top 30% of scores of each model with an exact McNemar test [30]. Table 2 used survey weights and Taylor linearization [19]; the models did not use weights. As a post hoc reporting analysis, we refitted the audited models and report test-set discrimination, threshold metrics at 0.5 and calibration (Appendix A). The study was not registered and follows TRIPOD+AI [31].
+E1 and E3 were primary endpoints, E2 and E5 secondary and E4 descriptive. E3 used a participant-level bootstrap (B = 5,000); each inequality was tested with the one-sided 2.5th percentile, and all had to hold (intersection–union test). E2 used the same bootstrap. No correction for multiple endpoints was applied. Analyses required at least 80 eligible people and 40 people in the analysis set. CF analyses were run with seeds 42 (primary), 43 and 44; each seed reruns the pipeline on the same data (70/30 split, all model fits, the bootstrap sample for g, DiCE search). For E2 and E3, seed 42 decided and the other seeds had to give point estimates in the same direction. The bootstrap intervals are conditional on the trained models and on the people with valid CFs. *E5*, a secondary screening analysis, compared the proportion of G01 people captured in the top 30% of scores of each CF model with an exact McNemar test [30]. Table 2 used survey weights and Taylor linearization [19]; the models did not use weights. Post hoc, we report test-set discrimination and calibration of the audited models (Appendix A). The study was not registered and follows TRIPOD+AI [31].
 
 ## 2.7. Sensitivity analyses and reproducibility
 
-Sensitivity analyses (seed 42) changed the label definitions, the cycle, the model, the CF search and the selected people (Table 5). M2-phys locked physiology instead of diagnosis-related features, and M3 added a maximum 5% reduction in BMI and waist to M1. All results come from one run of \url{scripts/run_all.sh} (software and hardware: Appendix A).
+Sensitivity analyses (seed 42) changed the label definitions, the cycle, the model, the CF search and the selected people (Table 5). M2-phys locked physiology instead of diagnosis-related features, and M3 added a maximum 5% reduction in BMI and waist to M1 (definitions: Appendix A). All results come from one run of \texttt{scripts/\allowbreak{}run\_\allowbreak{}all.sh} (software and hardware: Appendix A). Claude (Anthropic) assisted with analysis code, which the author reviewed and ran.
 
 # 3. Results
 
 ## 3.1. Sample
 
-In 2015–2018, the two labels disagreed for a survey-weighted 12.9% [11.8; 13.9] of adults (23.1% [21.8; 24.3] with 130/80 mmHg). Compared with G11, G01 people were less likely to have a usual place of care or a visit in the past year (Table 2). The models used for CFs had test AUROC 0.810 ($f_{\mathrm{self}}$) and 0.836 ($f_{\mathrm{clin}}$) in 2015–2018, with balanced accuracy 0.726 and 0.752 at threshold 0.5 and calibration slopes 0.82 and 0.86 (Appendix Table A.7).
+In 2015–2018, the two labels disagreed for a survey-weighted 12.9% [11.8; 13.9] of adults (23.1% [21.8; 24.3] with 130/80 mmHg). Compared with G11, G01 people were less likely to have a usual place of care or a visit in the past year (Table 2). In 2015–2018, the CF models had test AUC 0.810 ($f_{\mathrm{self}}$) and 0.836 ($f_{\mathrm{clin}}$) and calibration slopes 0.82 and 0.86 (Appendix Table A.7).
 
 **Table 2.** Characteristics of the 2015–2018 sample by label pair (140/90 mmHg).
 
@@ -136,11 +136,11 @@ In 2015–2018, the two labels disagreed for a survey-weighted 12.9% [11.8; 13.9
 | Systolic BP, mmHg, mean (SD) | 123.7 (17.7) | 115.8 (10.8) | 148.2 (13.1) | 122.0 (9.7) | 135.3 (20.0) |
 | On BP medication, % | 24.1 | 0 | 0 | 0 | 89.2 |
 
-*G00: both labels 0; G01: $Y_{\mathrm{clin}}$ = 1, $Y_{\mathrm{self}}$ = 0; G10: $Y_{\mathrm{self}}$ = 1, $Y_{\mathrm{clin}}$ = 0; G11: both 1. Survey-weighted (WTMEC2YR divided by the number of cycles); 95% confidence intervals for access-to-care rows by Taylor linearization. Medication is 0 outside G11 by label definition and skip pattern. Full table: Appendix Table A.6.*
+*1 mmHg = 0.133 kPa. G00: both labels 0; G01: $Y_{\mathrm{clin}}$ = 1, $Y_{\mathrm{self}}$ = 0; G10: $Y_{\mathrm{self}}$ = 1, $Y_{\mathrm{clin}}$ = 0; G11: both 1. Survey-weighted (WTMEC2YR divided by the number of cycles); 95% confidence intervals for access-to-care rows by Taylor linearization. Medication is 0 outside G11 by label definition and skip pattern. Full table: Appendix Table A.6.*
 
 ## 3.2. Reliance (E1)
 
-Test-set AUC (mean over bootstrap refits) was 0.806 for $f_{\mathrm{self}}$ and 0.831 for $f_{\mathrm{clin}}$. Permuting access-to-care features reduced the AUC of $f_{\mathrm{self}}$ more than that of $f_{\mathrm{clin}}$ by 0.014 [0.008; 0.019] (Fig. 2). The importance share of access to care was 9.8% in $f_{\mathrm{self}}$ and 2.8% in $f_{\mathrm{placebo}}$ (difference 7.0 percentage points [2.4; 11.0]), so class-wise random label noise did not reproduce this reliance. The result was similar in 2011–2014 (0.015 [0.009; 0.022]). Removing G01 people from training reduced it to 0.005 [0.000; 0.010] (random removal: 0.014).
+Test-set AUC (mean over bootstrap refits) was 0.806 for $f_{\mathrm{self}}$ and 0.831 for $f_{\mathrm{clin}}$. Permuting access-to-care features reduced the AUC of $f_{\mathrm{self}}$ more than that of $f_{\mathrm{clin}}$ by 0.014 [0.008; 0.019] (Fig. 2). The importance share of access to care was 9.8% in $f_{\mathrm{self}}$ and 2.8% in $f_{\mathrm{placebo}}$ (difference 7.0 percentage points [2.4; 11.0]; share defined in all 100 bootstrap draws), so class-wise random label noise did not reproduce this reliance. The result was similar in 2011–2014 (0.015 [0.009; 0.022]). Removing G01 people from training reduced it to 0.005 [0.000; 0.010] (random removal: 0.014).
 
 An important limit: in untreated people, compared with a blood-pressure-only label, the difference was −0.003 [−0.017; 0.011]. E1 therefore depends on the phenotype definition and the population.
 
@@ -148,7 +148,7 @@ An important limit: in untreated people, compared with a blood-pressure-only lab
 
 ## 3.3. Contribution (E2)
 
-Resetting diagnosis-related features in M0 CFs raised the percentile score of $g_{\mathrm{self}}$ more than that of $g_{\mathrm{clin}}$ by 4.3 percentile points (E2 = 0.043; lower bound 0.037; n = 187). E2 was 0.044 (0.037) and 0.058 (0.049) in seeds 43 and 44, and positive in all three seeds of 2011–2014 (Appendix Table A.5). It was positive for CFs from both $f_{\mathrm{self}}$ (0.057) and $f_{\mathrm{clin}}$ (0.030). Between 49% and 65% of valid M0 CFs changed at least one diagnosis-related feature. Access to care, other diagnoses and self-rated health each contributed, but their order changed between seeds (Table 4).
+Resetting diagnosis-related features in M0 CFs raised the percentile score of $g_{\mathrm{self}}$ more than that of $g_{\mathrm{clin}}$ by 4.3 percentile points (E2 = 0.043; lower bound 0.037; n = 187). E2 was 0.044 (0.037) and 0.058 (0.049) in seeds 43 and 44, and positive in all three seeds of 2011–2014 (Appendix Table A.5). It was positive for CFs from both $f_{\mathrm{self}}$ (0.057) and $f_{\mathrm{clin}}$ (0.030). Between 49% and 65% of valid M0 CFs changed at least one diagnosis-related feature. All three groups contributed, but their order changed between seeds (Table 4).
 
 ## 3.4. Locking (E3)
 
@@ -162,11 +162,11 @@ On the same S02 sets in 2015–2018, ablation reduced |A| by 64%, 67% and 50%, w
 
 | Endpoint | Quantity | Seed 42 | Seed 43 | Seed 44 | Conclusion |
 |--------|------------|--------------|--------------|--------------|---------|
-| E1 (primary) | Access-to-care AUC drop, $f_{\mathrm{self}}$ − $f_{\mathrm{clin}}$ | 0.014 [0.008; 0.019] | — | — | Met |
+| E1 (primary) | Access-to-care AUC drop, $f_{\mathrm{self}}$ − $f_{\mathrm{clin}}$ (test n = 3,046) | 0.014 [0.008; 0.019] | — | — | Met |
 | E2 (secondary) | Contribution of diagnosis-related features, S0 | 0.043 (0.037); n = 187 | 0.044 (0.037); n = 184 | 0.058 (0.049); n = 197 | Met in all seeds |
 | E3 (primary) | A(M0); A(M0) − A(M2); A(M0) + A(M2), S02 | 0.120 (0.097); 0.033 (0.012); 0.208 (0.160); n = 172 | 0.058 (0.028); 0.014 (−0.009); 0.103 (0.042); n = 168 | 0.181 (0.156); 0.016 (−0.004); 0.346 (0.300); n = 175 | Met in seed 42; same direction in 43, 44 |
 | E4 (descriptive) | Valid-CF coverage from $f_{\mathrm{self}}$, M1 vs M0 | 9.0% vs 100%; 18 common | 12.0% vs 99.5%; 24 common | 10.5% vs 99.5%; 21 common | ECD not interpretable (n < 40) |
-| E5 (secondary) | G01 share in top 30%, $f_{\mathrm{self}}$ vs $f_{\mathrm{clin}}$ | 27.8% vs 33.3%; p = 0.029 | — | — | Met pooled; not met per cycle |
+| E5 (secondary) | G01 people captured in top 30%, $f_{\mathrm{self}}$ vs $f_{\mathrm{clin}}$ (n = 255) | 27.8% vs 33.3%; p = 0.029 | — | — | Met pooled; not met per cycle |
 
 **Table 4.** Contribution of each diagnosis-related group when reset alone, seed 42.
 
@@ -180,13 +180,13 @@ On the same S02 sets in 2015–2018, ablation reduced |A| by 64%, 67% and 50%, w
 
 ## 3.5. Guideline-based rules (E4)
 
-Under M1, DiCE found a valid CF for 9.0–12.0% of people with $f_{\mathrm{self}}$ and 3.0–7.5% with $f_{\mathrm{clin}}$, compared with 92–100% under M0 and 86–99% under M2 (Fig. 4). In 88–97% of failures DiCE returned no CF. Only 18–24 people had valid $f_{\mathrm{self}}$ CFs in both M0 and M1 (threshold 40), so we draw no conclusion on whether the rules reduce the difference. All valid M1 CFs lowered BMI or waist, often by a large amount: the mean relative BMI reduction was 26–37%, and 74–94% of valid CFs reduced BMI by more than 10%. No valid M1 CF in 2015–2018 changed access to care, although the rules allowed it. Coverage was also low in 2011–2014 (8.5–18.0% with $f_{\mathrm{self}}$). When BMI and waist reductions were limited to 5% (M3), coverage fell to 0.5% ($f_{\mathrm{self}}$) and 0% ($f_{\mathrm{clin}}$).
+Under M1, DiCE found a valid CF for 9.0–12.0% of people with $f_{\mathrm{self}}$ and 3.0–7.5% with $f_{\mathrm{clin}}$, compared with 92–100% under M0 and 86.5–98.5% under M2 (Fig. 4). In 88–97% of failures DiCE returned no CF. Only 18–24 people had valid $f_{\mathrm{self}}$ CFs in both M0 and M1 (threshold 40), so we draw no conclusion on whether the rules reduce the difference. All valid M1 CFs lowered BMI or waist, often by a large amount: the mean relative BMI reduction was 26–37%, and 74–94% of valid CFs reduced BMI by more than 10%. Coverage was also low in 2011–2014 (8.5–18.0% with $f_{\mathrm{self}}$). When BMI and waist reductions were limited to 5% (M3), coverage fell to 0.5% ($f_{\mathrm{self}}$) and 0% ($f_{\mathrm{clin}}$).
 
 ![Fig. 4. Share of the 200 selected people with at least one valid CF under M0 (baseline), M2 (diagnosis-related group locked) and M1 (guideline-based rules), by CF model and seed (NHANES 2015–2018).](fig4.pdf){width=82%}
 
 ## 3.6. Screening (E5) and sensitivity analyses
 
-In the top 30% of scores, $f_{\mathrm{self}}$ selected 27.8% of G01 people and $f_{\mathrm{clin}}$ 33.3% (11 vs 25 discordant people; exact McNemar p = 0.029), but not significantly within each cycle (p = 0.21 and 0.115). Because G01 is partly defined by $Y_{\mathrm{clin}}$, E5 shows different selections, not clinical benefit.
+Of the 255 G01 people in the test set, the top 30% of scores captured 27.8% with $f_{\mathrm{self}}$ and 33.3% with $f_{\mathrm{clin}}$ (11 vs 25 discordant people; exact McNemar p = 0.029), but not significantly within each cycle (n = 106 and 114 G01 people; p = 0.21 and 0.115). Because G01 is partly defined by $Y_{\mathrm{clin}}$, E5 shows different selections, not clinical benefit.
 
 E1 was met in all sensitivity analyses except the blood-pressure-only label in untreated people, and E3 was met at seed 42 in all three CF sensitivity analyses (Table 5). With DiCE genetic, A fell from 0.242 to 0.169 (about 30%), so the size of A depends on the CF algorithm. Locking physiology instead (M2-phys) increased A from 0.137 to 0.191 on 89 common people, whereas M2 reduced it on the same people (A(M0) − A(M2) = 0.032 [0.003; 0.062]).
 
@@ -203,6 +203,8 @@ E1 was met in all sensitivity analyses except the blood-pressure-only label in u
 | DiCE genetic | — | 0.105 (n = 192) | Met (n = 177) |
 | $Y_{\mathrm{clin}}$ = 1 people only | — | 0.033 (n = 109) | Met (n = 104) |
 | All returned CFs | — | — | Not met |
+
+*E1 "met" requires both conditions of Section 2.3 (AUC-drop lower bound > 0 and positive share difference versus $f_{\mathrm{placebo}}$); the share was defined in at least 98 of 100 bootstrap draws in every analysis. Definitions of each analysis: Appendix A. E1 sample: test n = 3,046 (2,161 in untreated people for the blood-pressure-only label).*
 
 # 4. Discussion
 
@@ -251,7 +253,7 @@ NHANES protocols were approved by the NCHS Research Ethics Review Board (Protoco
 
 # Data availability
 
-NHANES data are publicly available from the US National Center for Health Statistics. Analysis code, run configuration and summary results are available at https://github.com/danh-tc/plca-hypertension; all endpoint results were produced by `scripts/run_all.sh` at commit 85a813b; the post hoc performance and data-characteristics tables by `scripts/run_posthoc_performance.sh`. No study protocol was published, and the study was not registered.
+NHANES data are publicly available from the US National Center for Health Statistics. Analysis code, run configuration and summary results are available at https://github.com/danh-tc/plca-hypertension; all endpoint results were produced by `scripts/run_all.sh` at commit 85a813b; the post hoc performance and data-characteristics tables by `scripts/run_posthoc_performance.sh` at commit 78d83ef (outputs in `results_posthoc/`). No study protocol was published, and the study was not registered.
 
 # Patient and public involvement
 
@@ -259,7 +261,7 @@ Patients and the public were not involved in the design, conduct, reporting or d
 
 # Declaration of generative AI and AI-assisted technologies in the writing process
 
-During the preparation of this work, the author used Claude (Anthropic) for language editing, clarity improvement, and assistance with manuscript preparation and analysis code. All AI-generated output was reviewed, verified, and edited by the author, who takes full responsibility for the content of this publication.
+During the preparation of this work, the author used Claude (Anthropic) for language editing, clarity improvement, and assistance with manuscript preparation. Its use for analysis code is described in Section 2.7. All AI-generated output was reviewed, verified, and edited by the author, who takes full responsibility for the content of this publication.
 
 
 # References
@@ -289,7 +291,7 @@ During the preparation of this work, the author used Claude (Anthropic) for lang
 22. A. Fisher, C. Rudin, F. Dominici, All models are wrong, but many are useful: learning a variable's importance by studying an entire class of prediction models simultaneously, J. Mach. Learn. Res. 20 (177) (2019) 1–81
 23. Q. Au, J. Herbinger, C. Stachl, B. Bischl, G. Casalicchio, Grouped feature importance and combined features effect plot, Data Min. Knowl. Discov. 36 (4) (2022) 1401–1450, <https://doi.org/10.1007/s10618-022-00840-5>
 24. B. Efron, Bootstrap methods: another look at the jackknife, Ann. Stat. 7 (1) (1979) 1–26, <https://doi.org/10.1214/aos/1176344552>
-25. D.W. Jones, K.C. Ferdinand, S.J. Taler, et al., 2025 AHA/\allowbreak{}ACC/\allowbreak{}AANP/\allowbreak{}AAPA/\allowbreak{}ABC/\allowbreak{}ACCP/\allowbreak{}ACPM/\allowbreak{}AGS/\allowbreak{}AMA/\allowbreak{}ASPC/\allowbreak{}NMA/\allowbreak{}PCNA/\allowbreak{}SGIM guideline for the prevention, detection, evaluation and management of high blood pressure in adults: a report of the American College of Cardiology/\allowbreak{}American Heart Association Joint Committee on Clinical Practice Guidelines, Circulation 152 (2025) e114–e218, <https://doi.org/10.1161/CIR.0000000000001356>
+25. D.W. Jones, K.C. Ferdinand, S.J. Taler, et al., 2025 AHA/\allowbreak{}ACC/\allowbreak{}AANP/\allowbreak{}AAPA/\allowbreak{}ABC/\allowbreak{}ACCP/\allowbreak{}ACPM/\allowbreak{}AGS/\allowbreak{}AMA/\allowbreak{}ASPC/\allowbreak{}NMA/\allowbreak{}PCNA/\allowbreak{}SGIM guideline for the prevention, detection, evaluation and management of high blood pressure in adults: a report of the American College of Cardiology/\allowbreak{}American Heart Association Joint Committee on Clinical Practice Guidelines, Circulation 152 (11) (2025) e114–e218, <https://doi.org/10.1161/CIR.0000000000001356>
 26. S.M. Grundy, J.I. Cleeman, S.R. Daniels, et al., Diagnosis and management of the metabolic syndrome: an American Heart Association/\allowbreak{}National Heart, Lung, and Blood Institute scientific statement, Circulation 112 (17) (2005) 2735–2752, <https://doi.org/10.1161/CIRCULATIONAHA.105.169404>
 27. K.G.M.M. Alberti, R.H. Eckel, S.M. Grundy, et al., Harmonizing the metabolic syndrome: a joint interim statement, Circulation 120 (16) (2009) 1640–1645, <https://doi.org/10.1161/CIRCULATIONAHA.109.192644>
 28. R.S. Blumenthal, P.B. Morris, M. Gaudino, et al., 2026 ACC/\allowbreak{}AHA/\allowbreak{}AACVPR/\allowbreak{}ABC/\allowbreak{}ACPM/\allowbreak{}ADA/\allowbreak{}AGS/\allowbreak{}APhA/\allowbreak{}ASPC/\allowbreak{}NLA/\allowbreak{}PCNA guideline on the management of dyslipidemia, J. Am. Coll. Cardiol. (2026), <https://doi.org/10.1016/j.jacc.2025.11.016>
@@ -317,7 +319,7 @@ During the preparation of this work, the author used Claude (Anthropic) for lang
 
 **Table A2.** Components of A and I on the same people (S02), NHANES 2015–2018.
 
-| Seed | Mode | n | $\mathrm{ECD}_{self}$ | $\mathrm{ECD}_{clin}$ | A | I |
+| Seed | Mode | n | $\mathrm{ECD}_{\mathrm{self}}$ | $\mathrm{ECD}_{\mathrm{clin}}$ | A | I |
 |---|---|---|---|---|---|---|
 | 42 | M0 | 172 | 0.089 | −0.031 | 0.120 | 0.058 |
 | 42 | M2 | 172 | 0.070 | −0.018 | 0.087 | 0.052 |
@@ -326,7 +328,7 @@ During the preparation of this work, the author used Claude (Anthropic) for lang
 | 44 | M0 | 175 | 0.125 | −0.055 | 0.181 | 0.070 |
 | 44 | M2 | 175 | 0.154 | −0.010 | 0.165 | 0.144 |
 
-*I = $\mathrm{ECD}_{self}$ + $\mathrm{ECD}_{clin}$; I/2 is the mean difference between the score drop on the same-label and the cross-label evaluation model, with both CF sources weighted equally. I is descriptive and has no interval. Locking reduced A but did not consistently reduce I. Source: \url{results/confirmation/cf_primary/C6_all_seeds.csv}.*
+*I = $\mathrm{ECD}_{\mathrm{self}}$ + $\mathrm{ECD}_{\mathrm{clin}}$; I/2 is the mean difference between the score drop on the same-label and the cross-label evaluation model, with both CF sources weighted equally. I is descriptive and has no interval. Locking reduced A but did not consistently reduce I. Source: \texttt{results/\allowbreak{}confirmation/\allowbreak{}cf\_\allowbreak{}primary/\allowbreak{}C6\_\allowbreak{}all\_\allowbreak{}seeds.csv}.*
 
 **Table A3.** Mean score drop per CF, by CF model and mode, seed 42.
 
@@ -339,7 +341,7 @@ During the preparation of this work, the author used Claude (Anthropic) for lang
 | $f_{\mathrm{clin}}$ | M1 | 27 | 0.126 | 0.256 | 0.130 |
 | $f_{\mathrm{clin}}$ | M2 | 851 | 0.221 | 0.205 | −0.016 |
 
-*Averaged directly over valid CFs, not per person first, and not restricted to S02; not a replacement for E3. M1 rows are based on very few CFs. Source: \url{results/confirmation/cf_primary/seed42/C7_transfer_by_channel.csv}.*
+*Averaged directly over valid CFs, not per person first, and not restricted to S02; not a replacement for E3. M1 rows are based on very few CFs. Source: \texttt{results/\allowbreak{}confirmation/\allowbreak{}cf\_\allowbreak{}primary/\allowbreak{}seed42/\allowbreak{}C7\_\allowbreak{}transfer\_\allowbreak{}by\_\allowbreak{}channel.csv}.*
 
 **Table A4.** Guideline-based rules (mode M1): allowed changes and basis.
 
@@ -365,9 +367,9 @@ During the preparation of this work, the author used Claude (Anthropic) for lang
 | E3, seed 42: A(M0); A(M2); lower bound of A(M0) + A(M2) | 0.040; −0.032; −0.028; not met | 0.120; 0.087; 0.160; met |
 | E3, seeds 43 and 44: A(M2) | −0.037; 0.045 | 0.045; 0.165 |
 | E4: valid-CF coverage under M1, $f_{\mathrm{self}}$ (seeds 42/43/44) | 18.0 / 8.5 / 12.5%; common n 36 / 17 / 25 | 9.0 / 12.0 / 10.5%; common n 18 / 24 / 21 |
-| E4: $\mathrm{ECD}_{self}$(M0) − $\mathrm{ECD}_{self}$(M1) | Not interpretable (n < 40) | Not interpretable (n < 40); raw values 0.025 / 0.029 / 0.008 |
+| E4: $\mathrm{ECD}_{\mathrm{self}}$(M0) − $\mathrm{ECD}_{\mathrm{self}}$(M1) | Not interpretable (n < 40) | Not interpretable (n < 40); raw values 0.025 / 0.029 / 0.008 |
 
-*The 2011–2014 data were used to develop the procedure, including E2, so results there are not an independent evaluation. E2 and E3 use different people (S0 and S02), so their stability can only be compared descriptively. Sources: \url{results/discovery} and \url{results/confirmation}.*
+*E1 "met" requires both conditions of Section 2.3; the share was defined in all 100 bootstrap draws in both periods. The 2011–2014 data were used to develop the procedure, including E2, so results there are not an independent evaluation. E2 and E3 use different people (S0 and S02), so their stability can only be compared descriptively. Sources: \texttt{results/\allowbreak{}discovery} and \texttt{results/\allowbreak{}confirmation}.*
 
 **Table A6.** Full characteristics of the 2015–2018 sample by label pair (140/90 mmHg).
 
@@ -398,7 +400,7 @@ During the preparation of this work, the author used Claude (Anthropic) for lang
 | Diastolic BP, mmHg, mean (SD) | 71.7 (11.4) | 69.7 (9.1) | 82.3 (13.1) | 72.5 (10.0) | 73.2 (13.7) |
 | On BP medication, % | 24.1 | 0 | 0 | 0 | 89.2 |
 
-*Survey-weighted (WTMEC2YR divided by the number of cycles); 95% confidence intervals for access-to-care rows by Taylor linearization with the survey design (30 strata, 60 primary sampling units). One G00 person lacks usual-place and visit data. Source: \url{results/confirmation/T1c_demographics_confirmation.csv} and \url{results/confirmation/design_se}.*
+*1 mmHg = 0.133 kPa. Survey-weighted (WTMEC2YR divided by the number of cycles); 95% confidence intervals for access-to-care rows by Taylor linearization with the survey design (30 strata, 60 primary sampling units). One G00 person lacks usual-place and visit data. Source: \texttt{results/\allowbreak{}confirmation/\allowbreak{}T1c\_\allowbreak{}demographics\_\allowbreak{}confirmation.csv} and \texttt{results/\allowbreak{}confirmation/\allowbreak{}design\_\allowbreak{}se}.*
 
 **Detailed formulas.** Let S be the analysis set, $K_{i,s}$ the number of valid CFs from model s for person i, and $x'_{ij}$ the j-th CF. Then
 
@@ -414,15 +416,15 @@ $$\mathrm{E2} = \frac{1}{2|S_0|}\sum_{i \in S_0}\left(D_i^{(\mathrm{self})} + D_
 
 From Eqs. (A.1)–(A.4), $A(\mathrm{M0}) - A_{\mathrm{abl}} = 2\,\mathrm{E2}$ when both sides use the same people, CFs and averaging; this does not hold directly for E2 on S0 compared with A(M0) on S02.
 
-**Naming in the code.** E2 is `E6`, S0 is `S_M0`, S02 is `S_star`, and the guideline-based rules are `T-HTN` (\url{docs/taxonomy_THTN.md}).
+**Naming in the code.** E2 is `E6`, S0 is `S_M0`, S02 is `S_star`, and the guideline-based rules are `T-HTN` (\texttt{docs/\allowbreak{}taxonomy\_\allowbreak{}THTN.md}).
 
-**Model performance and calibration (post hoc reporting, not an endpoint).** Table A.7 and Fig. A.1 were produced by \url{scripts/run_posthoc_performance.sh}.
+**Model performance and calibration (post hoc reporting, not an endpoint).** Table A.7 and Fig. A.1 were produced by \texttt{scripts/\allowbreak{}run\_\allowbreak{}posthoc\_\allowbreak{}performance.sh}.
 
 **Table A7.** Test-set performance and calibration of the models used to generate counterfactuals (post hoc reporting; threshold 0.5).
 
 | Metric | $f_{\mathrm{self}}$, 2011–2014 | $f_{\mathrm{clin}}$, 2011–2014 | $f_{\mathrm{self}}$, 2015–2018 | $f_{\mathrm{clin}}$, 2015–2018 |
 |---|---|---|---|---|
-| AUROC | 0.824 [0.808; 0.838] | 0.849 [0.834; 0.862] | 0.810 [0.794; 0.825] | 0.836 [0.822; 0.849] |
+| AUC | 0.824 [0.808; 0.838] | 0.849 [0.834; 0.862] | 0.810 [0.794; 0.825] | 0.836 [0.822; 0.849] |
 | AUPRC | 0.718 [0.690; 0.747] | 0.737 [0.707; 0.764] | 0.704 [0.674; 0.731] | 0.742 [0.717; 0.768] |
 | Accuracy | 0.762 [0.747; 0.776] | 0.779 [0.764; 0.793] | 0.747 [0.732; 0.762] | 0.760 [0.745; 0.774] |
 | Balanced accuracy | 0.735 [0.719; 0.750] | 0.755 [0.739; 0.771] | 0.726 [0.710; 0.742] | 0.752 [0.736; 0.768] |
@@ -435,7 +437,7 @@ From Eqs. (A.1)–(A.4), $A(\mathrm{M0}) - A_{\mathrm{abl}} = 2\,\mathrm{E2}$ wh
 | Calibration intercept | 0.026 [−0.063; 0.117] | 0.044 [−0.057; 0.141] | −0.076 [−0.173; 0.017] | −0.014 [−0.113; 0.083] |
 | Calibration slope | 0.906 [0.840; 0.982] | 0.892 [0.828; 0.961] | 0.818 [0.755; 0.886] | 0.855 [0.799; 0.918] |
 
-*Each model against its own training label ($f_{\mathrm{self}}$: $Y_{\mathrm{self}}$; $f_{\mathrm{clin}}$: $Y_{\mathrm{clin}}$). XGBoost with training-split median imputation, seed 42, 30% test split (n = 3,094 and 3,046). 95% intervals: test-set bootstrap (B = 1,000) with the fitted model held fixed; retraining variability is not included. Unweighted. The refitted test AUROC matched the frozen run exactly. Calibration intercept with slope fixed at 1; slope from logistic recalibration on logit p. CF analyses use percentile scores, which depend only on the ranking of scores.*
+*Each model against its own training label ($f_{\mathrm{self}}$: $Y_{\mathrm{self}}$; $f_{\mathrm{clin}}$: $Y_{\mathrm{clin}}$). XGBoost with training-split median imputation, seed 42, 30% test split (n = 3,094 and 3,046). 95% intervals: test-set bootstrap (B = 1,000) with the fitted model held fixed; retraining variability is not included. Unweighted. The refitted test AUC matched the frozen run exactly. AUC: area under the receiver operating characteristic curve; AUPRC: area under the precision-recall curve; PPV/NPV: positive/negative predictive value. Calibration intercept with slope fixed at 1; slope from logistic recalibration on logit p. CF analyses use percentile scores, which depend only on the ranking of scores.*
 
 ![Fig. A1. Calibration of the models used to generate counterfactuals on the 2015–2018 test split (deciles of predicted probability; dashed line: perfect calibration). Post hoc reporting.](figA1.pdf){width=82%}
 
@@ -460,14 +462,16 @@ From Eqs. (A.1)–(A.4), $A(\mathrm{M0}) - A_{\mathrm{abl}} = 2\,\mathrm{E2}$ wh
 | Drinks per drinking day | ALQ130 (+ALQ101, ALQ111); drinks/day | 1.0 [1.0; 3.0] | 19.3 | 2.0 [1.0; 3.0] | 21.4 |
 | Vigorous recreational activity | PAQ650 | 22.3% | 0.0 | 24.2% | 0.0 |
 | Moderate recreational activity | PAQ665 | 41.8% | 0.0 | 40.7% | 0.0 |
-| BMI | BMXBMI; kg/m2 | 27.7 [24.0; 32.3] | 1.1 | 28.5 [24.7; 33.4] | 1.1 |
+| BMI | BMXBMI; kg/m² | 27.7 [24.0; 32.3] | 1.1 | 28.5 [24.7; 33.4] | 1.1 |
 | Waist | BMXWAIST; cm | 97.2 [86.8; 108.3] | 4.9 | 99.1 [88.6; 110.5] | 5.0 |
 | Total cholesterol | LBXTC; mg/dL (x0.02586 = mmol/L) | 188 [163; 216] | 5.6 | 186 [161; 214] | 5.7 |
-| HbA1c | LBXGH; % (NGSP) | 5.5 [5.2; 5.9] | 4.1 | 5.6 [5.3; 6.0] | 4.5 |
+| HbA1c | LBXGH; % (NGSP; IFCC mmol/mol = 10.93 × % − 23.5) | 5.5 [5.2; 5.9] | 4.1 | 5.6 [5.3; 6.0] | 4.5 |
 | Self-rated health | HUQ010; 1-5 (1 = excellent) | 3 [2; 3] | 0.1 | 3 [2; 4] | 0.1 |
 
 *Feature groups as in Section 2.2. RIDRETH3: 1 Mexican American, 2 Other Hispanic, 3 non-Hispanic White, 4 non-Hispanic Black, 6 non-Hispanic Asian, 7 other or multiracial. Missing % differed by at most 1.4 percentage points between training and test splits. Skip patterns resolved by the feature builder: never smokers have current_smoker = 0 and never drinkers have drinks_per_day = 0; BPQ060 is skipped when high cholesterol was reported and was dropped. Refused and don't-know codes were set to missing; no other outlier removal or truncation was applied. Class balance (positive %): $Y_{\mathrm{self}}$ 37.0% and $Y_{\mathrm{clin}}$ 36.5% in 2011–2014; 37.8% and 40.0% in 2015–2018; no resampling or class weighting was used.*
 
 **Clinical translation roadmap (proposed, not evaluated).** *Intended users:* model developers, clinical informatics and AI governance teams. *Position in the workflow:* after model development and before release of a CF-based decision support tool; PLCA does not run at the point of care and produces no patient-facing output. *Current readiness:* technology readiness level 3–4, self-assessed against the machine learning TRL framework [32] (analytical proof of concept on public survey data). *Steps before any deployment:* (1) repeat the audit on electronic health record data with a diagnosis code and measured blood pressure for the same patients; (2) clinician review of the constraint rules and of a sample of CFs; (3) prespecified acceptance criteria for valid-CF coverage and for A under each constraint setting; (4) re-audit after model updates or data drift. *Not yet studied:* usability, effect on clinical decisions, and patient outcomes.
 
-**Computing environment.** All endpoint results: one run of \url{scripts/run_all.sh} at commit 85a813b on a Linux laptop (Intel Core i5-1335U, 16 GB RAM; Python 3.12.3, XGBoost 3.4.1, scikit-learn 1.9.1, dice-ml 0.12). Package versions: \url{results/pip_freeze.txt}; environment: \url{results/environment.json}. Analysis code was written with assistance from Claude (Anthropic); all code was reviewed and run by the author, and every reported number is read from the output files of these runs.
+**Definitions of the sensitivity analyses (Table 5).** *130/80 mmHg threshold:* $Y_{\mathrm{clin}}$ with systolic ≥130 or diastolic ≥80 mmHg or medication. *Self-report told ≥2 times:* $Y_{\mathrm{self}}$ = 1 only if told on two or more occasions (BPQ030). *Reconstructed cholesterol-check variable:* BPQ060 kept as an access feature, set to 1 when high cholesterol was reported (BPQ080 = 1), because the questionnaire then skips BPQ060. *Cycle:* each 2-year cycle analysed alone, with its own split and models. *Blood-pressure-only label, untreated:* untreated people only (n = 7,202; 5,041 training, 2,161 test), with the examination label defined by blood pressure ≥140/90 mmHg alone; both models retrained. *Removing G01 (or G10) people from training:* E1 refitted after dropping all G01 (or G10) people from the training split, compared with dropping the same number of randomly chosen training people with the same $Y_{\mathrm{self}}$ value; the test set is unchanged. *Logistic regression:* standardized logistic regression instead of XGBoost for all models. *DiCE genetic:* genetic instead of random search. *$Y_{\mathrm{clin}}$ = 1 people only:* CF queries restricted to untreated people with $Y_{\mathrm{clin}}$ = 1. *All returned CFs:* E3 computed with all CFs returned by DiCE, including invalid ones.
+
+**Computing environment.** All endpoint results: one run of \texttt{scripts/\allowbreak{}run\_\allowbreak{}all.sh} at commit 85a813b on a Linux laptop (Intel Core i5-1335U, 16 GB RAM; Python 3.12.3, XGBoost 3.4.1, scikit-learn 1.9.1, dice-ml 0.12). Package versions: \texttt{results/\allowbreak{}pip\_\allowbreak{}freeze.txt}; environment: \texttt{results/\allowbreak{}environment.json}. Analysis code was written with assistance from Claude (Anthropic); all code was reviewed and run by the author, and every reported number is read from the output files of these runs.

@@ -77,10 +77,10 @@ DICTIONARY = {
                        "Average drinks per drinking day (never drinkers = 0)"),
     "vigorous_rec_pa": ("lifestyle", "PAQ650", "binary", "", "Any vigorous recreational activity"),
     "moderate_rec_pa": ("lifestyle", "PAQ665", "binary", "", "Any moderate recreational activity"),
-    "bmi": ("physiology", "BMXBMI", "continuous", "kg/m2", "Body mass index"),
+    "bmi": ("physiology", "BMXBMI", "continuous", "kg/m²", "Body mass index"),
     "waist": ("physiology", "BMXWAIST", "continuous", "cm", "Waist circumference"),
     "total_chol": ("physiology", "LBXTC", "continuous", "mg/dL (x0.02586 = mmol/L)", "Total cholesterol"),
-    "hba1c": ("physiology", "LBXGH", "continuous", "% (NGSP)", "Glycated haemoglobin"),
+    "hba1c": ("physiology", "LBXGH", "continuous", "% (NGSP; IFCC mmol/mol = 10.93 × % − 23.5)", "Glycated hemoglobin"),
     "self_rated_health": ("self_rated_health", "HUQ010", "ordinal", "1-5 (1 = excellent)",
                           "Self-rated general health"),
 }
@@ -278,7 +278,7 @@ def plot_calibration(cal_tables, path, period):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
-    plt.rcParams.update({"font.size": 9, "pdf.fonttype": 42})
+    plt.rcParams.update({"font.size": 9})
     fig, axes = plt.subplots(1, 2, figsize=(7.0, 3.4), sharey=True)
     for ax, mname in zip(axes, LABELS):
         t = cal_tables[mname]
@@ -287,7 +287,7 @@ def plot_calibration(cal_tables, path, period):
         ax.set_xlim(0, 1)
         ax.set_ylim(0, 1)
         ax.set_xlabel("Mean predicted probability (decile)")
-        ax.set_title({"f_self": "Self-report model", "f_clin": "Examination-informed model"}[mname],
+        ax.set_title({"f_self": "Self-report model", "f_clin": "Examination-based model"}[mname],
                      fontsize=9)
     axes[0].set_ylabel("Observed proportion")
     fig.tight_layout()

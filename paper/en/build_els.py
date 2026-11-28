@@ -14,7 +14,7 @@ subprocess.run([sys.executable, "build_en.py", "--md-only"], cwd=ROOT, check=Tru
 md = (ROOT / "paper_en.md").read_text(encoding="utf-8")
 
 def esc(s):
-    out, parts = [], re.split(r"(\$[^$]+\$|\\url\{[^}]*\})", s)
+    out, parts = [], re.split(r"(\$[^$]+\$|\\url\{[^}]*\}|\\texttt\{(?:[^{}]|\{\})*\})", s)
     for k, p in enumerate(parts):
         if k % 2:
             out.append(p); continue
@@ -151,7 +151,7 @@ doc = cls + r"""
 \begin{abstract}
 """ + "\n\n".join(r"\textbf{%s:} %s" % (a, esc(b)) for a, b in abstract) + r"""
 \end{abstract}
-""" + (r"\begin{highlights}" + "\n" + "\n".join(r"\item " + esc(h) for h in hl) + "\n" + r"\end{highlights}" if MODE == "submission" else "") + r"""
+""" + "" + r"""
 \begin{keyword}
 """ + r" \sep ".join(esc(k.strip()) for k in keywords) + r"""
 \end{keyword}
@@ -169,6 +169,10 @@ doc = cls + r"""
 \end{document}
 """
 name = f"paper_en_{MODE}"
+def _breakable(m):
+    s = m.group(1)
+    return r"\texttt{" + s.replace("/", r"/\allowbreak{}").replace(r"\_", r"\_\allowbreak{}") + "}"
+doc = re.sub(r"\\texttt\{([^{}]*(?:\\_[^{}]*)*)\}", _breakable, doc)   # file names may break at / and _
 (ROOT / f"{name}.tex").write_text(doc, encoding="utf-8")
 for _ in range(2):
     subprocess.run(["pdflatex", "-interaction=nonstopmode", f"{name}.tex"], cwd=ROOT, stdout=subprocess.DEVNULL)

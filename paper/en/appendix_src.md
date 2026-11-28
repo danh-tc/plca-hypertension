@@ -63,7 +63,7 @@
 | E4: valid-CF coverage under M1, f_self (seeds 42/43/44) | 18.0 / 8.5 / 12.5%; common n 36 / 17 / 25 | 9.0 / 12.0 / 10.5%; common n 18 / 24 / 21 |
 | E4: ECD_self(M0) − ECD_self(M1) | Not interpretable (n < 40) | Not interpretable (n < 40); raw values 0.025 / 0.029 / 0.008 |
 
-*The 2011–2014 data were used to develop the procedure, including E2, so results there are not an independent evaluation. E2 and E3 use different people (S0 and S02), so their stability can only be compared descriptively. Sources: `results/discovery` and `results/confirmation`.*
+*E1 "met" requires both conditions of Section 2.3; the share was defined in all 100 bootstrap draws in both periods. The 2011–2014 data were used to develop the procedure, including E2, so results there are not an independent evaluation. E2 and E3 use different people (S0 and S02), so their stability can only be compared descriptively. Sources: `results/discovery` and `results/confirmation`.*
 
 **Table A6.** Full characteristics of the 2015–2018 sample by label pair (140/90 mmHg).
 
@@ -94,7 +94,7 @@
 | Diastolic BP, mmHg, mean (SD) | 71.7 (11.4) | 69.7 (9.1) | 82.3 (13.1) | 72.5 (10.0) | 73.2 (13.7) |
 | On BP medication, % | 24.1 | 0 | 0 | 0 | 89.2 |
 
-*Survey-weighted (WTMEC2YR divided by the number of cycles); 95% confidence intervals for access-to-care rows by Taylor linearization with the survey design (30 strata, 60 primary sampling units). One G00 person lacks usual-place and visit data. Source: `results/confirmation/T1c_demographics_confirmation.csv` and `results/confirmation/design_se`.*
+*1 mmHg = 0.133 kPa. Survey-weighted (WTMEC2YR divided by the number of cycles); 95% confidence intervals for access-to-care rows by Taylor linearization with the survey design (30 strata, 60 primary sampling units). One G00 person lacks usual-place and visit data. Source: `results/confirmation/T1c_demographics_confirmation.csv` and `results/confirmation/design_se`.*
 
 **Detailed formulas.** Let S be the analysis set, $K_{i,s}$ the number of valid CFs from model s for person i, and $x'_{ij}$ the j-th CF. Then
 
@@ -118,7 +118,7 @@ From Eqs. (A.1)–(A.4), $A(\mathrm{M0}) - A_{abl} = 2\,\mathrm{E2}$ when both s
 
 | Metric | f_self, 2011–2014 | f_clin, 2011–2014 | f_self, 2015–2018 | f_clin, 2015–2018 |
 |---|---|---|---|---|
-| AUROC | 0.824 [0.808; 0.838] | 0.849 [0.834; 0.862] | 0.810 [0.794; 0.825] | 0.836 [0.822; 0.849] |
+| AUC | 0.824 [0.808; 0.838] | 0.849 [0.834; 0.862] | 0.810 [0.794; 0.825] | 0.836 [0.822; 0.849] |
 | AUPRC | 0.718 [0.690; 0.747] | 0.737 [0.707; 0.764] | 0.704 [0.674; 0.731] | 0.742 [0.717; 0.768] |
 | Accuracy | 0.762 [0.747; 0.776] | 0.779 [0.764; 0.793] | 0.747 [0.732; 0.762] | 0.760 [0.745; 0.774] |
 | Balanced accuracy | 0.735 [0.719; 0.750] | 0.755 [0.739; 0.771] | 0.726 [0.710; 0.742] | 0.752 [0.736; 0.768] |
@@ -131,7 +131,7 @@ From Eqs. (A.1)–(A.4), $A(\mathrm{M0}) - A_{abl} = 2\,\mathrm{E2}$ when both s
 | Calibration intercept | 0.026 [−0.063; 0.117] | 0.044 [−0.057; 0.141] | −0.076 [−0.173; 0.017] | −0.014 [−0.113; 0.083] |
 | Calibration slope | 0.906 [0.840; 0.982] | 0.892 [0.828; 0.961] | 0.818 [0.755; 0.886] | 0.855 [0.799; 0.918] |
 
-*Each model against its own training label (f_self: Y_self; f_clin: Y_clin). XGBoost with training-split median imputation, seed 42, 30% test split (n = 3,094 and 3,046). 95% intervals: test-set bootstrap (B = 1,000) with the fitted model held fixed; retraining variability is not included. Unweighted. The refitted test AUROC matched the frozen run exactly. Calibration intercept with slope fixed at 1; slope from logistic recalibration on logit p. CF analyses use percentile scores, which depend only on the ranking of scores.*
+*Each model against its own training label (f_self: Y_self; f_clin: Y_clin). XGBoost with training-split median imputation, seed 42, 30% test split (n = 3,094 and 3,046). 95% intervals: test-set bootstrap (B = 1,000) with the fitted model held fixed; retraining variability is not included. Unweighted. The refitted test AUC matched the frozen run exactly. AUC: area under the receiver operating characteristic curve; AUPRC: area under the precision-recall curve; PPV/NPV: positive/negative predictive value. Calibration intercept with slope fixed at 1; slope from logistic recalibration on logit p. CF analyses use percentile scores, which depend only on the ranking of scores.*
 
 ![Fig. A1. Calibration of the models used to generate counterfactuals on the 2015–2018 test split (deciles of predicted probability; dashed line: perfect calibration). Post hoc reporting.](figA1.pdf){width=82%}
 
@@ -156,14 +156,16 @@ From Eqs. (A.1)–(A.4), $A(\mathrm{M0}) - A_{abl} = 2\,\mathrm{E2}$ when both s
 | Drinks per drinking day | ALQ130 (+ALQ101, ALQ111); drinks/day | 1.0 [1.0; 3.0] | 19.3 | 2.0 [1.0; 3.0] | 21.4 |
 | Vigorous recreational activity | PAQ650 | 22.3% | 0.0 | 24.2% | 0.0 |
 | Moderate recreational activity | PAQ665 | 41.8% | 0.0 | 40.7% | 0.0 |
-| BMI | BMXBMI; kg/m2 | 27.7 [24.0; 32.3] | 1.1 | 28.5 [24.7; 33.4] | 1.1 |
+| BMI | BMXBMI; kg/m² | 27.7 [24.0; 32.3] | 1.1 | 28.5 [24.7; 33.4] | 1.1 |
 | Waist | BMXWAIST; cm | 97.2 [86.8; 108.3] | 4.9 | 99.1 [88.6; 110.5] | 5.0 |
 | Total cholesterol | LBXTC; mg/dL (x0.02586 = mmol/L) | 188 [163; 216] | 5.6 | 186 [161; 214] | 5.7 |
-| HbA1c | LBXGH; % (NGSP) | 5.5 [5.2; 5.9] | 4.1 | 5.6 [5.3; 6.0] | 4.5 |
+| HbA1c | LBXGH; % (NGSP; IFCC mmol/mol = 10.93 × % − 23.5) | 5.5 [5.2; 5.9] | 4.1 | 5.6 [5.3; 6.0] | 4.5 |
 | Self-rated health | HUQ010; 1-5 (1 = excellent) | 3 [2; 3] | 0.1 | 3 [2; 4] | 0.1 |
 
 *Feature groups as in Section 2.2. RIDRETH3: 1 Mexican American, 2 Other Hispanic, 3 non-Hispanic White, 4 non-Hispanic Black, 6 non-Hispanic Asian, 7 other or multiracial. Missing % differed by at most 1.4 percentage points between training and test splits. Skip patterns resolved by the feature builder: never smokers have current_smoker = 0 and never drinkers have drinks_per_day = 0; BPQ060 is skipped when high cholesterol was reported and was dropped. Refused and don't-know codes were set to missing; no other outlier removal or truncation was applied. Class balance (positive %): Y_self 37.0% and Y_clin 36.5% in 2011–2014; 37.8% and 40.0% in 2015–2018; no resampling or class weighting was used.*
 
 **Clinical translation roadmap (proposed, not evaluated).** *Intended users:* model developers, clinical informatics and AI governance teams. *Position in the workflow:* after model development and before release of a CF-based decision support tool; PLCA does not run at the point of care and produces no patient-facing output. *Current readiness:* technology readiness level 3–4, self-assessed against the machine learning TRL framework [41] (analytical proof of concept on public survey data). *Steps before any deployment:* (1) repeat the audit on electronic health record data with a diagnosis code and measured blood pressure for the same patients; (2) clinician review of the constraint rules and of a sample of CFs; (3) prespecified acceptance criteria for valid-CF coverage and for A under each constraint setting; (4) re-audit after model updates or data drift. *Not yet studied:* usability, effect on clinical decisions, and patient outcomes.
+
+**Definitions of the sensitivity analyses (Table 5).** *130/80 mmHg threshold:* Y_clin with systolic ≥130 or diastolic ≥80 mmHg or medication. *Self-report told ≥2 times:* Y_self = 1 only if told on two or more occasions (BPQ030). *Reconstructed cholesterol-check variable:* BPQ060 kept as an access feature, set to 1 when high cholesterol was reported (BPQ080 = 1), because the questionnaire then skips BPQ060. *Cycle:* each 2-year cycle analysed alone, with its own split and models. *Blood-pressure-only label, untreated:* untreated people only (n = 7,202; 5,041 training, 2,161 test), with the examination label defined by blood pressure ≥140/90 mmHg alone; both models retrained. *Removing G01 (or G10) people from training:* E1 refitted after dropping all G01 (or G10) people from the training split, compared with dropping the same number of randomly chosen training people with the same Y_self value; the test set is unchanged. *Logistic regression:* standardized logistic regression instead of XGBoost for all models. *DiCE genetic:* genetic instead of random search. *Y_clin = 1 people only:* CF queries restricted to untreated people with Y_clin = 1. *All returned CFs:* E3 computed with all CFs returned by DiCE, including invalid ones.
 
 **Computing environment.** All endpoint results: one run of `scripts/run_all.sh` at commit 85a813b on a Linux laptop (Intel Core i5-1335U, 16 GB RAM; Python 3.12.3, XGBoost 3.4.1, scikit-learn 1.9.1, dice-ml 0.12). Package versions: `results/pip_freeze.txt`; environment: `results/environment.json`. Analysis code was written with assistance from Claude (Anthropic); all code was reviewed and run by the author, and every reported number is read from the output files of these runs.

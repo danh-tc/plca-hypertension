@@ -5,7 +5,7 @@ import pandas as pd
 
 root = sys.argv[1] if len(sys.argv) > 1 else "results_posthoc/performance"
 P = {"discovery": "2011–2014", "confirmation": "2015–2018"}
-M = [("auroc", "AUROC"), ("auprc", "AUPRC"), ("accuracy", "Accuracy"), ("balanced_accuracy", "Balanced accuracy"),
+M = [("auroc", "AUC"), ("auprc", "AUPRC"), ("accuracy", "Accuracy"), ("balanced_accuracy", "Balanced accuracy"),
      ("sensitivity", "Sensitivity"), ("specificity", "Specificity"), ("ppv", "PPV"), ("npv", "NPV"),
      ("prevalence", "Prevalence (test set)"), ("brier", "Brier score"),
      ("cal_intercept", "Calibration intercept"), ("cal_slope", "Calibration slope")]
@@ -26,7 +26,7 @@ n = {p: int(pd.read_csv(f"{root}/{p}/DATA_class_balance.csv").query("label=='Y_s
 out += ["", f"*Each model against its own training label (f_self: Y_self; f_clin: Y_clin). XGBoost with training-split median "
         f"imputation, seed 42, 30% test split (n = {n['discovery']:,} and {n['confirmation']:,}). 95% intervals: test-set "
         "bootstrap (B = 1,000) with the fitted model held fixed; retraining variability is not included. Unweighted. "
-        "The refitted test AUROC matched the frozen run exactly. Calibration intercept with slope fixed at 1; slope from "
+        "The refitted test AUC matched the frozen run exactly. AUC: area under the receiver operating characteristic curve; AUPRC: area under the precision-recall curve; PPV/NPV: positive/negative predictive value. Calibration intercept with slope fixed at 1; slope from "
         "logistic recalibration on logit p. CF analyses use percentile scores, which depend only on the ranking of scores.*", ""]
 
 dic = pd.read_csv(f"{root}/confirmation/DATA_dictionary.csv")

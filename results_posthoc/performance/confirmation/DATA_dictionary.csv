@@ -19,8 +19,8 @@ current_smoker,lifestyle,SMQ020/SMQ040,binary,,Current smoker (never smokers = 0
 drinks_per_day,lifestyle,ALQ130 (+ALQ101/ALQ111),continuous,drinks/day,Average drinks per drinking day (never drinkers = 0),True
 vigorous_rec_pa,lifestyle,PAQ650,binary,,Any vigorous recreational activity,True
 moderate_rec_pa,lifestyle,PAQ665,binary,,Any moderate recreational activity,True
-bmi,physiology,BMXBMI,continuous,kg/m2,Body mass index,True
+bmi,physiology,BMXBMI,continuous,kg/m²,Body mass index,True
 waist,physiology,BMXWAIST,continuous,cm,Waist circumference,True
 total_chol,physiology,LBXTC,continuous,mg/dL (x0.02586 = mmol/L),Total cholesterol,True
-hba1c,physiology,LBXGH,continuous,% (NGSP),Glycated haemoglobin,True
+hba1c,physiology,LBXGH,continuous,% (NGSP; IFCC mmol/mol = 10.93 × % − 23.5),Glycated hemoglobin,True
 self_rated_health,self_rated_health,HUQ010,ordinal,1-5 (1 = excellent),Self-rated general health,True
