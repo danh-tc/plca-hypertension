@@ -45,7 +45,7 @@
 | Current smoking (SMQ020/SMQ040) | Only yes → no | G/P | Avoid tobacco [39] |
 | Drinks per drinking day (ALQ130) | If x > 1, down within [1, x]; otherwise fixed | G/S | [34], recommendation 6 (Class 1/A); the floor of one follows the meaning of ALQ130 |
 | Moderate (PAQ665) and vigorous (PAQ650) recreational activity | Only no → yes | G/P | [34], recommendation 7 (Class 1/A); [40] |
-| BMI (BMXBMI) | If x > T, down within [T, x]; otherwise fixed. T = 23 for non-Hispanic Asian (RIDRETH3 = 6), 25 otherwise | G/P | [34], recommendation 1 (Class 1/A), and BMI categories |
+| BMI (BMXBMI) | If x > T, down within [T, x]; otherwise fixed. T = 23 for non-Hispanic Asian (RIDRETH3 = 6), 25 otherwise | G/P | [34], recommendation 1 (Class 1/A); BMI cut-offs, including 23 kg/m² for Asian populations [42] |
 | Waist (BMXWAIST) | If x > T, down within [T, x]; otherwise fixed. T = 102 cm (men), 88 cm (women) | P | Abdominal obesity thresholds [35,36] |
 | Age, sex, race/ethnicity | Fixed | I | Immutable |
 | All other features (education, income, visits, diagnoses, cholesterol, HbA1c, self-rated health) | Fixed | S/D | Not a direct change target, or no general directional rule |

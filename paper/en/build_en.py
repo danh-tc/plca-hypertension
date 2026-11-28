@@ -21,6 +21,8 @@ for l in vi.split("## Tài liệu tham khảo")[1].splitlines():
 
 # references added after the Vietnamese version was frozen (English manuscript only)
 refs[34] = refs[34].replace("Circulation 152 (2025)", "Circulation 152 (11) (2025)")
+refs[42] = ("WHO Expert Consultation, Appropriate body-mass index for Asian populations and its implications for policy "
+            "and intervention strategies, Lancet 363 (9403) (2004) 157–163, https://doi.org/10.1016/S0140-6736(03)15268-3")
 refs[41] = ("A. Lavin, C.M. Gilligan-Lee, A. Visnjic, S. Ganju, D. Newman, S. Ganguly, D. Lange, A.G. Baydin, "
             "A. Sharma, A. Gibson, S. Zheng, E.P. Xing, C. Mattmann, J. Parr, Y. Gal, Technology readiness levels for "
             "machine learning systems, Nat. Commun. 13 (2022) 6039, https://doi.org/10.1038/s41467-022-33128-9")
